@@ -58,7 +58,7 @@
 			callAPI.TabIndex = 3;
 			callAPI.Text = "Go";
 			callAPI.UseVisualStyleBackColor = true;
-			callAPI.Click += callAPI_Click;
+			callAPI.Click += CallAPI_Click;
 			// 
 			// resultsText
 			// 
