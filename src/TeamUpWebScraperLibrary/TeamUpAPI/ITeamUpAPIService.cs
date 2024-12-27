@@ -5,5 +5,5 @@ namespace TeamUpWebScraperLibrary.TeamUpAPI;
 
 public interface ITeamUpAPIService
 {
-	Task<ErrorOr<IEnumerable<Event>>> GetEventsAsync(DateTime dateFrom, DateTime dateTo);
+	Task<ErrorOr<EventResponse>> GetEventsAsync(DateTime dateFrom, DateTime dateTo);
 }

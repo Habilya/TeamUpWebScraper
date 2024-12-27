@@ -26,7 +26,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 		_httpClient = _httpClientFactory.CreateClient(TeamUpApiConstants.HTTP_CLIENTNAME);
 	}
 
-	public async Task<ErrorOr<IEnumerable<Event>>> GetEventsAsync(DateTime dateFrom, DateTime dateTo)
+	public async Task<ErrorOr<EventResponse>> GetEventsAsync(DateTime dateFrom, DateTime dateTo)
 	{
 		string route = "events";
 		string queryStringParams = $"?startDate={DateTimeToString(dateFrom)}&endDate={DateTimeToString(dateTo)}&tz={_teamUpApiConfiguration.TimeZone}";
@@ -62,7 +62,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 
 		try
 		{
-			var responseBody = await response.Content.ReadFromJsonAsync<List<Event>>();
+			var responseBody = await response.Content.ReadFromJsonAsync<EventResponse>();
 
 			return responseBody is not null
 				? responseBody
