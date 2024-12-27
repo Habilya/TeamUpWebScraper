@@ -35,9 +35,10 @@ public class TeamUpAPIService : ITeamUpAPIService
 
 		if (response.StatusCode.Equals(HttpStatusCode.BadRequest))
 		{
+			string responseErrorAsString = "";
 			try
 			{
-				var responseErrorAsString = await response.Content.ReadAsStringAsync();
+				responseErrorAsString = await response.Content.ReadAsStringAsync();
 				if (responseErrorAsString.Equals(TeamUpApiConstants.API_BADREQUEST_KEYMISSING))
 				{
 					return Errors.Events.ApiTokenMissingOrInvalid();
@@ -50,6 +51,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 			}
 			catch (Exception ex)
 			{
+				_logger.LogWarning($"Response as text:\n{responseErrorAsString}");
 				_logger.LogError(ex, "Unhandled Exception while processing bad request");
 				return Errors.Events.BadRequest();
 			}
@@ -64,9 +66,12 @@ public class TeamUpAPIService : ITeamUpAPIService
 		{
 			var responseBody = await response.Content.ReadFromJsonAsync<EventResponse>();
 
-			return responseBody is not null
-				? responseBody
-				: Errors.Events.NotFound();
+			if (responseBody is null)
+			{
+				return Errors.Events.NotFound();
+			}
+
+			return responseBody;
 		}
 		catch (Exception)
 		{
