@@ -5,12 +5,14 @@ namespace TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 public class Event
 {
 	public string Id { get; set; } = default!;
+	[JsonPropertyName("subcalendar_id")]
 	public long SubcalendarId { get; set; } = default!;
+	[JsonPropertyName("subcalendar_ids")]
 	public List<long> SubcalendarIds { get; set; } = default!;
 	public string Title { get; set; } = default!;
-	[JsonPropertyName("StartDt")]
+	[JsonPropertyName("start_dt")]
 	public DateTime StartDate { get; set; } = default!;
-	[JsonPropertyName("EndDt")]
+	[JsonPropertyName("end_dt")]
 	public DateTime EndDate { get; set; } = default!;
 	public int SignupCount { get; set; } = default!;
 	public List<Signup>? Signups { get; set; } = default!;

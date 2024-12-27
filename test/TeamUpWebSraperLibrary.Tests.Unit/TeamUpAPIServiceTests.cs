@@ -73,11 +73,15 @@ public class TeamUpAPIServiceTests
 				{
 					Id = "1781416861",
 					Title = "Compétition régionale Yoseikan Budo (arts martiaux)",
-					StartDate =  DateTime.MinValue,
-					EndDate = DateTime.MinValue,
-					SubcalendarId = 0L,
-					SubcalendarIds = default!,
-					Custom = new Custom(),
+					StartDate =  new DateTime(2024, 12, 01, 09, 00,00),
+					EndDate = new DateTime(2024, 12, 01, 16, 00,00),
+					SubcalendarId = 11798519L,
+					SubcalendarIds = new List<long>{ 11798519L },
+					Custom = new Custom
+					{
+						ContratProvincialContract = new List<string> { "non_no" },
+						NombreDeMembresNecessaires = "2"
+					},
 					SignupCount = 0,
 					Signups = new List<Signup>
 					{
@@ -92,11 +96,14 @@ public class TeamUpAPIServiceTests
 				{
 					Id = "1759667815",
 					Title = "Exercice sauvetage forestier",
-					StartDate =  DateTime.MinValue,
-					EndDate = DateTime.MinValue,
-					SubcalendarId = 0L,
-					SubcalendarIds = default!,
-					Custom = new Custom(),
+					StartDate =  new DateTime(2024, 12, 01, 09, 00,00),
+					EndDate = new DateTime(2024, 12, 01, 12, 00,00),
+					SubcalendarId = 9634218L,
+					SubcalendarIds = new List<long>{ 9634218L },
+					Custom = new Custom
+					{
+						ContratProvincialContract = new List<string> { "non_no" }
+					},
 					SignupCount = 0,
 					Signups = new List<Signup>
 					{
@@ -186,7 +193,37 @@ public class TeamUpAPIServiceTests
 							Name = "Marie-Ève Bélanger (PR) 971"
 						}  // 16
 					}
-				}
+				},
+				new Event
+				{
+					Id = "1776293830",
+					Title = "Fan Club et Club 1909",
+					StartDate =  new DateTime(2024, 12, 01, 14, 00,00),
+					EndDate = new DateTime(2024, 12, 01, 19, 30,00),
+					SubcalendarId = 9616459L,
+					SubcalendarIds = new List<long>{ 9616459L },
+					Custom = new Custom
+					{
+						Division = "452",
+						Client2 = "centre bell",
+						ContratProvincialContract = new List<string> { "non_no" },
+						NombreDeMembresNecessaires = "4"
+					},
+					SignupCount = 0,
+					Signups = new List<Signup>
+					{
+						new Signup
+						{
+							Id = 3830388L,
+							Name = "Pascal Pedneault (PR) 1002"
+						},
+						new Signup
+						{
+							Id = 3830390L,
+							Name = "Charles-Etienne Pedneault (PR) 1002"
+						}
+					}
+				},
 			}
 		};
 		#endregion

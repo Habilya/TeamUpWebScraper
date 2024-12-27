@@ -306,6 +306,78 @@
 				],
 				"contact_d_urgence_emer_contact": "Steve Sirois 1-877-889-0631 poste 6102"
 			}
+		},
+		{
+			"id": "1776293830",
+			"series_id": null,
+			"remote_id": null,
+			"subcalendar_id": 9616459,
+			"subcalendar_ids": [
+				9616459
+			],
+			"all_day": false,
+			"rrule": "",
+			"title": "Fan Club et Club 1909",
+			"who": "",
+			"location": "1225 st antoine",
+			"notes": "<p>Date : 1 décembre 2024</p>\n<p>•     Lieu : Centre Bell</p>\n<p>•     Entrée des membres : 1909 avenue des Canadiens.</p>\n<p>•     Ouverture des portes : 14h</p>\n<p>•     Début du match : 15h</p>\n<p>•     Fin de l’événement : 18h environ</p>\n<p>•     Nombre de personnes : Entre 1500 à 2000 TBD</p>",
+			"version": "0da77392e9f6",
+			"readonly": true,
+			"tz": "America/Toronto",
+			"attachments": [],
+			"start_dt": "2024-12-01T14:00:00-05:00",
+			"end_dt": "2024-12-01T19:30:00-05:00",
+			"ristart_dt": null,
+			"rsstart_dt": null,
+			"creation_dt": "2024-11-12T15:53:57-05:00",
+			"update_dt": "2024-11-30T20:04:57-05:00",
+			"delete_dt": null,
+			"signup_enabled": true,
+			"signup_visibility": "all_users",
+			"signup_limit": 4,
+			"signup_deadline": "2024-12-01T13:30:00-05:00",
+			"signup_deadline_enabled": true,
+			"signup_count": 4,
+			"signups": [
+				{
+					"id": 3830390,
+					"event_id": 1776293830,
+					"name": "Charles-Etienne Pedneault (PR) 1002",
+					"email": "",
+					"email_hash": "a0cbe7af217cdaa0bdaf12d58dd50fba",
+					"remote_id": "2320B6E9-8EDA-4875-993A-D8C7E5BE362D",
+					"readonly": true,
+					"creation_dt": "2024-11-30T20:04:57-05:00",
+					"update_dt": null
+				},
+				{
+					"id": 3830388,
+					"event_id": 1776293830,
+					"name": "Pascal Pedneault (PR) 1002",
+					"email": "",
+					"email_hash": "8adda8fd8956cccfbf8b5fb7c7f5d934",
+					"remote_id": "41077516-86E4-49E0-8DAD-502C9B38C75C",
+					"readonly": true,
+					"creation_dt": "2024-11-30T20:02:51-05:00",
+					"update_dt": null
+				}
+			],
+			"comments_enabled": false,
+			"custom": {
+				"client2": "centre bell",
+				"division": "452",
+				"priorite_priority2": [
+					"normal"
+				],
+				"cate_gorie_category": [
+					"service"
+				],
+				"contrat_provincial_contract": [
+					"non_no"
+				],
+				"contact_d_urgence_emer_contact": "centrebell@asjquebec.ca",
+				"nombre_de_membres_ne_cessaires": "4"
+			}
 		}
 	]
 }
