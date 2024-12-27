@@ -48,17 +48,8 @@ public class TeamUpAPIService : ITeamUpAPIService
 
 	private async Task<ErrorOr<EventResponse>> GetEventsProcessAnyOtherRequestType(HttpResponseMessage response)
 	{
-		try
-		{
-			var responseAsString = await response.Content.ReadAsStringAsync();
-			_logger.LogWarning($"Unknown Response as text:\n{responseAsString}");
-			return Errors.Events.BadRequest();
-		}
-		catch (Exception ex)
-		{
-			_logger.LogError(ex, "Unhandled Exception while processing GetEventsProcessAnyOtherRequestType request type");
-			throw;
-		}
+		await LogResponseAsText(response);
+		return Errors.Events.BadRequest();
 	}
 
 	private async Task<ErrorOr<EventResponse>> GetEventsProcessBadRequestResponse(HttpResponseMessage response)
@@ -98,11 +89,24 @@ public class TeamUpAPIService : ITeamUpAPIService
 
 			return responseBody;
 		}
-		catch (Exception)
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, "Unhandled Exception while GetEventsProcessOkResponse");
+			await LogResponseAsText(response);
+			return Errors.Events.BadRequest();
+		}
+	}
+
+	private async Task LogResponseAsText(HttpResponseMessage response)
+	{
+		try
 		{
 			var responseErrorAsString = await response.Content.ReadAsStringAsync();
 			_logger.LogWarning($"Response as text:\n{responseErrorAsString}");
-			throw;
+		}
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, "Unhandled Exception while LogResponseAsText");
 		}
 	}
 

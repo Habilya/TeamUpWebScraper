@@ -47,6 +47,21 @@ public class TeamUpAPIServiceTests
 
 
 		// Act
+		var actual = await _sut.GetEventsAsync(new DateTime(2012, 12, 1), new DateTime(2012, 12, 25));
+
+
+		// Assert
+		logger.Received(1).LogError(
+			Arg.Is<JsonException>(ex => ex.Message.Equals("'H' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.")),
+			"Unhandled Exception while GetEventsProcessOkResponse"
+		);
+
+		logger.Received(1).LogWarning("Response as text:\nHello, world!");
+	}
+
+	// If an exception assertion is needed
+	/*
+		// Act
 		Func<Task> act = () => _sut.GetEventsAsync(new DateTime(2012, 12, 1), new DateTime(2012, 12, 25));
 
 
@@ -55,9 +70,8 @@ public class TeamUpAPIServiceTests
 			.WithMessage("'H' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.");
 
 		// Note: these assertions are called after the await of async function
-		logger.Received(0).LogError(Arg.Any<Exception>(), Arg.Any<string>());
-		logger.Received(1).LogWarning("Response as text:\nHello, world!");
-	}
+	 
+	 */
 
 
 	[Fact]
