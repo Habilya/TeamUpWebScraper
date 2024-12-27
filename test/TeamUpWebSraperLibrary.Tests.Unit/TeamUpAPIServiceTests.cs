@@ -76,7 +76,7 @@ public class TeamUpAPIServiceTests
 					StartDate =  DateTime.MinValue,
 					EndDate = DateTime.MinValue,
 					SubcalendarId = 0L,
-					SubcalendarIds = null,
+					SubcalendarIds = default!,
 					Custom = new Custom(),
 					SignupCount = 0,
 					Signups = new List<Signup>
@@ -95,7 +95,7 @@ public class TeamUpAPIServiceTests
 					StartDate =  DateTime.MinValue,
 					EndDate = DateTime.MinValue,
 					SubcalendarId = 0L,
-					SubcalendarIds = null,
+					SubcalendarIds = default!,
 					Custom = new Custom(),
 					SignupCount = 0,
 					Signups = new List<Signup>
