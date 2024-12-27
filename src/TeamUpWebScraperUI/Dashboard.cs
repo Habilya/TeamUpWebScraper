@@ -26,8 +26,8 @@ public partial class Dashboard : Form
 	{
 		try
 		{
-			var dateFromValue = dtpDateFrom.Value;
-			var dateToValue = dtpDateTo.Value;
+			var dateFromValue = dtpDateFrom.Value.Date;
+			var dateToValue = dtpDateTo.Value.Date;
 			if (!IsValidDatesSpan(dateFromValue, dateToValue))
 			{
 				return;
