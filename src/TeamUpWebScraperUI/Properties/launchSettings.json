@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "TeamUpWebScraperUI": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "BUILD_NUMBER": "DEV_ENV",
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 ﻿using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.Validators;
+using TeamUpWebScraperUI.Constants;
 
 namespace TeamUpWebScraperUI;
 
@@ -20,6 +21,13 @@ public partial class Dashboard : Form
 		_teamUpAPIService = teamUpAPIService;
 
 		InitializeComponent();
+		DisplayVersion();
+	}
+
+	private void DisplayVersion()
+	{
+		// Add Version to this form title bar
+		Text += $" {Versionning.GetVersionOneLiner()}";
 	}
 
 	private async void CallAPI_Click(object sender, EventArgs e)
