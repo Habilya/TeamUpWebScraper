@@ -1,0 +1,236 @@
+﻿using FluentAssertions;
+using NSubstitute;
+using System.Net;
+using System.Text.Json;
+using TeamUpWebScraperLibrary.Logging;
+using TeamUpWebScraperLibrary.TeamUpAPI;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
+
+namespace TeamUpWebSraperLibrary.Tests.Unit;
+
+public class CustomHttpMessageHandler : HttpMessageHandler
+{
+	private readonly HttpResponseMessage _response;
+
+	public CustomHttpMessageHandler(HttpResponseMessage response)
+	{
+		_response = response;
+	}
+
+	protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+	{
+		return Task.FromResult(_response);
+	}
+}
+
+public class TeamUpAPIServiceTests
+{
+	[Fact]
+	public async Task GetEventsAsync_OkButTextResponse_ShouldMatch()
+	{
+		// Arrange
+		var iHttpClientFactory = Substitute.For<IHttpClientFactory>();
+		var teamUpApiConfiguration = Substitute.For<TeamUpApiConfiguration>();
+		var logger = Substitute.For<ILoggerAdapter<TeamUpAPIService>>();
+
+		teamUpApiConfiguration.TimeZone = "America/Toronto";
+
+		var responseAsString = "Hello, world!";
+		var responseMessage = new HttpResponseMessage(HttpStatusCode.OK)
+		{
+			Content = new StringContent(responseAsString)
+		};
+		ArrangeHttpClientMock(iHttpClientFactory, responseMessage);
+
+		var _sut = new TeamUpAPIService(iHttpClientFactory, teamUpApiConfiguration, logger);
+
+
+		// Act
+		Func<Task> act = () => _sut.GetEventsAsync(new DateTime(2012, 12, 1), new DateTime(2012, 12, 25));
+
+
+		// Assert
+		await act.Should().ThrowAsync<JsonException>()
+			.WithMessage("'H' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.");
+
+		// Note: these assertions are called after the await of async function
+		logger.Received(0).LogError(Arg.Any<Exception>(), Arg.Any<string>());
+		logger.Received(1).LogWarning("Response as text:\nHello, world!");
+	}
+
+
+	[Fact]
+	public async Task GetEventsAsync_OkJsonResponse_ShouldMatch()
+	{
+		// Arrange
+		#region Expected (Huge object)
+		var expected = new EventResponse
+		{
+			Events = new List<Event>
+			{
+				new Event
+				{
+					Id = "1781416861",
+					Title = "Compétition régionale Yoseikan Budo (arts martiaux)",
+					StartDate =  DateTime.MinValue,
+					EndDate = DateTime.MinValue,
+					SubcalendarId = 0L,
+					SubcalendarIds = null,
+					Custom = new Custom(),
+					SignupCount = 0,
+					Signups = new List<Signup>
+					{
+						new Signup
+						{
+							Id = 3821288L,
+							Name = "Provost, Francois"
+						}
+					}
+				},
+				new Event
+				{
+					Id = "1759667815",
+					Title = "Exercice sauvetage forestier",
+					StartDate =  DateTime.MinValue,
+					EndDate = DateTime.MinValue,
+					SubcalendarId = 0L,
+					SubcalendarIds = null,
+					Custom = new Custom(),
+					SignupCount = 0,
+					Signups = new List<Signup>
+					{
+						new Signup
+						{
+							Id = 3830570L,
+							Name = "Benoit Vachon PR971"
+						}, // 0
+						new Signup
+						{
+							Id = 3830397L,
+							Name = "Giuliana Rotella"
+						}, // 1
+						new Signup
+						{
+							Id = 3830089L,
+							Name = "Michael Benigno"
+						}, // 2
+						new Signup
+						{
+							Id = 3830086L,
+							Name = "Antonio Benigno"
+						}, // 3
+						new Signup
+						{
+							Id = 3829769L,
+							Name = "Rizk Sujaa SC 1002"
+						}, // 4
+						new Signup
+						{
+							Id = 3828460L,
+							Name = "Alexandra Tardif-Morency"
+						}, // 5
+						new Signup
+						{
+							Id = 3827248L,
+							Name = "Dany Levesque 971 Laval"
+						}, // 6
+						new Signup
+						{
+							Id = 3803990L,
+							Name = "Serge Pellerin PR 971"
+						}, // 7
+						new Signup
+						{
+							Id = 3791762L,
+							Name = "Yannick Gagnon (PR) 883"
+						}, // 8
+						new Signup
+						{
+							Id = 3781556L,
+							Name = "Renée Legault PR 971"
+						}, // 9
+						new Signup
+						{
+							Id = 3771504L,
+							Name = "Julie R SG971"
+						}, // 10
+						new Signup
+						{
+							Id = 3763438L,
+							Name = "Mylene Bessette pr 971"
+						}, // 11
+						new Signup
+						{
+							Id = 3757063L,
+							Name = "Martin Lee SG 971"
+						}, // 12
+						new Signup
+						{
+							Id = 3751965L,
+							Name = "Jacques Frédérick PR (SC)"
+						}, // 13
+						new Signup
+						{
+							Id = 3751963L,
+							Name = "Dany Houde PR (Prov)"
+						}, // 14
+						new Signup
+						{
+							Id = 3747445L,
+							Name = "Martin Chicoine"
+						}, // 15
+						new Signup
+						{
+							Id = 3747442L,
+							Name = "Marie-Ève Bélanger (PR) 971"
+						}  // 16
+					}
+				}
+			}
+		};
+		#endregion
+
+		var iHttpClientFactory = Substitute.For<IHttpClientFactory>();
+		var teamUpApiConfiguration = Substitute.For<TeamUpApiConfiguration>();
+		var logger = Substitute.For<ILoggerAdapter<TeamUpAPIService>>();
+
+		teamUpApiConfiguration.TimeZone = "America/Toronto";
+
+		var responseAsStringPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\ShortEventsResponse.json");
+		var responseAsString = File.ReadAllText(responseAsStringPath);
+
+		var responseMessage = new HttpResponseMessage(HttpStatusCode.OK)
+		{
+			Content = new StringContent(responseAsString)
+		};
+		ArrangeHttpClientMock(iHttpClientFactory, responseMessage);
+
+		var _sut = new TeamUpAPIService(iHttpClientFactory, teamUpApiConfiguration, logger);
+
+
+		// Act
+		var actual = await _sut.GetEventsAsync(new DateTime(2012, 12, 1), new DateTime(2012, 12, 25));
+
+
+		// Assert
+		logger.Received(0).LogError(Arg.Any<Exception>(), Arg.Any<string>());
+		logger.Received(0).LogWarning(Arg.Any<string>());
+		actual.Value.Should().BeEquivalentTo(expected);
+	}
+
+	private static void ArrangeHttpClientMock(IHttpClientFactory iHttpClientFactory, HttpResponseMessage httpResponseMessage)
+	{
+
+		var handler = new CustomHttpMessageHandler(httpResponseMessage);
+
+		// Create an instance of HttpClient using the mock handler
+		var httpClient = new HttpClient(handler)
+		{
+			// Base address can be any valid URI
+			BaseAddress = new Uri("http://localhost/")
+		};
+
+		iHttpClientFactory.CreateClient(Arg.Any<string>()).Returns(httpClient);
+	}
+}
