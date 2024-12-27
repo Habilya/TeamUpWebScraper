@@ -258,7 +258,6 @@ public class TeamUpAPIServiceTests
 
 	private static void ArrangeHttpClientMock(IHttpClientFactory iHttpClientFactory, HttpResponseMessage httpResponseMessage)
 	{
-
 		var handler = new CustomHttpMessageHandler(httpResponseMessage);
 
 		// Create an instance of HttpClient using the mock handler
