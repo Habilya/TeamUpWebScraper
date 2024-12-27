@@ -1,8 +1,7 @@
 ﻿
-namespace TeamUpWebScraperLibrary.Providers
+namespace TeamUpWebScraperLibrary.Providers;
+
+public interface IDateTimeProvider
 {
-	public interface IDateTimeProvider
-	{
-		DateTime DateTimeNow { get; }
-	}
+	DateTime DateTimeNow { get; }
 }
