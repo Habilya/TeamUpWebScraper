@@ -28,10 +28,10 @@ public class TeamUpAPIService : ITeamUpAPIService
 
 	public async Task<ErrorOr<IEnumerable<Event>>> GetEventsAsync(DateTime dateFrom, DateTime dateTo)
 	{
-		string route = "/events";
+		string route = "events";
 		string queryStringParams = $"?startDate={DateTimeToString(dateFrom)}&endDate={DateTimeToString(dateTo)}&tz={_teamUpApiConfiguration.TimeZone}";
 
-		var response = await _httpClient.GetAsync($"/{_teamUpApiConfiguration.CalendarId}{route}{queryStringParams}");
+		var response = await _httpClient.GetAsync($"{route}{queryStringParams}");
 
 		if (response.StatusCode.Equals(HttpStatusCode.BadRequest))
 		{

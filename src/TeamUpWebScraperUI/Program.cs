@@ -65,7 +65,7 @@ public static class Program
 					var calendarId = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_CalendarId_NAME}");
 					var teamupToken = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_TeamupToken_NAME}");
 
-					httpClient.BaseAddress = new Uri(baseURL + calendarId);
+					httpClient.BaseAddress = new Uri(baseURL + calendarId + "/");
 					httpClient.DefaultRequestHeaders
 						.Add(HeaderNames.Accept, "application/json");
 					httpClient.DefaultRequestHeaders
