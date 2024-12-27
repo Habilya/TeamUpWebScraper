@@ -50,8 +50,8 @@ public partial class Dashboard : Form
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, "Call Api Button threw an unhandled exception.");
-			MessageBox.Show("An unhandled exception was thrown, more insormation in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			_logger.LogError(ex, "CallAPI_Click Button threw an unhandled exception.");
+			MessageBox.Show("An unhandled exception was thrown, more information in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 	}
 
