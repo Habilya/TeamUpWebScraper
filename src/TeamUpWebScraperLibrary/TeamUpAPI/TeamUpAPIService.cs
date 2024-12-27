@@ -60,12 +60,20 @@ public class TeamUpAPIService : ITeamUpAPIService
 			return Errors.Events.NotFound();
 		}
 
+		try
+		{
+			var responseBody = await response.Content.ReadFromJsonAsync<List<Event>>();
 
-		var responseBody = await response.Content.ReadFromJsonAsync<List<Event>>();
-
-		return responseBody is not null
-			? responseBody
-			: Errors.Events.NotFound();
+			return responseBody is not null
+				? responseBody
+				: Errors.Events.NotFound();
+		}
+		catch (Exception)
+		{
+			var responseErrorAsString = await response.Content.ReadAsStringAsync();
+			_logger.LogWarning($"Response as text:\n{responseErrorAsString}");
+			throw;
+		}
 	}
 
 	private string DateTimeToString(DateTime dateFrom)

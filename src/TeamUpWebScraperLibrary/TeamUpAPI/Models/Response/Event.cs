@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
@@ -8,12 +8,12 @@ public class Event
 	public long SubcalendarId { get; set; } = default!;
 	public List<long> SubcalendarIds { get; set; } = default!;
 	public string Title { get; set; } = default!;
-	[JsonProperty(PropertyName = "StartDt")]
+	[JsonPropertyName("StartDt")]
 	public DateTime StartDate { get; set; } = default!;
-	[JsonProperty(PropertyName = "EndDt")]
+	[JsonPropertyName("EndDt")]
 	public DateTime EndDate { get; set; } = default!;
 	public int SignupCount { get; set; } = default!;
-	public List<Signup> Signups { get; set; } = default!;
+	public List<Signup>? Signups { get; set; } = default!;
 	public Custom Custom { get; set; } = default!;
 
 
