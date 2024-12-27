@@ -42,6 +42,10 @@ public partial class Dashboard : Form
 			}
 
 			// TODO: Logic here
+			// 1. write tests with _teamUpAPIService mocked with n substitute using provided json file
+			// 2. write logic that transforms the data
+			// 3. Model for Excel Table
+			// 4. Excel spreadsheet report provider
 
 		}
 		catch (Exception ex)
