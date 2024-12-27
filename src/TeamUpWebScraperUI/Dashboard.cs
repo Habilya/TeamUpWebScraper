@@ -1,38 +1,66 @@
-﻿using TeamUpWebScraperLibrary;
+﻿using TeamUpWebScraperLibrary.Logging;
+using TeamUpWebScraperLibrary.TeamUpAPI;
+using TeamUpWebScraperLibrary.Validators;
 
 namespace TeamUpWebScraperUI;
 
 public partial class Dashboard : Form
 {
-	private readonly IApiAccess api = new ApiAccess();
+	private readonly ILoggerAdapter<Dashboard> _logger;
+	private readonly InputValidation _inputValidation;
+	private readonly ITeamUpAPIService _teamUpAPIService;
 
-	public Dashboard()
+	public Dashboard(
+		ILoggerAdapter<Dashboard> logger,
+		InputValidation inputValidation,
+		ITeamUpAPIService teamUpAPIService)
 	{
+		_logger = logger;
+		_inputValidation = inputValidation;
+		_teamUpAPIService = teamUpAPIService;
+
 		InitializeComponent();
 	}
 
-	private async void callAPI_Click(object sender, EventArgs e)
+	private async void CallAPI_Click(object sender, EventArgs e)
 	{
-		//systemStatusLabel.Text = "Calling API...";
-		//resultsText.Text = "";
+		try
+		{
+			var dateFromValue = dtpDateFrom.Value;
+			var dateToValue = dtpDateTo.Value;
+			if (!IsValidDatesSpan(dateFromValue, dateToValue))
+			{
+				return;
+			}
 
-		//// Validate the API URL
-		//if (api.IsValidUrl(apiText.Text) == false)
-		//{
-		//	systemStatusLabel.Text = "Invalid URL";
-		//	return;
-		//}
+			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync(dateFromValue, dateToValue);
+			if (eventsRouteResponse.IsError)
+			{
+				var firstError = eventsRouteResponse.FirstError;
+				MessageBox.Show(firstError.Description, firstError.Code, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
 
-		//try
-		//{
-		//	resultsText.Text = await api.CallApiAsync(apiText.Text);
+			// TODO: Logic here
 
-		//	systemStatusLabel.Text = "Ready";
-		//}
-		//catch (Exception ex)
-		//{
-		//	resultsText.Text = "Error: " + ex.Message;
-		//	systemStatusLabel.Text = "Error";
-		//}
+		}
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, "Call Api Button threw an unhandled exception.");
+			MessageBox.Show("An unhandled exception was thrown, more insormation in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+		}
+	}
+
+	private bool IsValidDatesSpan(DateTime dateFromValue, DateTime dateToValue)
+	{
+		var datesSpanValidationResults = _inputValidation.ValidateDatesRange(dateFromValue, dateToValue);
+		if (datesSpanValidationResults.Any())
+		{
+			var validationsMessage = string.Join('\n', datesSpanValidationResults.ToArray());
+			MessageBox.Show(validationsMessage, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			return false;
+		}
+
+		return true;
 	}
 }
