@@ -24,7 +24,28 @@ public static class EventApiResponseTransformer
 		{
 			Id = GetEventId(eventData, calendarsMapping),
 			Title = eventData.Title,
+			Location = eventData.Location,
+			Notes = eventData.Notes,
+			StartDate = eventData.StartDate.ToString("yyyy-MM-dd"),
+			EndDate = eventData.EndDate.ToString("yyyy-MM-dd"),
+			CreationDate = eventData.CreationDate.ToString("yyyy-MM-dd"),
+			UpdateDate = eventData.UpdateDate.ToString("yyyy-MM-dd"),
+			DeleteDate = eventData.DeleteDate?.ToString("yyyy-MM-dd") ?? default!,
+			SignupVisibility = eventData.SignupVisibility,
+			SignupCount = eventData.SignupCount.ToString(),
+			Signups = GetSignups(eventData),
+			Division = GetDivision(eventData)
 		};
+	}
+
+	private static string GetDivision(Event eventData)
+	{
+		return "";
+	}
+
+	private static List<string> GetSignups(Event eventData)
+	{
+		return new List<string>();
 	}
 
 	private static string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)

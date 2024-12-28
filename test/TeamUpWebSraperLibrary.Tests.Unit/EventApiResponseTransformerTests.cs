@@ -22,11 +22,40 @@ public class EventApiResponseTransformerTests
 			{
 				Id = "DIV-241201-0900-0971",
 				Title = "Exercice sauvetage forestier",
+				Location = "Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est\nLaval (Québec)  H7E 5G8",
+				Notes = "<p>Exercice de sauvetage en milieu forestier</p>",
+				StartDate = "2024-12-01",
+				EndDate = "2024-12-01",
+				CreationDate = "2024-10-13",
+				UpdateDate = "2024-12-01",
+				DeleteDate = default!,
+				SignupVisibility = default!,
+				SignupCount = "0",
+				Signups = new List<string>
+				{
+
+				},
+				Division = ""
+
 			}, // 0
 			new EventSpreadSheetLine
 			{
 				Id = "CB-241201-1400-0452",
 				Title = "Fan Club et Club 1909",
+				Location = "1225 st antoine",
+				Notes = "<p>Date : 1 décembre 2024</p>",
+				StartDate = "2024-12-01",
+				EndDate = "2024-12-01",
+				CreationDate = "2024-11-12",
+				UpdateDate = "2024-11-30",
+				DeleteDate = default!,
+				SignupVisibility = default!,
+				SignupCount = "0",
+				Signups = new List<string>
+				{
+
+				},
+				Division = ""
 			} // 1
 		};
 
@@ -34,45 +63,53 @@ public class EventApiResponseTransformerTests
 		var input = new List<Event>
 		{
 			new Event
+			{
+				Id = "1759667815",
+				Title = "Exercice sauvetage forestier",
+				Location = "Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est\nLaval (Québec)  H7E 5G8",
+				StartDate = new DateTime(2024, 12, 01, 09, 00, 00),
+				EndDate = new DateTime(2024, 12, 01, 12, 00, 00),
+				CreationDate = new DateTime(2024, 10, 13, 21, 18, 47),
+				UpdateDate = new DateTime(2024, 12, 01, 06, 28, 41),
+				SubcalendarId = 9634218L,
+				SubcalendarIds = new List<long>{ 9634218L },
+				Notes = "<p>Exercice de sauvetage en milieu forestier</p>",
+				Custom = new Custom
 				{
-					Id = "1759667815",
-					Title = "Exercice sauvetage forestier",
-					StartDate =  new DateTime(2024, 12, 01, 09, 00, 00),
-					EndDate = new DateTime(2024, 12, 01, 12, 00, 00),
-					SubcalendarId = 9634218L,
-					SubcalendarIds = new List<long>{ 9634218L },
-					Custom = new Custom
-					{
-						ContratProvincialContract = new List<string> { "non_no" }
-					},
-					SignupCount = 0,
-					Signups = new List<Signup>
-					{
-						new Signup
-						{
-							Id = 3830570L,
-							Name = "Benoit Vachon PR971"
-						}, // 0
-						new Signup
-						{
-							Id = 3830397L,
-							Name = "Giuliana Rotella"
-						}, // 1
-						new Signup
-						{
-							Id = 3830089L,
-							Name = "Michael Benigno"
-						}, // 2
-					}
+					ContratProvincialContract = new List<string> { "non_no" }
 				},
+				SignupCount = 0,
+				Signups = new List<Signup>
+				{
+					new Signup
+					{
+						Id = 3830570L,
+						Name = "Benoit Vachon PR971"
+					}, // 0
+					new Signup
+					{
+						Id = 3830397L,
+						Name = "Giuliana Rotella"
+					}, // 1
+					new Signup
+					{
+						Id = 3830089L,
+						Name = "Michael Benigno"
+					}, // 2
+				}
+			}, // 0
 			new Event
 			{
 				Id = "1776293830",
 				Title = "Fan Club et Club 1909",
-				StartDate =  new DateTime(2024, 12, 01, 14, 00, 00),
+				Location = "1225 st antoine",
+				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
 				EndDate = new DateTime(2024, 12, 01, 19, 30, 00),
+				CreationDate = new DateTime(2024, 11, 12, 15, 53, 57),
+				UpdateDate = new DateTime(2024, 11, 30, 20, 04, 57),
 				SubcalendarId = 9616459L,
 				SubcalendarIds = new List<long>{ 9616459L },
+				Notes = "<p>Date : 1 décembre 2024</p>",
 				Custom = new Custom
 				{
 					Division = "452",
@@ -94,7 +131,7 @@ public class EventApiResponseTransformerTests
 						Name = "Charles-Etienne Pedneault (PR) 1002"
 					}
 				}
-			}
+			}  // 1
 		};
 
 		// Act

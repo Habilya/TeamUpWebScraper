@@ -87,10 +87,14 @@ public class TeamUpAPIServiceTests
 				{
 					Id = "1781416861",
 					Title = "Compétition régionale Yoseikan Budo (arts martiaux)",
-					StartDate =  new DateTime(2024, 12, 01, 09, 00,00),
-					EndDate = new DateTime(2024, 12, 01, 16, 00,00),
+					Location = "École Plein Soleil 9 Rue Genest Lévis G6J 1P5 QC",
+					StartDate = new DateTime(2024, 12, 01, 09, 00,00),
+					EndDate = new DateTime(2024, 12, 01, 16, 00, 00),
+					CreationDate = new DateTime(2024, 11, 21, 17, 37, 31),
+					UpdateDate = new DateTime(2024, 11, 24, 07, 32, 20),
 					SubcalendarId = 11798519L,
 					SubcalendarIds = new List<long>{ 11798519L },
+					Notes = "<p>Repas et stationnement fournis</p>",
 					Custom = new Custom
 					{
 						ContratProvincialContract = new List<string> { "non_no" },
@@ -105,15 +109,19 @@ public class TeamUpAPIServiceTests
 							Name = "Provost, Francois"
 						}
 					}
-				},
+				}, // 0
 				new Event
 				{
 					Id = "1759667815",
 					Title = "Exercice sauvetage forestier",
-					StartDate =  new DateTime(2024, 12, 01, 09, 00,00),
-					EndDate = new DateTime(2024, 12, 01, 12, 00,00),
+					Location = "Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est\nLaval (Québec)  H7E 5G8",
+					StartDate = new DateTime(2024, 12, 01, 09, 00, 00),
+					EndDate = new DateTime(2024, 12, 01, 12, 00, 00),
+					CreationDate = new DateTime(2024, 10, 13, 21, 18, 47),
+					UpdateDate = new DateTime(2024, 12, 01, 06, 28, 41),
 					SubcalendarId = 9634218L,
 					SubcalendarIds = new List<long>{ 9634218L },
+					Notes = "<p>Exercice de sauvetage en milieu forestier</p>",
 					Custom = new Custom
 					{
 						ContratProvincialContract = new List<string> { "non_no" }
@@ -207,15 +215,19 @@ public class TeamUpAPIServiceTests
 							Name = "Marie-Ève Bélanger (PR) 971"
 						}  // 16
 					}
-				},
+				}, // 1
 				new Event
 				{
 					Id = "1776293830",
 					Title = "Fan Club et Club 1909",
-					StartDate =  new DateTime(2024, 12, 01, 14, 00,00),
-					EndDate = new DateTime(2024, 12, 01, 19, 30,00),
+					Location = "1225 st antoine",
+					StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
+					EndDate = new DateTime(2024, 12, 01, 19, 30, 00),
+					CreationDate = new DateTime(2024, 11, 12, 15, 53, 57),
+					UpdateDate = new DateTime(2024, 11, 30, 20, 04, 57),
 					SubcalendarId = 9616459L,
 					SubcalendarIds = new List<long>{ 9616459L },
+					Notes = "<p>Date : 1 décembre 2024</p>",
 					Custom = new Custom
 					{
 						Division = "452",
@@ -237,7 +249,7 @@ public class TeamUpAPIServiceTests
 							Name = "Charles-Etienne Pedneault (PR) 1002"
 						}
 					}
-				},
+				}, // 2
 			}
 		};
 		#endregion
