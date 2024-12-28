@@ -147,9 +147,16 @@ public class EventApiResponseTransformerTests
 	[Theory]
 	[InlineData(1, "DIV-241201-0900-0971")]
 	[InlineData(2, "CB-241201-1400-0452")]
+
+	[InlineData(3, "PB-241023-1830-0971")]
+	[InlineData(4, "DIV-241025-1215-0452")]
+	[InlineData(5, "DIV-241111-0900-0452")]
+
+	[InlineData(6, "DIV-240924-0700-Prov")]
+	[InlineData(7, "DIV-240525-1100-Prov")]
+	[InlineData(8, "DIV-241002-1330-Gard")]
 	public void GetEventId_ShouldReturnMatching_WhenInputValid(int dataId, string expected)
 	{
-		//private static string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
 		// Arrange
 		var config = ReadConfigIntoModel();
 		var dataMap = new Dictionary<int, Event>
@@ -174,6 +181,65 @@ public class EventApiResponseTransformerTests
 					ContratProvincialContract = new List<string> { "non_no" },
 				}
 			}}, // CB-241201-1400-0452
+			{3, new Event{
+				StartDate = new DateTime(2024, 10, 23, 18, 30, 00),
+				SubcalendarId = 9634218L,
+				SubcalendarIds = new List<long>{ 9634218L },
+				Custom = new Custom
+				{
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // PB-241023-1830-0971
+			{4, new Event{
+				StartDate = new DateTime(2024, 10, 25, 12, 15, 00),
+				SubcalendarId = 10065801L,
+				SubcalendarIds = new List<long>{ 10065801L, 11159835L },
+				Custom = new Custom
+				{
+					Division = "D452",
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // DIV-241025-1215-0452
+			{5, new Event{
+				StartDate = new DateTime(2024, 11, 11, 09, 00, 00),
+				SubcalendarId = 13329555L,
+				SubcalendarIds = new List<long>{ 13329555L, 11159835L },
+				Custom = new Custom
+				{
+					Division = "Garde d'Honneur",
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // DIV-241111-0900-0452
+			{6, new Event{
+				StartDate = new DateTime(2024, 09, 24, 07, 00, 00),
+				SubcalendarId = 10065801L,
+				SubcalendarIds = new List<long>{ 10065801L },
+				Custom = new Custom
+				{
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // DIV-240924-0700-Prov
+			{7, new Event{
+				StartDate = new DateTime(2024, 05, 25, 11, 00, 00),
+				SubcalendarId = 10065801L,
+				SubcalendarIds = new List<long>{ 10065801L },
+				Custom = new Custom
+				{
+					Client2 = "Evenko",
+					Division = "Provincial",
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // DIV-240525-1100-Prov
+			{8, new Event{
+				StartDate = new DateTime(2024, 10, 02, 13, 30, 00),
+				SubcalendarId = 13329555L,
+				SubcalendarIds = new List<long>{ 13329555L },
+				Custom = new Custom
+				{
+					Division = "Garde d'Honneur",
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // DIV-241002-1330-Gard
 		};
 
 		var eventData = dataMap[dataId];
@@ -183,6 +249,7 @@ public class EventApiResponseTransformerTests
 			.GetMethod("GetEventId", BindingFlags.NonPublic | BindingFlags.Static)!;
 
 		object[] methodParameters = new object[2] { eventData, config.Calendars };
+
 
 		// Act
 		var actual = (string)privateMethodGetEventId.Invoke(null, methodParameters)!;

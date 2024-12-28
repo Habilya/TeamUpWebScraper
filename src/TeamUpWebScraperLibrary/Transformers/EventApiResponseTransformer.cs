@@ -44,11 +44,13 @@ public static class EventApiResponseTransformer
 
 	private static string GetDivision(Event eventData)
 	{
+		// TODO:
 		return "";
 	}
 
 	private static List<string> GetSignups(Event eventData)
 	{
+		// TODO:
 		return new List<string>();
 	}
 
