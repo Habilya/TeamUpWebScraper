@@ -61,6 +61,7 @@ public static class Program
 				services.AddSingleton<InputValidation>();
 				services.AddSingleton<ITeamUpAPIService, TeamUpAPIService>();
 				services.AddSingleton<IXLWorkBookFactory, XLWorkBookFactory>();
+				services.AddSingleton<IExcelSpreadsheetReportProvider, ExcelSpreadsheetReportProvider>();
 				services.AddHttpClient(TeamUpApiConstants.HTTP_CLIENTNAME, httpClient =>
 				{
 					var baseURL = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_BaseURL_NAME}");

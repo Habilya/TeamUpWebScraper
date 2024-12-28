@@ -7,7 +7,7 @@ using static TeamUpWebScraperLibrary.ExcelSpreadsheetReport.ExcelSpreadSheetCons
 namespace TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 
 
-public class ExcelSpreadsheetReportProvider
+public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 {
 	private readonly ILoggerAdapter<ExcelSpreadsheetReportProvider> _logger;
 	private readonly IDateTimeProvider _dateTimeProvider;
