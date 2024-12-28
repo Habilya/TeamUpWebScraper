@@ -34,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="EventApiResponseTransformerTestFiles\TestsConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="TeamUpApiServiceTestFiles\ShortEventsResponse.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
