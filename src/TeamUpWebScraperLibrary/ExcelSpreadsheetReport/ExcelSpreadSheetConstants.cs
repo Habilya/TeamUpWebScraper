@@ -11,9 +11,6 @@ public static class ExcelSpreadSheetConstants
 
 	public const int ExcelReportSignupsLimit = 60;
 
-
-
-
 	public const int SIGNUP_NAME_COLUMN_WIDTH = 15;
 
 	public static readonly List<KeyValuePair<string, int>> ExcelReportHeaders = new List<KeyValuePair<string, int>>

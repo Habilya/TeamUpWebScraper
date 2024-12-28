@@ -88,22 +88,16 @@ public class ExcelSpreadsheetReportProvider
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.SignupVisibility).Value = line.SignupVisibility;
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.SignupCount).Value = line.SignupCount;
 
-			int initialColumn = (int)ExcelReportHeadersColumns.Column1;
-			int finalColumn = (int)ExcelReportHeadersColumns.Column60;
-			foreach (var signup in line.Signups)
+			int signupColumn = (int)ExcelReportHeadersColumns.Column1;
+			// The Excell sheet has a limited number of columns
+			// There fore we can only display in report ExcelReportSignupsLimit of signups
+			foreach (var signup in line.Signups.Take(ExcelReportSignupsLimit).ToList())
 			{
-				ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.SignupCount).Value = line.SignupCount;
+				ws.Cell(emptyRowNumber, signupColumn).Value = signup;
+				signupColumn++;
 			}
 
-			/*
-			 Column1 = 12,
-			 TO
-			 Column60 = 71,
-			 */
-
-
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Division_Column2).Value = line.Division;
-
 
 			emptyRowNumber++;
 		}
