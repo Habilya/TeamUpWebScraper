@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
 using Serilog;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI;
@@ -59,6 +60,7 @@ public static class Program
 				services.AddTransient(typeof(ILoggerAdapter<>), typeof(LoggerAdapter<>));
 				services.AddSingleton<InputValidation>();
 				services.AddSingleton<ITeamUpAPIService, TeamUpAPIService>();
+				services.AddSingleton<IXLWorkBookFactory, XLWorkBookFactory>();
 				services.AddHttpClient(TeamUpApiConstants.HTTP_CLIENTNAME, httpClient =>
 				{
 					var baseURL = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_BaseURL_NAME}");

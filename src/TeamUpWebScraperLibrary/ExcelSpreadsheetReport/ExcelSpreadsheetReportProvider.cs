@@ -11,13 +11,16 @@ public class ExcelSpreadsheetReportProvider
 {
 	private readonly ILoggerAdapter<ExcelSpreadsheetReportProvider> _logger;
 	private readonly IDateTimeProvider _dateTimeProvider;
+	private readonly IXLWorkBookFactory _xlWorkBookFactory;
 
 	public ExcelSpreadsheetReportProvider(
 		ILoggerAdapter<ExcelSpreadsheetReportProvider> logger,
-		IDateTimeProvider dateTimeProvider)
+		IDateTimeProvider dateTimeProvider,
+		IXLWorkBookFactory xlWorkBookFactory)
 	{
 		_logger = logger;
 		_dateTimeProvider = dateTimeProvider;
+		_xlWorkBookFactory = xlWorkBookFactory;
 	}
 
 	public string ExcelReportFileName
@@ -43,24 +46,29 @@ public class ExcelSpreadsheetReportProvider
 
 	private void CreateNewExcelReportFile(string filename, List<EventSpreadSheetLine> reportSpreadsheetLines)
 	{
-		using (var wb = new XLWorkbook())
+		using (var wb = _xlWorkBookFactory.CreateXLWorkBook())
 		{
 			var ws = wb.Worksheets.Add(ExcelReportSheetName);
 
-			// Write all the Columns
-			int columnIndex = (int)ExcelReportHeadersColumns.Id;
-			ExcelReportHeaders.ForEach(h =>
-			{
-				ws.Cell(ExcelReportHeaderLineNumber, columnIndex).Value = h.Key;
-				ws.Cell(ExcelReportHeaderLineNumber, columnIndex).WorksheetColumn().Width = h.Value;
-				columnIndex++;
-			});
+			WriteHeaders(ws);
 
 			// Write report lines
 			WriteDataLinesToSpresdsheet(ws, ExcelReportHeaderLineNumber + 1, reportSpreadsheetLines);
 
 			wb.SaveAs(filename);
 		}
+	}
+
+	private void WriteHeaders(IXLWorksheet ws)
+	{
+		// Write all the Columns
+		int columnIndex = (int)ExcelReportHeadersColumns.Id;
+		ExcelReportHeaders.ForEach(h =>
+		{
+			ws.Cell(ExcelReportHeaderLineNumber, columnIndex).Value = h.Key;
+			ws.Cell(ExcelReportHeaderLineNumber, columnIndex).WorksheetColumn().Width = h.Value;
+			columnIndex++;
+		});
 	}
 
 	private void WriteDataLinesToSpresdsheet(IXLWorksheet ws, int emptyRowNumber, List<EventSpreadSheetLine> reportSpreadsheetLines)
