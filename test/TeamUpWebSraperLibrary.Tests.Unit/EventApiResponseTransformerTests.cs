@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
-using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
+using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
@@ -107,10 +108,18 @@ public class EventApiResponseTransformerTests
 
 	private static TeamUpApiConfiguration ReadConfigIntoModel()
 	{
-		// Read appsettings.json into a model
-		var configWithMappingPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"EventApiResponseTransformerTestFiles\TestsConfig.json");
-		var configWithMappingAsString = File.ReadAllText(configWithMappingPath);
-		var config = JsonSerializer.Deserialize<TeamUpApiConfiguration>(configWithMappingAsString);
-		return config!;
+		var builder = new ConfigurationBuilder();
+		builder.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+			   .AddJsonFile(@"EventApiResponseTransformerTestFiles\TestsConfig.json", optional: false, reloadOnChange: true);
+
+		var configuration = builder.Build();  // Build the configuration
+
+		// Create the TeamUpApiConfiguration object to bind the section to
+		var teamUpApiConfiguration = new TeamUpApiConfiguration();
+
+		// Bind the configuration section to the model
+		configuration.GetSection(TeamUpApiConstants.CONFIG_SECTION_NAME).Bind(teamUpApiConfiguration);
+
+		return teamUpApiConfiguration;
 	}
 }
