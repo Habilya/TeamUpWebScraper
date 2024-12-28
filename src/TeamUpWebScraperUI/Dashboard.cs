@@ -1,4 +1,6 @@
-﻿using TeamUpWebScraperLibrary.Logging;
+﻿using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
+using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.Validators;
 using TeamUpWebScraperUI.Constants;
@@ -10,15 +12,20 @@ public partial class Dashboard : Form
 	private readonly ILoggerAdapter<Dashboard> _logger;
 	private readonly InputValidation _inputValidation;
 	private readonly ITeamUpAPIService _teamUpAPIService;
+	private readonly IExcelSpreadsheetReportProvider _excelSpreadsheetReportProvider;
+
+	private List<EventSpreadSheetLine> ReportSpreadsheetLines { get; set; } = default!;
 
 	public Dashboard(
 		ILoggerAdapter<Dashboard> logger,
 		InputValidation inputValidation,
-		ITeamUpAPIService teamUpAPIService)
+		ITeamUpAPIService teamUpAPIService,
+		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider)
 	{
 		_logger = logger;
 		_inputValidation = inputValidation;
 		_teamUpAPIService = teamUpAPIService;
+		_excelSpreadsheetReportProvider = excelSpreadsheetReportProvider;
 
 		InitializeComponent();
 		DisplayVersion();
@@ -56,12 +63,15 @@ public partial class Dashboard : Form
 			// 2. write logic that transforms the data
 			// [OK] 3. Model for Excel Table
 			// 4. Excel spreadsheet report provider
-
+			if (1 == 2)
+			{
+				saveXLSX.Enabled = true;
+			}
 		}
 		catch (Exception ex)
 		{
 			_logger.LogError(ex, "CallAPI_Click Button threw an unhandled exception.");
-			MessageBox.Show("An unhandled exception was thrown, more information in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			ShowUnhandledExceptionPopup();
 		}
 	}
 
@@ -76,5 +86,24 @@ public partial class Dashboard : Form
 		}
 
 		return true;
+	}
+
+	private void SaveXLSX_Click(object sender, EventArgs e)
+	{
+		try
+		{
+			string savePath = ""; // use a save dialog window here
+			_excelSpreadsheetReportProvider.SaveExcelReport(savePath, ReportSpreadsheetLines);
+		}
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, "SaveXLSX_Click Button threw an unhandled exception.");
+			ShowUnhandledExceptionPopup();
+		}
+	}
+
+	private static void ShowUnhandledExceptionPopup()
+	{
+		MessageBox.Show("An unhandled exception was thrown, more information in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
 	}
 }

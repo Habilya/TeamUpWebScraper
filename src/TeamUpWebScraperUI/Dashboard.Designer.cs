@@ -38,6 +38,7 @@
 			dtpDateFrom = new DateTimePicker();
 			dtpDateTo = new DateTimePicker();
 			label2 = new Label();
+			saveXLSX = new Button();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -63,12 +64,12 @@
 			// resultsText
 			// 
 			resultsText.BorderStyle = BorderStyle.FixedSingle;
-			resultsText.Location = new Point(25, 191);
+			resultsText.Location = new Point(25, 242);
 			resultsText.Multiline = true;
 			resultsText.Name = "resultsText";
 			resultsText.ReadOnly = true;
 			resultsText.ScrollBars = ScrollBars.Both;
-			resultsText.Size = new Size(829, 416);
+			resultsText.Size = new Size(829, 391);
 			resultsText.TabIndex = 4;
 			// 
 			// statusStrip
@@ -90,7 +91,7 @@
 			// resultsLabel
 			// 
 			resultsLabel.AutoSize = true;
-			resultsLabel.Location = new Point(25, 147);
+			resultsLabel.Location = new Point(25, 197);
 			resultsLabel.Name = "resultsLabel";
 			resultsLabel.Size = new Size(88, 32);
 			resultsLabel.TabIndex = 6;
@@ -134,12 +135,24 @@
 			label2.TabIndex = 10;
 			label2.Text = "Select Dates Range";
 			// 
+			// saveXLSX
+			// 
+			saveXLSX.Enabled = false;
+			saveXLSX.Location = new Point(744, 141);
+			saveXLSX.Name = "saveXLSX";
+			saveXLSX.Size = new Size(110, 76);
+			saveXLSX.TabIndex = 11;
+			saveXLSX.Text = "Save .xlsx";
+			saveXLSX.UseVisualStyleBackColor = true;
+			saveXLSX.Click += SaveXLSX_Click;
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(13F, 32F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(884, 677);
+			Controls.Add(saveXLSX);
 			Controls.Add(label2);
 			Controls.Add(dtpDateTo);
 			Controls.Add(dtpDateFrom);
@@ -170,5 +183,6 @@
 		private DateTimePicker dtpDateFrom;
 		private DateTimePicker dtpDateTo;
 		private Label label2;
+		private Button saveXLSX;
 	}
 }
