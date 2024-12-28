@@ -75,9 +75,10 @@ public static class Program
 				// Read appsettings.json into a model
 				var teamUpApiConfiguration = new TeamUpApiConfiguration();
 
-				// !!! BUG: !!! This bind is uncapable of parsing dates in this format "2021-05-15T18:27:25+00:00"
-				// JsonSerializer can do it
-				// Either "Tell" this to use JsonSerializer or  use it to bind form config section
+				// !!! BUG or FEATURE? !!! This Bind is uncapable of reading model annotations
+				// ex: [JsonPropertyName("name")]
+				// Probably because config is supposed to be concieved by the developer
+				// and everythig is supposed to be rightly named
 				context.Configuration.GetSection(TeamUpApiConstants.CONFIG_SECTION_NAME).Bind(teamUpApiConfiguration);
 
 				services.AddSingleton(teamUpApiConfiguration);
