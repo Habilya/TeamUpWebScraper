@@ -45,13 +45,14 @@ public static class EventApiResponseTransformer
 	private static string GetDivision(Event eventData)
 	{
 		// TODO:
+		var mainSubCalendarId = eventData.SubcalendarId;
+		var customFieldDivision = eventData.Custom?.Division;
 		return "";
 	}
 
 	private static List<string> GetSignups(Event eventData)
 	{
-		// TODO:
-		return new List<string>();
+		return eventData.Signups?.Select(q => q.Name).ToList() ?? new List<string>();
 	}
 
 	private static string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
