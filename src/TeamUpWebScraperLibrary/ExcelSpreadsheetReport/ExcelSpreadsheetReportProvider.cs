@@ -57,13 +57,13 @@ public class ExcelSpreadsheetReportProvider
 			});
 
 			// Write report lines
-			WriteToExcelReportSpresdsheet(ws, ExcelReportHeaderLineNumber + 1, reportSpreadsheetLines);
+			WriteDataLinesToSpresdsheet(ws, ExcelReportHeaderLineNumber + 1, reportSpreadsheetLines);
 
 			wb.SaveAs(filename);
 		}
 	}
 
-	private void WriteToExcelReportSpresdsheet(IXLWorksheet ws, int emptyRowNumber, List<EventSpreadSheetLine> reportSpreadsheetLines)
+	private void WriteDataLinesToSpresdsheet(IXLWorksheet ws, int emptyRowNumber, List<EventSpreadSheetLine> reportSpreadsheetLines)
 	{
 		foreach (var line in reportSpreadsheetLines)
 		{
@@ -84,7 +84,7 @@ public class ExcelSpreadsheetReportProvider
 			int finalColumn = (int)ExcelReportHeadersColumns.Column60;
 			foreach (var signup in line.Signups)
 			{
-
+				ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.SignupCount).Value = line.SignupCount;
 			}
 
 			/*
