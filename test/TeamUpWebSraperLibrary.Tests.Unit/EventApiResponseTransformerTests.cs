@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Microsoft.Extensions.Configuration;
+using System.Reflection;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
@@ -143,6 +144,56 @@ public class EventApiResponseTransformerTests
 			.And.BeEquivalentTo(expected);
 	}
 
+	[Theory]
+	[InlineData(1, "DIV-241201-0900-0971")]
+	[InlineData(2, "CB-241201-1400-0452")]
+	public void GetEventId_ShouldReturnMatching_WhenInputValid(int dataId, string expected)
+	{
+		//private static string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
+		// Arrange
+		var config = ReadConfigIntoModel();
+		var dataMap = new Dictionary<int, Event>
+		{
+			{1, new Event{
+				StartDate = new DateTime(2024, 12, 01, 09, 00, 00),
+				SubcalendarId = 9634218L,
+				SubcalendarIds = new List<long>{ 9634218L },
+				Custom = new Custom
+				{
+					ContratProvincialContract = new List<string> { "non_no" }
+				}
+			}}, // DIV-241201-0900-0971
+			{2, new Event{
+				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
+				SubcalendarId = 9616459L,
+				SubcalendarIds = new List<long>{ 9616459L },
+				Custom = new Custom
+				{
+					Division = "452",
+					Client2 = "centre bell",
+					ContratProvincialContract = new List<string> { "non_no" },
+				}
+			}}, // CB-241201-1400-0452
+		};
+
+		var eventData = dataMap[dataId];
+
+		// Private Method info obtained using REFLEXION
+		MethodInfo privateMethodGetEventId = typeof(EventApiResponseTransformer)
+			.GetMethod("GetEventId", BindingFlags.NonPublic | BindingFlags.Static)!;
+
+		object[] methodParameters = new object[2] { eventData, config.Calendars };
+
+		// Act
+		var actual = (string)privateMethodGetEventId.Invoke(null, methodParameters)!;
+
+
+		// Assert
+		actual.Should().Be(expected);
+	}
+
+
+	// TODO: Move this potentially to a separate class if another test for reading config is needed
 	private static TeamUpApiConfiguration ReadConfigIntoModel()
 	{
 		var builder = new ConfigurationBuilder();

@@ -6,6 +6,10 @@ namespace TeamUpWebScraperLibrary.Transformers;
 
 public static class EventApiResponseTransformer
 {
+	public const string STRING_DATE_TIME_FORMAT = "yyyy-MM-dd";
+	public const string EVENT_ID_EVENT_DATE_FORMAT = "yyMMdd";
+	public const string EVENT_ID_EVENT_TIME_FORMAT = "HHmm";
+
 	public static List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<CalendarConfiguration> calendarsMapping)
 	{
 		var eventSpreadSheetLines = new List<EventSpreadSheetLine>();
@@ -26,11 +30,11 @@ public static class EventApiResponseTransformer
 			Title = eventData.Title,
 			Location = eventData.Location,
 			Notes = eventData.Notes,
-			StartDate = eventData.StartDate.ToString("yyyy-MM-dd"),
-			EndDate = eventData.EndDate.ToString("yyyy-MM-dd"),
-			CreationDate = eventData.CreationDate.ToString("yyyy-MM-dd"),
-			UpdateDate = eventData.UpdateDate.ToString("yyyy-MM-dd"),
-			DeleteDate = eventData.DeleteDate?.ToString("yyyy-MM-dd") ?? default!,
+			StartDate = eventData.StartDate.ToString(STRING_DATE_TIME_FORMAT),
+			EndDate = eventData.EndDate.ToString(STRING_DATE_TIME_FORMAT),
+			CreationDate = eventData.CreationDate.ToString(STRING_DATE_TIME_FORMAT),
+			UpdateDate = eventData.UpdateDate.ToString(STRING_DATE_TIME_FORMAT),
+			DeleteDate = eventData.DeleteDate?.ToString(STRING_DATE_TIME_FORMAT) ?? default!,
 			SignupVisibility = eventData.SignupVisibility,
 			SignupCount = eventData.SignupCount.ToString(),
 			Signups = GetSignups(eventData),
@@ -50,8 +54,8 @@ public static class EventApiResponseTransformer
 
 	private static string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
 	{
-		var eventDate = eventData.StartDate.ToString("yyMMdd");
-		var eventTime = eventData.StartDate.ToString("HHmm");
+		var eventDate = eventData.StartDate.ToString(EVENT_ID_EVENT_DATE_FORMAT);
+		var eventTime = eventData.StartDate.ToString(EVENT_ID_EVENT_TIME_FORMAT);
 
 		string eventPrefix = "";
 		string eventSuffix = "";
