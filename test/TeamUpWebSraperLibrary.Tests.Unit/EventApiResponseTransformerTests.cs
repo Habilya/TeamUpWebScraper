@@ -77,10 +77,10 @@ public class EventApiResponseTransformerTests
 				Id = "1759667815",
 				Title = "Exercice sauvetage forestier",
 				Location = "Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est\nLaval (Québec)  H7E 5G8",
-				StartDate = new DateTime(2024, 12, 01, 09, 00, 00),
-				EndDate = new DateTime(2024, 12, 01, 12, 00, 00),
-				CreationDate = new DateTime(2024, 10, 13, 21, 18, 47),
-				UpdateDate = new DateTime(2024, 12, 01, 06, 28, 41),
+				StartDate = new DateTimeOffset(2024, 12, 01, 09, 00, 00, new TimeSpan(-5, 0, 0)),
+				EndDate = new DateTimeOffset(2024, 12, 01, 12, 00, 00, new TimeSpan(-5, 0, 0)),
+				CreationDate = new DateTimeOffset(2024, 10, 13, 21, 18, 47, new TimeSpan(-4, 0, 0)),
+				UpdateDate = new DateTimeOffset(2024, 12, 01, 06, 28, 41, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 9634218L,
 				SubcalendarIds = new List<long>{ 9634218L },
 				Notes = "<p>Exercice de sauvetage en milieu forestier</p>",
@@ -113,10 +113,10 @@ public class EventApiResponseTransformerTests
 				Id = "1776293830",
 				Title = "Fan Club et Club 1909",
 				Location = "1225 st antoine",
-				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
-				EndDate = new DateTime(2024, 12, 01, 19, 30, 00),
-				CreationDate = new DateTime(2024, 11, 12, 15, 53, 57),
-				UpdateDate = new DateTime(2024, 11, 30, 20, 04, 57),
+				StartDate = new DateTimeOffset(2024, 12, 01, 14, 00, 00, new TimeSpan(-5, 0, 0)),
+				EndDate = new DateTimeOffset(2024, 12, 01, 19, 30, 00, new TimeSpan(-5, 0, 0)),
+				CreationDate = new DateTimeOffset(2024, 11, 12, 15, 53, 57, new TimeSpan(-5, 0, 0)),
+				UpdateDate = new DateTimeOffset(2024, 11, 30, 20, 04, 57, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 9616459L,
 				SubcalendarIds = new List<long>{ 9616459L },
 				Notes = "<p>Date : 1 décembre 2024</p>",
@@ -147,10 +147,10 @@ public class EventApiResponseTransformerTests
 				Id = "1776293831",
 				Title = "Some Other Event",
 				Location = "1225 st antoine",
-				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
-				EndDate = new DateTime(2024, 12, 01, 19, 30, 00),
-				CreationDate = new DateTime(2024, 11, 12, 15, 53, 57),
-				UpdateDate = new DateTime(2024, 11, 30, 20, 04, 57),
+				StartDate = new DateTimeOffset(2024, 12, 01, 14, 00, 00, new TimeSpan(-5, 0, 0)),
+				EndDate = new DateTimeOffset(2024, 12, 01, 19, 30, 00, new TimeSpan(-5, 0, 0)),
+				CreationDate = new DateTimeOffset(2024, 11, 12, 15, 53, 57, new TimeSpan(-5, 0, 0)),
+				UpdateDate = new DateTimeOffset(2024, 11, 30, 20, 04, 57, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 9616459L,
 				SubcalendarIds = new List<long>{ 9616459L },
 				Notes = "<p>Date : 1 décembre 2024</p>",
@@ -196,7 +196,7 @@ public class EventApiResponseTransformerTests
 		{
 			{1, new Event{
 				Title = "Exercice sauvetage forestier",
-				StartDate = new DateTime(2024, 12, 01, 09, 00, 00),
+				StartDate = new DateTimeOffset(2024, 12, 01, 09, 00, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 9634218L,
 				SubcalendarIds = new List<long>{ 9634218L },
 				Custom = new Custom
@@ -206,7 +206,7 @@ public class EventApiResponseTransformerTests
 			}}, // DIV-241201-0900-0971
 			{2, new Event{
 				Title = "Fan Club et Club 1909",
-				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
+				StartDate = new DateTimeOffset(2024, 12, 01, 14, 00, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 9616459L,
 				SubcalendarIds = new List<long>{ 9616459L },
 				Custom = new Custom
@@ -218,7 +218,7 @@ public class EventApiResponseTransformerTests
 			}}, // CB-241201-1400-0452
 			{3, new Event{
 				Title = "PB Christian Nodal",
-				StartDate = new DateTime(2024, 10, 23, 18, 30, 00),
+				StartDate = new DateTimeOffset(2024, 10, 23, 18, 30, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 9634218L,
 				SubcalendarIds = new List<long>{ 9634218L },
 				Custom = new Custom
@@ -228,7 +228,7 @@ public class EventApiResponseTransformerTests
 			}}, // PB-241023-1830-0971
 			{4, new Event{
 				Title = "OP SANG LIMITES (Montréal)",
-				StartDate = new DateTime(2024, 10, 25, 12, 15, 00),
+				StartDate = new DateTimeOffset(2024, 10, 25, 12, 15, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 10065801L,
 				SubcalendarIds = new List<long>{ 10065801L, 11159835L },
 				Custom = new Custom
@@ -239,7 +239,7 @@ public class EventApiResponseTransformerTests
 			}}, // DIV-241025-1215-0452
 			{5, new Event{
 				Title = "Parade du Jour du Souvenir à Montréal",
-				StartDate = new DateTime(2024, 11, 11, 09, 00, 00),
+				StartDate = new DateTimeOffset(2024, 11, 11, 09, 00, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 13329555L,
 				SubcalendarIds = new List<long>{ 13329555L, 11159835L },
 				Custom = new Custom
@@ -250,7 +250,7 @@ public class EventApiResponseTransformerTests
 			}}, // DIV-241111-0900-0452
 			{6, new Event{
 				Title = "Tournoi PGA",
-				StartDate = new DateTime(2024, 09, 24, 07, 00, 00),
+				StartDate = new DateTimeOffset(2024, 09, 24, 07, 00, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 10065801L,
 				SubcalendarIds = new List<long>{ 10065801L },
 				Custom = new Custom
@@ -260,7 +260,7 @@ public class EventApiResponseTransformerTests
 			}}, // DIV-240924-0700-Prov
 			{7, new Event{
 				Title = "Fuego Fuego",
-				StartDate = new DateTime(2024, 05, 25, 11, 00, 00),
+				StartDate = new DateTimeOffset(2024, 05, 25, 11, 00, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 10065801L,
 				SubcalendarIds = new List<long>{ 10065801L },
 				Custom = new Custom
@@ -272,7 +272,7 @@ public class EventApiResponseTransformerTests
 			}}, // DIV-240525-1100-Prov
 			{8, new Event{
 				Title = "Garde d'Honneur - Funérailles",
-				StartDate = new DateTime(2024, 10, 02, 13, 30, 00),
+				StartDate = new DateTimeOffset(2024, 10, 02, 13, 30, 00, new TimeSpan(-5, 0, 0)),
 				SubcalendarId = 13329555L,
 				SubcalendarIds = new List<long>{ 13329555L },
 				Custom = new Custom

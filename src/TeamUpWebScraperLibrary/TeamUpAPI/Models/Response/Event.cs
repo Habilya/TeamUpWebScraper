@@ -13,15 +13,15 @@ public class Event
 	public string Location { get; set; } = default!;
 	public string Notes { get; set; } = default!;
 	[JsonPropertyName("start_dt")]
-	public DateTime StartDate { get; set; } = default!;
+	public DateTimeOffset StartDate { get; set; } = default!;
 	[JsonPropertyName("end_dt")]
-	public DateTime EndDate { get; set; } = default!;
+	public DateTimeOffset EndDate { get; set; } = default!;
 	[JsonPropertyName("creation_dt")]
-	public DateTime CreationDate { get; set; } = default!;
+	public DateTimeOffset CreationDate { get; set; } = default!;
 	[JsonPropertyName("update_dt")]
-	public DateTime? UpdateDate { get; set; } = default!;
+	public DateTimeOffset? UpdateDate { get; set; } = default!;
 	[JsonPropertyName("delete_dt")]
-	public DateTime? DeleteDate { get; set; } = default!;
+	public DateTimeOffset? DeleteDate { get; set; } = default!;
 	public string SignupVisibility { get; set; } = default!;
 	[JsonPropertyName("signup_count")]
 	public int SignupCount { get; set; } = default!;
