@@ -60,8 +60,8 @@ jobs:
       Test_Project_Path: "[NOT_WORKING add manually to Run unit tests]"                # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Wap_Project_Directory: src/TeamUpWebScraperUI   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Wap_Project_Path: src/TeamUpWebScraperUI/TeamUpWebScraperUI.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
-      DOTNET_ENVIRONMENT: Production
-      BUILD_NUMBER: ${{ $(date +'%Y%m%d') }}_${{ github.run_number }}
+      DOTNET_ENVIRONMENT: N/A
+      BUILD_NUMBER: N/A
     
     steps:
     - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
@@ -73,8 +73,8 @@ jobs:
         $BUILD_NUMBER_LOC = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
-        echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $GITHUB_ENV
-        echo "DOTNET_ENVIRONMENT=Production" >> $GITHUB_ENV
+        echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $env:GITHUB_ENV
+        echo "DOTNET_ENVIRONMENT=Production" >> $env:GITHUB_ENV
         echo "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
         echo "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
 
