@@ -75,7 +75,8 @@ jobs:
         echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
         
     - name: Print the BUILD_NUMBER
-      run: echo "Build number is $BUILD_NUMBER"
+      run: |
+        echo "Build number is $env:BUILD_NUMBER"
     
     - name: Checkout
       uses: actions/checkout@v4
