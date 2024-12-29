@@ -30,7 +30,6 @@
 		{
 			apiLabel = new Label();
 			callAPI = new Button();
-			resultsText = new TextBox();
 			statusStrip = new StatusStrip();
 			systemStatusLabel = new ToolStripStatusLabel();
 			resultsLabel = new Label();
@@ -39,7 +38,9 @@
 			dtpDateTo = new DateTimePicker();
 			label2 = new Label();
 			saveXLSX = new Button();
+			dataGridViewResults = new DataGridView();
 			statusStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
 			SuspendLayout();
 			// 
 			// apiLabel
@@ -60,17 +61,6 @@
 			callAPI.Text = "Go";
 			callAPI.UseVisualStyleBackColor = true;
 			callAPI.Click += CallAPI_Click;
-			// 
-			// resultsText
-			// 
-			resultsText.BorderStyle = BorderStyle.FixedSingle;
-			resultsText.Location = new Point(25, 242);
-			resultsText.Multiline = true;
-			resultsText.Name = "resultsText";
-			resultsText.ReadOnly = true;
-			resultsText.ScrollBars = ScrollBars.Both;
-			resultsText.Size = new Size(829, 391);
-			resultsText.TabIndex = 4;
 			// 
 			// statusStrip
 			// 
@@ -146,12 +136,24 @@
 			saveXLSX.UseVisualStyleBackColor = true;
 			saveXLSX.Click += SaveXLSX_Click;
 			// 
+			// dataGridViewResults
+			// 
+			dataGridViewResults.AllowUserToAddRows = false;
+			dataGridViewResults.AllowUserToDeleteRows = false;
+			dataGridViewResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewResults.Location = new Point(25, 232);
+			dataGridViewResults.Name = "dataGridViewResults";
+			dataGridViewResults.ReadOnly = true;
+			dataGridViewResults.Size = new Size(829, 403);
+			dataGridViewResults.TabIndex = 12;
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(13F, 32F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(884, 677);
+			Controls.Add(dataGridViewResults);
 			Controls.Add(saveXLSX);
 			Controls.Add(label2);
 			Controls.Add(dtpDateTo);
@@ -159,7 +161,6 @@
 			Controls.Add(label1);
 			Controls.Add(resultsLabel);
 			Controls.Add(statusStrip);
-			Controls.Add(resultsText);
 			Controls.Add(callAPI);
 			Controls.Add(apiLabel);
 			Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -168,6 +169,7 @@
 			Text = "TeamUp Time Parser";
 			statusStrip.ResumeLayout(false);
 			statusStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -175,7 +177,6 @@
 		#endregion
 		private Label apiLabel;
 		private Button callAPI;
-		private TextBox resultsText;
 		private StatusStrip statusStrip;
 		private Label resultsLabel;
 		private ToolStripStatusLabel systemStatusLabel;
@@ -184,5 +185,6 @@
 		private DateTimePicker dtpDateTo;
 		private Label label2;
 		private Button saveXLSX;
+		private DataGridView dataGridViewResults;
 	}
 }

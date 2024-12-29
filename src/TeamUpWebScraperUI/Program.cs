@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
 using Serilog;
+using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.Providers;
@@ -64,6 +65,7 @@ public static class Program
 				services.AddSingleton<IXLWorkBookFactory, XLWorkBookFactory>();
 				services.AddSingleton<IEventApiResponseTransformer, EventApiResponseTransformer>();
 				services.AddSingleton<IExcelSpreadsheetReportProvider, ExcelSpreadsheetReportProvider>();
+				services.AddSingleton<IDisplayGridViewProvider, DisplayGridViewProvider>();
 				services.AddHttpClient(TeamUpApiConstants.HTTP_CLIENTNAME, httpClient =>
 				{
 					var baseURL = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_BaseURL_NAME}");

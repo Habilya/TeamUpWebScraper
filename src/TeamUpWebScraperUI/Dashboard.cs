@@ -1,4 +1,5 @@
-﻿using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
+﻿using TeamUpWebScraperLibrary.DisplayGridView;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
@@ -6,6 +7,7 @@ using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 using TeamUpWebScraperUI.Constants;
+using TeamUpWebScraperUI.DisplayDataGridGeneration;
 
 namespace TeamUpWebScraperUI;
 
@@ -17,6 +19,7 @@ public partial class Dashboard : Form
 	private readonly IEventApiResponseTransformer _eventApiResponseTransformer;
 	private readonly IExcelSpreadsheetReportProvider _excelSpreadsheetReportProvider;
 	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;
+	private readonly IDisplayGridViewProvider _displayGridViewProvider;
 
 
 	private List<EventSpreadSheetLine> ReportSpreadsheetLines { get; set; } = default!;
@@ -27,7 +30,8 @@ public partial class Dashboard : Form
 		ITeamUpAPIService teamUpAPIService,
 		IEventApiResponseTransformer eventApiResponseTransformer,
 		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider,
-		TeamUpApiConfiguration teamUpApiConfiguration)
+		TeamUpApiConfiguration teamUpApiConfiguration,
+		IDisplayGridViewProvider displayGridViewProvider)
 	{
 		_logger = logger;
 		_inputValidation = inputValidation;
@@ -35,9 +39,19 @@ public partial class Dashboard : Form
 		_eventApiResponseTransformer = eventApiResponseTransformer;
 		_excelSpreadsheetReportProvider = excelSpreadsheetReportProvider;
 		_teamUpApiConfiguration = teamUpApiConfiguration;
+		_displayGridViewProvider = displayGridViewProvider;
 
 		InitializeComponent();
+		ReinitUIElements();
 		DisplayVersion();
+	}
+
+	private void ReinitUIElements()
+	{
+		saveXLSX.Enabled = false;
+		resultsLabel.Text = DashBoardConstants.RESULTS_LABEL_DEFAULT;
+		dataGridViewResults.Columns.Clear();
+		dataGridViewResults.Rows.Clear();
 	}
 
 	private void DisplayVersion()
@@ -50,6 +64,7 @@ public partial class Dashboard : Form
 	{
 		try
 		{
+			ReinitUIElements();
 			ReportSpreadsheetLines = default!;
 			#region Input Validation
 			var dateFromValue = dtpDateFrom.Value.Date;
@@ -79,7 +94,9 @@ public partial class Dashboard : Form
 
 			#region Transforming API response into reportable model object
 			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, _teamUpApiConfiguration.Calendars);
+			#endregion
 
+			#region UI acttions depending on the result
 			if (ReportSpreadsheetLines is null || !ReportSpreadsheetLines.Any())
 			{
 				MessageBox.Show("For some reason the Transformed list that goes in Excel is empty...", "Events List Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -87,6 +104,9 @@ public partial class Dashboard : Form
 			}
 			else
 			{
+				resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_RESULTS, ReportSpreadsheetLines.Count);
+				var displayResults = _displayGridViewProvider.TransformReportSpreadsheetLinesInotDisplayLines(ReportSpreadsheetLines);
+				DataGridViewHelper.GenerateDataGridView(dataGridViewResults, displayResults);
 				saveXLSX.Enabled = true;
 			}
 			#endregion
