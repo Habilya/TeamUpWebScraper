@@ -79,7 +79,7 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Run unit tests
-      run: dotnet test ./test/TeamUpWebSraperLibrary.Tests.Unit/TeamUpWebSraperLibrary.Tests.Unit.csproj --configuration Release --no-build --verbosity normal
+      run: dotnet test ./test/TeamUpWebSraperLibrary.Tests.Unit/TeamUpWebSraperLibrary.Tests.Unit.csproj
       
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
