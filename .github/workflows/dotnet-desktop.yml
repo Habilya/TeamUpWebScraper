@@ -73,10 +73,11 @@ jobs:
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
         echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
-        
+
     - name: Print the BUILD_NUMBER
       run: |
-        echo "Build number is $env:BUILD_NUMBER"
+        # Print the BUILD_NUMBER using PowerShell syntax
+        Write-Host "Build number is $env:BUILD_NUMBER"
     
     - name: Checkout
       uses: actions/checkout@v4
@@ -128,4 +129,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: MSIX Package
-        path: ${{ env.Wap_Project_Directory }}\AppPackages
+        path: ${{ env.Wap_Project_Directory }}\bin\Release\net8.0-windows
