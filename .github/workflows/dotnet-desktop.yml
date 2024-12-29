@@ -77,6 +77,14 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
 
+    - name: List files in test directory
+      run: |
+        ls -R ./test/
+
+    - name: List files in src directory
+      run: |
+        ls -R ./src/
+
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test test/**/*.csproj --configuration Release --no-build --verbosity normal
