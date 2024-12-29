@@ -56,10 +56,10 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: TeamUpWebScraper.sln                      # Your solution file
-      Wap_Project_Directory: TeamUpWebScraperUI                 # WAP project directory
-      Wap_Project_Path: src/TeamUpWebScraperUI.csproj           # Path to WAP project
-      Test_Project_Path: ./test/**/*.csproj                     # Path to all test projects (recursive)
+      Solution_Name: TeamUpWebScraper                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      Test_Project_Path: ./test/**/*.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Wap_Project_Directory: TeamUpWebScraperUI   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: src/TeamUpWebScraperUI.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
@@ -77,36 +77,38 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
 
-    # Restore dependencies (this is generally needed before building and testing)
-    - name: Restore dependencies
-      run: dotnet restore ${{ env.Solution_Name }} --configuration ${{ matrix.configuration }}
+    # Restore the application to populate the obj folder with RuntimeIdentifiers
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
 
-    # Execute unit tests for all test projects
+    # Execute all unit tests in the solution
     - name: Run unit tests
       run: dotnet test ${{ env.Test_Project_Path }} --configuration ${{ matrix.configuration }} --no-build --verbosity normal
 
-
-    # Decode and save the signing certificate from secrets (Base64 encoded .pfx)
-    - name: Decode the PFX certificate
+    # Decode the base 64 encoded pfx and save the Signing_Certificate
+    - name: Decode the pfx
       run: |
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
         $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath GitHubActionsWorkflow.pfx
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
 
-    # Build and package the Windows Application
-    - name: Build and package the app
-      run: msbuild $env:Wap_Project_Path /p:Configuration=${{ matrix.configuration }} /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
+    # Create the app package by building and packaging the Windows Application Packaging project
+    - name: Create the app package
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
       env:
-        Appx_Bundle: Always  # Always bundle the app
-        Appx_Package_Build_Mode: StoreUpload  # Store upload mode for MSIX package
+        Appx_Bundle: Always
+        Appx_Bundle_Platforms: x86|x64
+        Appx_Package_Build_Mode: StoreUpload
         Configuration: ${{ matrix.configuration }}
 
-    # Clean up the PFX certificate
-    - name: Remove PFX certificate
+    # Remove the pfx
+    - name: Remove the pfx
       run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
 
-    # Upload the build artifact (MSIX package)
-    - name: Upload MSIX package artifact
+    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+    - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: MSIX Package
