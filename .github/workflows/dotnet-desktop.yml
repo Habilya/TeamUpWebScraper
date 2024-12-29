@@ -79,9 +79,14 @@ jobs:
 
     - name: Print BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
-        # Print the updated BUILD_NUMBER and DOTNET_ENVIRONMENT
+        # Access the updated environment variables
         echo "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
         echo "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
+
+    - name: Debug Environment Variables
+      run: |
+        echo "Current environment variables:"
+        printenv
     
     - name: Checkout
       uses: actions/checkout@v4
