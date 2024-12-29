@@ -65,7 +65,7 @@ jobs:
 
     steps:
     
-    - name: Set BUILD_NUMBER environment variable
+    - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
         # Get today's date in yyyyMMdd format using PowerShell's Get-Date cmdlet
         $TODAY = (Get-Date).ToString('yyyyMMdd')
@@ -74,14 +74,14 @@ jobs:
         $BUILD_NUMBER_LOC = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
-        Write-Host "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $GITHUB_ENV
-        Write-Host "DOTNET_ENVIRONMENT=Production" >> $GITHUB_ENV
+        echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $GITHUB_ENV
+        echo "DOTNET_ENVIRONMENT=Production" >> $GITHUB_ENV
 
     - name: Print BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
-        # Print the updated BUILD_NUMBER and DOTNET_ENVIRONMENT (after the first step)
-        Write-Host "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
-        Write-Host "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
+        # Print the updated BUILD_NUMBER and DOTNET_ENVIRONMENT
+        echo "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
+        echo "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
     
     - name: Checkout
       uses: actions/checkout@v4
