@@ -74,11 +74,12 @@ jobs:
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
         Write-Host "BUILD_NUMBER=${BUILD_NUMBER}" >> $GITHUB_ENV
+        Write-Host "DOTNET_ENVIRONMENT=Production" >> $GITHUB_ENV 
 
     - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
-         Write-Host "Build number is $env:BUILD_NUMBER"
-         Write-Host "DOTNET_ENVIRONMENT is $env:DOTNET_ENVIRONMENT"
+         Write-Host "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
+         Write-Host "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
     
     - name: Checkout
       uses: actions/checkout@v4
