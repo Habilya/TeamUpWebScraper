@@ -73,6 +73,8 @@ jobs:
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
         echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $GITHUB_ENV
         echo "DOTNET_ENVIRONMENT=Production" >> $GITHUB_ENV
+        echo "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
+        echo "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
 
     - name: Print BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
