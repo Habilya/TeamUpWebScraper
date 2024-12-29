@@ -4,7 +4,7 @@ using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
 namespace TeamUpWebScraperLibrary.Transformers;
 
-public static class EventApiResponseTransformer
+public class EventApiResponseTransformer : IEventApiResponseTransformer
 {
 	public const string STRING_DATE_TIME_FORMAT = "yyyy-MM-dd";
 	public const string EVENT_ID_EVENT_DATE_FORMAT = "yyMMdd";
@@ -17,8 +17,12 @@ public static class EventApiResponseTransformer
 	public const string CENTRE_BELL_SEARCHABLE = "centre bell";
 	public const string PLACE_BELL_SEARCHABLE = "pb";
 
+	public EventApiResponseTransformer()
+	{
 
-	public static List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<CalendarConfiguration> calendarsMapping)
+	}
+
+	public List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<CalendarConfiguration> calendarsMapping)
 	{
 		var eventSpreadSheetLines = new List<EventSpreadSheetLine>();
 
@@ -30,7 +34,7 @@ public static class EventApiResponseTransformer
 		return eventSpreadSheetLines;
 	}
 
-	private static EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<CalendarConfiguration> calendarsMapping)
 	{
 		return new EventSpreadSheetLine
 		{
@@ -60,7 +64,7 @@ public static class EventApiResponseTransformer
 		};
 	}
 
-	private static string? GetConcatenatedListValues(List<string>? listFromCustom)
+	private string? GetConcatenatedListValues(List<string>? listFromCustom)
 	{
 		if (listFromCustom is null || !listFromCustom.Any())
 		{
@@ -70,7 +74,7 @@ public static class EventApiResponseTransformer
 		return string.Join(", ", listFromCustom.ToArray());
 	}
 
-	private static string GetPresencesConcat(Event eventData)
+	private string GetPresencesConcat(Event eventData)
 	{
 		if (eventData.Signups is null || !eventData.Signups.Any())
 		{
@@ -80,12 +84,12 @@ public static class EventApiResponseTransformer
 		return string.Join(" //", eventData.Signups!.Select(q => q.Name).ToArray());
 	}
 
-	private static List<string> GetSignups(Event eventData)
+	private List<string> GetSignups(Event eventData)
 	{
 		return eventData.Signups?.Select(q => q.Name).ToList() ?? new List<string>();
 	}
 
-	private static string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
 	{
 		var eventDate = eventData.StartDate.ToString(EVENT_ID_EVENT_DATE_FORMAT);
 		var eventTime = eventData.StartDate.ToString(EVENT_ID_EVENT_TIME_FORMAT);
@@ -93,7 +97,7 @@ public static class EventApiResponseTransformer
 		return $"{GetEventIdPrefix(eventData, calendarsMapping)}-{eventDate}-{eventTime}-{GetDivision(eventData, calendarsMapping)}";
 	}
 
-	private static string GetDivision(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private string GetDivision(Event eventData, List<CalendarConfiguration> calendarsMapping)
 	{
 		var prefix = GetEventIdPrefix(eventData, calendarsMapping);
 
@@ -137,7 +141,7 @@ public static class EventApiResponseTransformer
 		}
 	}
 
-	private static string GetEventIdPrefix(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private string GetEventIdPrefix(Event eventData, List<CalendarConfiguration> calendarsMapping)
 	{
 		var subCalendarNames = GetSubCalendarsOfEvent(eventData, calendarsMapping);
 
@@ -154,7 +158,7 @@ public static class EventApiResponseTransformer
 		return EVENT_ID_PREFIX_DIV;
 	}
 
-	private static List<string> GetSubCalendarsOfEvent(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private List<string> GetSubCalendarsOfEvent(Event eventData, List<CalendarConfiguration> calendarsMapping)
 	{
 		List<string> subCalendarNames = new List<string>();
 		if (eventData.SubcalendarIds.Any())
@@ -168,7 +172,7 @@ public static class EventApiResponseTransformer
 		return subCalendarNames;
 	}
 
-	private static string GetStringAfter(string input, string delimiter)
+	private string GetStringAfter(string input, string delimiter)
 	{
 		int index = input.IndexOf(delimiter);
 

@@ -15,6 +15,7 @@ public class EventApiResponseTransformerTests
 	public void EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid()
 	{
 		// Arrange
+		var _sut = new EventApiResponseTransformer();
 		var config = ReadConfigIntoModel();
 
 		var expected = new List<EventSpreadSheetLine>
@@ -144,7 +145,7 @@ public class EventApiResponseTransformerTests
 		};
 
 		// Act
-		var actual = EventApiResponseTransformer.EventApiResponseToSpreadSheetLines(input, config.Calendars);
+		var actual = _sut.EventApiResponseToSpreadSheetLines(input, config.Calendars);
 
 		// Assert
 		actual.Should()
@@ -164,6 +165,7 @@ public class EventApiResponseTransformerTests
 	public void GetEventId_ShouldReturnMatching_WhenInputValid(int dataId, string expected)
 	{
 		// Arrange
+		var _sut = new EventApiResponseTransformer();
 		var config = ReadConfigIntoModel();
 		var dataMap = new Dictionary<int, Event>
 		{
@@ -260,13 +262,13 @@ public class EventApiResponseTransformerTests
 
 		// Private Method info obtained using REFLEXION
 		MethodInfo privateMethodGetEventId = typeof(EventApiResponseTransformer)
-			.GetMethod("GetEventId", BindingFlags.NonPublic | BindingFlags.Static)!;
+			.GetMethod("GetEventId", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
 		object[] methodParameters = new object[2] { eventData, config.Calendars };
 
 
 		// Act
-		var actual = (string)privateMethodGetEventId.Invoke(null, methodParameters)!;
+		var actual = (string)privateMethodGetEventId.Invoke(_sut, methodParameters)!;
 
 
 		// Assert

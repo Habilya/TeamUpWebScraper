@@ -9,6 +9,7 @@ using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 
 namespace TeamUpWebScraperUI;
@@ -61,6 +62,7 @@ public static class Program
 				services.AddSingleton<InputValidation>();
 				services.AddSingleton<ITeamUpAPIService, TeamUpAPIService>();
 				services.AddSingleton<IXLWorkBookFactory, XLWorkBookFactory>();
+				services.AddSingleton<IEventApiResponseTransformer, EventApiResponseTransformer>();
 				services.AddSingleton<IExcelSpreadsheetReportProvider, ExcelSpreadsheetReportProvider>();
 				services.AddHttpClient(TeamUpApiConstants.HTTP_CLIENTNAME, httpClient =>
 				{

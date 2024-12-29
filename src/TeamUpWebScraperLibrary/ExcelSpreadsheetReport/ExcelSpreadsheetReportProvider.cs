@@ -27,7 +27,23 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		get
 		{
-			return string.Format(ExcelReportFileNameTemplate, _dateTimeProvider.DateTimeNow.ToString(ExcelReportFileNameDateFormat));
+			return string.Format(EXCELREPORT_FILENAME_TEMPLATE, _dateTimeProvider.DateTimeNow.ToString(EXCELREPORT_FILENAME_DATE_FORMAT));
+		}
+	}
+
+	public string ExcelReportDefaultSavePath
+	{
+		get
+		{
+			return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + EXCELREPORT_USER_DEFAULT_FOLDER;
+		}
+	}
+
+	public string ExcelReportSaveDialogFilter
+	{
+		get
+		{
+			return EXCELREPORT_SAVE_DIALOG_FILTER;
 		}
 	}
 
@@ -48,12 +64,12 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		using (var wb = _xlWorkBookFactory.CreateXLWorkBook())
 		{
-			var ws = wb.Worksheets.Add(ExcelReportSheetName);
+			var ws = wb.Worksheets.Add(EXCELREPORT_SHEET_NAME);
 
 			WriteHeaders(ws);
 
 			// Write report lines
-			WriteDataLinesToSpresdsheet(ws, ExcelReportHeaderLineNumber + 1, reportSpreadsheetLines);
+			WriteDataLinesToSpresdsheet(ws, EXCELREPORT_HEADER_LINENUMBER + 1, reportSpreadsheetLines);
 
 			wb.SaveAs(filename);
 		}
@@ -65,8 +81,8 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		int columnIndex = (int)ExcelReportHeadersColumns.Id;
 		ExcelReportHeaders.ForEach(h =>
 		{
-			ws.Cell(ExcelReportHeaderLineNumber, columnIndex).Value = h.Key;
-			ws.Cell(ExcelReportHeaderLineNumber, columnIndex).WorksheetColumn().Width = h.Value;
+			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).Value = h.Key;
+			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).WorksheetColumn().Width = h.Value;
 			columnIndex++;
 		});
 	}
@@ -91,7 +107,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			int signupColumn = (int)ExcelReportHeadersColumns.Column1;
 			// The Excell sheet has a limited number of columns
 			// There fore we can only display in report ExcelReportSignupsLimit of signups
-			foreach (var signup in line.Signups.Take(EXCEL_REPORT_SIGNUPS_LIMIT).ToList())
+			foreach (var signup in line.Signups.Take(EXCELREPORT_SIGNUPS_LIMIT).ToList())
 			{
 				ws.Cell(emptyRowNumber, signupColumn).Value = signup;
 				signupColumn++;

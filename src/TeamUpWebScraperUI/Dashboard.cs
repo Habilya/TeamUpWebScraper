@@ -2,6 +2,8 @@
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 using TeamUpWebScraperUI.Constants;
 
@@ -12,7 +14,10 @@ public partial class Dashboard : Form
 	private readonly ILoggerAdapter<Dashboard> _logger;
 	private readonly InputValidation _inputValidation;
 	private readonly ITeamUpAPIService _teamUpAPIService;
+	private readonly IEventApiResponseTransformer _eventApiResponseTransformer;
 	private readonly IExcelSpreadsheetReportProvider _excelSpreadsheetReportProvider;
+	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;
+
 
 	private List<EventSpreadSheetLine> ReportSpreadsheetLines { get; set; } = default!;
 
@@ -20,12 +25,16 @@ public partial class Dashboard : Form
 		ILoggerAdapter<Dashboard> logger,
 		InputValidation inputValidation,
 		ITeamUpAPIService teamUpAPIService,
-		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider)
+		IEventApiResponseTransformer eventApiResponseTransformer,
+		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider,
+		TeamUpApiConfiguration teamUpApiConfiguration)
 	{
 		_logger = logger;
 		_inputValidation = inputValidation;
 		_teamUpAPIService = teamUpAPIService;
+		_eventApiResponseTransformer = eventApiResponseTransformer;
 		_excelSpreadsheetReportProvider = excelSpreadsheetReportProvider;
+		_teamUpApiConfiguration = teamUpApiConfiguration;
 
 		InitializeComponent();
 		DisplayVersion();
@@ -41,6 +50,7 @@ public partial class Dashboard : Form
 	{
 		try
 		{
+			ReportSpreadsheetLines = default!;
 			var dateFromValue = dtpDateFrom.Value.Date;
 			var dateToValue = dtpDateTo.Value.Date;
 			if (!IsValidDatesSpan(dateFromValue, dateToValue))
@@ -57,13 +67,20 @@ public partial class Dashboard : Form
 			}
 
 			var eventsList = eventsRouteResponse.Value.Events;
+			if (eventsList is null || !eventsList.Any())
+			{
+				MessageBox.Show("For some reason the events list is empty...", "Events List Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
 
-			// TODO: Logic here
-			// [OK] 1. write tests with _teamUpAPIService mocked with n substitute using provided json file
-			// 2. write logic that transforms the data
-			// [OK] 3. Model for Excel Table
-			// 4. Excel spreadsheet report provider
-			if (1 == 2)
+			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, _teamUpApiConfiguration.Calendars);
+
+			if (ReportSpreadsheetLines is null || !ReportSpreadsheetLines.Any())
+			{
+				MessageBox.Show("For some reason the Transformed list that goes in Excel is empty...", "Events List Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			else
 			{
 				saveXLSX.Enabled = true;
 			}
@@ -92,8 +109,23 @@ public partial class Dashboard : Form
 	{
 		try
 		{
-			string savePath = ""; // use a save dialog window here
-			_excelSpreadsheetReportProvider.SaveExcelReport(savePath, ReportSpreadsheetLines);
+			// Preconfigured file path and file name and filter
+			SaveFileDialog saveFileDialog = new SaveFileDialog
+			{
+				InitialDirectory = _excelSpreadsheetReportProvider.ExcelReportDefaultSavePath,
+				FileName = _excelSpreadsheetReportProvider.ExcelReportFileName,
+				Filter = _excelSpreadsheetReportProvider.ExcelReportSaveDialogFilter,
+			};
+
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				_excelSpreadsheetReportProvider.SaveExcelReport(saveFileDialog.FileName, ReportSpreadsheetLines);
+				Console.WriteLine($"Excel report saved successfully.");
+			}
+			else
+			{
+				return;
+			}
 		}
 		catch (Exception ex)
 		{
