@@ -74,12 +74,13 @@ jobs:
         $BUILD_NUMBER_LOC = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
-        Write-Host "BUILD_NUMBER=${BUILD_NUMBER_LOC}" >> $GITHUB_ENV
+        echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $GITHUB_ENV
 
-    - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
+    - name: Print BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
-         Write-Host "BUILD_NUMBER is $env:BUILD_NUMBER"
-         Write-Host "DOTNET_ENVIRONMENT is $env:DOTNET_ENVIRONMENT"
+        # Print the updated BUILD_NUMBER and DOTNET_ENVIRONMENT (after the first step)
+        echo "BUILD_NUMBER is ${{ env.BUILD_NUMBER }}"
+        echo "DOTNET_ENVIRONMENT is ${{ env.DOTNET_ENVIRONMENT }}"
     
     - name: Checkout
       uses: actions/checkout@v4
