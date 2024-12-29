@@ -58,10 +58,25 @@ jobs:
     env:
       Solution_Name: TeamUpWebScraper.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: "[NOT_WORKING add manually to Run unit tests]"                # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: TeamUpWebScraperUI   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: src/TeamUpWebScraperUI.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Directory: src/TeamUpWebScraperUI   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: src/TeamUpWebScraperUI/TeamUpWebScraperUI.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      DOTNET_ENVIRONMENT: "Production"  # or Development, depending on your needs
 
     steps:
+    - name: Set BUILD_NUMBER environment variable
+      run: |
+        # Get today's date in yyyyMMdd format
+        TODAY=$(date +'%Y%m%d')
+        
+        # Combine date with the GitHub run number to create BUILD_NUMBER
+        BUILD_NUMBER="${TODAY}.${{ github.run_number }}"
+
+        # Set the BUILD_NUMBER as an environment variable for subsequent steps
+        echo "BUILD_NUMBER=${BUILD_NUMBER}" >> $GITHUB_ENV
+
+    - name: Print the BUILD_NUMBER
+      run: echo "Build number is $BUILD_NUMBER"
+    
     - name: Checkout
       uses: actions/checkout@v4
       with:
