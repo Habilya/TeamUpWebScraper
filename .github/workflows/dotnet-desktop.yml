@@ -114,7 +114,14 @@ jobs:
 
     # Remove the config folder it should not be deployed
     - name: Remove the config folder
-      run: Remove-Item -path $env:Wap_Project_Directory\config
+      run: |
+        # Check if the config folder exists and remove it
+        if (Test-Path "$env:Wap_Project_Directory\config") {
+            Remove-Item -Path "$env:Wap_Project_Directory\config" -Recurse -Force
+            Write-Host "Config folder removed."
+        } else {
+            Write-Host "Config folder does not exist, nothing to remove."
+        }
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
