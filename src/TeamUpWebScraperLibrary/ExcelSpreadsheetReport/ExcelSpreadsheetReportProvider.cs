@@ -83,6 +83,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		{
 			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).Value = h.Key;
 			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).WorksheetColumn().Width = h.Value;
+			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).Style.Fill.BackgroundColor = HEADER_CELL_BACKGROUND_COLOR;
 			columnIndex++;
 		});
 	}

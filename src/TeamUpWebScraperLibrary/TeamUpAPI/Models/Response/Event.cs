@@ -23,7 +23,7 @@ public class Event
 	[JsonPropertyName("delete_dt")]
 	public DateTime? DeleteDate { get; set; } = default!;
 	public string SignupVisibility { get; set; } = default!;
-
+	[JsonPropertyName("signup_count")]
 	public int SignupCount { get; set; } = default!;
 	public List<Signup>? Signups { get; set; } = default!;
 	public Custom Custom { get; set; } = default!;

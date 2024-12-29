@@ -32,7 +32,7 @@ public class EventApiResponseTransformerTests
 				UpdateDate = "2024-12-01",
 				DeleteDate = default!,
 				SignupVisibility = default!,
-				SignupCount = "0",
+				SignupCount = "3",
 				Signups = new List<string>
 				{
 					"Benoit Vachon PR971",
@@ -55,7 +55,7 @@ public class EventApiResponseTransformerTests
 				UpdateDate = "2024-11-30",
 				DeleteDate = default!,
 				SignupVisibility = default!,
-				SignupCount = "0",
+				SignupCount = "2",
 				Signups = new List<string>
 				{
 					"Pascal Pedneault (PR) 1002",
@@ -88,7 +88,7 @@ public class EventApiResponseTransformerTests
 				{
 					ContratProvincialContract = new List<string> { "non_no" }
 				},
-				SignupCount = 0,
+				SignupCount = 3,
 				Signups = new List<Signup>
 				{
 					new Signup
@@ -127,7 +127,7 @@ public class EventApiResponseTransformerTests
 					ContratProvincialContract = new List<string> { "non_no" },
 					NombreDeMembresNecessaires = "4"
 				},
-				SignupCount = 0,
+				SignupCount = 2,
 				Signups = new List<Signup>
 				{
 					new Signup
@@ -141,7 +141,32 @@ public class EventApiResponseTransformerTests
 						Name = "Charles-Etienne Pedneault (PR) 1002"
 					}
 				}
-			}  // 1
+			}, // 1
+			new Event
+			{
+				Id = "1776293831",
+				Title = "Some Other Event",
+				Location = "1225 st antoine",
+				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
+				EndDate = new DateTime(2024, 12, 01, 19, 30, 00),
+				CreationDate = new DateTime(2024, 11, 12, 15, 53, 57),
+				UpdateDate = new DateTime(2024, 11, 30, 20, 04, 57),
+				SubcalendarId = 9616459L,
+				SubcalendarIds = new List<long>{ 9616459L },
+				Notes = "<p>Date : 1 décembre 2024</p>",
+				Custom = new Custom
+				{
+					Division = "452",
+					Client2 = "centre bell",
+					ContratProvincialContract = new List<string> { "non_no" },
+					NombreDeMembresNecessaires = "4"
+				},
+				SignupCount = 0,
+				Signups = new List<Signup>
+				{
+
+				}
+			}  // 2 (should not be considered as SignupCount = 0)
 		};
 
 		// Act

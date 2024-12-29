@@ -1,4 +1,6 @@
-﻿namespace TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
+﻿using ClosedXML.Excel;
+
+namespace TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 
 public static class ExcelSpreadSheetConstants
 {
@@ -11,6 +13,7 @@ public static class ExcelSpreadSheetConstants
 	public const string EXCELREPORT_SHEET_NAME = "Export";
 	public const int EXCELREPORT_HEADER_LINENUMBER = 1;
 	public const int EXCELREPORT_SIGNUPS_LIMIT = 60;
+	public static readonly XLColor HEADER_CELL_BACKGROUND_COLOR = XLColor.LightSkyBlue;
 
 	public const int SIGNUP_NAME_COLUMN_WIDTH = 25;
 	public const int DEFAULT_COLUMN_WIDTH = 15;

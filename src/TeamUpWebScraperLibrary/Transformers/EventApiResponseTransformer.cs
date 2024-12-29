@@ -26,7 +26,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 	{
 		var eventSpreadSheetLines = new List<EventSpreadSheetLine>();
 
-		foreach (var eventData in events)
+		foreach (var eventData in events.Where(q => q.SignupCount > 0))
 		{
 			eventSpreadSheetLines.Add(SingleEventResponseToSpreadSheetLine(eventData, calendarsMapping));
 		}

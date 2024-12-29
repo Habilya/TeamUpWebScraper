@@ -101,7 +101,7 @@ public class TeamUpAPIServiceTests
 						NombreDeMembresNecessaires = "2",
 						CateGorieCategory = new List<string> { "service" },
 					},
-					SignupCount = 0,
+					SignupCount = 1,
 					Signups = new List<Signup>
 					{
 						new Signup
@@ -130,7 +130,7 @@ public class TeamUpAPIServiceTests
 						PrioritePriority2 = new List<string> { "normal" },
 						ResponsableInCharge = "Steve Sirois 1-877-889-0631 poste 6102",
 					},
-					SignupCount = 0,
+					SignupCount = 17,
 					Signups = new List<Signup>
 					{
 						new Signup
@@ -241,7 +241,7 @@ public class TeamUpAPIServiceTests
 						CateGorieCategory = new List<string> { "service" },
 						PrioritePriority2 = new List<string> { "normal" },
 					},
-					SignupCount = 0,
+					SignupCount = 4,
 					Signups = new List<Signup>
 					{
 						new Signup
