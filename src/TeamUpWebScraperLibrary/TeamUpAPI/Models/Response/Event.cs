@@ -19,7 +19,7 @@ public class Event
 	[JsonPropertyName("creation_dt")]
 	public DateTime CreationDate { get; set; } = default!;
 	[JsonPropertyName("update_dt")]
-	public DateTime UpdateDate { get; set; } = default!;
+	public DateTime? UpdateDate { get; set; } = default!;
 	[JsonPropertyName("delete_dt")]
 	public DateTime? DeleteDate { get; set; } = default!;
 	public string SignupVisibility { get; set; } = default!;

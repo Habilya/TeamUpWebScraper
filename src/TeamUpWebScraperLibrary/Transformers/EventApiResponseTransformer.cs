@@ -45,7 +45,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			StartDate = eventData.StartDate.ToString(STRING_DATE_TIME_FORMAT),
 			EndDate = eventData.EndDate.ToString(STRING_DATE_TIME_FORMAT),
 			CreationDate = eventData.CreationDate.ToString(STRING_DATE_TIME_FORMAT),
-			UpdateDate = eventData.UpdateDate.ToString(STRING_DATE_TIME_FORMAT),
+			UpdateDate = eventData.UpdateDate?.ToString(STRING_DATE_TIME_FORMAT) ?? default!,
 			DeleteDate = eventData.DeleteDate?.ToString(STRING_DATE_TIME_FORMAT) ?? default!,
 			SignupVisibility = eventData.SignupVisibility,
 			SignupCount = eventData.SignupCount.ToString(),

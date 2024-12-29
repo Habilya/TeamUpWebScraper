@@ -51,13 +51,16 @@ public partial class Dashboard : Form
 		try
 		{
 			ReportSpreadsheetLines = default!;
+			#region Input Validation
 			var dateFromValue = dtpDateFrom.Value.Date;
 			var dateToValue = dtpDateTo.Value.Date;
 			if (!IsValidDatesSpan(dateFromValue, dateToValue))
 			{
 				return;
 			}
+			#endregion
 
+			#region Calling API
 			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync(dateFromValue, dateToValue);
 			if (eventsRouteResponse.IsError)
 			{
@@ -72,7 +75,9 @@ public partial class Dashboard : Form
 				MessageBox.Show("For some reason the events list is empty...", "Events List Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
+			#endregion
 
+			#region Transforming API response into reportable model object
 			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, _teamUpApiConfiguration.Calendars);
 
 			if (ReportSpreadsheetLines is null || !ReportSpreadsheetLines.Any())
@@ -84,6 +89,7 @@ public partial class Dashboard : Form
 			{
 				saveXLSX.Enabled = true;
 			}
+			#endregion
 		}
 		catch (Exception ex)
 		{
@@ -120,7 +126,7 @@ public partial class Dashboard : Form
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				_excelSpreadsheetReportProvider.SaveExcelReport(saveFileDialog.FileName, ReportSpreadsheetLines);
-				Console.WriteLine($"Excel report saved successfully.");
+				MessageBox.Show("Excel report saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			else
 			{
