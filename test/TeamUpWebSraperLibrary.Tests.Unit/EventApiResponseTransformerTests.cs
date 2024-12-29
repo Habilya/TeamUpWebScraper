@@ -38,7 +38,7 @@ public class EventApiResponseTransformerTests
 					"Giuliana Rotella",
 					"Michael Benigno"
 				},
-				Division = ""
+				Division = "0971"
 
 			}, // 0
 			new EventSpreadSheetLine
@@ -59,7 +59,7 @@ public class EventApiResponseTransformerTests
 					"Pascal Pedneault (PR) 1002",
 					"Charles-Etienne Pedneault (PR) 1002"
 				},
-				Division = ""
+				Division = "0452"
 			} // 1
 		};
 
@@ -165,6 +165,7 @@ public class EventApiResponseTransformerTests
 		var dataMap = new Dictionary<int, Event>
 		{
 			{1, new Event{
+				Title = "Exercice sauvetage forestier",
 				StartDate = new DateTime(2024, 12, 01, 09, 00, 00),
 				SubcalendarId = 9634218L,
 				SubcalendarIds = new List<long>{ 9634218L },
@@ -174,6 +175,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // DIV-241201-0900-0971
 			{2, new Event{
+				Title = "Fan Club et Club 1909",
 				StartDate = new DateTime(2024, 12, 01, 14, 00, 00),
 				SubcalendarId = 9616459L,
 				SubcalendarIds = new List<long>{ 9616459L },
@@ -185,6 +187,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // CB-241201-1400-0452
 			{3, new Event{
+				Title = "PB Christian Nodal",
 				StartDate = new DateTime(2024, 10, 23, 18, 30, 00),
 				SubcalendarId = 9634218L,
 				SubcalendarIds = new List<long>{ 9634218L },
@@ -194,6 +197,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // PB-241023-1830-0971
 			{4, new Event{
+				Title = "OP SANG LIMITES (Montréal)",
 				StartDate = new DateTime(2024, 10, 25, 12, 15, 00),
 				SubcalendarId = 10065801L,
 				SubcalendarIds = new List<long>{ 10065801L, 11159835L },
@@ -204,6 +208,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // DIV-241025-1215-0452
 			{5, new Event{
+				Title = "Parade du Jour du Souvenir à Montréal",
 				StartDate = new DateTime(2024, 11, 11, 09, 00, 00),
 				SubcalendarId = 13329555L,
 				SubcalendarIds = new List<long>{ 13329555L, 11159835L },
@@ -214,6 +219,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // DIV-241111-0900-0452
 			{6, new Event{
+				Title = "Tournoi PGA",
 				StartDate = new DateTime(2024, 09, 24, 07, 00, 00),
 				SubcalendarId = 10065801L,
 				SubcalendarIds = new List<long>{ 10065801L },
@@ -223,6 +229,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // DIV-240924-0700-Prov
 			{7, new Event{
+				Title = "Fuego Fuego",
 				StartDate = new DateTime(2024, 05, 25, 11, 00, 00),
 				SubcalendarId = 10065801L,
 				SubcalendarIds = new List<long>{ 10065801L },
@@ -234,6 +241,7 @@ public class EventApiResponseTransformerTests
 				}
 			}}, // DIV-240525-1100-Prov
 			{8, new Event{
+				Title = "Garde d'Honneur - Funérailles",
 				StartDate = new DateTime(2024, 10, 02, 13, 30, 00),
 				SubcalendarId = 13329555L,
 				SubcalendarIds = new List<long>{ 13329555L },
