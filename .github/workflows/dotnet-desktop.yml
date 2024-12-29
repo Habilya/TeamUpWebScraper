@@ -74,8 +74,8 @@ jobs:
         $BUILD_NUMBER_LOC = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
-        echo "::set-env name=BUILD_NUMBER::$BUILD_NUMBER_LOC"
-        echo "::set-env name=DOTNET_ENVIRONMENT::Production"
+        echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $GITHUB_ENV
+        echo "DOTNET_ENVIRONMENT=Production" >> $GITHUB_ENV
 
     - name: Print BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
