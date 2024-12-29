@@ -38,8 +38,9 @@ public class EventApiResponseTransformerTests
 					"Giuliana Rotella",
 					"Michael Benigno"
 				},
-				Division = "0971"
-
+				Division = "0971",
+				ProvincialContract = "non_no",
+				PresencesConcat = "Benoit Vachon PR971 //Giuliana Rotella //Michael Benigno"
 			}, // 0
 			new EventSpreadSheetLine
 			{
@@ -59,7 +60,11 @@ public class EventApiResponseTransformerTests
 					"Pascal Pedneault (PR) 1002",
 					"Charles-Etienne Pedneault (PR) 1002"
 				},
-				Division = "0452"
+				Division = "0452",
+				Client2 = "centre bell",
+				ProvincialContract = "non_no",
+				NbMembersNeeded = "4",
+				PresencesConcat = "Pascal Pedneault (PR) 1002 //Charles-Etienne Pedneault (PR) 1002"
 			} // 1
 		};
 
@@ -150,11 +155,9 @@ public class EventApiResponseTransformerTests
 	[Theory]
 	[InlineData(1, "DIV-241201-0900-0971")]
 	[InlineData(2, "CB-241201-1400-0452")]
-
 	[InlineData(3, "PB-241023-1830-0971")]
 	[InlineData(4, "DIV-241025-1215-0452")]
 	[InlineData(5, "DIV-241111-0900-0452")]
-
 	[InlineData(6, "DIV-240924-0700-Prov")]
 	[InlineData(7, "DIV-240525-1100-Prov")]
 	[InlineData(8, "DIV-241002-1330-Gard")]

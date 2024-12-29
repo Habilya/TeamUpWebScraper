@@ -46,9 +46,40 @@ public static class EventApiResponseTransformer
 			SignupVisibility = eventData.SignupVisibility,
 			SignupCount = eventData.SignupCount.ToString(),
 			Signups = GetSignups(eventData),
-			Division = GetDivision(eventData, calendarsMapping)
+
+			Client2 = eventData.Custom.Client2,
+			Division = GetDivision(eventData, calendarsMapping),
+			Medical = eventData.Custom.MeDicalMedical,
+			Priority = GetConcatenatedListValues(eventData.Custom.PrioritePriority2),
+			Category = GetConcatenatedListValues(eventData.Custom.CateGorieCategory),
+			ResponsibleInCharge = eventData.Custom.ResponsableInCharge,
+			ProvincialContract = GetConcatenatedListValues(eventData.Custom.ContratProvincialContract),
+			NbMembersNeeded = eventData.Custom.NombreDeMembresNecessaires,
+
+			PresencesConcat = GetPresencesConcat(eventData)
 		};
 	}
+
+	private static string? GetConcatenatedListValues(List<string>? listFromCustom)
+	{
+		if (listFromCustom is null || !listFromCustom.Any())
+		{
+			return default;
+		}
+
+		return string.Join(", ", listFromCustom.ToArray());
+	}
+
+	private static string GetPresencesConcat(Event eventData)
+	{
+		if (eventData.Signups is null || !eventData.Signups.Any())
+		{
+			return string.Empty;
+		}
+
+		return string.Join(" //", eventData.Signups!.Select(q => q.Name).ToArray());
+	}
+
 	private static List<string> GetSignups(Event eventData)
 	{
 		return eventData.Signups?.Select(q => q.Name).ToList() ?? new List<string>();

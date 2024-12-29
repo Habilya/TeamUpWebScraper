@@ -9,23 +9,24 @@ public static class ExcelSpreadSheetConstants
 
 	public const int ExcelReportHeaderLineNumber = 1;
 
-	public const int ExcelReportSignupsLimit = 60;
+	public const int EXCEL_REPORT_SIGNUPS_LIMIT = 60;
 
-	public const int SIGNUP_NAME_COLUMN_WIDTH = 15;
+	public const int SIGNUP_NAME_COLUMN_WIDTH = 25;
+	public const int DEFAULT_COLUMN_WIDTH = 15;
 
 	public static readonly List<KeyValuePair<string, int>> ExcelReportHeaders = new List<KeyValuePair<string, int>>
 	{
 		new KeyValuePair<string, int>("events.id", 20),
 		new KeyValuePair<string, int>("events.title", 65),
 		new KeyValuePair<string, int>("events.location", 25),
-		new KeyValuePair<string, int>("events.notes", 15),
-		new KeyValuePair<string, int>("events.start_dt", 15),
-		new KeyValuePair<string, int>("events.end_dt", 15),
-		new KeyValuePair<string, int>("events.creation_dt", 15),
-		new KeyValuePair<string, int>("events.update_dt", 15),
-		new KeyValuePair<string, int>("events.delete_dt", 15),
+		new KeyValuePair<string, int>("events.notes", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.start_dt", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.end_dt", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.creation_dt", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.update_dt", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.delete_dt", DEFAULT_COLUMN_WIDTH),
 		new KeyValuePair<string, int>("events.signup_visibility", 10),
-		new KeyValuePair<string, int>("events.signup_count", 15),
+		new KeyValuePair<string, int>("events.signup_count", DEFAULT_COLUMN_WIDTH),
 
 		new KeyValuePair<string, int>("1", SIGNUP_NAME_COLUMN_WIDTH),
 		new KeyValuePair<string, int>("2", SIGNUP_NAME_COLUMN_WIDTH),
@@ -93,7 +94,15 @@ public static class ExcelSpreadSheetConstants
 		new KeyValuePair<string, int>("59", SIGNUP_NAME_COLUMN_WIDTH),
 		new KeyValuePair<string, int>("60", SIGNUP_NAME_COLUMN_WIDTH),
 
-		new KeyValuePair<string, int>("Column2", 25),
+		new KeyValuePair<string, int>("events.custom.client2", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.division", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.me_dical_medical", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.priorite_priority2.1", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.cate_gorie_category.1", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.responsable_in_charge", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.contrat_provincial_contract.1", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("events.custom.nombre_de_membres_ne_cessaires", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("presences collees", DEFAULT_COLUMN_WIDTH),
 	};
 
 	public enum ExcelReportHeadersColumns
@@ -176,6 +185,14 @@ public static class ExcelSpreadSheetConstants
 		Column59 = 70,
 		Column60 = 71,
 
-		Division_Column2 = 72
+		events_custom_client2 = 72,
+		events_custom_division = 73,
+		events_custom_me_dical_medical = 74,
+		events_custom_priorite_priority2_1 = 75,
+		events_custom_cate_gorie_category_1 = 76,
+		events_custom_responsable_in_charge = 77,
+		events_custom_contrat_provincial_contract_1 = 78,
+		events_custom_nombre_de_membres_ne_cessaires = 79,
+		presences_collees = 80,
 	}
 }

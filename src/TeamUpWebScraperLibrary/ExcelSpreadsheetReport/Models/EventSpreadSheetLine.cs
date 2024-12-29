@@ -17,5 +17,13 @@ public class EventSpreadSheetLine
 
 	public List<string> Signups { get; set; } = default!;
 
+	public string? Client2 { get; set; } = default;
 	public string Division { get; set; } = default!;
+	public string? Medical { get; set; } = default;
+	public string? Priority { get; set; } = default;
+	public string? Category { get; set; } = default;
+	public string? ResponsibleInCharge { get; set; } = default;
+	public string? ProvincialContract { get; set; } = default;
+	public string? NbMembersNeeded { get; set; } = default;
+	public string PresencesConcat { get; set; } = default!;
 }

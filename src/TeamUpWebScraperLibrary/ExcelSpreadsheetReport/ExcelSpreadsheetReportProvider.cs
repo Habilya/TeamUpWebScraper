@@ -91,13 +91,22 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			int signupColumn = (int)ExcelReportHeadersColumns.Column1;
 			// The Excell sheet has a limited number of columns
 			// There fore we can only display in report ExcelReportSignupsLimit of signups
-			foreach (var signup in line.Signups.Take(ExcelReportSignupsLimit).ToList())
+			foreach (var signup in line.Signups.Take(EXCEL_REPORT_SIGNUPS_LIMIT).ToList())
 			{
 				ws.Cell(emptyRowNumber, signupColumn).Value = signup;
 				signupColumn++;
 			}
 
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Division_Column2).Value = line.Division;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_client2).Value = line.Client2;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_division).Value = line.Division;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_me_dical_medical).Value = line.Medical;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_priorite_priority2_1).Value = line.Priority;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_cate_gorie_category_1).Value = line.Category;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_responsable_in_charge).Value = line.ResponsibleInCharge;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_contrat_provincial_contract_1).Value = line.ProvincialContract;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_nombre_de_membres_ne_cessaires).Value = line.NbMembersNeeded;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees).Value = line.PresencesConcat;
+
 
 			emptyRowNumber++;
 		}

@@ -98,7 +98,8 @@ public class TeamUpAPIServiceTests
 					Custom = new Custom
 					{
 						ContratProvincialContract = new List<string> { "non_no" },
-						NombreDeMembresNecessaires = "2"
+						NombreDeMembresNecessaires = "2",
+						CateGorieCategory = new List<string> { "service" },
 					},
 					SignupCount = 0,
 					Signups = new List<Signup>
@@ -124,7 +125,10 @@ public class TeamUpAPIServiceTests
 					Notes = "<p>Exercice de sauvetage en milieu forestier</p>",
 					Custom = new Custom
 					{
-						ContratProvincialContract = new List<string> { "non_no" }
+						ContratProvincialContract = new List<string> { "non_no" },
+						CateGorieCategory = new List<string> { "formation_training" },
+						PrioritePriority2 = new List<string> { "normal" },
+						ResponsableInCharge = "Steve Sirois 1-877-889-0631 poste 6102",
 					},
 					SignupCount = 0,
 					Signups = new List<Signup>
@@ -233,7 +237,9 @@ public class TeamUpAPIServiceTests
 						Division = "452",
 						Client2 = "centre bell",
 						ContratProvincialContract = new List<string> { "non_no" },
-						NombreDeMembresNecessaires = "4"
+						NombreDeMembresNecessaires = "4",
+						CateGorieCategory = new List<string> { "service" },
+						PrioritePriority2 = new List<string> { "normal" },
 					},
 					SignupCount = 0,
 					Signups = new List<Signup>
