@@ -87,7 +87,7 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test test/**/*.csproj --configuration Release --no-build --verbosity normal
+      run: find ./test -name "*.csproj" -exec dotnet test {} --configuration Release --no-build --verbosity normal \;
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
