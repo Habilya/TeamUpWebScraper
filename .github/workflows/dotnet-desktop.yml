@@ -64,6 +64,16 @@ jobs:
       BUILD_NUMBER: "N/A"
 
     steps:
+
+
+    - name: Update BUILD_NUMBER Environment Variable
+      uses: MandalAutomations/Update-Environment-Variable@v1
+      with:
+        Name: "DOTNET_ENVIRONMENT"
+        Value: "Production"
+        EnvironmentName: ${{ matrix.enviornments }}
+        RepoId: ${{ github.repository_id }}
+        Token: ${{ secrets.PAT_TOKEN }}
     
     - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
