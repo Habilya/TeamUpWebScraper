@@ -18,4 +18,5 @@ WinForms App to parse a TeamUp Calendar and return data in Excel spreadsheet rep
 - ✅ write tests with _teamUpAPIService mocked with n substitute using provided json file
 - ✅ write logic that transforms the data recieved from API into a model that will go to Excel
 - ✅ Model for Excel Table
-- 🔲 Excel spreadsheet report provider
+- ✅ Display minimal values in the UI
+- ✅ Excel spreadsheet report provider
