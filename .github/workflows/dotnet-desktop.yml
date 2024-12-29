@@ -65,15 +65,15 @@ jobs:
     steps:
     - name: Set BUILD_NUMBER environment variable
       run: |
-        # Get today's date in yyyyMMdd format
-        TODAY=$(date +'%Y%m%d')
+        # Get today's date in yyyyMMdd format using PowerShell's Get-Date cmdlet
+        $TODAY = (Get-Date).ToString('yyyyMMdd')
         
         # Combine date with the GitHub run number to create BUILD_NUMBER
-        BUILD_NUMBER="${TODAY}.${{ github.run_number }}"
+        $BUILD_NUMBER = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
-        echo "BUILD_NUMBER=${BUILD_NUMBER}" >> $GITHUB_ENV
-
+        echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+        
     - name: Print the BUILD_NUMBER
       run: echo "Build number is $BUILD_NUMBER"
     
