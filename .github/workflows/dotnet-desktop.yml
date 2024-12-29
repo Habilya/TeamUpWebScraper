@@ -63,6 +63,7 @@ jobs:
       DOTNET_ENVIRONMENT: "Production"  # or Development, depending on your needs
 
     steps:
+    
     - name: Set BUILD_NUMBER environment variable
       run: |
         # Get today's date in yyyyMMdd format using PowerShell's Get-Date cmdlet
@@ -72,12 +73,12 @@ jobs:
         $BUILD_NUMBER = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
-        echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+        Write-Host "BUILD_NUMBER=${BUILD_NUMBER}" >> $GITHUB_ENV
 
-    - name: Print the BUILD_NUMBER
+    - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
       run: |
-        # Print the BUILD_NUMBER using PowerShell syntax
-        Write-Host "Build number is $env:BUILD_NUMBER"
+         Write-Host "Build number is $env:BUILD_NUMBER"
+         Write-Host "DOTNET_ENVIRONMENT is $env:DOTNET_ENVIRONMENT"
     
     - name: Checkout
       uses: actions/checkout@v4
@@ -104,15 +105,6 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Create the app package by building and packaging the Windows Application Packaging project
-    - name: Create the app package
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle
-      env:
-        Appx_Bundle: Always
-        Appx_Bundle_Platforms: x86|x64
-        Appx_Package_Build_Mode: StoreUpload
-        Configuration: ${{ matrix.configuration }}
-
     # Remove the config folder it should not be deployed
     - name: Remove the config folder
       run: |
@@ -123,6 +115,15 @@ jobs:
         } else {
             Write-Host "Config folder does not exist, nothing to remove."
         }
+
+    # Create the app package by building and packaging the Windows Application Packaging project
+    - name: Create the app package
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle
+      env:
+        Appx_Bundle: Always
+        Appx_Bundle_Platforms: x86|x64
+        Appx_Package_Build_Mode: StoreUpload
+        Configuration: ${{ matrix.configuration }}
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
