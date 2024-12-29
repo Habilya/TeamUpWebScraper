@@ -61,6 +61,7 @@ jobs:
       Wap_Project_Directory: src/TeamUpWebScraperUI   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Wap_Project_Path: src/TeamUpWebScraperUI/TeamUpWebScraperUI.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
       DOTNET_ENVIRONMENT: Production
+      BUILD_NUMBER: "${{(Get-Date).ToString('yyyyMMdd')}}.${{ github.run_number }}"
     
     steps:
     - name: Set BUILD_NUMBER and DOTNET_ENVIRONMENT
