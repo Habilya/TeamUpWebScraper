@@ -34,7 +34,9 @@ public class EventApiResponseTransformerTests
 				SignupCount = "0",
 				Signups = new List<string>
 				{
-
+					"Benoit Vachon PR971",
+					"Giuliana Rotella",
+					"Michael Benigno"
 				},
 				Division = ""
 
@@ -54,7 +56,8 @@ public class EventApiResponseTransformerTests
 				SignupCount = "0",
 				Signups = new List<string>
 				{
-
+					"Pascal Pedneault (PR) 1002",
+					"Charles-Etienne Pedneault (PR) 1002"
 				},
 				Division = ""
 			} // 1
