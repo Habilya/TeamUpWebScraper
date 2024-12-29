@@ -57,7 +57,7 @@ jobs:
 
     env:
       Solution_Name: TeamUpWebScraper                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: ./test/**/*.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Test_Project_Path: "[NOT_WORKING]"                # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Wap_Project_Directory: TeamUpWebScraperUI   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Wap_Project_Path: src/TeamUpWebScraperUI.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
@@ -79,7 +79,7 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Run unit tests
-      run: dotnet test ${{ env.Test_Project_Path }} --configuration ${{ matrix.configuration }} --no-build --verbosity normal
+      run: dotnet test ./test/TeamUpWebSraperLibrary.Tests.Unit/TeamUpWebSraperLibrary.Tests.Unit.csproj --configuration Release --no-build --verbosity normal
       
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
