@@ -7,14 +7,14 @@ and return data in Excel spreadsheet report format.
 
 ## Configuration
 This project uses a config file, it is required for the application to start.
-By default the config folder is not deployed, if you are trying to run this application.
-You may create manually a `config` folder inside the application folder (where .exe is)
+By default, the config folder is not deployed. If you are trying to run this application,
+you may create manually a `config` folder inside the application folder (where the .exe is)
 and add a `appsettings.json` inside ex: `config/appsettings.json`.
 
-You may take the "Development" version that is store in the github repo
+You may take the "Development" version of that config, that is in the github repo
 [src/TeamUpWebScraperUI/config/appsettings.json](./src/TeamUpWebScraperUI/config/appsettings.json)
 
-Make sure to chang the following values:
+Make sure to change the following values:
 ```json
 "TeamUpAPI": {
 		"TeamupToken": "[YOUR_API_KEY]",
