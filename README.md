@@ -5,6 +5,24 @@ WinForms App to parse a TeamUp Calendar
 and return data in Excel spreadsheet report format.
 ![screenshot of Excel report file](screenshots/ExcelReport.png)
 
+## Configuration
+This project uses a config file, it is required for the application to start.
+By default the config folder is not deployed, if you are trying to run this application.
+You may create manually a `config` folder inside the application folder (where .exe is)
+and add a `appsettings.json` inside ex: `config/appsettings.json`.
+
+You may take the "Development" version that is store in the github repo
+[config/appsettings.json](./config/appsettings.json)
+
+Make sure to chang the following values:
+```json
+"TeamUpAPI": {
+		"TeamupToken": "[YOUR_API_KEY]",
+		"CalendarId": "[YOUR_CALENDAR_ID]",
+	},
+	...
+```
+
 ## Keep in mind the environmental variables specifieed in UI project
 (They are in project properties > Debug/General > Open Debug Launch Profiles UI > Environment Variables)
 (Or in Solution Explorer > Properties > launchSettings.json)
@@ -12,7 +30,7 @@ and return data in Excel spreadsheet report format.
 * DOTNET_ENVIRONMENT = Development
 
 
-#### To Do List
+## To Do List
 
 - ✅ Dependency Injection
 - ✅ Serilog Logger + Rotating File
