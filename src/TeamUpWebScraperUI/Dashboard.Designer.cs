@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			var resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
 			apiLabel = new Label();
 			callAPI = new Button();
 			statusStrip = new StatusStrip();
@@ -164,6 +165,7 @@
 			Controls.Add(callAPI);
 			Controls.Add(apiLabel);
 			Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			Icon = (Icon)resources.GetObject("$this.Icon");
 			Margin = new Padding(6);
 			Name = "Dashboard";
 			Text = "TeamUp Time Parser";

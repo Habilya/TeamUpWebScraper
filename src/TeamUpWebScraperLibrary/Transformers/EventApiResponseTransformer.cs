@@ -26,12 +26,23 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 	{
 		var eventSpreadSheetLines = new List<EventSpreadSheetLine>();
 
-		foreach (var eventData in events.Where(q => q.SignupCount > 0))
+		foreach (var eventData in PrepareEventsCollection(events))
 		{
 			eventSpreadSheetLines.Add(SingleEventResponseToSpreadSheetLine(eventData, calendarsMapping));
 		}
 
 		return eventSpreadSheetLines;
+	}
+
+	private List<Event> PrepareEventsCollection(List<Event> events)
+	{
+		// Take only events with signups
+		// Order them by StartDate then by id  !! NOT only by id
+		return events
+			.Where(q => q.SignupCount > 0)
+			.OrderBy(o => o.StartDate)
+			.ThenBy(o => o.Id)
+			.ToList();
 	}
 
 	private EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<CalendarConfiguration> calendarsMapping)

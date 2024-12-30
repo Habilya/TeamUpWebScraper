@@ -41,7 +41,7 @@ public class TeamUpAPIServiceTests
 		{
 			Content = new StringContent(responseAsString)
 		};
-		ArrangeHttpClientMock(iHttpClientFactory, responseMessage);
+		TestsHelper.ArrangeHttpClientMock(iHttpClientFactory, responseMessage);
 
 		var _sut = new TeamUpAPIService(iHttpClientFactory, teamUpApiConfiguration, logger);
 
@@ -273,7 +273,7 @@ public class TeamUpAPIServiceTests
 		{
 			Content = new StringContent(responseAsString)
 		};
-		ArrangeHttpClientMock(iHttpClientFactory, responseMessage);
+		TestsHelper.ArrangeHttpClientMock(iHttpClientFactory, responseMessage);
 
 		var _sut = new TeamUpAPIService(iHttpClientFactory, teamUpApiConfiguration, logger);
 
@@ -286,19 +286,5 @@ public class TeamUpAPIServiceTests
 		logger.Received(0).LogError(Arg.Any<Exception>(), Arg.Any<string>());
 		logger.Received(0).LogWarning(Arg.Any<string>());
 		actual.Value.Should().BeEquivalentTo(expected);
-	}
-
-	private static void ArrangeHttpClientMock(IHttpClientFactory iHttpClientFactory, HttpResponseMessage httpResponseMessage)
-	{
-		var handler = new CustomHttpMessageHandler(httpResponseMessage);
-
-		// Create an instance of HttpClient using the mock handler
-		var httpClient = new HttpClient(handler)
-		{
-			// Base address can be any valid URI
-			BaseAddress = new Uri("http://localhost/")
-		};
-
-		iHttpClientFactory.CreateClient(Arg.Any<string>()).Returns(httpClient);
 	}
 }

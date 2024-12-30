@@ -4,7 +4,7 @@ namespace TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 
 public static class ExcelSpreadSheetConstants
 {
-	public const string EXCELREPORT_FILENAME_TEMPLATE = "WatcherFileSystemFromKofax_{0}.xlsx";
+	public const string EXCELREPORT_FILENAME_TEMPLATE = "TeamUpEventsReport_{0}.xlsx";
 	public const string EXCELREPORT_FILENAME_DATE_FORMAT = "yyyy-MM-dd_hh-mm-ss";
 
 	public const string EXCELREPORT_USER_DEFAULT_FOLDER = @"\Downloads\";
