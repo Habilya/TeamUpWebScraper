@@ -1,6 +1,9 @@
 ﻿# TeamUpWebScraper
 
-WinForms App to parse a TeamUp Calendar and return data in Excel spreadsheet report format.
+WinForms App to parse a TeamUp Calendar 
+![Main dashboard screen featuring all the controls](screenshots/Winform1.png)
+and return data in Excel spreadsheet report format.
+![screenshot of Excel report file](screenshots/ExcelReport.png)
 
 ## Keep in mind the environmental variables specifieed in UI project
 (They are in project properties > Debug/General > Open Debug Launch Profiles UI > Environment Variables)
@@ -20,3 +23,4 @@ WinForms App to parse a TeamUp Calendar and return data in Excel spreadsheet rep
 - ✅ Model for Excel Table
 - ✅ Display minimal values in the UI
 - ✅ Excel spreadsheet report provider
+- 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
