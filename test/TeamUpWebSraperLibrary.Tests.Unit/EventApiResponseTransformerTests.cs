@@ -1,9 +1,6 @@
 ﻿using FluentAssertions;
-using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
-using TeamUpWebScraperLibrary.TeamUpAPI;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
 
@@ -16,7 +13,7 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var config = ReadConfigIntoModel();
+		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
 
 		var expected = new List<EventSpreadSheetLine>
 		{
@@ -191,7 +188,7 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var config = ReadConfigIntoModel();
+		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
 		var dataMap = new Dictionary<int, Event>
 		{
 			{1, new Event{
@@ -298,24 +295,5 @@ public class EventApiResponseTransformerTests
 
 		// Assert
 		actual.Should().Be(expected);
-	}
-
-
-	// TODO: Move this potentially to a separate class if another test for reading config is needed
-	private static TeamUpApiConfiguration ReadConfigIntoModel()
-	{
-		var builder = new ConfigurationBuilder();
-		builder.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-			   .AddJsonFile(@"EventApiResponseTransformerTestFiles\TestsConfig.json", optional: false, reloadOnChange: true);
-
-		var configuration = builder.Build();  // Build the configuration
-
-		// Create the TeamUpApiConfiguration object to bind the section to
-		var teamUpApiConfiguration = new TeamUpApiConfiguration();
-
-		// Bind the configuration section to the model
-		configuration.GetSection(TeamUpApiConstants.CONFIG_SECTION_NAME).Bind(teamUpApiConfiguration);
-
-		return teamUpApiConfiguration;
 	}
 }
