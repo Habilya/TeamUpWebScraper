@@ -12,7 +12,7 @@ You may create manually a `config` folder inside the application folder (where .
 and add a `appsettings.json` inside ex: `config/appsettings.json`.
 
 You may take the "Development" version that is store in the github repo
-[config/appsettings.json](./config/appsettings.json)
+[src/TeamUpWebScraperUI/config/appsettings.json](./src/TeamUpWebScraperUI/config/appsettings.json)
 
 Make sure to chang the following values:
 ```json
