@@ -114,8 +114,14 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 				signupColumn++;
 			}
 
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_client2).Value = line.Client2;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_division).Value = line.Division;
+			var events_custom_client2 = ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_client2);
+			events_custom_client2.Value = line.Client2;
+			events_custom_client2.Style.NumberFormat.Format = "@";
+
+			var events_custom_division = ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_division);
+			events_custom_division.Value = line.Division;
+			events_custom_division.Style.NumberFormat.Format = "@";
+
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_me_dical_medical).Value = line.Medical;
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_priorite_priority2_1).Value = line.Priority;
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_cate_gorie_category_1).Value = line.Category;

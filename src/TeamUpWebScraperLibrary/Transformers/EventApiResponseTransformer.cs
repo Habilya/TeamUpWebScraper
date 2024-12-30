@@ -6,7 +6,7 @@ namespace TeamUpWebScraperLibrary.Transformers;
 
 public class EventApiResponseTransformer : IEventApiResponseTransformer
 {
-	public const string STRING_DATE_TIME_FORMAT = "yyyy-MM-dd";
+	public const string STRING_DATE_TIME_FORMAT = "yyyy-MM-ddTHH:mm:sszzz";
 	public const string EVENT_ID_EVENT_DATE_FORMAT = "yyMMdd";
 	public const string EVENT_ID_EVENT_TIME_FORMAT = "HHmm";
 
