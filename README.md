@@ -41,5 +41,5 @@ Make sure to change the following values:
 - ✅ Model for Excel Table
 - ✅ Display minimal values in the UI
 - ✅ Excel spreadsheet report provider
-- 🔲 Use Verify & Verify.xUnit for some of the bigger tests
+- 🔲 Use Verify & Verify.xUnit for some of the bigger expected objects in tests https://github.com/VerifyTests/Verify
 - 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
