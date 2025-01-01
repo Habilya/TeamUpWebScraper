@@ -1,50 +1,55 @@
-﻿using TeamUpWebScraperLibrary.Providers;
+﻿using FluentValidation;
+using TeamUpWebScraperLibrary.Providers;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 
 namespace TeamUpWebScraperLibrary.Validators;
 
-public class InputValidation
+public class InputValidation : AbstractValidator<InputModel>
 {
+	// TODO: Maybe read it from config??
+	private const int MAX_DAYS_SPAN_LIMIT = 60;
+
 	private readonly IDateTimeProvider _dateTimeProvider;
 
 	public InputValidation(IDateTimeProvider dateTimeProvider)
 	{
 		_dateTimeProvider = dateTimeProvider;
+
+		RuleFor(x => x.DateFrom)
+			.Cascade(CascadeMode.Stop)
+			.NotNull().WithMessage("DateFrom cannot be empty")
+			.LessThanOrEqualTo(x => x.DateTo).WithMessage("DateFrom cannot be greater than DateTo")
+			.Must((x, dateFrom) => IsValidDaysSpan(x.DateFrom, x.DateTo)).WithMessage($"Span of DateFrom to DateTo cannot be greater than {MAX_DAYS_SPAN_LIMIT} days (Too much Data)");
+
+		RuleFor(x => x.DateTo)
+			.Cascade(CascadeMode.Stop)
+			.NotNull().WithMessage("DateTo cannot be empty");
+
+		// DateFrom must NOT be in the future
+		RuleFor(x => x.DateFrom)
+			.Must((x, dateFrom) => NotInFutureDate(x.DateFrom)).WithMessage($"DateFrom may not be in the future (greater than {_dateTimeProvider.DateTimeNow.ToString("yyyy-MM-dd")})");
 	}
 
-	public List<string> ValidateDatesRange(DateTime? dateFrom, DateTime? dateTo)
+	private bool NotInFutureDate(DateTime? dateFrom)
 	{
-		var validationMessages = new List<string>();
-
 		if (dateFrom is null)
 		{
-			validationMessages.Add("DateFrom cannot be empty");
+			return true;
 		}
 
-		if (dateTo is null)
+		return dateFrom <= _dateTimeProvider.DateTimeNow;
+	}
+
+	private bool IsValidDaysSpan(DateTime? dateFrom, DateTime? dateTo)
+	{
+		if (dateFrom is null || dateTo is null)
 		{
-			validationMessages.Add("DateTo cannot be empty");
+			// If either is null, skip the validation
+			return true;
 		}
 
-		if (dateFrom > dateTo)
-		{
-			validationMessages.Add("DateFrom cannot be greater than DateTo");
-		}
-
-		if (dateTo is not null && dateFrom is not null)
-		{
-			var monthsSpan = (dateTo.Value.Month - dateFrom.Value.Month) + 12 * (dateTo.Value.Year - dateFrom.Value.Year);
-			if (monthsSpan > 2)
-			{
-				validationMessages.Add("Span of DateFrom to DateTo cannot be greater than 2 months (Too much Data)");
-			}
-		}
-
-		var currentDateTime = _dateTimeProvider.DateTimeNow;
-		if (dateFrom > currentDateTime)
-		{
-			validationMessages.Add($"DateFrom may not be in the future (greater than {currentDateTime.ToString("yyyy-MM-dd")})");
-		}
-
-		return validationMessages;
+		// They've been checked for null at this point...
+		TimeSpan difference = (DateTime)dateTo - (DateTime)dateFrom;
+		return difference.Days <= MAX_DAYS_SPAN_LIMIT;
 	}
 }

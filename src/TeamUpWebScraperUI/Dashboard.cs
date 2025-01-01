@@ -4,6 +4,7 @@ using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 using TeamUpWebScraperUI.Constants;
@@ -67,16 +68,17 @@ public partial class Dashboard : Form
 			ReinitUIElements();
 			ReportSpreadsheetLines = default!;
 			#region Input Validation
-			var dateFromValue = dtpDateFrom.Value.Date;
-			var dateToValue = dtpDateTo.Value.Date;
-			if (!IsValidDatesSpan(dateFromValue, dateToValue))
+			// Get Input values into a model
+			var inputValues = GetInputIntoModel();
+			if (!IsValidInputValues(inputValues))
 			{
 				return;
 			}
 			#endregion
 
 			#region Calling API
-			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync(dateFromValue, dateToValue);
+			// At this point, Assuming the input Values have been validated
+			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync((DateTime)inputValues.DateFrom!, (DateTime)inputValues.DateTo!);
 			if (eventsRouteResponse.IsError)
 			{
 				var firstError = eventsRouteResponse.FirstError;
@@ -118,17 +120,29 @@ public partial class Dashboard : Form
 		}
 	}
 
-	private bool IsValidDatesSpan(DateTime dateFromValue, DateTime dateToValue)
+	private InputModel GetInputIntoModel()
 	{
-		var datesSpanValidationResults = _inputValidation.ValidateDatesRange(dateFromValue, dateToValue);
-		if (datesSpanValidationResults.Any())
+		return new InputModel
 		{
-			var validationsMessage = string.Join('\n', datesSpanValidationResults.ToArray());
-			MessageBox.Show(validationsMessage, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			DateFrom = dtpDateFrom.Value.Date,
+			DateTo = dtpDateTo.Value.Date
+		};
+	}
+
+	private bool IsValidInputValues(InputModel inputValues)
+	{
+		var inputValidationResults = _inputValidation.Validate(inputValues);
+
+		if (inputValidationResults.IsValid)
+		{
+			return true;
+		}
+		else
+		{
+			var message = string.Join("\n", inputValidationResults.Errors.Select(q => q.ErrorMessage));
+			MessageBox.Show(message, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			return false;
 		}
-
-		return true;
 	}
 
 	private void SaveXLSX_Click(object sender, EventArgs e)

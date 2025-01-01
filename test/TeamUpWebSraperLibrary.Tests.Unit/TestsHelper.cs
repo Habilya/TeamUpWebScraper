@@ -37,4 +37,15 @@ public static class TestsHelper
 
 		iHttpClientFactory.CreateClient(Arg.Any<string>()).Returns(httpClient);
 	}
+
+	public static DateTime? ParseDateForTest(string? dateAsString, string DateInputFormat)
+	{
+		if (string.IsNullOrWhiteSpace(dateAsString))
+		{
+			return null;
+		}
+
+		DateTime.TryParseExact(dateAsString, DateInputFormat, null, System.Globalization.DateTimeStyles.None, out DateTime dateResult);
+		return dateResult;
+	}
 }
