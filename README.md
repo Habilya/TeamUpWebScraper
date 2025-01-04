@@ -45,6 +45,7 @@ Make sure to change the following values:
 - ✅ Use FluentValidations for input validator
 - ✅ Add config section and model for Excel SpreadSheet provider
 - ✅ Highlight in yellow Excel report lines that have words matching a RegEx in config (Annule, Cancelled, Reporte)
+- ✅ Read from config this private const int MAX_DAYS_SPAN_LIMIT = 60;
 - 🔲 Write additional tests for GetEvents route of TeamUpAPI service
 - ✅ Read Calendars from API route (not from mapping)  `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
 - 🔲 AutoMapper converting your model objects to Excel formats or from API responses to domain models

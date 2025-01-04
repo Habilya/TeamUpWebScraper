@@ -1,25 +1,26 @@
 ﻿using FluentValidation;
 using TeamUpWebScraperLibrary.Providers;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 
 namespace TeamUpWebScraperLibrary.Validators;
 
 public class InputValidation : AbstractValidator<InputModel>
 {
-	// TODO: Maybe read it from config??
-	private const int MAX_DAYS_SPAN_LIMIT = 60;
-
 	private readonly IDateTimeProvider _dateTimeProvider;
+	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;
 
-	public InputValidation(IDateTimeProvider dateTimeProvider)
+	public InputValidation(IDateTimeProvider dateTimeProvider,
+		TeamUpApiConfiguration teamUpApiConfiguration)
 	{
 		_dateTimeProvider = dateTimeProvider;
+		_teamUpApiConfiguration = teamUpApiConfiguration;
 
 		RuleFor(x => x.DateFrom)
 			.Cascade(CascadeMode.Stop)
 			.NotNull().WithMessage("DateFrom cannot be empty")
 			.LessThanOrEqualTo(x => x.DateTo).WithMessage("DateFrom cannot be greater than DateTo")
-			.Must((x, dateFrom) => IsValidDaysSpan(x.DateFrom, x.DateTo)).WithMessage($"Span of DateFrom to DateTo cannot be greater than {MAX_DAYS_SPAN_LIMIT} days (Too much Data)");
+			.Must((x, dateFrom) => IsValidDaysSpan(x.DateFrom, x.DateTo)).WithMessage($"Span of DateFrom to DateTo cannot be greater than {_teamUpApiConfiguration.MaxDaysDataSpanLimit} days (Too much Data)");
 
 		RuleFor(x => x.DateTo)
 			.Cascade(CascadeMode.Stop)
@@ -50,6 +51,6 @@ public class InputValidation : AbstractValidator<InputModel>
 
 		// They've been checked for null at this point...
 		TimeSpan difference = (DateTime)dateTo - (DateTime)dateFrom;
-		return difference.Days <= MAX_DAYS_SPAN_LIMIT;
+		return difference.Days <= _teamUpApiConfiguration.MaxDaysDataSpanLimit;
 	}
 }

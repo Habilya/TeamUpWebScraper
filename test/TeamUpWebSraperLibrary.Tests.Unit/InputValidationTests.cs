@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using NSubstitute;
 using TeamUpWebScraperLibrary.Providers;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Validators;
 
@@ -17,10 +18,13 @@ public class InputValidationTests
 	{
 		// !! Attention !! : this code in the constructor will be executed for each single test.
 		// This assures the self containability of tests
-		IDateTimeProvider dateTimeProvider = Substitute.For<IDateTimeProvider>();
+		var dateTimeProvider = Substitute.For<IDateTimeProvider>();
 		dateTimeProvider.DateTimeNow.Returns(new DateTime(2022, 2, 2, 20, 0, 0));
 
-		_sut = new InputValidation(dateTimeProvider);
+		var teamUpApiConfiguration = Substitute.For<TeamUpApiConfiguration>();
+		teamUpApiConfiguration.MaxDaysDataSpanLimit = 60;
+
+		_sut = new InputValidation(dateTimeProvider, teamUpApiConfiguration);
 	}
 
 
