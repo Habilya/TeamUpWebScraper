@@ -15,6 +15,4 @@ public static class TeamUpApiConstants
 	public const string CONFIG_TimeZone_NAME = "TimeZone";
 
 	public const string API_ROUTE_DATE_FORMAT = "yyyy-MM-dd";
-
-	public const string API_BADREQUEST_KEYMISSING = "Teamup-Token header is missing. Make sure you request an API key and send it with every request you make.";
 }

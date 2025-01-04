@@ -33,67 +33,34 @@ public class TeamUpAPIService : ITeamUpAPIService
 
 		var response = await _httpClient.GetAsync($"{route}{queryStringParams}");
 
-		switch (response.StatusCode)
-		{
-			case HttpStatusCode.OK:
-				return await GetEventsProcessOkResponse(response);
-			case HttpStatusCode.BadRequest:
-				return await GetEventsProcessBadRequestResponse(response);
-			case HttpStatusCode.NotFound:
-				return Errors.Events.NotFound();
-			default:
-				return await GetEventsProcessAnyOtherRequestType(response);
-		}
+		return await ProcessApiResponse<EventResponse>(response);
 	}
 
-	private async Task<ErrorOr<EventResponse>> GetEventsProcessAnyOtherRequestType(HttpResponseMessage response)
+	private async Task<ErrorOr<T>> ProcessApiResponse<T>(HttpResponseMessage response)
 	{
-		await LogResponseAsText(response);
-		return Errors.Events.BadRequest();
-	}
-
-	private async Task<ErrorOr<EventResponse>> GetEventsProcessBadRequestResponse(HttpResponseMessage response)
-	{
-		string responseErrorAsString = "";
 		try
 		{
-			responseErrorAsString = await response.Content.ReadAsStringAsync();
-			if (responseErrorAsString.Equals(TeamUpApiConstants.API_BADREQUEST_KEYMISSING))
+			switch (response.StatusCode)
 			{
-				return Errors.Events.ApiTokenMissingOrInvalid();
-			}
-			else
-			{
-				var errorBody = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-				return Errors.Events.ApiRequestError(errorBody!.error);
+				case HttpStatusCode.OK:
+					var responseBody = await response.Content.ReadFromJsonAsync<T>();
+
+					if (responseBody is null)
+					{
+						return Errors.TeamUpAPIServiceErrors.ApiResponseWithTextError("Parsed response is null.");
+					}
+
+					return responseBody;
+				default:
+					var errorBody = await response.Content.ReadFromJsonAsync<ErrorResponse>();
+					return Errors.TeamUpAPIServiceErrors.ApiResponseWithJsonError(errorBody!.Error);
 			}
 		}
 		catch (Exception ex)
 		{
-			_logger.LogWarning($"Response as text:\n{responseErrorAsString}");
-			_logger.LogError(ex, "Unhandled Exception while processing bad request");
-			return Errors.Events.BadRequest();
-		}
-	}
-
-	private async Task<ErrorOr<EventResponse>> GetEventsProcessOkResponse(HttpResponseMessage response)
-	{
-		try
-		{
-			var responseBody = await response.Content.ReadFromJsonAsync<EventResponse>();
-
-			if (responseBody is null)
-			{
-				return Errors.Events.NotFound();
-			}
-
-			return responseBody;
-		}
-		catch (Exception ex)
-		{
-			_logger.LogError(ex, "Unhandled Exception while GetEventsProcessOkResponse");
+			_logger.LogError(ex, "Unhandled Exception while processing API response");
 			await LogResponseAsText(response);
-			return Errors.Events.BadRequest();
+			return Errors.TeamUpAPIServiceErrors.ApiResponseWithTextError("Unhandled Exception was thrown while parsing response, more details in the log file.");
 		}
 	}
 
@@ -110,8 +77,8 @@ public class TeamUpAPIService : ITeamUpAPIService
 		}
 	}
 
-	private string DateTimeToString(DateTime dateFrom)
+	private string DateTimeToString(DateTime dateTime)
 	{
-		return dateFrom.ToString(TeamUpApiConstants.API_ROUTE_DATE_FORMAT, CultureInfo.InvariantCulture);
+		return dateTime.ToString(TeamUpApiConstants.API_ROUTE_DATE_FORMAT, CultureInfo.InvariantCulture);
 	}
 }

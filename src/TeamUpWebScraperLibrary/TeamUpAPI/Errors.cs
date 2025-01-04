@@ -4,26 +4,22 @@ namespace TeamUpWebScraperLibrary.TeamUpAPI;
 
 public static partial class Errors
 {
-	public static class Events
+	public static class TeamUpAPIServiceErrors
 	{
-		public static Error ApiTokenMissingOrInvalid() => Error.Validation(code: "Events.ApiToken.MissingOrInvalid", description: $"API Token missing or invalid");
+		public static Error ApiResponseWithTextError(string errorMessage) => Error.Validation(code: "BadRequest with error as text", description: errorMessage);
 
-		public static Error NotFound() => Error.Validation(code: "Events.MotFound", description: $"404 Not found");
-
-		public static Error BadRequest() => Error.Validation(code: "Events.BadRequest", description: $"400 Bad Request");
-
-		public static Error ApiRequestError(ErrorDetail error) => Error.Validation(code: error.id, description: $"{error.title}\n{error.message}");
+		public static Error ApiResponseWithJsonError(ErrorDetail error) => Error.Validation(code: error.Id, description: $"{error.Title}\n{error.Message}");
 	}
 }
 
 public class ErrorResponse
 {
-	public ErrorDetail error { get; set; } = default!;
+	public ErrorDetail Error { get; set; } = default!;
 }
 
 public class ErrorDetail
 {
-	public string id { get; set; } = default!;
-	public string title { get; set; } = default!;
-	public string message { get; set; } = default!;
+	public string Id { get; set; } = default!;
+	public string Title { get; set; } = default!;
+	public string Message { get; set; } = default!;
 }

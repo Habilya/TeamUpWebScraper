@@ -53,7 +53,7 @@ public class TeamUpAPIServiceTests
 		// Assert
 		logger.Received(1).LogError(
 			Arg.Is<JsonException>(ex => ex.Message.Equals("'H' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.")),
-			"Unhandled Exception while GetEventsProcessOkResponse"
+			"Unhandled Exception while processing API response"
 		);
 
 		logger.Received(1).LogWarning("Response as text:\nHello, world!");
