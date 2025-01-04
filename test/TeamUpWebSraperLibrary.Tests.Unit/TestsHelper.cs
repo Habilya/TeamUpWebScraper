@@ -1,13 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NSubstitute;
-using TeamUpWebScraperLibrary.TeamUpAPI;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 
 namespace TeamUpWebSraperLibrary.Tests.Unit;
 
 public static class TestsHelper
 {
-	public static TeamUpApiConfiguration ReadConfigIntoModel(string configRelativePath)
+	public static T? ReadConfigIntoModel<T>(string configRelativePath, string configSectionName)
 	{
 		var builder = new ConfigurationBuilder();
 		builder.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -15,13 +13,10 @@ public static class TestsHelper
 
 		var configuration = builder.Build();  // Build the configuration
 
-		// Create the TeamUpApiConfiguration object to bind the section to
-		var teamUpApiConfiguration = new TeamUpApiConfiguration();
+		var section = configuration.GetSection(configSectionName);
+		T? configModel = section.Get<T>();
 
-		// Bind the configuration section to the model
-		configuration.GetSection(TeamUpApiConstants.CONFIG_SECTION_NAME).Bind(teamUpApiConfiguration);
-
-		return teamUpApiConfiguration;
+		return configModel;
 	}
 
 	public static void ArrangeHttpClientMock(IHttpClientFactory iHttpClientFactory, HttpResponseMessage httpResponseMessage)

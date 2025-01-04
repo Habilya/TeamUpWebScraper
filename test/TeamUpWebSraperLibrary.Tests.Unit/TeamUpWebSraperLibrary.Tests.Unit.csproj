@@ -38,6 +38,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="AppsettingsConfigReadingTestFiles\AppsettingsConfigReadingTests.ReadExcelReportSpreadSheetConfigSection_ShouldMatchExpected_WhenConfigValid.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AppsettingsConfigReadingTestFiles\AppsettingsConfigReadingTests.ReadTeamUpAPIConfigSection_ShouldMatchExpected_WhenConfigValid.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AppsettingsConfigReadingTestFiles\ValidTestsConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="EventApiResponseToReportModelAcceptanceTests\EventApiResponseToReportModelAcceptanceTests.EventApiResponseToSpreadSheetLines_ShouldVerrify.verified.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

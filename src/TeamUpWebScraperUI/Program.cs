@@ -6,6 +6,7 @@ using Microsoft.Net.Http.Headers;
 using Serilog;
 using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI;
@@ -68,9 +69,9 @@ public static class Program
 				services.AddSingleton<IDisplayGridViewProvider, DisplayGridViewProvider>();
 				services.AddHttpClient(TeamUpApiConstants.HTTP_CLIENTNAME, httpClient =>
 				{
-					var baseURL = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_BaseURL_NAME}");
-					var calendarId = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_CalendarId_NAME}");
-					var teamupToken = context.Configuration.GetValue<string>($"{TeamUpApiConstants.CONFIG_SECTION_NAME}:{TeamUpApiConstants.CONFIG_TeamupToken_NAME}");
+					var baseURL = context.Configuration.GetValue<string>($"{AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API}:{TeamUpApiConstants.CONFIG_BaseURL_NAME}");
+					var calendarId = context.Configuration.GetValue<string>($"{AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API}:{TeamUpApiConstants.CONFIG_CalendarId_NAME}");
+					var teamupToken = context.Configuration.GetValue<string>($"{AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API}:{TeamUpApiConstants.CONFIG_TeamupToken_NAME}");
 
 					httpClient.BaseAddress = new Uri(baseURL + calendarId + "/");
 					httpClient.DefaultRequestHeaders
@@ -79,16 +80,24 @@ public static class Program
 						.Add(TeamUpApiConstants.API_TOKEN_HEADER_NAME, teamupToken);
 				});
 
-				// Read appsettings.json into a model
-				var teamUpApiConfiguration = new TeamUpApiConfiguration();
+
+				// Read appsettings.json into appropriate models
 
 				// !!! BUG or FEATURE? !!! This Bind is uncapable of reading model annotations
 				// ex: [JsonPropertyName("name")]
 				// Probably because config is supposed to be concieved by the developer
 				// and everythig is supposed to be rightly named
-				context.Configuration.GetSection(TeamUpApiConstants.CONFIG_SECTION_NAME).Bind(teamUpApiConfiguration);
-
+				#region TeamUpApiConfiguration as a dependency
+				var teamUpApiConfiguration = new TeamUpApiConfiguration();
+				context.Configuration.GetSection(AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API).Bind(teamUpApiConfiguration);
 				services.AddSingleton(teamUpApiConfiguration);
+				#endregion
+
+				#region ExcelReportSpreadSheetConfiguration as a dependency
+				var excelReportSpreadSheetConfiguration = new ExcelReportSpreadSheetConfig();
+				context.Configuration.GetSection(AppsettingsConstants.CONFIG_SECTION_NAME_EXCEL_SPREADSHEET).Bind(excelReportSpreadSheetConfiguration);
+				services.AddSingleton(excelReportSpreadSheetConfiguration);
+				#endregion
 			});
 	}
 }

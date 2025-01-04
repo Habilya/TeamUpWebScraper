@@ -545,7 +545,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#endregion
 
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
+		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
 
 
 		// Act
@@ -595,7 +595,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#endregion
 
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
+		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
 
 
 		// Act

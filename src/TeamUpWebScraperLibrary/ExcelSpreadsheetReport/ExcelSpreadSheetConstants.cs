@@ -1,19 +1,7 @@
-﻿using ClosedXML.Excel;
-
-namespace TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
+﻿namespace TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 
 public static class ExcelSpreadSheetConstants
 {
-	public const string EXCELREPORT_FILENAME_TEMPLATE = "TeamUpEventsReport_{0}.xlsx";
-	public const string EXCELREPORT_FILENAME_DATE_FORMAT = "yyyy-MM-dd_hh-mm-ss";
-
-	public const string EXCELREPORT_USER_DEFAULT_FOLDER = @"\Downloads\";
-	public const string EXCELREPORT_SAVE_DIALOG_FILTER = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
-
-	public const string EXCELREPORT_SHEET_NAME = "Export";
-	public const int EXCELREPORT_HEADER_LINENUMBER = 1;
-	public const int EXCELREPORT_SIGNUPS_LIMIT = 60;
-	public static readonly XLColor HEADER_CELL_BACKGROUND_COLOR = XLColor.LightSkyBlue;
 
 	public const int SIGNUP_NAME_COLUMN_WIDTH = 25;
 	public const int DEFAULT_COLUMN_WIDTH = 15;

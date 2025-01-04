@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using System.Reflection;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
 
@@ -20,7 +21,7 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
+		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
 
 		var input = new List<Event>
 		{
@@ -142,7 +143,7 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
+		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
 		var dataMap = new Dictionary<int, Event>
 		{
 			{1, new Event{

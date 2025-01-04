@@ -6,8 +6,6 @@ public static class TeamUpApiConstants
 
 	public const string API_TOKEN_HEADER_NAME = "Teamup-Token";
 
-	public const string CONFIG_SECTION_NAME = "TeamUpAPI";
-
 	public const string CONFIG_BaseURL_NAME = "BaseURL";
 
 	public const string CONFIG_CalendarId_NAME = "CalendarId";
