@@ -1,4 +1,5 @@
-﻿using TeamUpWebScraperLibrary.DisplayGridView;
+﻿using ErrorOr;
+using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
@@ -76,13 +77,28 @@ public partial class Dashboard : Form
 			}
 			#endregion
 
-			#region Calling API
+			#region Calling API for Calendars
+			var subCalendarsRouteResponse = await _teamUpAPIService.GetSubcalendarsAsync();
+			if (subCalendarsRouteResponse.IsError)
+			{
+				PopupError(subCalendarsRouteResponse);
+				return;
+			}
+
+			var subCalendarsList = subCalendarsRouteResponse.Value.Subcalendars;
+			if (subCalendarsList is null || !subCalendarsList.Any())
+			{
+				MessageBox.Show("For some reason the event SubCalendars list is empty...", "SubCalendars List Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			#endregion
+
+			#region Calling API for Events
 			// At this point, Assuming the input Values have been validated
 			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync((DateTime)inputValues.DateFrom!, (DateTime)inputValues.DateTo!);
 			if (eventsRouteResponse.IsError)
 			{
-				var firstError = eventsRouteResponse.FirstError;
-				MessageBox.Show(firstError.Description, firstError.Code, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				PopupError(eventsRouteResponse);
 				return;
 			}
 
@@ -95,7 +111,7 @@ public partial class Dashboard : Form
 			#endregion
 
 			#region Transforming API response into reportable model object
-			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, _teamUpApiConfiguration.Calendars);
+			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, subCalendarsList);
 			#endregion
 
 			#region UI acttions depending on the result
@@ -118,6 +134,12 @@ public partial class Dashboard : Form
 			_logger.LogError(ex, "CallAPI_Click Button threw an unhandled exception.");
 			ShowUnhandledExceptionPopup();
 		}
+	}
+
+	private static void PopupError<T>(ErrorOr<T> eventsRouteResponse)
+	{
+		var firstError = eventsRouteResponse.FirstError;
+		MessageBox.Show(firstError.Description, firstError.Code, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 	}
 
 	private InputModel GetInputIntoModel()

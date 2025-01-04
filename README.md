@@ -46,7 +46,7 @@ Make sure to change the following values:
 - ✅ Add config section and model for Excel SpreadSheet provider
 - 🔲 Highlight in yellow Excel report lines that have words matching from array in config (Annule, Cancelled, Reporte)
 - 🔲 Write additional tests for GetEvents route of TeamUpAPI service
-- 🔲 Read Calendars from API route (not from mapping)  `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
+- ✅ Read Calendars from API route (not from mapping)  `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
 - 🔲 AutoMapper converting your model objects to Excel formats or from API responses to domain models
 - 🔲 UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
 - 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER

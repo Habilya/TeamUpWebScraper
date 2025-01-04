@@ -36,6 +36,13 @@ public class TeamUpAPIService : ITeamUpAPIService
 		return await ProcessApiResponse<EventResponse>(response);
 	}
 
+	public async Task<ErrorOr<SubcalendarResponse>> GetSubcalendarsAsync()
+	{
+		var response = await _httpClient.GetAsync($"subcalendars");
+
+		return await ProcessApiResponse<SubcalendarResponse>(response);
+	}
+
 	private async Task<ErrorOr<T>> ProcessApiResponse<T>(HttpResponseMessage response)
 	{
 		try

@@ -2,8 +2,18 @@
 
 namespace TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
+/// <summary>
+/// There are more fields, but i'm parsing only what is somewhat needed
+/// https://teamup.stoplight.io/docs/api/0f9f896800ffe-get-events-collection
+/// </summary>
 public class Event
 {
+	/// <summary>
+	/// The event-identifier is an integer for a non-recurring event. 
+	/// For recurring events we will return the individual instances according to the recurrence rule and possibly existing exceptions. 
+	/// The individual instances will have an identifier that consists of the event-ID followed by '-rid-' and the unix-timestamp of the start-time of the individual event.
+	/// So an instance of the recurring event 123 starting on Thu Apr 04 15:43:58 2024 UTC would have the ID 123-rid-1712245438
+	/// </summary>
 	public string Id { get; set; } = default!;
 	[JsonPropertyName("subcalendar_id")]
 	public long SubcalendarId { get; set; } = default!;

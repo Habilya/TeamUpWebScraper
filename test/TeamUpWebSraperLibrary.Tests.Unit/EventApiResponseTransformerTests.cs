@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using System.Reflection;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
 
@@ -21,7 +20,7 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
 
 		var input = new List<Event>
 		{
@@ -123,7 +122,7 @@ public class EventApiResponseTransformerTests
 		};
 
 		// Act
-		var actual = _sut.EventApiResponseToSpreadSheetLines(input, config.Calendars);
+		var actual = _sut.EventApiResponseToSpreadSheetLines(input, subCalendars);
 
 		// Assert
 		await Verify(actual, _verifySettings)
@@ -143,7 +142,6 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
 		var dataMap = new Dictionary<int, Event>
 		{
 			{1, new Event{
@@ -237,11 +235,13 @@ public class EventApiResponseTransformerTests
 
 		var eventData = dataMap[dataId];
 
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
+
 		// Private Method info obtained using REFLEXION
 		MethodInfo privateMethodGetEventId = typeof(EventApiResponseTransformer)
 			.GetMethod("GetEventId", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
-		object[] methodParameters = new object[2] { eventData, config.Calendars };
+		object[] methodParameters = new object[2] { eventData, subCalendars };
 
 
 		// Act

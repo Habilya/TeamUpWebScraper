@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using NSubstitute;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
 namespace TeamUpWebSraperLibrary.Tests.Unit;
 
@@ -42,5 +44,11 @@ public static class TestsHelper
 
 		DateTime.TryParseExact(dateAsString, DateInputFormat, null, System.Globalization.DateTimeStyles.None, out DateTime dateResult);
 		return dateResult;
+	}
+
+	public static List<Subcalendar> ReadSubCalendarsFromJSON(string subCalendarsJSONFullPath)
+	{
+		string json = File.ReadAllText(subCalendarsJSONFullPath);
+		return JsonConvert.DeserializeObject<List<Subcalendar>>(json)!;
 	}
 }

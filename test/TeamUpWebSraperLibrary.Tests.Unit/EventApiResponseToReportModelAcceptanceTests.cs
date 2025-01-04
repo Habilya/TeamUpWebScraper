@@ -545,12 +545,11 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#endregion
 
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
-
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
 
 		// Act
 		var apiResponse = await teamUpAPIService.GetEventsAsync(dateFromParam, dateToParam);
-		var actual = _sut.EventApiResponseToSpreadSheetLines(apiResponse.Value.Events, config.Calendars);
+		var actual = _sut.EventApiResponseToSpreadSheetLines(apiResponse.Value.Events, subCalendars);
 
 
 		// Assert
@@ -595,12 +594,11 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#endregion
 
 		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel<TeamUpApiConfiguration>(@"EventApiResponseTransformerTestFiles\TestsConfig.json", AppsettingsConstants.CONFIG_SECTION_NAME_TEAMUP_API)!;
-
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
 
 		// Act
 		var apiResponse = await teamUpAPIService.GetEventsAsync(dateFromParam, dateToParam);
-		var actual = _sut.EventApiResponseToSpreadSheetLines(apiResponse.Value.Events, config.Calendars);
+		var actual = _sut.EventApiResponseToSpreadSheetLines(apiResponse.Value.Events, subCalendars);
 
 
 		// Assert
