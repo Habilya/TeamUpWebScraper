@@ -44,7 +44,7 @@ Make sure to change the following values:
 - ✅ Use Verify & Verify.xUnit for some of the bigger expected objects in tests https://github.com/VerifyTests/Verify
 - ✅ Use FluentValidations for input validator
 - ✅ Add config section and model for Excel SpreadSheet provider
-- 🔲 Highlight in yellow Excel report lines that have words matching from array in config (Annule, Cancelled, Reporte)
+- ✅ Highlight in yellow Excel report lines that have words matching a RegEx in config (Annule, Cancelled, Reporte)
 - 🔲 Write additional tests for GetEvents route of TeamUpAPI service
 - ✅ Read Calendars from API route (not from mapping)  `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
 - 🔲 AutoMapper converting your model objects to Excel formats or from API responses to domain models

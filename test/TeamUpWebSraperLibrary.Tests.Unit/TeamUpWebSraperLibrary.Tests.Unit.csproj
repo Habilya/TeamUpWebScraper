@@ -56,9 +56,6 @@
     <None Update="EventApiResponseTransformerTestFiles\EventApiResponseTransformerTests.EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid.verified.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EventApiResponseTransformerTestFiles\TestsConfig.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="TeamUpApiServiceTestFiles\ShortEventsResponse.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

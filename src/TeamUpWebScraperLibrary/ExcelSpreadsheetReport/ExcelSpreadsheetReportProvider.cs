@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.Providers;
@@ -15,6 +16,8 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	private readonly IXLWorkBookFactory _xlWorkBookFactory;
 	private readonly ExcelReportSpreadSheetConfig _excelReportSpreadSheetConfig;
 
+	private readonly Regex? _highlightTitlePattern;
+
 	public ExcelSpreadsheetReportProvider(
 		ILoggerAdapter<ExcelSpreadsheetReportProvider> logger,
 		IDateTimeProvider dateTimeProvider,
@@ -25,6 +28,11 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		_dateTimeProvider = dateTimeProvider;
 		_xlWorkBookFactory = xlWorkBookFactory;
 		_excelReportSpreadSheetConfig = excelReportSpreadSheetConfig;
+
+		if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern))
+		{
+			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern);
+		}
 	}
 
 	public XLColor GetXLColorFromHtmlColor(string htmlColor)
@@ -152,8 +160,28 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_nombre_de_membres_ne_cessaires).Value = line.NbMembersNeeded;
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees).Value = line.PresencesConcat;
 
+			WatchTitle(ws, emptyRowNumber, line.Title);
 
 			emptyRowNumber++;
+		}
+	}
+
+	private void WatchTitle(IXLWorksheet ws, int emptyRowNumber, string title)
+	{
+		if (_highlightTitlePattern is null)
+		{
+			return;
+		}
+
+		if (string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml))
+		{
+			return;
+		}
+
+		if (_highlightTitlePattern.IsMatch(title))
+		{
+			ws.Range(emptyRowNumber, (int)ExcelReportHeadersColumns.Id, emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees)
+				.Style.Fill.BackgroundColor = GetXLColorFromHtmlColor(_excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml);
 		}
 	}
 }

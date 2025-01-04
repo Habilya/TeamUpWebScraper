@@ -1,8 +1,0 @@
-{
-	"TeamUpAPI": {
-		"TeamupToken": "[TeamupToken_NOT_USED_IN_TESTS]",
-		"BaseURL": "[BaseURL_NOT_USED_IN_TESTS]",
-		"CalendarId": "[CalendarId_NOT_USED_IN_TESTS]",
-		"TimeZone": "[TimeZone_NOT_USED_IN_TESTS]"
-	}
-}
