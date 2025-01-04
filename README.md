@@ -43,6 +43,7 @@ Make sure to change the following values:
 - ✅ Excel spreadsheet report provider
 - ✅ Use Verify & Verify.xUnit for some of the bigger expected objects in tests https://github.com/VerifyTests/Verify
 - ✅ Use FluentValidations for input validator
+- 🔲 Read Calendars not from mapping but from API route `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
 - 🔲 AutoMapper converting your model objects to Excel formats or from API responses to domain models
 - 🔲 UI Testing with Appium
 - 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
