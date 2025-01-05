@@ -545,7 +545,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#endregion
 
 		var _sut = new EventApiResponseTransformer();
-		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		// Act
 		var apiResponse = await teamUpAPIService.GetEventsAsync(dateFromParam, dateToParam);
@@ -594,7 +594,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#endregion
 
 		var _sut = new EventApiResponseTransformer();
-		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		// Act
 		var apiResponse = await teamUpAPIService.GetEventsAsync(dateFromParam, dateToParam);

@@ -56,12 +56,58 @@
     <None Update="EventApiResponseTransformerTestFiles\EventApiResponseTransformerTests.EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid.verified.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TeamUpApiServiceTestFiles\ShortEventsResponse.json">
+    <None Update="EventApiResponseTransformerTestFiles\GetSubcalendarsAsync_CleanJsonResult.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TeamUpApiServiceTestFiles\SubCalendars.json">
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_200EmptyJsonResult.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_200ShortEventsJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_400InvalidTokenJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_404CalendarNotFoundJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_404RouteNotExistsJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetSubcalendarsAsync_200OkJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetSubcalendarsAsync_403NoPermissionJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_200EmptyJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_200ShortEventsJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_400InvalidTokenJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_404CalendarNotFoundJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_404RouteNotExistsJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_OkButTextResponse_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetSubcalendarsAsync_200OkJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetSubcalendarsAsync_403NoPermissionJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TeamUpApiServiceFilesVerrified\" />
   </ItemGroup>
 
 </Project>

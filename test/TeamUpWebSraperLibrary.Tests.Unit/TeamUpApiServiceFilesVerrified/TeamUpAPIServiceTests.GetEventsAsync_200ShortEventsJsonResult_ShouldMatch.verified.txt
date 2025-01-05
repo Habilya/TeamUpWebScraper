@@ -1,0 +1,189 @@
+﻿{
+  IsError: false,
+  Errors: [
+    {
+      Code: ErrorOr.NoErrors,
+      Description: Error list cannot be retrieved from a successful ErrorOr.,
+      Type: Unexpected,
+      NumericType: 1
+    }
+  ],
+  Value: {
+    Events: [
+      {
+        Id: 1781416861,
+        SubcalendarId: 11798519,
+        SubcalendarIds: [
+          11798519
+        ],
+        Title: Compétition régionale Yoseikan Budo (arts martiaux),
+        Location: École Plein Soleil 9 Rue Genest Lévis G6J 1P5 QC,
+        Notes: <p>Repas et stationnement fournis</p>,
+        StartDate: 2024-12-01 09:00 -5,
+        EndDate: 2024-12-01 16:00 -5,
+        CreationDate: 2024-11-21 17:37:31 -5,
+        UpdateDate: 2024-11-24 07:32:20 -5,
+        SignupCount: 1,
+        Signups: [
+          {
+            Id: 3821288,
+            Name: Provost, Francois
+          }
+        ],
+        Custom: {
+          CateGorieCategory: [
+            service
+          ],
+          ContratProvincialContract: [
+            non_no
+          ],
+          NombreDeMembresNecessaires: 2
+        }
+      },
+      {
+        Id: 1759667815,
+        SubcalendarId: 9634218,
+        SubcalendarIds: [
+          9634218
+        ],
+        Title: Exercice sauvetage forestier,
+        Location:
+Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est
+Laval (Québec)  H7E 5G8,
+        Notes: <p>Exercice de sauvetage en milieu forestier</p>,
+        StartDate: 2024-12-01 09:00 -5,
+        EndDate: 2024-12-01 12:00 -5,
+        CreationDate: 2024-10-13 21:18:47 -4,
+        UpdateDate: 2024-12-01 06:28:41 -5,
+        SignupCount: 17,
+        Signups: [
+          {
+            Id: 3830570,
+            Name: Benoit Vachon PR971
+          },
+          {
+            Id: 3830397,
+            Name: Giuliana Rotella
+          },
+          {
+            Id: 3830089,
+            Name: Michael Benigno
+          },
+          {
+            Id: 3830086,
+            Name: Antonio Benigno
+          },
+          {
+            Id: 3829769,
+            Name: Rizk Sujaa SC 1002
+          },
+          {
+            Id: 3828460,
+            Name: Alexandra Tardif-Morency
+          },
+          {
+            Id: 3827248,
+            Name: Dany Levesque 971 Laval
+          },
+          {
+            Id: 3803990,
+            Name: Serge Pellerin PR 971
+          },
+          {
+            Id: 3791762,
+            Name: Yannick Gagnon (PR) 883
+          },
+          {
+            Id: 3781556,
+            Name: Renée Legault PR 971
+          },
+          {
+            Id: 3771504,
+            Name: Julie R SG971
+          },
+          {
+            Id: 3763438,
+            Name: Mylene Bessette pr 971
+          },
+          {
+            Id: 3757063,
+            Name: Martin Lee SG 971
+          },
+          {
+            Id: 3751965,
+            Name: Jacques Frédérick PR (SC)
+          },
+          {
+            Id: 3751963,
+            Name: Dany Houde PR (Prov)
+          },
+          {
+            Id: 3747445,
+            Name: Martin Chicoine
+          },
+          {
+            Id: 3747442,
+            Name: Marie-Ève Bélanger (PR) 971
+          }
+        ],
+        Custom: {
+          PrioritePriority2: [
+            normal
+          ],
+          CateGorieCategory: [
+            formation_training
+          ],
+          ResponsableInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+          ContratProvincialContract: [
+            non_no
+          ]
+        }
+      },
+      {
+        Id: 1776293830,
+        SubcalendarId: 9616459,
+        SubcalendarIds: [
+          9616459
+        ],
+        Title: Fan Club et Club 1909,
+        Location: 1225 st antoine,
+        Notes: <p>Date : 1 décembre 2024</p>,
+        StartDate: 2024-12-01 14:00 -5,
+        EndDate: 2024-12-01 19:30 -5,
+        CreationDate: 2024-11-12 15:53:57 -5,
+        UpdateDate: 2024-11-30 20:04:57 -5,
+        SignupCount: 4,
+        Signups: [
+          {
+            Id: 3830390,
+            Name: Charles-Etienne Pedneault (PR) 1002
+          },
+          {
+            Id: 3830388,
+            Name: Pascal Pedneault (PR) 1002
+          }
+        ],
+        Custom: {
+          Division: 452,
+          Client2: centre bell,
+          PrioritePriority2: [
+            normal
+          ],
+          CateGorieCategory: [
+            service
+          ],
+          ContratProvincialContract: [
+            non_no
+          ],
+          NombreDeMembresNecessaires: 4
+        }
+      }
+    ]
+  },
+  FirstError: {
+    Code: ErrorOr.NoFirstError,
+    Description: First error cannot be retrieved from a successful ErrorOr.,
+    Type: Unexpected,
+    NumericType: 1
+  }
+}

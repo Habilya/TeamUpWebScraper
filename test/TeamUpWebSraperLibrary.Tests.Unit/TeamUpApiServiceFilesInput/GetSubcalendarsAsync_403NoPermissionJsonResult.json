@@ -1,0 +1,7 @@
+{
+    "error": {
+        "id": "no_permission",
+        "title": "Aucune permission",
+        "message": "Vous n'avez pas les autorisations requises pour effectuer cette action. Cela peut être dû à une modification des autorisations de votre lien depuis que vous avez chargé le calendrier. Veuillez recharger le calendrier."
+    }
+}

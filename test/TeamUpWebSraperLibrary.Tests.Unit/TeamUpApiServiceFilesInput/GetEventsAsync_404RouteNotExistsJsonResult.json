@@ -1,0 +1,7 @@
+{
+    "error": {
+        "id": "not_found",
+        "title": "Invalid address, page not found",
+        "message": "This page does not exist. If you reached it by following a Teamup link let us know so we can fix it!"
+    }
+}

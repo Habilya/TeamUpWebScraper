@@ -20,7 +20,7 @@ public class EventApiResponseTransformerTests
 	{
 		// Arrange
 		var _sut = new EventApiResponseTransformer();
-		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		var input = new List<Event>
 		{
@@ -235,7 +235,7 @@ public class EventApiResponseTransformerTests
 
 		var eventData = dataMap[dataId];
 
-		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TeamUpApiServiceTestFiles\SubCalendars.json"));
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		// Private Method info obtained using REFLEXION
 		MethodInfo privateMethodGetEventId = typeof(EventApiResponseTransformer)

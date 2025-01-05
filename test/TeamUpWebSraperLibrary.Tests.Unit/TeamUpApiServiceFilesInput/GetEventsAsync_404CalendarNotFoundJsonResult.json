@@ -1,0 +1,7 @@
+{
+    "error": {
+        "id": "calendar_not_found",
+        "title": "Calendar not found",
+        "message": "The web address used is not addressing a known calendar. Please verify the web address."
+    }
+}

@@ -1,0 +1,18 @@
+﻿{
+  IsError: false,
+  Errors: [
+    {
+      Code: ErrorOr.NoErrors,
+      Description: Error list cannot be retrieved from a successful ErrorOr.,
+      Type: Unexpected,
+      NumericType: 1
+    }
+  ],
+  Value: {},
+  FirstError: {
+    Code: ErrorOr.NoFirstError,
+    Description: First error cannot be retrieved from a successful ErrorOr.,
+    Type: Unexpected,
+    NumericType: 1
+  }
+}

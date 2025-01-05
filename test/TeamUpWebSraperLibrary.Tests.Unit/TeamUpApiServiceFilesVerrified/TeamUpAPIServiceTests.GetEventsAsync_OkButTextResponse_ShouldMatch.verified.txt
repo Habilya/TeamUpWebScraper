@@ -1,0 +1,25 @@
+﻿{
+  IsError: true,
+  Errors: [
+    {
+      Code: BadRequest with error as text,
+      Description: Unhandled Exception was thrown while parsing response, more details in the log file.,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  ErrorsOrEmptyList: [
+    {
+      Code: BadRequest with error as text,
+      Description: Unhandled Exception was thrown while parsing response, more details in the log file.,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  FirstError: {
+    Code: BadRequest with error as text,
+    Description: Unhandled Exception was thrown while parsing response, more details in the log file.,
+    Type: Validation,
+    NumericType: 2
+  }
+}

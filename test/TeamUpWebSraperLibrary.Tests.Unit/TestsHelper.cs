@@ -5,6 +5,21 @@ using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
 namespace TeamUpWebSraperLibrary.Tests.Unit;
 
+public class CustomHttpMessageHandler : HttpMessageHandler
+{
+	private readonly HttpResponseMessage _response;
+
+	public CustomHttpMessageHandler(HttpResponseMessage response)
+	{
+		_response = response;
+	}
+
+	protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+	{
+		return Task.FromResult(_response);
+	}
+}
+
 public static class TestsHelper
 {
 	public static T? ReadConfigIntoModel<T>(string configRelativePath, string configSectionName)
@@ -46,8 +61,13 @@ public static class TestsHelper
 		return dateResult;
 	}
 
-	public static List<Subcalendar> ReadSubCalendarsFromJSON(string subCalendarsJSONFullPath)
+	public static List<Subcalendar> ReadSubCalendarsFromJSON(string? subCalendarsJSONFullPath = null)
 	{
+		if (string.IsNullOrWhiteSpace(subCalendarsJSONFullPath))
+		{
+			subCalendarsJSONFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"EventApiResponseTransformerTestFiles\GetSubcalendarsAsync_CleanJsonResult.json");
+		}
+
 		string json = File.ReadAllText(subCalendarsJSONFullPath);
 		return JsonConvert.DeserializeObject<List<Subcalendar>>(json)!;
 	}
