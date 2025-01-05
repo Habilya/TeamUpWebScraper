@@ -4,7 +4,6 @@ using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
@@ -20,7 +19,6 @@ public partial class Dashboard : Form
 	private readonly ITeamUpAPIService _teamUpAPIService;
 	private readonly IEventApiResponseTransformer _eventApiResponseTransformer;
 	private readonly IExcelSpreadsheetReportProvider _excelSpreadsheetReportProvider;
-	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;
 	private readonly IDisplayGridViewProvider _displayGridViewProvider;
 
 
@@ -32,7 +30,6 @@ public partial class Dashboard : Form
 		ITeamUpAPIService teamUpAPIService,
 		IEventApiResponseTransformer eventApiResponseTransformer,
 		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider,
-		TeamUpApiConfiguration teamUpApiConfiguration,
 		IDisplayGridViewProvider displayGridViewProvider)
 	{
 		_logger = logger;
@@ -40,7 +37,6 @@ public partial class Dashboard : Form
 		_teamUpAPIService = teamUpAPIService;
 		_eventApiResponseTransformer = eventApiResponseTransformer;
 		_excelSpreadsheetReportProvider = excelSpreadsheetReportProvider;
-		_teamUpApiConfiguration = teamUpApiConfiguration;
 		_displayGridViewProvider = displayGridViewProvider;
 
 		InitializeComponent();
