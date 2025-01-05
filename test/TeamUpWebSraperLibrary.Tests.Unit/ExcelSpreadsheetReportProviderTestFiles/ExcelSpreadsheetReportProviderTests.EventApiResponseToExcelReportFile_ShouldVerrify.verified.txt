@@ -1,0 +1,2279 @@
+﻿[
+  {
+    Id: DIV-240901-1545-0094,
+    Title: Festival Hilarium,
+    Location: Parc Jacques Cartier,
+    Notes: <p>festival de humor</p>,
+    StartDate: 2024-09-01T15:45:00-04:00,
+    EndDate: 2024-09-01T23:00:00-04:00,
+    CreationDate: 2024-06-11T16:32:35-04:00,
+    UpdateDate: 2024-09-01T15:26:02-04:00,
+    SignupCount: 6,
+    Signups: [
+      mohamedabidi82,
+      Gaetan Lamarre,
+      Emilie Dionne,
+      Stéphanie Déragon,
+      Franck,
+      Pamela
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 3,
+    PresencesConcat: mohamedabidi82 //Gaetan Lamarre //Emilie Dionne //Stéphanie Déragon //Franck //Pamela
+  },
+  {
+    Id: DIV-240901-1630-0062,
+    Title: Fierté Québec (ancienne fête arc-en-ciel),
+    Location: Place D'Youville Rue Saint-Jean Québec QC G1R 3P1,
+    Notes:
+<p> Festival socio-artistique de la <em>fierté</em> 2SLGBTQ+</p>
+<p>Stationnements et repas non inclus, gardez vos reçues pour remboursement</p>
+<p>Tente fournis par le client </p>,
+    StartDate: 2024-09-01T16:30:00-04:00,
+    EndDate: 2024-09-01T23:30:00-04:00,
+    CreationDate: 2024-06-14T10:52:28-04:00,
+    UpdateDate: 2024-08-28T14:28:21-04:00,
+    SignupCount: 1,
+    Signups: [
+      Nicolas Arnau
+    ],
+    Client2: Box expériences,
+    Division: 0062,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Nicolas Arnau
+  },
+  {
+    Id: PB-240901-1830-0971,
+    Title: Annulé PB Arcangel & De La Ghetto,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-01T18:30:00-04:00,
+    EndDate: 2024-09-01T23:45:00-04:00,
+    CreationDate: 2024-07-26T09:08:45-04:00,
+    UpdateDate: 2024-08-23T13:21:10-04:00,
+    SignupCount: 3,
+    Signups: [
+      Steve Sirois,
+      Ethan Sirois - PR 971,
+      Théo Mandamiento (PR) 452
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Steve Sirois //Ethan Sirois - PR 971 //Théo Mandamiento (PR) 452,
+    LineHighLightColor: #FFFF00
+  },
+  {
+    Id: DIV-240902-1900-1002,
+    Title: Rencontre divisionnaire mensuelle,
+    Location: 20 Rue Pierre-Boucher, Boucherville, QC J4B 5A4,
+    Notes: <p>Rencontre divisionnaire mensuelle au local </p>,
+    StartDate: 2024-09-02T19:00:00-04:00,
+    EndDate: 2024-09-02T20:30:00-04:00,
+    CreationDate: 2024-04-30T11:22:56-04:00,
+    UpdateDate: 2024-11-30T04:13:27-05:00,
+    SignupCount: 2,
+    Signups: [
+      Eric Theriault (Pr 1002),
+      Benjamin Rose (PR) 1002
+    ],
+    Division: 1002,
+    Priority: normal,
+    Category: reunion_meeting,
+    ResponsibleInCharge: Xavier Dufresne 514-241-8122,
+    ProvincialContract: non_no,
+    PresencesConcat: Eric Theriault (Pr 1002) //Benjamin Rose (PR) 1002
+  },
+  {
+    Id: PB-240904-1830-0971,
+    Title: ANNULÉ PB Grupo Frontera,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-04T18:30:00-04:00,
+    EndDate: 2024-09-04T23:45:00-04:00,
+    CreationDate: 2024-05-20T20:40:03-04:00,
+    UpdateDate: 2024-09-03T09:46:49-04:00,
+    SignupCount: 10,
+    Signups: [
+      Yannick gagnon,
+      Olivier Robert 971 PR,
+      Martin Lee SG 971,
+      Serge Pellerin PR 971,
+      Kristie Lam(SG-M) 452,
+      Jaiden Tamakuwala,
+      Dany Levesque,
+      Benoit Vachon PR971,
+      Steve Sirois,
+      Ethan Sirois - PR 971
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Yannick gagnon //Olivier Robert 971 PR //Martin Lee SG 971 //Serge Pellerin PR 971 //Kristie Lam(SG-M) 452 //Jaiden Tamakuwala //Dany Levesque //Benoit Vachon PR971 //Steve Sirois //Ethan Sirois - PR 971
+  },
+  {
+    Id: DIV-240905-1900-0971,
+    Title: Rencontre Jeunesse et développement,
+    Location: CC Philémon-Gascon, 2830 rang Saint-Elzéar Est,
+    Notes: ,
+    StartDate: 2024-09-05T19:00:00-04:00,
+    EndDate: 2024-09-05T22:00:00-04:00,
+    CreationDate: 2024-08-16T10:41:15-04:00,
+    UpdateDate: 2024-09-05T07:58:51-04:00,
+    SignupCount: 11,
+    Signups: [
+      Yannick gagnon,
+      Benoit Vachon PR971,
+      Jean-Luc Renaud,
+      Hélène Caron - 971 PR,
+      Daniel Calvé Pr-971,
+      Martin Lee SG 971,
+      Steve Sirois,
+      Marie-Ève Bélanger PR 971,
+      Olivier Robert 971 PR,
+      martin chicoine,
+      Serge Pellerin PR 971
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: reunion_meeting,
+    ResponsibleInCharge: Marie-Ève Bélanger Marie-Eve.Belanger@asjquebec.ca,
+    ProvincialContract: non_no,
+    PresencesConcat: Yannick gagnon //Benoit Vachon PR971 //Jean-Luc Renaud //Hélène Caron - 971 PR //Daniel Calvé Pr-971 //Martin Lee SG 971 //Steve Sirois //Marie-Ève Bélanger PR 971 //Olivier Robert 971 PR //martin chicoine //Serge Pellerin PR 971
+  },
+  {
+    Id: DIV-240907-1000-1002,
+    Title: voiture ancienne,
+    Location: 1075 lionel-daunais boucherville,
+    Notes: <p>show de voitures anciennes devant le centre multifonctionnel Francine-Gadbois a Boucherville. </p>,
+    StartDate: 2024-09-07T10:00:00-04:00,
+    EndDate: 2024-09-07T16:30:00-04:00,
+    CreationDate: 2024-07-06T17:51:04-04:00,
+    UpdateDate: 2024-09-01T15:53:55-04:00,
+    SignupCount: 3,
+    Signups: [
+      Abidi,
+      Charles-Etienne Pedneault (PR) 1002,
+      Eric Theriault
+    ],
+    Client2: ville de boucherville,
+    Division: 1002,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Éric Thériault 514-983-3170,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 4,
+    PresencesConcat: Abidi //Charles-Etienne Pedneault (PR) 1002 //Eric Theriault
+  },
+  {
+    Id: DIV-240907-1100-0062,
+    Title: Lévis interculturelle,
+    Location: Quai Paquet 6075 Rue Saint-Laurent Lévis G6V 3P5 Québec,
+    Notes:
+<p>La tente doit être fourni par Ambulance Saint-Jean</p>
+<p>Repas et stationnement fournis </p>,
+    StartDate: 2024-09-07T11:00:00-04:00,
+    EndDate: 2024-09-07T17:00:00-04:00,
+    CreationDate: 2024-07-24T17:11:10-04:00,
+    UpdateDate: 2024-09-03T20:36:46-04:00,
+    SignupCount: 1,
+    Signups: [
+      Ken Harding PRM 0062
+    ],
+    Division: 0062,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Ken Harding PRM 0062
+  },
+  {
+    Id: DIV-240907-1330-0280,
+    Title: Concert d’orgue,
+    Location: Monastère Précieux Sang 2520 Girouard Ouest,
+    Notes: <p>Concert d’orgue</p>,
+    StartDate: 2024-09-07T13:30:00-04:00,
+    EndDate: 2024-09-07T16:00:00-04:00,
+    CreationDate: 2024-08-27T10:21:27-04:00,
+    UpdateDate: 2024-09-07T15:41:56-04:00,
+    SignupCount: 1,
+    Signups: [
+      Claudine Morisseau PR 280
+    ],
+    Client2: Centre d’histoire de St-Hyacinthe,
+    Division: 0280,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Claudine Morisseau PR 280
+  },
+  {
+    Id: DIV-240907-1500-0158,
+    Title: Voltigeurs,
+    Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
+    Notes: <p>venez encourager nos rouges!!! </p>,
+    StartDate: 2024-09-07T15:00:00-04:00,
+    EndDate: 2024-09-07T19:00:00-04:00,
+    CreationDate: 2024-08-05T11:32:09-04:00,
+    UpdateDate: 2024-08-24T07:36:02-04:00,
+    SignupCount: 2,
+    Signups: [
+      Caroline Girardot -SG 158,
+      Stephane Larocque PRM 158
+    ],
+    Client2: Les Voltigeurs,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Caroline Girardot -SG 158 //Stephane Larocque PRM 158
+  },
+  {
+    Id: PB-240907-1830-0971,
+    Title: PB Annulé Davido,
+    Location: ,
+    Notes: <p>Ouverture des inscriptions le 19 avril à 8h</p>,
+    StartDate: 2024-09-07T18:30:00-04:00,
+    EndDate: 2024-09-07T23:45:00-04:00,
+    CreationDate: 2024-04-18T10:23:45-04:00,
+    UpdateDate: 2024-07-16T18:22:21-04:00,
+    SignupCount: 20,
+    Signups: [
+      Ethan Sirois - PR 971,
+      Martin Lee,
+      Thibault T. Becquaert (PR) PROV,
+      Francis Dessureault-Vinette PR 971,
+      Nathan Lemelin SG 971,
+      Guillaume Benoit-Gagné PR 971,
+      Yannick gagnon,
+      Steve Sirois,
+      mylene bessette,
+      Evens-Edson MAURICE,
+      Sarah Tessier PR (883),
+      Suzie Gingras (SG) 452,
+      Erick Phiri,
+      Hélène Caron Pr 971,
+      Stéphanie Bernier Benoit (PR) 452,
+      Mylene Binette (Pr) 280,
+      Dany Levesque,
+      Precious Tsikwa,
+      Serge Pellerin 971 PR,
+      Marie-Ève Bélanger SG 971
+    ],
+    Division: 0971,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Ethan Sirois - PR 971 //Martin Lee //Thibault T. Becquaert (PR) PROV //Francis Dessureault-Vinette PR 971 //Nathan Lemelin SG 971 //Guillaume Benoit-Gagné PR 971 //Yannick gagnon //Steve Sirois //mylene bessette //Evens-Edson MAURICE //Sarah Tessier PR (883) //Suzie Gingras (SG) 452 //Erick Phiri //Hélène Caron Pr 971 //Stéphanie Bernier Benoit (PR) 452 //Mylene Binette (Pr) 280 //Dany Levesque //Precious Tsikwa //Serge Pellerin 971 PR //Marie-Ève Bélanger SG 971,
+    LineHighLightColor: #FFFF00
+  },
+  {
+    Id: DIV-240907-1830-0280,
+    Title: Concert d’orgue,
+    Location: Monastère Précieux Sang 2520 Girouard Ouest,
+    Notes: <p>Concert d’orgue</p>,
+    StartDate: 2024-09-07T18:30:00-04:00,
+    EndDate: 2024-09-07T20:30:00-04:00,
+    CreationDate: 2024-08-27T10:22:21-04:00,
+    UpdateDate: 2024-09-07T15:42:10-04:00,
+    SignupCount: 1,
+    Signups: [
+      Dany Robert
+    ],
+    Client2: Centre d’histoire de St-Hyacinthe,
+    Division: 0280,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Dany Robert
+  },
+  {
+    Id: DIV-240908-1300-0280,
+    Title: Concert d’orgue,
+    Location: Chapel Séminaire 650Girouard Est,
+    Notes: <p>Concert d’orgue</p>,
+    StartDate: 2024-09-08T13:00:00-04:00,
+    EndDate: 2024-09-08T17:00:00-04:00,
+    CreationDate: 2024-08-27T10:23:45-04:00,
+    UpdateDate: 2024-09-06T03:22:06-04:00,
+    SignupCount: 2,
+    Signups: [
+      Dany Robert,
+      Claudine Morisseau PR 280
+    ],
+    Client2: Centre d’histoire de St-Hyacinthe,
+    Division: 0280,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Dany Robert //Claudine Morisseau PR 280
+  },
+  {
+    Id: DIV-240908-1345-0094,
+    Title: Ceremonie pour veterans,
+    Location: 2685 King O (Hotel Delta),
+    Notes: <p>Ceremonie pour les veterans</p>,
+    StartDate: 2024-09-08T13:45:00-04:00,
+    EndDate: 2024-09-08T17:00:00-04:00,
+    CreationDate: 2024-09-01T11:42:13-04:00,
+    UpdateDate: 2024-09-05T21:38:10-04:00,
+    SignupCount: 1,
+    Signups: [
+      Lucas Durocher PR 309
+    ],
+    Client2: les veterans,
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 1,
+    PresencesConcat: Lucas Durocher PR 309
+  },
+  {
+    Id: DIV-240909-0745-0094,
+    Title: ceremonie pour veterans,
+    Location: 2685 King O (Hotel Delta),
+    Notes: <p>ceremonie pour les veterans</p>,
+    StartDate: 2024-09-09T07:45:00-04:00,
+    EndDate: 2024-09-09T16:00:00-04:00,
+    CreationDate: 2024-09-01T11:45:01-04:00,
+    UpdateDate: 2024-09-04T16:54:49-04:00,
+    SignupCount: 2,
+    Signups: [
+      Lucas Durocher PR 309,
+      Stéphanie Déragon
+    ],
+    Client2: les veterans,
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 1,
+    PresencesConcat: Lucas Durocher PR 309 //Stéphanie Déragon
+  },
+  {
+    Id: DIV-240910-0745-0094,
+    Title: Ceremonie pour veterans,
+    Location: 2685 King O (Hotel Delta),
+    Notes: <p>ceremonie pour les veterans</p>,
+    StartDate: 2024-09-10T07:45:00-04:00,
+    EndDate: 2024-09-10T12:00:00-04:00,
+    CreationDate: 2024-09-01T11:47:21-04:00,
+    UpdateDate: 2024-09-05T21:38:30-04:00,
+    SignupCount: 1,
+    Signups: [
+      Pamela
+    ],
+    Client2: les veterans,
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 1,
+    PresencesConcat: Pamela
+  },
+  {
+    Id: DIV-240910-1850-0452,
+    Title: Formation continue avec le 51e Ambulance de Campagne (PR seulement),
+    Location: 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion,
+    Notes:
+<p><strong>Dans le cadre du partenariat avec le 51e Ambulance de Campagne, nos PR pourront participer à certaines session de perfectionnement avec les Médics de l'Armée.</strong>  </p>
+<p><strong>Détails :</strong></p>
+<ol>
+<li>Il faudra être là à 18h50 pour commencer à l'heure.</li>
+<li>Ce sera en uniforme chemise ASJ complet comme en service, cela inclut donc les équipements de base (montres, de quoi prendre des notes, etc). Pour l'équipement de premier soin, comme d'habitude, il sera fourni.</li>
+<li>Cette soirée sera consacrée au protocole MARCH, similaire à notre CABCDE.</li>
+<li>Un instructeur PR d'ASJ sera présent pour assurer le suivi de nos protocoles ASJ.</li>
+<li>Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.</li>
+</ol>,
+    StartDate: 2024-09-10T18:50:00-04:00,
+    EndDate: 2024-09-10T20:30:00-04:00,
+    CreationDate: 2024-09-06T09:00:39-04:00,
+    UpdateDate: 2024-09-06T17:06:49-04:00,
+    SignupCount: 8,
+    Signups: [
+      Anik Boudreau (PR) 452,
+      Jean-René Guilbault (PR) 452,
+      Léonard Zabitsky (PR-J) 452,
+      Florian Caraud (PR) 452,
+      Benjamin Pomerleau (PR) 452,
+      Mathieu Keromnes (PR) 452,
+      Sylvie Lau (PR) 452,
+      Tristan Mercier (PR) 452
+    ],
+    Division: 0452,
+    Priority: normal,
+    Category: formation_training,
+    ResponsibleInCharge: Tristan Mercier | 438 889 0422 | tristan.mercier@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 8,
+    PresencesConcat: Anik Boudreau (PR) 452 //Jean-René Guilbault (PR) 452 //Léonard Zabitsky (PR-J) 452 //Florian Caraud (PR) 452 //Benjamin Pomerleau (PR) 452 //Mathieu Keromnes (PR) 452 //Sylvie Lau (PR) 452 //Tristan Mercier (PR) 452
+  },
+  {
+    Id: DIV-240911-0745-0094,
+    Title: ceremonie pour veterans,
+    Location: 2685 King O ( Hotel Delta),
+    Notes: <p>ceremonie pour les veterans</p>,
+    StartDate: 2024-09-11T07:45:00-04:00,
+    EndDate: 2024-09-11T17:00:00-04:00,
+    CreationDate: 2024-09-01T11:49:23-04:00,
+    UpdateDate: 2024-09-05T12:32:55-04:00,
+    SignupCount: 2,
+    Signups: [
+      Pamela,
+      Lucas Durocher PR 309
+    ],
+    Client2: les veterans,
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 1,
+    PresencesConcat: Pamela //Lucas Durocher PR 309
+  },
+  {
+    Id: DIV-240912-1600-0280,
+    Title: Happening de la rentrée,
+    Location: Rue Sicotte devant l’ITAQ,
+    Notes: <p>Spectacle pour la rentrée </p>,
+    StartDate: 2024-09-12T16:00:00-04:00,
+    EndDate: 2024-09-12T22:00:00-04:00,
+    CreationDate: 2024-07-02T11:43:46-04:00,
+    UpdateDate: 2024-07-12T18:36:29-04:00,
+    SignupCount: 2,
+    Signups: [
+      Laurie Gauthier SG 280,
+      Marc-Olivier Laplante PR 280
+    ],
+    Client2: St-Hyacinthe technopole,
+    Division: 0280,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Laurie Gauthier SG 280 //Marc-Olivier Laplante PR 280
+  },
+  {
+    Id: DIV-240913-1300-0062,
+    Title: Festival FONO Québec,
+    Location: Université Laval,
+    Notes:
+<p>Informations à venir</p>
+<p></p>,
+    StartDate: 2024-09-13T13:00:00-04:00,
+    EndDate: 2024-09-13T23:00:00-04:00,
+    CreationDate: 2024-08-30T09:41:52-04:00,
+    UpdateDate: 2024-09-04T09:03:31-04:00,
+    SignupCount: 8,
+    Signups: [
+      Audrey Fournier 16h,
+      Anne-Julie,
+      Tania Beauchamp,
+      Nancy Legris,
+      Anne-Marie Goyette,
+      Charles-Antoine Girard (PR-062) ( 16-23h),
+      Michel Beauchemin,
+      Elizabeth Lemay (PR)
+    ],
+    Division: 0062,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 20,
+    PresencesConcat: Audrey Fournier 16h //Anne-Julie //Tania Beauchamp //Nancy Legris //Anne-Marie Goyette //Charles-Antoine Girard (PR-062) ( 16-23h) //Michel Beauchemin //Elizabeth Lemay (PR)
+  },
+  {
+    Id: DIV-240913-1630-0971,
+    Title: Lumen,
+    Location: 4950 Rue Louis-B.-Mayer Laval H7P 0H7 QC,
+    Notes:
+<p></p>
+<p></p>
+<p> </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>Inauguration agrandissement Lumen </p>,
+    StartDate: 2024-09-13T16:30:00-04:00,
+    EndDate: 2024-09-13T20:30:00-04:00,
+    CreationDate: 2024-07-16T16:05:31-04:00,
+    UpdateDate: 2024-09-03T07:30:09-04:00,
+    SignupCount: 3,
+    Signups: [
+      Lea- Premier Évènement,
+      Helene Caron - PR 971,
+      Serge Pellerin PR 971
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Lea- Premier Évènement //Helene Caron - PR 971 //Serge Pellerin PR 971
+  },
+  {
+    Id: CB-240913-1730-0452,
+    Title: Judas Priest,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/ETCby7TRo1xCmncZ3hpSVXQBq2KIbUzUDrH7pzJGhZXbiA?e=5QTfjE" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-13T17:30:00-04:00,
+    EndDate: 2024-09-13T23:45:00-04:00,
+    CreationDate: 2024-07-29T09:46:08-04:00,
+    UpdateDate: 2024-09-23T06:13:56-04:00,
+    SignupCount: 15,
+    Signups: [
+      Helene ??? (??) ??,
+      Thomas Merlin (PR) 452 (18h30),
+      Agnès Merlin (SG) 452 (18h30),
+      Jean-René Guilbault (PR) 452,
+      Anik Boudreau (PR) 452,
+      Thibault T. Becquaert (PR) PROV,
+      Rosalie Lajeunesse (PR) 1002,
+      Félix Ravary (PR) 1002,
+      Yichen wu (PR) 452 (18h),
+      Xavier Dufresne (PR) 1002,
+      Eric Theriault (PR) 1002,
+      Valentina Barboza (PR) 1002,
+      Benjamin Lapointe (PR-M) 452,
+      Christophe Loranger (PR) 1002,
+      John Mercier (PR) 452
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Helene ??? (??) ?? //Thomas Merlin (PR) 452 (18h30) //Agnès Merlin (SG) 452 (18h30) //Jean-René Guilbault (PR) 452 //Anik Boudreau (PR) 452 //Thibault T. Becquaert (PR) PROV //Rosalie Lajeunesse (PR) 1002 //Félix Ravary (PR) 1002 //Yichen wu (PR) 452 (18h) //Xavier Dufresne (PR) 1002 //Eric Theriault (PR) 1002 //Valentina Barboza (PR) 1002 //Benjamin Lapointe (PR-M) 452 //Christophe Loranger (PR) 1002 //John Mercier (PR) 452
+  },
+  {
+    Id: DIV-240913-1815-0094,
+    Title: Pre saison Phoenix,
+    Location: Palais des Sports,
+    Notes: ,
+    StartDate: 2024-09-13T18:15:00-04:00,
+    EndDate: 2024-09-13T22:00:00-04:00,
+    CreationDate: 2024-05-27T13:27:18-04:00,
+    UpdateDate: 2024-08-22T09:11:02-04:00,
+    SignupCount: 1,
+    Signups: [
+      Pamela
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Alain Fortin,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 1,
+    PresencesConcat: Pamela
+  },
+  {
+    Id: DIV-240914-0830-0452,
+    Title: Exercice Médic Rampamt,
+    Location: 51e Ambulance de Campagne, 4895 Rue de Bullion, Montréal,
+    Notes:
+<p>1. Le 51e Ambulance de campagne tiendra son exercice annuel, Ex MEDIC RAMPANT à Farnham du 13-15 Sep 2024. Le 51e nous propose d'avoir 8 participants pour jouer des blessés pendant les simulations.</p>
+<p>2. Voici comment les participants d'ASJ pourraient être utilisés :<br>
+a. Participants dans les plateaux de révision de contrôle hémorragique<br>
+b. Participants dans le plateau d'extraction d'urgence<br>
+c. Leçon de théorie de search and rescue<br>
+d. En tant que patient/figurant lors de scénarios.</p>
+<p>3. Le point de réunion sera au 51e Ambulance de Campagne pour 06:15 le matin du 14 septembre 2024 en uniforme ASJ avec vêtements chauds pour l'extérieur. (Apportez des vêtements civils pouvant être salis, déchirés, etc. dans un sac). Je serai en charge de vous transporter à la base de Farnham et de vous ramener le soir avant l'heure du souper. Le dîner sera fourni.</p>,
+    StartDate: 2024-09-14T08:30:00-04:00,
+    EndDate: 2024-09-14T19:15:00-04:00,
+    CreationDate: 2024-08-20T20:03:02-04:00,
+    UpdateDate: 2024-09-11T20:01:49-04:00,
+    SignupCount: 8,
+    Signups: [
+      Pedneault Pascal (PR) 1002,
+      Léonard Zabitsky (PR-J) 452,
+      Olivia Pilon (SG-M) 452,
+      Kristina Lam (PR) 452,
+      Valentina Barboza (PR) 1002,
+      Christophe Loranger (PR) 1002,
+      Rosalie Lajeunesse (PR) 1002,
+      Tristan Mercier (PR) 452
+    ],
+    Client2: 51e Ambulance de Campagne,
+    Division: 0452,
+    Priority: normal,
+    Category: formation_training,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 8,
+    PresencesConcat: Pedneault Pascal (PR) 1002 //Léonard Zabitsky (PR-J) 452 //Olivia Pilon (SG-M) 452 //Kristina Lam (PR) 452 //Valentina Barboza (PR) 1002 //Christophe Loranger (PR) 1002 //Rosalie Lajeunesse (PR) 1002 //Tristan Mercier (PR) 452
+  },
+  {
+    Id: DIV-240914-0945-0094,
+    Title: Portes ouvertes travaux public,
+    Location: 555 rue des grandes fourches sud,
+    Notes: <p>journee portes ouvertes</p>,
+    StartDate: 2024-09-14T09:45:00-04:00,
+    EndDate: 2024-09-14T16:00:00-04:00,
+    CreationDate: 2024-09-04T16:54:19-04:00,
+    UpdateDate: 2024-09-13T08:40:47-04:00,
+    SignupCount: 2,
+    Signups: [
+      Mario St-François,
+      Pamela
+    ],
+    Client2: ville de sherbrooke,
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Mario St-François //Pamela
+  },
+  {
+    Id: CB-240914-1030-0452,
+    Title: HOCKEY CANADIENS FACE-À-FACE DES ESPOIRS 2024,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EXI_HlEyILdLgCB6OLhrcsIBjAuxNMTDfdy9A4qK6hzv6Q?e=RViydM" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-14T10:30:00-04:00,
+    EndDate: 2024-09-14T16:15:00-04:00,
+    CreationDate: 2024-07-29T09:47:29-04:00,
+    UpdateDate: 2024-09-14T12:13:29-04:00,
+    SignupCount: 8,
+    Signups: [
+      Miguel Tejeda (PR) 452 (12h15),
+      Thibault T. Becquaert (PR) PROV,
+      Justin Mah (PR-M) 452,
+      Martin Chicoine (SG) 452,
+      Scarbo Chan (PR) 452,
+      Kristie Lam (SG-M) 452,
+      Jaiden Tamakuwala (SG-M)452,
+      Justin Goldberg (SG-M) 452
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Miguel Tejeda (PR) 452 (12h15) //Thibault T. Becquaert (PR) PROV //Justin Mah (PR-M) 452 //Martin Chicoine (SG) 452 //Scarbo Chan (PR) 452 //Kristie Lam (SG-M) 452 //Jaiden Tamakuwala (SG-M)452 //Justin Goldberg (SG-M) 452
+  },
+  {
+    Id: DIV-240914-1130-0452,
+    Title: Fête de quartier de Saint-Henri,
+    Location: Parc Sir-George-Étienne-Cartier,
+    Notes:
+<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR pour 1 SG inscrit).</strong> </p>
+<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
+<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
+<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong> </p>
+<p></p>
+<p>Nombre de personnes attendues : 300 à 500 personnes.</p>
+<p>Repas fournis : BBQ </p>
+<p>Stationnement sur place</p>
+<p>Événement familiale avec activités divers sur place.</p>
+<p></p>
+<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+    StartDate: 2024-09-14T11:30:00-04:00,
+    EndDate: 2024-09-14T16:00:00-04:00,
+    CreationDate: 2024-06-27T16:31:22-04:00,
+    UpdateDate: 2024-09-23T13:21:03-04:00,
+    SignupCount: 2,
+    Signups: [
+      Florian Caraud (PR) 452,
+      Sylvie Lau (PR) 452
+    ],
+    Client2: CDC Solidarité Saint-Henri,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Stephanie Bernier Benoit - Stephanie.bernier-benoit@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Florian Caraud (PR) 452 //Sylvie Lau (PR) 452
+  },
+  {
+    Id: DIV-240914-1300-0062,
+    Title: Festival FONO Québec,
+    Location: Université Laval,
+    Notes: <p>Informations à venir </p>,
+    StartDate: 2024-09-14T13:00:00-04:00,
+    EndDate: 2024-09-14T23:00:00-04:00,
+    CreationDate: 2024-06-24T01:26:52-04:00,
+    UpdateDate: 2024-09-07T15:44:10-04:00,
+    SignupCount: 7,
+    Signups: [
+      Louise Michaud,
+      Jeff Simard,
+      Anne-Julie,
+      Audrey Fournier PR 17h,
+      Anne-Marie Goyette,
+      Michel Beauchemin,
+      Elizabeth Lemay (PR) 17h
+    ],
+    Division: 0062,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 20,
+    PresencesConcat: Louise Michaud //Jeff Simard //Anne-Julie //Audrey Fournier PR 17h //Anne-Marie Goyette //Michel Beauchemin //Elizabeth Lemay (PR) 17h
+  },
+  {
+    Id: PB-240914-1830-0971,
+    Title: PB THE AUSTRALIAN PINK FLOYD SHOW,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-14T18:30:00-04:00,
+    EndDate: 2024-09-14T23:45:00-04:00,
+    CreationDate: 2023-12-01T14:13:12-05:00,
+    UpdateDate: 2024-08-28T19:14:25-04:00,
+    SignupCount: 14,
+    Signups: [
+      Steve Sirois,
+      Walton Chin PR 0452,
+      Charles Maillé Pr 971,
+      Jessica Roy (PRM) 1002,
+      Romain Kowalski (SG) 971,
+      Dominic Pelletier (Nouveau),
+      Benoît Lacassagne (SG-M) 452,
+      Steve Stockless PR 883,
+      Ghiles Loubar (PR) 1002,
+      Dany Levesque,
+      Eric Theriault (Pr 1002),
+      Helene Mansano Theriault (sg1002) Besoin Mentor,
+      Liette Massé PR  1002,
+      mylene bessette
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 10,
+    PresencesConcat: Steve Sirois //Walton Chin PR 0452 //Charles Maillé Pr 971 //Jessica Roy (PRM) 1002 //Romain Kowalski (SG) 971 //Dominic Pelletier (Nouveau) //Benoît Lacassagne (SG-M) 452 //Steve Stockless PR 883 //Ghiles Loubar (PR) 1002 //Dany Levesque //Eric Theriault (Pr 1002) //Helene Mansano Theriault (sg1002) Besoin Mentor //Liette Massé PR  1002 //mylene bessette
+  },
+  {
+    Id: DIV-240915-0915-1002,
+    Title: Circuit bleu,
+    Location: Parc national des Iles de Boucherville55: Île Sainte-Marguerite, Boucherville, J4B 8R2, Québec,
+    Notes: <p>Maximum 200 personnes sur places. Repas et parking disponible sur places. C'est une journée de pagaie pour des amateurs. Dans le but de ramasser des fonds. Un lieu et une tente sera fourni par l'organisatuer.</p>,
+    StartDate: 2024-09-15T09:15:00-04:00,
+    EndDate: 2024-09-15T18:30:00-04:00,
+    CreationDate: 2024-09-12T13:18:49-04:00,
+    UpdateDate: 2024-09-15T01:44:12-04:00,
+    SignupCount: 3,
+    Signups: [
+      Helene Mansano Theriault (Prm1002),
+      Eugenie Leger Sg1002,
+      Eric Theriault (pr1002)
+    ],
+    Client2: Fondation Charles Bruneau, Personne contact : Aubrey Lecoq (438-455-8634),
+    Division: 1002,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Xavier Dufresne: 514-241-8122,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Helene Mansano Theriault (Prm1002) //Eugenie Leger Sg1002 //Eric Theriault (pr1002)
+  },
+  {
+    Id: CB-240915-1100-0452,
+    Title: HOCKEY CANADIENS FACE-À-FACE DES ESPOIRS 2024,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EdDQSyHOFYpFpDmhrPyynxUBp22rEVMeAp9vpGoY9fV2gg?e=XckGJr" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-15T11:00:00-04:00,
+    EndDate: 2024-09-15T16:45:00-04:00,
+    CreationDate: 2024-07-29T09:47:55-04:00,
+    UpdateDate: 2024-09-17T22:57:17-04:00,
+    SignupCount: 5,
+    Signups: [
+      Miguel Tejeda (PR) 452,
+      Zach Inzlicht (SG-M) 452,
+      Ruben Chang (PR) 452,
+      Pierre-adrien Méjat (PR) 452,
+      Thomas Trudel-James (Pr) 452
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Miguel Tejeda (PR) 452 //Zach Inzlicht (SG-M) 452 //Ruben Chang (PR) 452 //Pierre-adrien Méjat (PR) 452 //Thomas Trudel-James (Pr) 452
+  },
+  {
+    Id: PB-240915-1800-0971,
+    Title: PB Powerwolf avec Unleash The Archers,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-15T18:00:00-04:00,
+    EndDate: 2024-09-15T23:45:00-04:00,
+    CreationDate: 2024-02-09T09:43:42-05:00,
+    UpdateDate: 2024-09-15T16:51:02-04:00,
+    SignupCount: 10,
+    Signups: [
+      Romain Kowalski (SG) 971,
+      Steve Sirois,
+      Martin Chicoine,
+      Marie-Ève Bélanger PR 971,
+      Olivier Robert 971 PR,
+      Suzie Gingras (SG) 452,
+      Pierre-Alexandre Bleau,
+      Serge Pellerin PR 971,
+      Dominic Pelletier,
+      Dany Levesque
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 12,
+    PresencesConcat: Romain Kowalski (SG) 971 //Steve Sirois //Martin Chicoine //Marie-Ève Bélanger PR 971 //Olivier Robert 971 PR //Suzie Gingras (SG) 452 //Pierre-Alexandre Bleau //Serge Pellerin PR 971 //Dominic Pelletier //Dany Levesque
+  },
+  {
+    Id: PB-240916-1800-0971,
+    Title: PB Charli XCX & Troye Sivan, Sweat avec Shygirl,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-16T18:00:00-04:00,
+    EndDate: 2024-09-16T23:45:00-04:00,
+    CreationDate: 2024-04-17T14:36:14-04:00,
+    UpdateDate: 2024-09-07T21:40:25-04:00,
+    SignupCount: 15,
+    Signups: [
+      Steve Sirois,
+      Giulia Craciunescu (SG) 452,
+      Martin Lee SG 971,
+      Sara Chafik (PR) 452,
+      William Sabourin (SG) 062, Besoin De Jumelage Avec Massimo, Jeremie M Ou Francis Dv,
+      Romain Kowalski (SG) 971,
+      Marie-Ève Bélanger PR 971,
+      Tommy Maheu PRM 062,
+      Kefan Wu (SG-M) 452,
+      Helene Caron - Pr 971,
+      Massimo Ziliotti (PR) PROV,
+      Laila Slim,
+      Dany Levesque,
+      Jérémie Martin (PR) - 452,
+      Francis Dessureault-Vinette 971 PR
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Steve Sirois //Giulia Craciunescu (SG) 452 //Martin Lee SG 971 //Sara Chafik (PR) 452 //William Sabourin (SG) 062, Besoin De Jumelage Avec Massimo, Jeremie M Ou Francis Dv //Romain Kowalski (SG) 971 //Marie-Ève Bélanger PR 971 //Tommy Maheu PRM 062 //Kefan Wu (SG-M) 452 //Helene Caron - Pr 971 //Massimo Ziliotti (PR) PROV //Laila Slim //Dany Levesque //Jérémie Martin (PR) - 452 //Francis Dessureault-Vinette 971 PR
+  },
+  {
+    Id: CB-240917-1800-0452,
+    Title: Hans Zimmer,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EUqcjqamcNlDits_UXhAwp4BIx8ob_54qzwWDB7wGNa0HA?e=hik7dR" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-17T18:00:00-04:00,
+    EndDate: 2024-09-17T23:45:00-04:00,
+    CreationDate: 2024-07-29T09:48:27-04:00,
+    UpdateDate: 2024-09-16T11:39:55-04:00,
+    SignupCount: 17,
+    Signups: [
+      Pierre-adrien Méjat (PR) 452,
+      Si Yu Lu (PR) 452,
+      Joel Ishak (SG-M) 452,
+      Samuel Daoust (PR) 789,
+      Massimo Ziliotti (PR) PROV,
+      Roberto Ziliotti (SG-M) 452,
+      Mathilde Pesche (SG-M) 452,
+      Sandrine Arseneau (SG-M) 1002,
+      Mathieu Keromnes (PR) 452,
+      Maria Rudak (SG) 452,
+      Giulia Craciunescu (SG) 452 - Arrivée 18h30,
+      Théo Mandamiento (PR) 452,
+      Rita Rahbani (PR) 971,
+      Tristan Mercier (PR) 452 [Obs],
+      John Mercier (PR) 452,
+      Ben Gozlan (SG-M) 452,
+      Elie Eisenberg (SG-M) 452
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 18,
+    PresencesConcat: Pierre-adrien Méjat (PR) 452 //Si Yu Lu (PR) 452 //Joel Ishak (SG-M) 452 //Samuel Daoust (PR) 789 //Massimo Ziliotti (PR) PROV //Roberto Ziliotti (SG-M) 452 //Mathilde Pesche (SG-M) 452 //Sandrine Arseneau (SG-M) 1002 //Mathieu Keromnes (PR) 452 //Maria Rudak (SG) 452 //Giulia Craciunescu (SG) 452 - Arrivée 18h30 //Théo Mandamiento (PR) 452 //Rita Rahbani (PR) 971 //Tristan Mercier (PR) 452 [Obs] //John Mercier (PR) 452 //Ben Gozlan (SG-M) 452 //Elie Eisenberg (SG-M) 452
+  },
+  {
+    Id: CB-240918-1630-0452,
+    Title: Privé: ONE YOUNG WORLD 2024,
+    Location: 1225 st Antoine  ouest,
+    Notes: <p>5000 personnes </p>,
+    StartDate: 2024-09-18T16:30:00-04:00,
+    EndDate: 2024-09-18T21:30:00-04:00,
+    CreationDate: 2024-09-12T16:58:58-04:00,
+    UpdateDate: 2024-09-13T17:09:59-04:00,
+    SignupCount: 2,
+    Signups: [
+      Hélène Fortier (PR) 1002 (17h30),
+      Marie Dumais (PR) 452
+    ],
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    PresencesConcat: Hélène Fortier (PR) 1002 (17h30) //Marie Dumais (PR) 452
+  },
+  {
+    Id: PB-240919-1700-0971,
+    Title: PB The National and the War on Drugs avec Lucius,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-19T17:00:00-04:00,
+    EndDate: 2024-09-19T23:15:00-04:00,
+    CreationDate: 2024-02-29T09:15:06-05:00,
+    UpdateDate: 2024-09-19T08:04:14-04:00,
+    SignupCount: 11,
+    Signups: [
+      Tremblay, Pierre-Luc,
+      Daniel Calvé Pr-971,
+      Lea-SG 971 Première Fois Place Bell,
+      Pierre Pecquet A PARTIR DE 18H,
+      Romain Kowalski (SG) 971,
+      James Lamarche SG 971,
+      Olivier Robert 971 PR,
+      Dany Levesque,
+      Steve Sirois,
+      Marie-Ève Bélanger PR 971,
+      Martin Lee SG 971
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 12,
+    PresencesConcat: Tremblay, Pierre-Luc //Daniel Calvé Pr-971 //Lea-SG 971 Première Fois Place Bell //Pierre Pecquet A PARTIR DE 18H //Romain Kowalski (SG) 971 //James Lamarche SG 971 //Olivier Robert 971 PR //Dany Levesque //Steve Sirois //Marie-Ève Bélanger PR 971 //Martin Lee SG 971
+  },
+  {
+    Id: DIV-240919-1900-0452,
+    Title: Session de perfectionnement (Sujet: ateliers techniques signes vitaux) -  Training Session (Topic: technical workshop vital signs),
+    Location: 51e Ambulance de Campagne, 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion, Montréal, QC H2T 1Z6,
+    Notes:
+<p>Participez à nos sessions de perfectionnement ! </p>
+<p>Objectif : Renforcer l'esprit de corps des membres de la Division 452, tout en contribuant à accroître les compétences des bénévoles de l'ASJ.</p>
+<p>Code vestimentaire : Uniforme ASJ</p>
+<p>Participants : Tous sont les bienvenus (toutes divisions confondues). Les SG, les PR et les instructeurs sont les bienvenus. Si vous êtes un instructeur ou un professionnel de la santé ou tout simplement volontaire, vous pourriez donner une leçon ou aider à animer une session. Simplement contacter formation452@asjquebec.ca</p>
+<p>--------------------------</p>
+<p>Take part in our training sessions! </p>
+<p>Goal: To strengthen the esprit de corps of Division 452 members, while contributing to increasing the skills of ASJ volunteers.</p>
+<p>Dress code: SJA uniform</p>
+<p>Participants : All are welcome (all divisions). SGs, PRs and instructors alike. If you are an instructor or a healthcare professional or just willing, you can give a lesson or help lead a session. Just contact formation452@asjquebec.ca</p>,
+    StartDate: 2024-09-19T19:00:00-04:00,
+    EndDate: 2024-09-19T21:00:00-04:00,
+    CreationDate: 2024-09-03T20:12:48-04:00,
+    UpdateDate: 2024-09-19T18:58:51-04:00,
+    SignupCount: 12,
+    Signups: [
+      Olivia Ricci (PR) 452,
+      Pedneault Pascal (PR) 1002,
+      Florian Caraud (PR) 452,
+      Magalie Benoit,
+      Pascale LeBlanc (SG) 452,
+      Benoît Lacassagne (SG-M) 452,
+      John Mercier (PR) 452,
+      Sydney Wasserman (PR) 452,
+      Mathilde Pesche (SG-M) 452,
+      Sylvie Lau (PR) 452,
+      Tristan Mercier (PR) 452,
+      Martrin Chicoine
+    ],
+    Division: 0452,
+    Priority: normal,
+    Category: formation_training,
+    ResponsibleInCharge: Equipe formation 452, formation452@asjquebec.ca,
+    ProvincialContract: non_no,
+    PresencesConcat: Olivia Ricci (PR) 452 //Pedneault Pascal (PR) 1002 //Florian Caraud (PR) 452 //Magalie Benoit //Pascale LeBlanc (SG) 452 //Benoît Lacassagne (SG-M) 452 //John Mercier (PR) 452 //Sydney Wasserman (PR) 452 //Mathilde Pesche (SG-M) 452 //Sylvie Lau (PR) 452 //Tristan Mercier (PR) 452 //Martrin Chicoine
+  },
+  {
+    Id: DIV-240920-0000-0783,
+    Title: tigres contre val d'or,
+    Location: colisée desjardins victoriaville,
+    Notes: <p>hockey de la LHJMQ  </p>,
+    StartDate: 2024-09-20T00:00:00-04:00,
+    EndDate: 2024-09-20T23:59:00-04:00,
+    CreationDate: 2024-09-13T09:09:12-04:00,
+    UpdateDate: 2024-09-16T18:15:59-04:00,
+    SignupCount: 2,
+    Signups: [
+      nancy guay  pr,
+      Yves Tardif  PR
+    ],
+    Client2: tigres de victoriaville,
+    Division: 0783,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: yves tardif,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: nancy guay  pr //Yves Tardif  PR
+  },
+  {
+    Id: DIV-240920-0800-0062,
+    Title: Cross-Country CSSPS,
+    Location: 145 Rue de la Faune Québec G1G 0K9,
+    Notes:
+<p>Salle ou tente fourni par le client</p>
+<p>Stationnement fourni</p>,
+    StartDate: 2024-09-20T08:00:00-04:00,
+    EndDate: 2024-09-20T11:00:00-04:00,
+    CreationDate: 2024-08-07T20:28:44-04:00,
+    UpdateDate: 2024-08-17T13:18:57-04:00,
+    SignupCount: 1,
+    Signups: [
+      Nathalie Larivière
+    ],
+    Division: 0062,
+    Category: service,
+    ProvincialContract: non_no,
+    PresencesConcat: Nathalie Larivière
+  },
+  {
+    Id: CB-240920-1700-0452,
+    Title: Kygo,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EXARUdfhQfBAjML4prS3anQBBbZMuGls7kIQhSm1VRXqBA?e=hUOz5F" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-20T17:00:00-04:00,
+    EndDate: 2024-09-20T23:30:00-04:00,
+    CreationDate: 2024-07-29T09:49:10-04:00,
+    UpdateDate: 2024-09-20T04:54:28-04:00,
+    SignupCount: 17,
+    Signups: [
+      Pierre-Guy Lavoie (PR) 280,
+      Marc-Olivier Laplante (PR) 280,
+      Matthieu Cholette (SG-M) 452,
+      Si Yu Lu (PR) 452,
+      Jean-Sébastien Audet (PR) 452,
+      Justin Goldberg (SG-M) 452,
+      Léonard Zabitsky (PR-J) 452,
+      Rita Rahbani (PR 971),
+      Marion Synishin (SG-M) 452,
+      Yani Likongo (SG-M) 452,
+      Giulia Craciunescu (SG) 452 - (18h30),
+      Maria Rudak (SG) 452,
+      Naomie Lo (SG) 452,
+      Tiara Habelrih (SG-M) 452,
+      John Mercier (PR) 452,
+      Jérémie Martin (PR) 452,
+      Suzie Gingras (SG) 452
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 18,
+    PresencesConcat: Pierre-Guy Lavoie (PR) 280 //Marc-Olivier Laplante (PR) 280 //Matthieu Cholette (SG-M) 452 //Si Yu Lu (PR) 452 //Jean-Sébastien Audet (PR) 452 //Justin Goldberg (SG-M) 452 //Léonard Zabitsky (PR-J) 452 //Rita Rahbani (PR 971) //Marion Synishin (SG-M) 452 //Yani Likongo (SG-M) 452 //Giulia Craciunescu (SG) 452 - (18h30) //Maria Rudak (SG) 452 //Naomie Lo (SG) 452 //Tiara Habelrih (SG-M) 452 //John Mercier (PR) 452 //Jérémie Martin (PR) 452 //Suzie Gingras (SG) 452
+  },
+  {
+    Id: DIV-240920-1800-0158,
+    Title: Voltigeurs,
+    Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
+    Notes: <p>venez encourager nos rouges!!! </p>,
+    StartDate: 2024-09-20T18:00:00-04:00,
+    EndDate: 2024-09-20T22:00:00-04:00,
+    CreationDate: 2024-08-27T11:21:59-04:00,
+    UpdateDate: 2024-09-16T21:00:40-04:00,
+    SignupCount: 2,
+    Signups: [
+      Xavier Parent,
+      Caroline Girardot -SG 158
+    ],
+    Client2: Les Voltigeurs,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Xavier Parent //Caroline Girardot -SG 158
+  },
+  {
+    Id: PB-240920-1830-0971,
+    Title: PB Dadju et Tayc,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-20T18:30:00-04:00,
+    EndDate: 2024-09-20T23:45:00-04:00,
+    CreationDate: 2024-07-10T09:23:21-04:00,
+    UpdateDate: 2024-09-20T16:16:06-04:00,
+    SignupCount: 18,
+    Signups: [
+      Martin Chicoine 19h,
+      Benoit Vachon PR971,
+      Giuliana Rotella Sg,
+      Michael Benigno,
+      Antonio Benigno,
+      Serge Pellerin PR 971,
+      Étienne Kemp-Rousseau - PR 971,
+      Dany Levesque,
+      Dominic Pelletier (SG) - 971,
+      Marie Eve Paquette PR,
+      Sandrine Arseneau (Besoin d’un mentor),
+      Jean-Paul Alkhlaf,
+      Guillaume Benoit-Gagné PR 971,
+      Marie-Ève Bélanger PR 971,
+      Martin Lee SG,
+      Hélène Caron - 971 PR,
+      Ethan Sirois,
+      Steve Sirois
+    ],
+    Division: 0971,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 18,
+    PresencesConcat: Martin Chicoine 19h //Benoit Vachon PR971 //Giuliana Rotella Sg //Michael Benigno //Antonio Benigno //Serge Pellerin PR 971 //Étienne Kemp-Rousseau - PR 971 //Dany Levesque //Dominic Pelletier (SG) - 971 //Marie Eve Paquette PR //Sandrine Arseneau (Besoin d’un mentor) //Jean-Paul Alkhlaf //Guillaume Benoit-Gagné PR 971 //Marie-Ève Bélanger PR 971 //Martin Lee SG //Hélène Caron - 971 PR //Ethan Sirois //Steve Sirois
+  },
+  {
+    Id: DIV-240921-0945-0158,
+    Title: Festival aux Goûts du Sanctuaire,
+    Location: 1795 Chemin du Golf Ouest Saint-Majorique,
+    Notes: <p>repas fourni</p>,
+    StartDate: 2024-09-21T09:45:00-04:00,
+    EndDate: 2024-09-21T16:00:00-04:00,
+    CreationDate: 2024-09-09T16:36:54-04:00,
+    UpdateDate: 2024-09-20T13:55:05-04:00,
+    SignupCount: 2,
+    Signups: [
+      Marie-Josée Nault PRM 158,
+      Caroline Girardot -SG 158
+    ],
+    Client2: Loisir St-Majorique,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Marie-Josée Nault PRM 158 //Caroline Girardot -SG 158
+  },
+  {
+    Id: DIV-240921-1100-0094,
+    Title: Collation des Grades,
+    Location: Universite,
+    Notes: <p>Ceremonie des finnisants , Poste sur place, Uniforme complete oubliger (pantalon et chemise)</p>,
+    StartDate: 2024-09-21T11:00:00-04:00,
+    EndDate: 2024-09-21T18:00:00-04:00,
+    CreationDate: 2024-08-21T16:17:05-04:00,
+    UpdateDate: 2024-09-21T10:02:08-04:00,
+    SignupCount: 5,
+    Signups: [
+      Lucas Durocher (Midi),
+      Mario St-François,
+      Mario Lambert,
+      Sonia Cyr,
+      Emilie Dionne
+    ],
+    Client2: Uni,
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 6,
+    PresencesConcat: Lucas Durocher (Midi) //Mario St-François //Mario Lambert //Sonia Cyr //Emilie Dionne
+  },
+  {
+    Id: DIV-240921-1515-0094,
+    Title: Phoenix,
+    Location: Palais des Sports,
+    Notes: ,
+    StartDate: 2024-09-21T15:15:00-04:00,
+    EndDate: 2024-09-21T19:00:00-04:00,
+    CreationDate: 2024-05-27T13:29:20-04:00,
+    UpdateDate: 2024-08-22T09:11:17-04:00,
+    SignupCount: 1,
+    Signups: [
+      Pamela
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Alain Fortin,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 1,
+    PresencesConcat: Pamela
+  },
+  {
+    Id: PB-240921-1800-0971,
+    Title: PB PJHarvey,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-21T18:00:00-04:00,
+    EndDate: 2024-09-21T23:45:00-04:00,
+    CreationDate: 2024-02-29T13:08:27-05:00,
+    UpdateDate: 2024-09-17T09:42:50-04:00,
+    SignupCount: 8,
+    Signups: [
+      Marie-Ève Bélanger PR 971 - Victime,
+      Hélène Caron - PR 971,
+      Martin,
+      Dany Levesque,
+      Steve Sirois,
+      Serge Pellerin PR 971,
+      Dominic Pelletier (Nouveau),
+      Aude Exertier (PR) 452
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 12,
+    PresencesConcat: Marie-Ève Bélanger PR 971 - Victime //Hélène Caron - PR 971 //Martin //Dany Levesque //Steve Sirois //Serge Pellerin PR 971 //Dominic Pelletier (Nouveau) //Aude Exertier (PR) 452
+  },
+  {
+    Id: CB-240921-1800-0452,
+    Title: Dadju & Tayc,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EdXFxrVT7U5In-5wflkDj64BwvGBzXFBTtDfj6l1F92zMA?e=NJjvBI" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-21T18:00:00-04:00,
+    EndDate: 2024-09-21T23:30:00-04:00,
+    CreationDate: 2024-07-29T09:49:33-04:00,
+    UpdateDate: 2024-09-21T13:19:38-04:00,
+    SignupCount: 10,
+    Signups: [
+      Rosalie Lajeunesse (PR) 1002,
+      Keandra Charpentier (PR-J) 843,
+      Anik Boudreau (PR) 452,
+      Jean-René Guilbault (PR) 452,
+      Léonard Zabitsky (PR-J) 452,
+      Thibault T. Becquaert (PR) PROV,
+      Romane Dumas (SG) 452,
+      Alexia Ursachi (SG-J-M) 452,
+      Martin Lee (SG) 971,
+      Rita Rahbani (PR) 971
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Rosalie Lajeunesse (PR) 1002 //Keandra Charpentier (PR-J) 843 //Anik Boudreau (PR) 452 //Jean-René Guilbault (PR) 452 //Léonard Zabitsky (PR-J) 452 //Thibault T. Becquaert (PR) PROV //Romane Dumas (SG) 452 //Alexia Ursachi (SG-J-M) 452 //Martin Lee (SG) 971 //Rita Rahbani (PR) 971
+  },
+  {
+    Id: DIV-240922-0930-0452,
+    Title: Walk to end PKD,
+    Location: Parc de Dollard-des-Ormeaux,
+    Notes:
+<p><strong>IMPORTANTS : </strong> </p>
+<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR par SG inscrit).</strong> </p>
+<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
+<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
+<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452</strong> </p>
+<p>Informations relatives à l’événement : </p>
+<p>Description de l’événement si le titre n’est pas complétement explicite, fonctionnement de l’événement </p>
+<p>Infos supplémentaires : </p>
+<p>- Parking fourni</p>
+<p>- Repas fourni</p>
+<p>- Nombre de personnes attendues : <em>à valider</em></p>
+<p>- L'événement a lieu à l'extérieur, donc prévoir les vêtements en conséquences</p>
+<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+    StartDate: 2024-09-22T09:30:00-04:00,
+    EndDate: 2024-09-22T14:00:00-04:00,
+    CreationDate: 2024-09-17T19:21:16-04:00,
+    UpdateDate: 2024-09-21T20:56:57-04:00,
+    SignupCount: 2,
+    Signups: [
+      Azadeh Nourian (PR) 452,
+      Kathryn Griffin (PR) 452
+    ],
+    Client2: PKD Fundation of Canada,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Jeremie.martin@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Azadeh Nourian (PR) 452 //Kathryn Griffin (PR) 452
+  },
+  {
+    Id: DIV-240922-1500-0158,
+    Title: Voltigeurs,
+    Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
+    Notes: <p>venez encourager nos rouges!!! </p>,
+    StartDate: 2024-09-22T15:00:00-04:00,
+    EndDate: 2024-09-22T19:00:00-04:00,
+    CreationDate: 2024-08-27T11:22:22-04:00,
+    UpdateDate: 2024-09-10T01:31:58-04:00,
+    SignupCount: 2,
+    Signups: [
+      Stephane Larocque PRM 158,
+      Caroline Girardot -SG 158
+    ],
+    Client2: Les Voltigeurs,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Stephane Larocque PRM 158 //Caroline Girardot -SG 158
+  },
+  {
+    Id: CB-240923-1700-0452,
+    Title: Canadiens vs Philadelphie,
+    Location: 1225 rue Saint-Antoine O,
+    Notes: ,
+    StartDate: 2024-09-23T17:00:00-04:00,
+    EndDate: 2024-09-23T22:45:00-04:00,
+    CreationDate: 2024-08-15T13:24:19-04:00,
+    UpdateDate: 2024-09-23T15:37:43-04:00,
+    SignupCount: 10,
+    Signups: [
+      Jean-RenéGuilbault (PR) 452 arriver 19h,
+      Anik Boudreau (PR) 452 arriver 19h,
+      Marylène Bouchard-Verret (PR) 062,
+      Laurie Gauthier (SG) 280,
+      Marc-Olivier Laplante (PR) 280,
+      Michael Lambert (PR) 843,
+      Paul Mottier (PR) 452,
+      Jérémie Martin (PR) 452,
+      Benjamin Lapointe (PR-M) 452,
+      Mathilde Pesche (SG-M) 452
+    ],
+    Client2: Centre Bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Jean-RenéGuilbault (PR) 452 arriver 19h //Anik Boudreau (PR) 452 arriver 19h //Marylène Bouchard-Verret (PR) 062 //Laurie Gauthier (SG) 280 //Marc-Olivier Laplante (PR) 280 //Michael Lambert (PR) 843 //Paul Mottier (PR) 452 //Jérémie Martin (PR) 452 //Benjamin Lapointe (PR-M) 452 //Mathilde Pesche (SG-M) 452
+  },
+  {
+    Id: DIV-240924-0700-Prov,
+    Title: Tournoi PGA,
+    Location:
+Club de golf Royal Montréal
+25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
+    Notes:
+<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
+<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+    StartDate: 2024-09-24T07:00:00-04:00,
+    EndDate: 2024-09-24T19:00:00-04:00,
+    CreationDate: 2024-09-03T11:27:08-04:00,
+    UpdateDate: 2024-09-22T22:08:08-04:00,
+    SignupCount: 5,
+    Signups: [
+      Sébastien Rhéaume,
+      Gaétane Tremblay,
+      K. Harding CONT-2506573 PRM 062,
+      cardinal mario,
+      Kathryn Griffin Pr-452 as per email
+    ],
+    Division: Prov,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Équipe provinciale,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: Sébastien Rhéaume //Gaétane Tremblay //K. Harding CONT-2506573 PRM 062 //cardinal mario //Kathryn Griffin Pr-452 as per email
+  },
+  {
+    Id: PB-240924-1630-0971,
+    Title: PB Suicideboy avec Denzel Curry, Pouya, Shakewell, HAARPER, Ekkstacy,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-24T16:30:00-04:00,
+    EndDate: 2024-09-24T23:45:00-04:00,
+    CreationDate: 2024-04-10T08:08:21-04:00,
+    UpdateDate: 2024-09-24T09:13:51-04:00,
+    SignupCount: 12,
+    Signups: [
+      Yannick gagnon,
+      Renée Legault PR 971 Kiosk,
+      Serge Pellerin PR 971,
+      Steve Sirois,
+      Benoit Vachon PR971,
+      Dany Levesque,
+      Marie-Ève Bélanger PR 971,
+      Carole-Anne Binette,
+      Jonathan Beausoleil (SG) 843,
+      Samuel Daoust PR 789,
+      Rita Rahbani (PR 971),
+      Michèle St-Arnaud-Champigny (Sg 1002)
+    ],
+    Division: 0971,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Yannick gagnon //Renée Legault PR 971 Kiosk //Serge Pellerin PR 971 //Steve Sirois //Benoit Vachon PR971 //Dany Levesque //Marie-Ève Bélanger PR 971 //Carole-Anne Binette //Jonathan Beausoleil (SG) 843 //Samuel Daoust PR 789 //Rita Rahbani (PR 971) //Michèle St-Arnaud-Champigny (Sg 1002)
+  },
+  {
+    Id: CB-240924-1700-0452,
+    Title: Canadiens vs New Jersey,
+    Location: 1225 rue Saint-Antoine O,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EQz_ulJpCBpKguB1SrWJXWgBzA63rzB8ed56I4wVoqszFg?e=Dlgaa1" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-24T17:00:00-04:00,
+    EndDate: 2024-09-24T22:45:00-04:00,
+    CreationDate: 2024-08-15T13:25:54-04:00,
+    UpdateDate: 2024-08-16T13:34:02-04:00,
+    SignupCount: 6,
+    Signups: [
+      George Loutochin (PR) 452,
+      Rosalie Lajeunesse (PR) 1002,
+      Jérémie Martin (PR) 452,
+      Jérémy Tessier (PR) 062,
+      Olivia Pilon (SG-M) 452 - arrivée 17h30,
+      Matthieu Cholette (SG-M) 452
+    ],
+    Client2: Centre Bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: George Loutochin (PR) 452 //Rosalie Lajeunesse (PR) 1002 //Jérémie Martin (PR) 452 //Jérémy Tessier (PR) 062 //Olivia Pilon (SG-M) 452 - arrivée 17h30 //Matthieu Cholette (SG-M) 452
+  },
+  {
+    Id: DIV-240924-1850-0452,
+    Title: Formation continue avec le 51e Ambulance de Campagne (PR seulement),
+    Location: 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion,
+    Notes:
+<p><strong>Dans le cadre du partenariat avec le 51e Ambulance de Campagne, nos PR pourront participer à certaines session de perfectionnement avec les Médics de l'Armée.</strong></p>
+<p><strong>Détails :</strong></p>
+<ol>
+<li>Il faudra être là à 18h50 pour commencer à l'heure.</li>
+<li>Ce sera en uniforme chemise ASJ complet comme en service, cela inclut donc les équipements de base (montres, de quoi prendre des notes, etc). Pour l'équipement de premier soin, comme d'habitude, il sera fourni.</li>
+<li>Cette soirée sera consacrée au système musculo-squelettique, aux traumas craniens et aux blessures liées à la chaleur et au froid.</li>
+<li>Un instructeur PR d'ASJ sera présent pour assurer le suivi de nos protocoles ASJ.</li>
+<li>Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.</li>
+</ol>,
+    StartDate: 2024-09-24T18:50:00-04:00,
+    EndDate: 2024-09-24T20:30:00-04:00,
+    CreationDate: 2024-09-13T09:01:41-04:00,
+    UpdateDate: 2024-09-17T17:07:56-04:00,
+    SignupCount: 6,
+    Signups: [
+      Hélène Fortier (Pr 1002),
+      Yichen wu (PR) - 452,
+      Sylvie Lau (PR) 452,
+      Tristan Mercier (PR) 452,
+      Eric Theriault (PR) 1002,
+      Lucas Vauzour (PR) 452
+    ],
+    Division: 0452,
+    Priority: normal,
+    Category: formation_training,
+    ResponsibleInCharge: Tristan Mercier | 438 889 0422 | tristan.mercier@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 12,
+    PresencesConcat: Hélène Fortier (Pr 1002) //Yichen wu (PR) - 452 //Sylvie Lau (PR) 452 //Tristan Mercier (PR) 452 //Eric Theriault (PR) 1002 //Lucas Vauzour (PR) 452
+  },
+  {
+    Id: DIV-240925-0700-Prov,
+    Title: Tournoi PGA,
+    Location:
+Club de golf Royal Montréal
+25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
+    Notes:
+<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
+<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+    StartDate: 2024-09-25T07:00:00-04:00,
+    EndDate: 2024-09-25T19:00:00-04:00,
+    CreationDate: 2024-09-03T11:27:48-04:00,
+    UpdateDate: 2024-09-22T22:08:23-04:00,
+    SignupCount: 5,
+    Signups: [
+      Sébastien Rhéaume,
+      Gaétane Tremblay,
+      K. Harding CONT-2506573 PRM 062,
+      cardinal mario,
+      Kathryn Griffin Pr-452 as per email
+    ],
+    Division: Prov,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Équipe provinciale,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: Sébastien Rhéaume //Gaétane Tremblay //K. Harding CONT-2506573 PRM 062 //cardinal mario //Kathryn Griffin Pr-452 as per email
+  },
+  {
+    Id: DIV-240925-1100-0094,
+    Title: Recrutrment Cascades KF,
+    Location: 412 bd Marie Victorin Kingsey Falls,
+    Notes: ,
+    StartDate: 2024-09-25T11:00:00-04:00,
+    EndDate: 2024-09-25T13:30:00-04:00,
+    CreationDate: 2024-09-23T08:46:50-04:00,
+    UpdateDate: 2024-09-23T09:30:54-04:00,
+    SignupCount: 1,
+    Signups: [
+      Lucas Durocher PR 309
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: autre,
+    ResponsibleInCharge: Lucas Durocher 819-239-3634,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Lucas Durocher PR 309
+  },
+  {
+    Id: PB-240925-1730-0971,
+    Title: PB Vampire Weekend avec Cults,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-25T17:30:00-04:00,
+    EndDate: 2024-09-25T23:45:00-04:00,
+    CreationDate: 2024-02-21T15:30:43-05:00,
+    UpdateDate: 2024-08-12T20:14:09-04:00,
+    SignupCount: 10,
+    Signups: [
+      Cloé-Jade Ouellet PR,
+      Daniel Calvé Pr-971,
+      Martin Chicoine,
+      Steve Sirois,
+      Benoit Vachon PR971,
+      Sharafi Saeid,
+      Dany Levesque,
+      Marie-Ève Bélanger PR 971,
+      Martin Lee SG 971,
+      Mylene Bessette pr 971
+    ],
+    Division: 0971,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Cloé-Jade Ouellet PR //Daniel Calvé Pr-971 //Martin Chicoine //Steve Sirois //Benoit Vachon PR971 //Sharafi Saeid //Dany Levesque //Marie-Ève Bélanger PR 971 //Martin Lee SG 971 //Mylene Bessette pr 971
+  },
+  {
+    Id: CB-240925-1800-0452,
+    Title: Twenty One Pilots,
+    Location: 1225 st antoine ouest,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EWUvTIayuZRKuBw5TYKAiXwBT45VXEbwnQ2TIbagQrd0cg?e=JSRIag" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-25T18:00:00-04:00,
+    EndDate: 2024-09-25T23:45:00-04:00,
+    CreationDate: 2024-07-29T09:49:57-04:00,
+    UpdateDate: 2024-08-27T02:02:54-04:00,
+    SignupCount: 12,
+    Signups: [
+      Tiara Habelrih (SG-M) 452 - Arrivée à 19h,
+      Charles-Etienne Pedneault (PR) 1002,
+      Lucas Vauzour (PR) 452,
+      Anastasia Wallack (PR) 971,
+      Michael Lambert (PR) 843,
+      Sylvie Lau (PR) 452,
+      Massimo Ziliotti (PR) PROV,
+      Giulia Craciunescu (SG) 452 - Arrivée 18h30,
+      Théo Mandamiento (PR) 452,
+      Jérémie Martin (PR) 452,
+      Rita Rahbani (PR) 971,
+      Suzie Gingras (SG) 452
+    ],
+    Client2: centre bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 16,
+    PresencesConcat: Tiara Habelrih (SG-M) 452 - Arrivée à 19h //Charles-Etienne Pedneault (PR) 1002 //Lucas Vauzour (PR) 452 //Anastasia Wallack (PR) 971 //Michael Lambert (PR) 843 //Sylvie Lau (PR) 452 //Massimo Ziliotti (PR) PROV //Giulia Craciunescu (SG) 452 - Arrivée 18h30 //Théo Mandamiento (PR) 452 //Jérémie Martin (PR) 452 //Rita Rahbani (PR) 971 //Suzie Gingras (SG) 452
+  },
+  {
+    Id: DIV-240926-0700-Prov,
+    Title: Tournoi PGA,
+    Location:
+Club de golf Royal Montréal
+25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
+    Notes:
+<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
+<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+    StartDate: 2024-09-26T07:00:00-04:00,
+    EndDate: 2024-09-26T19:00:00-04:00,
+    CreationDate: 2024-09-03T11:29:44-04:00,
+    UpdateDate: 2024-09-24T12:40:17-04:00,
+    SignupCount: 6,
+    Signups: [
+      George Loutochin,
+      Sébastien Rhéaume,
+      Gaétane Tremblay,
+      K. Harding CONT-2506573 PRM 062,
+      cardinal mario,
+      Kathryn Griffin Pr-452 as per email
+    ],
+    Division: Prov,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Équipe provinciale,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: George Loutochin //Sébastien Rhéaume //Gaétane Tremblay //K. Harding CONT-2506573 PRM 062 //cardinal mario //Kathryn Griffin Pr-452 as per email
+  },
+  {
+    Id: DIV-240926-1900-0971,
+    Title: Annulé Préparation sécurité civile,
+    Location: CC Philémon-Gascon, 2830 rang Saint-Elzéar Est,
+    Notes: ,
+    StartDate: 2024-09-26T19:00:00-04:00,
+    EndDate: 2024-09-26T22:00:00-04:00,
+    CreationDate: 2024-08-16T10:42:49-04:00,
+    UpdateDate: 2024-09-26T12:39:11-04:00,
+    SignupCount: 5,
+    Signups: [
+      James Lamarche SG 971,
+      Daniel Calvé Pr-971,
+      Marie-Ève Bélanger PR 971,
+      Serge Pellerin PR 971,
+      Martrin Chicoine
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: reunion_meeting,
+    ResponsibleInCharge: Marie-Ève Bélanger Marie-Eve.Belanger@asjquebec.ca,
+    ProvincialContract: non_no,
+    PresencesConcat: James Lamarche SG 971 //Daniel Calvé Pr-971 //Marie-Ève Bélanger PR 971 //Serge Pellerin PR 971 //Martrin Chicoine,
+    LineHighLightColor: #FFFF00
+  },
+  {
+    Id: DIV-240927-0700-Prov,
+    Title: Tournoi PGA,
+    Location:
+Club de golf Royal Montréal
+25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
+    Notes:
+<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
+<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+    StartDate: 2024-09-27T07:00:00-04:00,
+    EndDate: 2024-09-27T19:00:00-04:00,
+    CreationDate: 2024-09-03T11:30:13-04:00,
+    UpdateDate: 2024-09-26T16:41:20-04:00,
+    SignupCount: 6,
+    Signups: [
+      Charles Maillé Pr (971),
+      Hélène Fortier (PR) 1002,
+      Gaétane Tremblay,
+      K. Harding CONT-2506573 PRM 062,
+      cardinal mario,
+      Kathryn Griffin Pr-452 as per email
+    ],
+    Division: Prov,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Équipe provinciale,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: Charles Maillé Pr (971) //Hélène Fortier (PR) 1002 //Gaétane Tremblay //K. Harding CONT-2506573 PRM 062 //cardinal mario //Kathryn Griffin Pr-452 as per email
+  },
+  {
+    Id: DIV-240927-1530-0452,
+    Title: Ultra Hole Challenge,
+    Location: Golf Saint-Raphaël (1111 Montée de l’Église, Île-Bizzard),
+    Notes:
+<p><strong>IMPORTANTS : </strong> </p>
+<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR par SG inscrit).</strong> </p>
+<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
+<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
+<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong> </p>
+<p>Informations relatives à l’événement : </p>
+<p>Compétitions de golf filmées et diffusées à la télévision. </p>
+<p>Infos supplémentaires : </p>
+<p>- Parking fourni</p>
+<p>- Repas fourni   </p>
+<p>- Nombre de personnes attendues  : 3 000</p>
+<p>- L'événement se tient à l'extérieur donc prévoir la tenue en conséquence.</p>
+<p>- Possible transport depuis centre-ville en covoiturage</p>
+<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+    StartDate: 2024-09-27T15:30:00-04:00,
+    EndDate: 2024-09-27T22:00:00-04:00,
+    CreationDate: 2024-09-11T12:40:19-04:00,
+    UpdateDate: 2024-09-21T21:16:30-04:00,
+    SignupCount: 2,
+    Signups: [
+      Suzie Gingras (SG) 452,
+      Stéphanie Bernier Benoit (PR) 452
+    ],
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Operations452@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Suzie Gingras (SG) 452 //Stéphanie Bernier Benoit (PR) 452
+  },
+  {
+    Id: DIV-240927-1800-0158,
+    Title: Village Hanté,
+    Location: 1425 rue Montplaisir Drummondville,
+    Notes: <p>Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir</p>,
+    StartDate: 2024-09-27T18:00:00-04:00,
+    EndDate: 2024-09-27T22:30:00-04:00,
+    CreationDate: 2024-08-29T15:02:53-04:00,
+    UpdateDate: 2024-09-24T17:00:00-04:00,
+    SignupCount: 5,
+    Signups: [
+      Elyane Bourret PRM 158,
+      Laurie Gauthier SG 280,
+      Marc-Olivier Laplante PR 280,
+      Marie-Josee Nault PRM 158,
+      Caroline Girardot -SG 158
+    ],
+    Client2: Village québecois d'antan,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret 819-388-2953,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 4,
+    PresencesConcat: Elyane Bourret PRM 158 //Laurie Gauthier SG 280 //Marc-Olivier Laplante PR 280 //Marie-Josee Nault PRM 158 //Caroline Girardot -SG 158
+  },
+  {
+    Id: DIV-240927-1800-0783,
+    Title: tigres contre rouyn-noranda,
+    Location: colisée desjardins victoriaville,
+    Notes: <p>hockey de la LHJMQ</p>,
+    StartDate: 2024-09-27T18:00:00-04:00,
+    EndDate: 2024-09-27T22:00:00-04:00,
+    CreationDate: 2024-09-13T09:12:20-04:00,
+    UpdateDate: 2024-09-24T17:40:07-04:00,
+    SignupCount: 2,
+    Signups: [
+      Josée,
+      Yves Tardif
+    ],
+    Client2: tigres de victoriaville,
+    Division: 0783,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: yves tardif,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Josée //Yves Tardif
+  },
+  {
+    Id: DIV-240927-1815-0094,
+    Title: Phoenix,
+    Location: Palais des Sports,
+    Notes: ,
+    StartDate: 2024-09-27T18:15:00-04:00,
+    EndDate: 2024-09-27T22:00:00-04:00,
+    CreationDate: 2024-05-27T13:30:27-04:00,
+    UpdateDate: 2024-09-27T15:44:13-04:00,
+    SignupCount: 2,
+    Signups: [
+      Mario Lambert,
+      Pamela
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Alain fortin,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Mario Lambert //Pamela
+  },
+  {
+    Id: DIV-240928-0700-Prov,
+    Title: Tournoi PGA,
+    Location:
+Club de golf Royal Montréal
+25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
+    Notes:
+<p>Nous sommes à la recherche de 10 PR pour cet événement unique. Inscription via TEAM UP.</p>
+<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+    StartDate: 2024-09-28T07:00:00-04:00,
+    EndDate: 2024-09-28T19:00:00-04:00,
+    CreationDate: 2024-09-03T11:30:38-04:00,
+    UpdateDate: 2024-09-20T18:44:44-04:00,
+    SignupCount: 8,
+    Signups: [
+      Gaétane Tremblay,
+      Valentina Barboza (PR) 1002,
+      Félix Ravary (PR) 1002,
+      Pierre-adrien MÉJAT (Pr) 452,
+      cardinal mario,
+      Kathryn Griffin Pr-452 as per email,
+      Charles-Etienne Pedneault (PR) 1002,
+      Pedneault Pascal (PR) 1002
+    ],
+    Division: Prov,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Équipe provinciale,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: Gaétane Tremblay //Valentina Barboza (PR) 1002 //Félix Ravary (PR) 1002 //Pierre-adrien MÉJAT (Pr) 452 //cardinal mario //Kathryn Griffin Pr-452 as per email //Charles-Etienne Pedneault (PR) 1002 //Pedneault Pascal (PR) 1002
+  },
+  {
+    Id: DIV-240928-0800-0062,
+    Title: Défi forestier,
+    Location: École secondaire Mont-Saint-Sacrement 200 Boul Saint-Sacrement Saint-Gabriel-de-Valcartier G0A 4S0 QC,
+    Notes:
+<p>10 boucles de sentiers, le plus gros 5KM, 4 roues disponible si besoin </p>
+<p>Premier départ 08:00</p>
+<p>Salle fournis par le client à l'accueil des coureurs, bâtiment fermé avec eau, table et chaise.</p>
+<p>Repas et stationnement fournis </p>,
+    StartDate: 2024-09-28T08:00:00-04:00,
+    EndDate: 2024-09-28T13:30:00-04:00,
+    CreationDate: 2024-07-24T15:51:42-04:00,
+    UpdateDate: 2024-08-04T21:15:40-04:00,
+    SignupCount: 1,
+    Signups: [
+      harvey yves
+    ],
+    Division: 0062,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: harvey yves
+  },
+  {
+    Id: DIV-240928-0800-0971,
+    Title: Rendez-vous de la sécurité civile,
+    Location:
+École Fleur-de-Vie Laval
+Québec H7R 3R8,
+    Notes:
+<p>Le 28 septembre prochain, la division 971 Laval participe à un exercice de déploiement en sécurité civile qui aura lieu à Laval. Dans le cadre de cet exercice, nous avons besoin de 6 à 8 volontaires qui seront les victimes à secourir lors de la situation d’urgence.</p>
+<p> </p>
+<p>De plus, lors de cet évènement, nous avons l’occasion de tenir un kiosque pour présenter notre organisation et éventuellement recruter des membres. Il s’agit d’une bonne occasion de visibilité pour notre équipe. À cette fin, nous avons besoin d’un ou deux volontaires afin de tenir le kiosque.</p>,
+    StartDate: 2024-09-28T08:00:00-04:00,
+    EndDate: 2024-09-28T17:00:00-04:00,
+    CreationDate: 2024-08-09T11:36:05-04:00,
+    UpdateDate: 2024-09-25T13:23:44-04:00,
+    SignupCount: 5,
+    Signups: [
+      Dominic Pelletier (SG) - 971,
+      Martin Chicoine,
+      Marie-Ève Bélanger PR 971 - Victime,
+      Julie Racine SG971 Kiosque,
+      Renée Legault PR 971 Kiosk
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: autre,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: Dominic Pelletier (SG) - 971 //Martin Chicoine //Marie-Ève Bélanger PR 971 - Victime //Julie Racine SG971 Kiosque //Renée Legault PR 971 Kiosk
+  },
+  {
+    Id: DIV-240928-0945-0452,
+    Title: Marche Respirons l'Espoir de Montréal,
+    Location: Parc Angrignon (3500 Boul Des Trinitaires Montréal H4E 4J3 QC),
+    Notes:
+<p><strong>IMPORTANTS :</strong></p>
+<p><strong>Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR pour 1 SG inscrit).</strong></p>
+<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong></p>
+<p><strong>Veuillez respecter ce modèle pour s’inscrire : <em>Prénom Nom (PR/SG– J-M) Division.</em>  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong></p>
+<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong></p>
+<p>Informations supplémentaires :</p>
+<p>-Stationnement disponible sur place</p>
+<p>-Repas fourni par le client à la fin de la marche</p>
+<p>-Nombre de personnes attendues : 50 à 100 personnes</p>
+<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées)</p>,
+    StartDate: 2024-09-28T09:45:00-04:00,
+    EndDate: 2024-09-28T13:30:00-04:00,
+    CreationDate: 2024-05-16T12:06:58-04:00,
+    UpdateDate: 2024-09-26T14:23:11-04:00,
+    SignupCount: 2,
+    Signups: [
+      Marie Dumais (PR) 452,
+      Gabrielle Velten-Jameson (SG-M) 452
+    ],
+    Client2: Fondation Canadienne de la Fibrose Pulmonaire,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Stephanie Bernier Benoit - Stephanie.bernier-benoit@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Marie Dumais (PR) 452 //Gabrielle Velten-Jameson (SG-M) 452
+  },
+  {
+    Id: DIV-240928-1000-0280,
+    Title: Porte ouverte aéroport,
+    Location: Aéroport St-Mathieu de Beloeil,
+    Notes: <p>porte ouvert</p>,
+    StartDate: 2024-09-28T10:00:00-04:00,
+    EndDate: 2024-09-28T16:30:00-04:00,
+    CreationDate: 2024-05-23T20:53:17-04:00,
+    UpdateDate: 2024-09-23T10:30:17-04:00,
+    SignupCount: 2,
+    Signups: [
+      Pierre-Guy Lavoie (PR) 280,
+      Dany Robert
+    ],
+    Division: 0280,
+    Priority: normal,
+    Category: service,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Pierre-Guy Lavoie (PR) 280 //Dany Robert
+  },
+  {
+    Id: DIV-240928-1015-0094,
+    Title: Entreprise en famille,
+    Location: Ecole du Triolet,
+    Notes: <p>eventment de familles a l`ecole du Triolet</p>,
+    StartDate: 2024-09-28T10:15:00-04:00,
+    EndDate: 2024-09-28T16:30:00-04:00,
+    CreationDate: 2024-09-04T16:51:21-04:00,
+    UpdateDate: 2024-09-27T12:51:31-04:00,
+    SignupCount: 2,
+    Signups: [
+      Mario St-François,
+      Franck
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Mario Lambert 819-212-9497,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Mario St-François //Franck
+  },
+  {
+    Id: DIV-240928-1645-0094,
+    Title: Phoenix,
+    Location: Palais des Sports,
+    Notes: ,
+    StartDate: 2024-09-28T16:45:00-04:00,
+    EndDate: 2024-09-28T21:00:00-04:00,
+    CreationDate: 2024-05-27T13:31:51-04:00,
+    UpdateDate: 2024-09-27T09:17:16-04:00,
+    SignupCount: 2,
+    Signups: [
+      Pamela,
+      Franck
+    ],
+    Division: 0094,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Alain Fortin,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Pamela //Franck
+  },
+  {
+    Id: CB-240928-1700-0452,
+    Title: Canadiens vs Toronto,
+    Location: 1225 rue Saint-Antoine O,
+    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EcpIgPcJ7phJk15tPymLoFMBnG0mDPpP_PypnP4qOqa-9Q?e=SeThvT" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    StartDate: 2024-09-28T17:00:00-04:00,
+    EndDate: 2024-09-28T22:45:00-04:00,
+    CreationDate: 2024-08-15T13:26:52-04:00,
+    UpdateDate: 2024-08-26T12:42:12-04:00,
+    SignupCount: 6,
+    Signups: [
+      Keandra Charpentier (PR-J) 843,
+      Miguel Tejeda (PR) 452,
+      George Loutochin (PR) 452,
+      Benoît Lacassagne (SG-M) 452,
+      John Mercier (PR) 452,
+      Léonard Zabitsky (PR-J) 452
+    ],
+    Client2: Centre Bell,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: centrebell@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Keandra Charpentier (PR-J) 843 //Miguel Tejeda (PR) 452 //George Loutochin (PR) 452 //Benoît Lacassagne (SG-M) 452 //John Mercier (PR) 452 //Léonard Zabitsky (PR-J) 452
+  },
+  {
+    Id: DIV-240928-1800-0158,
+    Title: Village Hanté,
+    Location: 1425 rue Montplaisir Drummondville,
+    Notes: <p>Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir</p>,
+    StartDate: 2024-09-28T18:00:00-04:00,
+    EndDate: 2024-09-28T22:30:00-04:00,
+    CreationDate: 2024-08-29T15:03:12-04:00,
+    UpdateDate: 2024-09-27T21:49:34-04:00,
+    SignupCount: 3,
+    Signups: [
+      Maxime Bourret,
+      Caroline Girardot -SG 158,
+      Marie-Josée Nault PRM 158
+    ],
+    Client2: Village québecois d'antan,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret 819-388-2953,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 4,
+    PresencesConcat: Maxime Bourret //Caroline Girardot -SG 158 //Marie-Josée Nault PRM 158
+  },
+  {
+    Id: DIV-240929-0700-Prov,
+    Title: Tournoi PGA,
+    Location:
+Club de golf Royal Montréal
+25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
+    Notes:
+<p>Nous sommes à la recherche de 10 PR pour cet événement unique. Inscription via TEAM UP.</p>
+<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+    StartDate: 2024-09-29T07:00:00-04:00,
+    EndDate: 2024-09-29T19:00:00-04:00,
+    CreationDate: 2024-09-03T11:31:09-04:00,
+    UpdateDate: 2024-09-20T18:45:09-04:00,
+    SignupCount: 4,
+    Signups: [
+      Gaétane Tremblay,
+      Isabelle Derasp,
+      cardinal mario,
+      Kathryn Griffin Pr-452 as per email
+    ],
+    Division: Prov,
+    Priority: haut_high,
+    Category: service,
+    ResponsibleInCharge: Équipe provinciale,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 10,
+    PresencesConcat: Gaétane Tremblay //Isabelle Derasp //cardinal mario //Kathryn Griffin Pr-452 as per email
+  },
+  {
+    Id: DIV-240929-0800-0280,
+    Title: Relai 2 h,
+    Location: Parc Casimir Dessaules,
+    Notes: <p>Course à relai autour du parc</p>,
+    StartDate: 2024-09-29T08:00:00-04:00,
+    EndDate: 2024-09-29T12:00:00-04:00,
+    CreationDate: 2024-08-26T15:49:23-04:00,
+    UpdateDate: 2024-09-23T10:42:04-04:00,
+    SignupCount: 2,
+    Signups: [
+      Tommy Marquis (PR) 280,
+      Pierre-Guy Lavoie (PR) 280
+    ],
+    Client2: Club athlétisme St-Hyacinthe,
+    Division: 0280,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Daniel Laflamme,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Tommy Marquis (PR) 280 //Pierre-Guy Lavoie (PR) 280
+  },
+  {
+    Id: DIV-240929-1130-0452,
+    Title: Monktoberfest,
+    Location: 5959 Boulevard Monk,
+    Notes:
+<p><strong>IMPORTANTS :</strong></p>
+<p><strong>Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR par SG inscrit).</strong></p>
+<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong></p>
+<p><strong>Veuillez respecter ce modèle pour s’inscrire : <em>Prénom Nom (PR/SG– J-M) Division.</em>  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong></p>
+<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong></p>
+<p><strong>Les membres mineurs doivent faire remplir l’autorisation parentale (ci-jointe) pour chaque événement.</strong></p>
+<p>Informations relatives à l’événement :</p>
+<p>Description de l’événement si le titre n’est pas complétement explicite, fonctionnement de l’événement</p>
+<p>Infos supplémentaires :</p>
+<p>- Parking fourni</p>
+<p>- Repas fourni</p>
+<p>- Nombre de personnes attendues : 7000 personnes sur la journée</p>
+<p>- Se déroule à l'extérieur donc prévoir la tenue en conséquence</p>
+<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées)</p>,
+    StartDate: 2024-09-29T11:30:00-04:00,
+    EndDate: 2024-09-29T19:00:00-04:00,
+    CreationDate: 2024-09-17T15:40:23-04:00,
+    UpdateDate: 2024-09-28T19:39:18-04:00,
+    SignupCount: 2,
+    Signups: [
+      Gabrielle Velten-Jameson (SG-M) 452,
+      Azadeh Nourian(PR)452
+    ],
+    Client2: Groupe Paradoxe,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Jérémie MARTIN - jeremie.martin@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Gabrielle Velten-Jameson (SG-M) 452 //Azadeh Nourian(PR)452
+  },
+  {
+    Id: DIV-240929-1230-0452,
+    Title: Parade Phénoména,
+    Location: Parc Lahaie,
+    Notes:
+<p><strong>IMPORTANTS :  </strong></p>
+<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR pour 1 SG inscrit).</strong> </p>
+<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
+<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
+<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong> </p>
+<p>Infos supplémentaires : </p>
+<p>- Parking non fourni (remboursement à la suite à hauteur de 20$) </p>
+<p>- Repas non fourni (service de moins de 5h)</p>
+<p>- Nombre de personnes attendues : de 500 à 1000</p>
+<p>- Sur la route, donc attention à la météo ce jour ! La parade part du Parc Lahaie pour se rendre au carré de Gaspé.</p>
+<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+    StartDate: 2024-09-29T12:30:00-04:00,
+    EndDate: 2024-09-29T17:00:00-04:00,
+    CreationDate: 2024-05-28T18:31:55-04:00,
+    UpdateDate: 2024-09-28T19:53:51-04:00,
+    SignupCount: 3,
+    Signups: [
+      Thibault T. Becquaert (PR) PROV,
+      Benoît Lacassagne (SG-M) 452,
+      Andrei Ciuvilin (PR) 452
+    ],
+    Client2: Les Filles électriques,
+    Division: 0452,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Jérémie MARTIN - jeremie.martin@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 4,
+    PresencesConcat: Thibault T. Becquaert (PR) PROV //Benoît Lacassagne (SG-M) 452 //Andrei Ciuvilin (PR) 452
+  },
+  {
+    Id: DIV-240929-1500-0158,
+    Title: Voltigeurs,
+    Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
+    Notes: <p>venez encourager nos rouges!!! </p>,
+    StartDate: 2024-09-29T15:00:00-04:00,
+    EndDate: 2024-09-29T19:00:00-04:00,
+    CreationDate: 2024-08-27T11:22:39-04:00,
+    UpdateDate: 2024-09-25T14:24:55-04:00,
+    SignupCount: 2,
+    Signups: [
+      Caroline Girardot -SG 158,
+      Stephane Larocque PRM 158
+    ],
+    Client2: Les Voltigeurs,
+    Division: 0158,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Maxime Bourret,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 2,
+    PresencesConcat: Caroline Girardot -SG 158 //Stephane Larocque PRM 158
+  },
+  {
+    Id: DIV-240929-1500-0783,
+    Title: tigres contre quebec,
+    Location: colisée desjardins vicroriaville,
+    Notes: <p>hockey de la LHJMQ</p>,
+    StartDate: 2024-09-29T15:00:00-04:00,
+    EndDate: 2024-09-29T19:00:00-04:00,
+    CreationDate: 2024-09-13T09:18:00-04:00,
+    UpdateDate: 2024-09-28T18:20:59-04:00,
+    SignupCount: 2,
+    Signups: [
+      Yves Tardif PR,
+      serge pellerin PR
+    ],
+    Client2: tigres de victoriaville,
+    Division: 0783,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: yves tardif,
+    ProvincialContract: oui_yes,
+    NbMembersNeeded: 2,
+    PresencesConcat: Yves Tardif PR //serge pellerin PR
+  },
+  {
+    Id: PB-240930-1730-0971,
+    Title: PB The Marley Brothers,
+    Location: ,
+    Notes: ,
+    StartDate: 2024-09-30T17:30:00-04:00,
+    EndDate: 2024-09-30T23:45:00-04:00,
+    CreationDate: 2024-04-17T14:37:53-04:00,
+    UpdateDate: 2024-09-30T16:37:39-04:00,
+    SignupCount: 10,
+    Signups: [
+      Steve Sirois,
+      Martin Lee,
+      Benoit Vachon PR971,
+      Dany Levesque 971 Laval,
+      Giulia Craciunescu (SG) 452,
+      Marie-Ève Bélanger PR 971,
+      Romain Kowalski (SG) 971,
+      Martin,
+      Precious Tsikwa,
+      Veronique Lettre
+    ],
+    Division: 0971,
+    Priority: normal,
+    Category: service,
+    ResponsibleInCharge: Steve Sirois 1-877-889-0631 poste 6102,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Steve Sirois //Martin Lee //Benoit Vachon PR971 //Dany Levesque 971 Laval //Giulia Craciunescu (SG) 452 //Marie-Ève Bélanger PR 971 //Romain Kowalski (SG) 971 //Martin //Precious Tsikwa //Veronique Lettre
+  },
+  {
+    Id: CB-240930-1900-0452,
+    Title: Réunion d'État-Major (CUB),
+    Location: Par Team,
+    Notes:
+<p>Réunion d'État-Major suivant le modèle de CUB.</p>
+<p>Pour vous connecter : </p>
+<p><a href="https://teams.microsoft.com/l/meetup-join/19%3Ameeting_Y2ExOTNiMTEtMDk1NS00YjZiLWE0Y2YtYjM2NGJkZmFlYjky%40thread.v2/0?context=%7B%22Tid%22%3A%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2C%22Oid%22%3A%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7D" target="_blank" title="https://teams.microsoft.com/l/meetup-join/19%3ameeting_y2exotnimtetmdk1ns00yjzilwe0y2ytyjm2ngjkzmflyjky%40thread.v2/0?context=%7b%22tid%22%3a%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2c%22oid%22%3a%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7d" rel="noreferrer noopener external">https://teams.microsoft.com/l/meetup-join/19%3ameeting_Y2ExOTNiMTEtMDk1NS00YjZiLWE0Y2YtYjM2NGJkZmFlYjky%40thread.v2/0?context=%7b%22Tid%22%3a%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2c%22Oid%22%3a%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7d</a></p>
+<p>La réunion est seulement requise pour les officiers de la Division 452.</p>
+<p>Assurer vous d'avoir mis à jour la diapositive de votre département : <a href="https://asjqc.sharepoint.com/:p:/s/Division0452-Gestionnairesdivisionnaires/EWwO8EOM3yRGo_fU1NZjnLEBaBG70KEY0-HRxPLYkPk9WA?e=7ZNn3U" target="_blank" rel="noreferrer noopener external">CUB (30 sept 2024).pptx</a></p>
+<p>La réunion devrait durer une trentaine de minutes.</p>,
+    StartDate: 2024-09-30T19:00:00-04:00,
+    EndDate: 2024-09-30T20:00:00-04:00,
+    CreationDate: 2024-09-03T18:17:15-04:00,
+    UpdateDate: 2024-09-30T18:45:13-04:00,
+    SignupCount: 11,
+    Signups: [
+      Florès Jean-Pierre (PR) 452,
+      Anik Boudreau (PR) 452,
+      Christina Delacretaz (PR) 452,
+      Mathieu Keromnes (PR) 452,
+      Stéphanie Bernier Benoit (PR) 452,
+      Jérémie Martin (PR) 452,
+      Sylvie Lau (PR) 452,
+      Jeremie Guet (PR) 452,
+      Kathryn Griffin (PR) 452,
+      Pierre-adrien Méjat (PR) 452,
+      Tristan Mercier (PR) 452
+    ],
+    Division: 0452,
+    Priority: haut_high,
+    Category: reunion_meeting,
+    ResponsibleInCharge: Tristan Mercier, tristan.mercier@asjquebec.ca,
+    ProvincialContract: non_no,
+    NbMembersNeeded: 14,
+    PresencesConcat: Florès Jean-Pierre (PR) 452 //Anik Boudreau (PR) 452 //Christina Delacretaz (PR) 452 //Mathieu Keromnes (PR) 452 //Stéphanie Bernier Benoit (PR) 452 //Jérémie Martin (PR) 452 //Sylvie Lau (PR) 452 //Jeremie Guet (PR) 452 //Kathryn Griffin (PR) 452 //Pierre-adrien Méjat (PR) 452 //Tristan Mercier (PR) 452
+  }
+]

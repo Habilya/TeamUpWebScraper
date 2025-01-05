@@ -15,8 +15,6 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	private readonly IXLWorkBookFactory _xlWorkBookFactory;
 	private readonly ExcelReportSpreadSheetConfig _excelReportSpreadSheetConfig;
 
-	private IXLWorksheet _xLWorksheet = default!;
-
 	public ExcelSpreadsheetReportProvider(
 		ILoggerAdapter<ExcelSpreadsheetReportProvider> logger,
 		IDateTimeProvider dateTimeProvider,
@@ -88,7 +86,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		using (var wb = _xlWorkBookFactory.CreateXLWorkBook())
 		{
-			_xLWorksheet = wb.Worksheets.Add(_excelReportSpreadSheetConfig.ReportSpreadSheetName);
+			var _xLWorksheet = wb.Worksheets.Add(_excelReportSpreadSheetConfig.ReportSpreadSheetName);
 
 			WriteHeaders(_xLWorksheet);
 

@@ -59,6 +59,12 @@
     <None Update="EventApiResponseTransformerTestFiles\GetSubcalendarsAsync_CleanJsonResult.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ExcelSpreadsheetReportProviderTestFiles\EventApiResponseToExcelReportFile.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExcelSpreadsheetReportProviderTestFiles\ExcelSpreadsheetReportProviderTests.EventApiResponseToExcelReportFile_ShouldVerrify.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_200EmptyJsonResult.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

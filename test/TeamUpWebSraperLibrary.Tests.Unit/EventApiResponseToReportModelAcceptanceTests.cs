@@ -525,6 +525,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#region Arrangement of APIService response
 		var iHttpClientFactory = Substitute.For<IHttpClientFactory>();
 		var teamUpApiConfiguration = Substitute.For<TeamUpApiConfiguration>();
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
 		var logger = Substitute.For<ILoggerAdapter<TeamUpAPIService>>();
 
 		teamUpApiConfiguration.TimeZone = "America/Toronto";
@@ -544,7 +545,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		var dateToParam = new DateTime(2024, 11, 30);
 		#endregion
 
-		var _sut = new EventApiResponseTransformer();
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
 		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		// Act
@@ -574,6 +575,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		#region Arrangement of APIService response
 		var iHttpClientFactory = Substitute.For<IHttpClientFactory>();
 		var teamUpApiConfiguration = Substitute.For<TeamUpApiConfiguration>();
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
 		var logger = Substitute.For<ILoggerAdapter<TeamUpAPIService>>();
 
 		teamUpApiConfiguration.TimeZone = "America/Toronto";
@@ -593,7 +595,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 		var dateToParam = new DateTime(2024, 11, 30);
 		#endregion
 
-		var _sut = new EventApiResponseTransformer();
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
 		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		// Act

@@ -1,5 +1,7 @@
 ﻿using FluentAssertions;
+using NSubstitute;
 using System.Reflection;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
 
@@ -19,7 +21,8 @@ public class EventApiResponseTransformerTests
 	public async Task EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid()
 	{
 		// Arrange
-		var _sut = new EventApiResponseTransformer();
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
 		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		var input = new List<Event>
@@ -141,7 +144,8 @@ public class EventApiResponseTransformerTests
 	public void GetEventId_ShouldReturnMatching_WhenInputValid(int dataId, string expected)
 	{
 		// Arrange
-		var _sut = new EventApiResponseTransformer();
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
 		var dataMap = new Dictionary<int, Event>
 		{
 			{1, new Event{
