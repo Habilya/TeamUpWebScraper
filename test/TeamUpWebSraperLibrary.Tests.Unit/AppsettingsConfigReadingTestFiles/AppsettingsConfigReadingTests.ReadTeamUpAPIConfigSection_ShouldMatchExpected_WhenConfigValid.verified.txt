@@ -1,0 +1,7 @@
+﻿{
+  TeamupToken: [YOUR_API_KEY],
+  BaseURL: https://api.teamup.com/,
+  CalendarId: [YOUR_CALENDAR_ID],
+  TimeZone: America/Toronto,
+  MaxDaysDataSpanLimit: 60
+}

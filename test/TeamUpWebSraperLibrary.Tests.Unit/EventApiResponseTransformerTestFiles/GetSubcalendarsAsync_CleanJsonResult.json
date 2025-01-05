@@ -1,0 +1,262 @@
+[
+	{
+		"id": 9616473,
+		"name": "A > Formation",
+		"active": true,
+		"color": 25,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-15T18:27:25+00:00",
+		"update_dt": "2021-09-24T13:57:47+00:00"
+	},
+	{
+		"id": 13329555,
+		"name": "A > Garde d'Honneur",
+		"active": true,
+		"color": 45,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2024-06-03T20:26:11+00:00",
+		"update_dt": "2024-06-03T20:26:52+00:00"
+	},
+	{
+		"id": 11628509,
+		"name": "A > Programme thérapie assistée par le chien",
+		"active": true,
+		"color": 18,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2022-12-17T23:29:17+00:00",
+		"update_dt": null
+	},
+	{
+		"id": 10065801,
+		"name": "A > Provincial / non divisionnaire",
+		"active": true,
+		"color": 5,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-09-24T13:24:19+00:00",
+		"update_dt": "2021-09-24T13:58:21+00:00"
+	},
+	{
+		"id": 9796769,
+		"name": "A > Sécurité Civile",
+		"active": true,
+		"color": 6,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-07-07T00:27:00+00:00",
+		"update_dt": "2021-09-24T13:57:03+00:00"
+	},
+	{
+		"id": 9642439,
+		"name": "Centre Bell & Place Bell > D440 Place Bell",
+		"active": true,
+		"color": 47,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-22T22:41:28+00:00",
+		"update_dt": "2021-09-24T13:55:48+00:00"
+	},
+	{
+		"id": 9616459,
+		"name": "Centre Bell & Place Bell > D452 Centre Bell",
+		"active": true,
+		"color": 37,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-15T18:21:35+00:00",
+		"update_dt": "2024-06-03T20:25:03+00:00"
+	},
+	{
+		"id": 11798519,
+		"name": "Divisionnaire > D062 Québec",
+		"active": true,
+		"color": 36,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2023-02-02T17:21:16+00:00",
+		"update_dt": "2023-05-28T22:07:37+00:00"
+	},
+	{
+		"id": 11798520,
+		"name": "Divisionnaire > D094 Sherbrooke",
+		"active": true,
+		"color": 23,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2023-02-02T17:21:23+00:00",
+		"update_dt": "2023-02-02T17:23:59+00:00"
+	},
+	{
+		"id": 10084847,
+		"name": "Divisionnaire > D158 Drummondville",
+		"active": true,
+		"color": 15,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-09-29T23:37:58+00:00",
+		"update_dt": null
+	},
+	{
+		"id": 11089917,
+		"name": "Divisionnaire > D233 Trois-Rivières",
+		"active": true,
+		"color": 24,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2022-07-27T18:37:25+00:00",
+		"update_dt": "2022-07-27T18:37:34+00:00"
+	},
+	{
+		"id": 9616443,
+		"name": "Divisionnaire > D280 Saint-Hyacinthe",
+		"active": true,
+		"color": 34,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-15T18:05:35+00:00",
+		"update_dt": "2021-05-22T22:15:07+00:00"
+	},
+	{
+		"id": 10439888,
+		"name": "Divisionnaire > D300 Saguenay",
+		"active": true,
+		"color": 40,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2022-01-21T02:54:43+00:00",
+		"update_dt": null
+	},
+	{
+		"id": 11798523,
+		"name": "Divisionnaire > D309 Victoriaville",
+		"active": true,
+		"color": 26,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2023-02-02T17:21:48+00:00",
+		"update_dt": "2023-02-02T17:24:24+00:00"
+	},
+	{
+		"id": 11777838,
+		"name": "Divisionnaire > D335 Saint-Georges",
+		"active": true,
+		"color": 31,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2023-01-29T01:23:56+00:00",
+		"update_dt": "2023-01-29T01:34:52+00:00"
+	},
+	{
+		"id": 11159835,
+		"name": "Divisionnaire > D452 Montréal",
+		"active": true,
+		"color": 3,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2022-08-16T22:21:42+00:00",
+		"update_dt": "2024-06-03T20:23:09+00:00"
+	},
+	{
+		"id": 13779430,
+		"name": "Divisionnaire > D452 Montréal > D452 Ouest-de-l'île",
+		"active": true,
+		"color": 2,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2024-10-29T23:09:10+00:00",
+		"update_dt": "2024-11-08T02:48:54+00:00"
+	},
+	{
+		"id": 11433815,
+		"name": "Divisionnaire > D549 Baie-Comeau",
+		"active": true,
+		"color": 28,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2022-10-22T17:20:51+00:00",
+		"update_dt": "2023-02-02T17:38:29+00:00"
+	},
+	{
+		"id": 11798521,
+		"name": "Divisionnaire > D783 De l’Érable",
+		"active": true,
+		"color": 39,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2023-02-02T17:21:39+00:00",
+		"update_dt": "2023-02-02T17:38:00+00:00"
+	},
+	{
+		"id": 10891663,
+		"name": "Divisionnaire > D789 Laurentides",
+		"active": true,
+		"color": 17,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2022-05-25T22:09:17+00:00",
+		"update_dt": null
+	},
+	{
+		"id": 9826757,
+		"name": "Divisionnaire > D843 Haut Richelieu",
+		"active": true,
+		"color": 32,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-07-15T16:55:10+00:00",
+		"update_dt": null
+	},
+	{
+		"id": 9883222,
+		"name": "Divisionnaire > D883 Repentigny",
+		"active": true,
+		"color": 10,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-08-04T03:50:37+00:00",
+		"update_dt": null
+	},
+	{
+		"id": 9623201,
+		"name": "Divisionnaire > D907 Gatineau",
+		"active": true,
+		"color": 16,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-17T23:28:35+00:00",
+		"update_dt": "2021-05-17T23:28:44+00:00"
+	},
+	{
+		"id": 9634218,
+		"name": "Divisionnaire > D971 Laval",
+		"active": true,
+		"color": 20,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-20T12:29:12+00:00",
+		"update_dt": "2021-07-28T00:39:08+00:00"
+	},
+	{
+		"id": 9616476,
+		"name": "Divisionnaire > D1002 Brossard/Longueuil",
+		"active": true,
+		"color": 13,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2021-05-15T18:31:25+00:00",
+		"update_dt": "2024-06-03T20:25:32+00:00"
+	},
+	{
+		"id": 11798522,
+		"name": "Divisionnaire > D1007 Vaudreuil-Soulanges",
+		"active": true,
+		"color": 30,
+		"overlap": true,
+		"readonly": true,
+		"creation_dt": "2023-02-02T17:21:44+00:00",
+		"update_dt": "2023-02-02T17:24:08+00:00"
+	}
+]

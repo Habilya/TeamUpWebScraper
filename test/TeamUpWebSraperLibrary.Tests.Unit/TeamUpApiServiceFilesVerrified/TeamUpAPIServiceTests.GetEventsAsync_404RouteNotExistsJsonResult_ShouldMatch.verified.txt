@@ -1,0 +1,31 @@
+﻿{
+  IsError: true,
+  Errors: [
+    {
+      Code: not_found,
+      Description:
+Invalid address, page not found
+This page does not exist. If you reached it by following a Teamup link let us know so we can fix it!,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  ErrorsOrEmptyList: [
+    {
+      Code: not_found,
+      Description:
+Invalid address, page not found
+This page does not exist. If you reached it by following a Teamup link let us know so we can fix it!,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  FirstError: {
+    Code: not_found,
+    Description:
+Invalid address, page not found
+This page does not exist. If you reached it by following a Teamup link let us know so we can fix it!,
+    Type: Validation,
+    NumericType: 2
+  }
+}

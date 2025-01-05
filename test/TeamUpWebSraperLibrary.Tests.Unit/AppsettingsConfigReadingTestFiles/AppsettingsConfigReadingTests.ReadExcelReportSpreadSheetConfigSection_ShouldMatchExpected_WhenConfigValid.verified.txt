@@ -1,0 +1,12 @@
+﻿{
+  ReportSpreadSheetName: Export,
+  ReportHeaderLine: 1,
+  ReportSignupsLimit: 60,
+  ReportHeaderBackgroundColorHtml: #87cefa,
+  ReportAttentionRequiredHighlightingColorHtml: #FFFF00,
+  EventTitlesToHighLightPattern: Cancel|Annul,
+  FileNameTemplate: TeamUpEventsReport_{0}.xlsx,
+  FileNameDateTimeFormat: yyyy-MM-dd_hh-mm-ss,
+  SaveDefaultFolder: \Downloads\,
+  SaveDialogFilter: Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*
+}

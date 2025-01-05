@@ -1,0 +1,7 @@
+{
+    "error": {
+        "id": "invalid_api_key",
+        "title": "Invalid API key in Teamup-Token header",
+        "message": "Check the value you sent or request a new one at https://teamup.com/api-keys/request"
+    }
+}

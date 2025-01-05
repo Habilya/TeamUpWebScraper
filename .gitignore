@@ -342,6 +342,5 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# Morneau Shepell
-Specs/**
-Data/Testing/**
+# Verify package
+*.received.*

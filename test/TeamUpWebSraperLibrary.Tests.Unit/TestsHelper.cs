@@ -1,13 +1,28 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using NSubstitute;
-using TeamUpWebScraperLibrary.TeamUpAPI;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
 namespace TeamUpWebSraperLibrary.Tests.Unit;
 
+public class CustomHttpMessageHandler : HttpMessageHandler
+{
+	private readonly HttpResponseMessage _response;
+
+	public CustomHttpMessageHandler(HttpResponseMessage response)
+	{
+		_response = response;
+	}
+
+	protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+	{
+		return Task.FromResult(_response);
+	}
+}
+
 public static class TestsHelper
 {
-	public static TeamUpApiConfiguration ReadConfigIntoModel(string configRelativePath)
+	public static T? ReadConfigIntoModel<T>(string configRelativePath, string configSectionName)
 	{
 		var builder = new ConfigurationBuilder();
 		builder.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -15,13 +30,10 @@ public static class TestsHelper
 
 		var configuration = builder.Build();  // Build the configuration
 
-		// Create the TeamUpApiConfiguration object to bind the section to
-		var teamUpApiConfiguration = new TeamUpApiConfiguration();
+		var section = configuration.GetSection(configSectionName);
+		T? configModel = section.Get<T>();
 
-		// Bind the configuration section to the model
-		configuration.GetSection(TeamUpApiConstants.CONFIG_SECTION_NAME).Bind(teamUpApiConfiguration);
-
-		return teamUpApiConfiguration;
+		return configModel;
 	}
 
 	public static void ArrangeHttpClientMock(IHttpClientFactory iHttpClientFactory, HttpResponseMessage httpResponseMessage)
@@ -36,5 +48,27 @@ public static class TestsHelper
 		};
 
 		iHttpClientFactory.CreateClient(Arg.Any<string>()).Returns(httpClient);
+	}
+
+	public static DateTime? ParseDateForTest(string? dateAsString, string DateInputFormat)
+	{
+		if (string.IsNullOrWhiteSpace(dateAsString))
+		{
+			return null;
+		}
+
+		DateTime.TryParseExact(dateAsString, DateInputFormat, null, System.Globalization.DateTimeStyles.None, out DateTime dateResult);
+		return dateResult;
+	}
+
+	public static List<Subcalendar> ReadSubCalendarsFromJSON(string? subCalendarsJSONFullPath = null)
+	{
+		if (string.IsNullOrWhiteSpace(subCalendarsJSONFullPath))
+		{
+			subCalendarsJSONFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"EventApiResponseTransformerTestFiles\GetSubcalendarsAsync_CleanJsonResult.json");
+		}
+
+		string json = File.ReadAllText(subCalendarsJSONFullPath);
+		return JsonConvert.DeserializeObject<List<Subcalendar>>(json)!;
 	}
 }

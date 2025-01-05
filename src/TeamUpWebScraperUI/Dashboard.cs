@@ -1,9 +1,10 @@
-﻿using TeamUpWebScraperLibrary.DisplayGridView;
+﻿using ErrorOr;
+using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 using TeamUpWebScraperUI.Constants;
@@ -18,7 +19,6 @@ public partial class Dashboard : Form
 	private readonly ITeamUpAPIService _teamUpAPIService;
 	private readonly IEventApiResponseTransformer _eventApiResponseTransformer;
 	private readonly IExcelSpreadsheetReportProvider _excelSpreadsheetReportProvider;
-	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;
 	private readonly IDisplayGridViewProvider _displayGridViewProvider;
 
 
@@ -30,7 +30,6 @@ public partial class Dashboard : Form
 		ITeamUpAPIService teamUpAPIService,
 		IEventApiResponseTransformer eventApiResponseTransformer,
 		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider,
-		TeamUpApiConfiguration teamUpApiConfiguration,
 		IDisplayGridViewProvider displayGridViewProvider)
 	{
 		_logger = logger;
@@ -38,7 +37,6 @@ public partial class Dashboard : Form
 		_teamUpAPIService = teamUpAPIService;
 		_eventApiResponseTransformer = eventApiResponseTransformer;
 		_excelSpreadsheetReportProvider = excelSpreadsheetReportProvider;
-		_teamUpApiConfiguration = teamUpApiConfiguration;
 		_displayGridViewProvider = displayGridViewProvider;
 
 		InitializeComponent();
@@ -67,20 +65,36 @@ public partial class Dashboard : Form
 			ReinitUIElements();
 			ReportSpreadsheetLines = default!;
 			#region Input Validation
-			var dateFromValue = dtpDateFrom.Value.Date;
-			var dateToValue = dtpDateTo.Value.Date;
-			if (!IsValidDatesSpan(dateFromValue, dateToValue))
+			// Get Input values into a model
+			var inputValues = GetInputIntoModel();
+			if (!IsValidInputValues(inputValues))
 			{
 				return;
 			}
 			#endregion
 
-			#region Calling API
-			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync(dateFromValue, dateToValue);
+			#region Calling API for Calendars
+			var subCalendarsRouteResponse = await _teamUpAPIService.GetSubcalendarsAsync();
+			if (subCalendarsRouteResponse.IsError)
+			{
+				PopupError(subCalendarsRouteResponse);
+				return;
+			}
+
+			var subCalendarsList = subCalendarsRouteResponse.Value.Subcalendars;
+			if (subCalendarsList is null || !subCalendarsList.Any())
+			{
+				MessageBox.Show("For some reason the event SubCalendars list is empty...", "SubCalendars List Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			#endregion
+
+			#region Calling API for Events
+			// At this point, Assuming the input Values have been validated
+			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync((DateTime)inputValues.DateFrom!, (DateTime)inputValues.DateTo!);
 			if (eventsRouteResponse.IsError)
 			{
-				var firstError = eventsRouteResponse.FirstError;
-				MessageBox.Show(firstError.Description, firstError.Code, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				PopupError(eventsRouteResponse);
 				return;
 			}
 
@@ -93,7 +107,7 @@ public partial class Dashboard : Form
 			#endregion
 
 			#region Transforming API response into reportable model object
-			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, _teamUpApiConfiguration.Calendars);
+			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, subCalendarsList);
 			#endregion
 
 			#region UI acttions depending on the result
@@ -118,17 +132,35 @@ public partial class Dashboard : Form
 		}
 	}
 
-	private bool IsValidDatesSpan(DateTime dateFromValue, DateTime dateToValue)
+	private static void PopupError<T>(ErrorOr<T> eventsRouteResponse)
 	{
-		var datesSpanValidationResults = _inputValidation.ValidateDatesRange(dateFromValue, dateToValue);
-		if (datesSpanValidationResults.Any())
+		var firstError = eventsRouteResponse.FirstError;
+		MessageBox.Show(firstError.Description, firstError.Code, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+	}
+
+	private InputModel GetInputIntoModel()
+	{
+		return new InputModel
 		{
-			var validationsMessage = string.Join('\n', datesSpanValidationResults.ToArray());
-			MessageBox.Show(validationsMessage, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			DateFrom = dtpDateFrom.Value.Date,
+			DateTo = dtpDateTo.Value.Date
+		};
+	}
+
+	private bool IsValidInputValues(InputModel inputValues)
+	{
+		var inputValidationResults = _inputValidation.Validate(inputValues);
+
+		if (inputValidationResults.IsValid)
+		{
+			return true;
+		}
+		else
+		{
+			var message = string.Join("\n", inputValidationResults.Errors.Select(q => q.ErrorMessage));
+			MessageBox.Show(message, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			return false;
 		}
-
-		return true;
 	}
 
 	private void SaveXLSX_Click(object sender, EventArgs e)

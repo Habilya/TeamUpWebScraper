@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using System.Drawing;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.Providers;
@@ -12,22 +13,43 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	private readonly ILoggerAdapter<ExcelSpreadsheetReportProvider> _logger;
 	private readonly IDateTimeProvider _dateTimeProvider;
 	private readonly IXLWorkBookFactory _xlWorkBookFactory;
+	private readonly ExcelReportSpreadSheetConfig _excelReportSpreadSheetConfig;
 
 	public ExcelSpreadsheetReportProvider(
 		ILoggerAdapter<ExcelSpreadsheetReportProvider> logger,
 		IDateTimeProvider dateTimeProvider,
-		IXLWorkBookFactory xlWorkBookFactory)
+		IXLWorkBookFactory xlWorkBookFactory,
+		ExcelReportSpreadSheetConfig excelReportSpreadSheetConfig)
 	{
 		_logger = logger;
 		_dateTimeProvider = dateTimeProvider;
 		_xlWorkBookFactory = xlWorkBookFactory;
+		_excelReportSpreadSheetConfig = excelReportSpreadSheetConfig;
+	}
+
+	public XLColor GetXLColorFromHtmlColor(string htmlColor)
+	{
+		if (string.IsNullOrWhiteSpace(htmlColor))
+		{
+			return XLColor.Transparent;
+		}
+
+		try
+		{
+			return XLColor.FromColor(ColorTranslator.FromHtml(htmlColor));
+		}
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, $"Trouble parsing color {htmlColor} into XLcolor object");
+			return XLColor.Transparent;
+		}
 	}
 
 	public string ExcelReportFileName
 	{
 		get
 		{
-			return string.Format(EXCELREPORT_FILENAME_TEMPLATE, _dateTimeProvider.DateTimeNow.ToString(EXCELREPORT_FILENAME_DATE_FORMAT));
+			return string.Format(_excelReportSpreadSheetConfig.FileNameTemplate, _dateTimeProvider.DateTimeNow.ToString(_excelReportSpreadSheetConfig.FileNameDateTimeFormat));
 		}
 	}
 
@@ -35,7 +57,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		get
 		{
-			return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + EXCELREPORT_USER_DEFAULT_FOLDER;
+			return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + _excelReportSpreadSheetConfig.SaveDefaultFolder;
 		}
 	}
 
@@ -43,7 +65,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		get
 		{
-			return EXCELREPORT_SAVE_DIALOG_FILTER;
+			return _excelReportSpreadSheetConfig.SaveDialogFilter;
 		}
 	}
 
@@ -64,12 +86,12 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		using (var wb = _xlWorkBookFactory.CreateXLWorkBook())
 		{
-			var ws = wb.Worksheets.Add(EXCELREPORT_SHEET_NAME);
+			var _xLWorksheet = wb.Worksheets.Add(_excelReportSpreadSheetConfig.ReportSpreadSheetName);
 
-			WriteHeaders(ws);
+			WriteHeaders(_xLWorksheet);
 
 			// Write report lines
-			WriteDataLinesToSpresdsheet(ws, EXCELREPORT_HEADER_LINENUMBER + 1, reportSpreadsheetLines);
+			WriteDataLinesToSpresdsheet(_xLWorksheet, _excelReportSpreadSheetConfig.ReportHeaderLine + 1, reportSpreadsheetLines);
 
 			wb.SaveAs(filename);
 		}
@@ -81,9 +103,9 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		int columnIndex = (int)ExcelReportHeadersColumns.Id;
 		ExcelReportHeaders.ForEach(h =>
 		{
-			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).Value = h.Key;
-			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).WorksheetColumn().Width = h.Value;
-			ws.Cell(EXCELREPORT_HEADER_LINENUMBER, columnIndex).Style.Fill.BackgroundColor = HEADER_CELL_BACKGROUND_COLOR;
+			ws.Cell(_excelReportSpreadSheetConfig.ReportHeaderLine, columnIndex).Value = h.Key;
+			ws.Cell(_excelReportSpreadSheetConfig.ReportHeaderLine, columnIndex).WorksheetColumn().Width = h.Value;
+			ws.Cell(_excelReportSpreadSheetConfig.ReportHeaderLine, columnIndex).Style.Fill.BackgroundColor = GetXLColorFromHtmlColor(_excelReportSpreadSheetConfig.ReportHeaderBackgroundColorHtml);
 			columnIndex++;
 		});
 	}
@@ -108,7 +130,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			int signupColumn = (int)ExcelReportHeadersColumns.Column1;
 			// The Excell sheet has a limited number of columns
 			// There fore we can only display in report ExcelReportSignupsLimit of signups
-			foreach (var signup in line.Signups.Take(EXCELREPORT_SIGNUPS_LIMIT).ToList())
+			foreach (var signup in line.Signups.Take(_excelReportSpreadSheetConfig.ReportSignupsLimit).ToList())
 			{
 				ws.Cell(emptyRowNumber, signupColumn).Value = signup;
 				signupColumn++;
@@ -130,8 +152,22 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_nombre_de_membres_ne_cessaires).Value = line.NbMembersNeeded;
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees).Value = line.PresencesConcat;
 
+			ManageLineHighLighting(ws, emptyRowNumber, line.LineHighLightColor);
 
 			emptyRowNumber++;
 		}
+	}
+
+	private void ManageLineHighLighting(IXLWorksheet ws, int emptyRowNumber, string LineHighLightColor)
+	{
+		var lineHighlightXLColor = GetXLColorFromHtmlColor(LineHighLightColor);
+
+		if (lineHighlightXLColor == XLColor.Transparent)
+		{
+			return;
+		}
+
+		ws.Range(emptyRowNumber, (int)ExcelReportHeadersColumns.Id, emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees)
+				.Style.Fill.BackgroundColor = lineHighlightXLColor;
 	}
 }

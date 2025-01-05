@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using NSubstitute;
 using System.Reflection;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
@@ -8,64 +9,21 @@ namespace TeamUpWebSraperLibrary.Tests.Unit;
 
 public class EventApiResponseTransformerTests
 {
+	private readonly VerifySettings _verifySettings;
+
+	public EventApiResponseTransformerTests()
+	{
+		_verifySettings = new VerifySettings();
+		_verifySettings.UseDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"EventApiResponseTransformerTestFiles"));
+	}
+
 	[Fact]
-	public void EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid()
+	public async Task EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid()
 	{
 		// Arrange
-		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
-
-		var expected = new List<EventSpreadSheetLine>
-		{
-			new EventSpreadSheetLine
-			{
-				Id = "DIV-241201-0900-0971",
-				Title = "Exercice sauvetage forestier",
-				Location = "Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est\nLaval (Québec)  H7E 5G8",
-				Notes = "<p>Exercice de sauvetage en milieu forestier</p>",
-				StartDate = "2024-12-01T09:00:00-05:00",
-				EndDate = "2024-12-01T12:00:00-05:00",
-				CreationDate = "2024-10-13T21:18:47-04:00",
-				UpdateDate = "2024-12-01T06:28:41-05:00",
-				DeleteDate = default!,
-				SignupVisibility = default!,
-				SignupCount = "3",
-				Signups = new List<string>
-				{
-					"Benoit Vachon PR971",
-					"Giuliana Rotella",
-					"Michael Benigno"
-				},
-				Division = "0971",
-				ProvincialContract = "non_no",
-				PresencesConcat = "Benoit Vachon PR971 //Giuliana Rotella //Michael Benigno"
-			}, // 0
-			new EventSpreadSheetLine
-			{
-				Id = "CB-241201-1400-0452",
-				Title = "Fan Club et Club 1909",
-				Location = "1225 st antoine",
-				Notes = "<p>Date : 1 décembre 2024</p>",
-				StartDate = "2024-12-01T14:00:00-05:00",
-				EndDate = "2024-12-01T19:30:00-05:00",
-				CreationDate = "2024-11-12T15:53:57-05:00",
-				UpdateDate = "2024-11-30T20:04:57-05:00",
-				DeleteDate = default!,
-				SignupVisibility = default!,
-				SignupCount = "2",
-				Signups = new List<string>
-				{
-					"Pascal Pedneault (PR) 1002",
-					"Charles-Etienne Pedneault (PR) 1002"
-				},
-				Division = "0452",
-				Client2 = "centre bell",
-				ProvincialContract = "non_no",
-				NbMembersNeeded = "4",
-				PresencesConcat = "Pascal Pedneault (PR) 1002 //Charles-Etienne Pedneault (PR) 1002"
-			} // 1
-		};
-
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
 
 		var input = new List<Event>
 		{
@@ -167,12 +125,11 @@ public class EventApiResponseTransformerTests
 		};
 
 		// Act
-		var actual = _sut.EventApiResponseToSpreadSheetLines(input, config.Calendars);
+		var actual = _sut.EventApiResponseToSpreadSheetLines(input, subCalendars);
 
 		// Assert
-		actual.Should()
-			.NotBeNull()
-			.And.BeEquivalentTo(expected);
+		await Verify(actual, _verifySettings)
+				.DontScrubDateTimes();
 	}
 
 	[Theory]
@@ -187,8 +144,8 @@ public class EventApiResponseTransformerTests
 	public void GetEventId_ShouldReturnMatching_WhenInputValid(int dataId, string expected)
 	{
 		// Arrange
-		var _sut = new EventApiResponseTransformer();
-		var config = TestsHelper.ReadConfigIntoModel(@"EventApiResponseTransformerTestFiles\TestsConfig.json");
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
 		var dataMap = new Dictionary<int, Event>
 		{
 			{1, new Event{
@@ -282,11 +239,13 @@ public class EventApiResponseTransformerTests
 
 		var eventData = dataMap[dataId];
 
+		var subCalendars = TestsHelper.ReadSubCalendarsFromJSON();
+
 		// Private Method info obtained using REFLEXION
 		MethodInfo privateMethodGetEventId = typeof(EventApiResponseTransformer)
 			.GetMethod("GetEventId", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
-		object[] methodParameters = new object[2] { eventData, config.Calendars };
+		object[] methodParameters = new object[2] { eventData, subCalendars };
 
 
 		// Act

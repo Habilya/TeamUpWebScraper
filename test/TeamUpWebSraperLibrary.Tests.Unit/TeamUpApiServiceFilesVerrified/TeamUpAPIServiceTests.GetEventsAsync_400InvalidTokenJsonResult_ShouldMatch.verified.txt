@@ -1,0 +1,31 @@
+﻿{
+  IsError: true,
+  Errors: [
+    {
+      Code: invalid_api_key,
+      Description:
+Invalid API key in Teamup-Token header
+Check the value you sent or request a new one at https://teamup.com/api-keys/request,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  ErrorsOrEmptyList: [
+    {
+      Code: invalid_api_key,
+      Description:
+Invalid API key in Teamup-Token header
+Check the value you sent or request a new one at https://teamup.com/api-keys/request,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  FirstError: {
+    Code: invalid_api_key,
+    Description:
+Invalid API key in Teamup-Token header
+Check the value you sent or request a new one at https://teamup.com/api-keys/request,
+    Type: Validation,
+    NumericType: 2
+  }
+}

@@ -1,0 +1,31 @@
+﻿{
+  IsError: true,
+  Errors: [
+    {
+      Code: no_permission,
+      Description:
+Aucune permission
+Vous n'avez pas les autorisations requises pour effectuer cette action. Cela peut être dû à une modification des autorisations de votre lien depuis que vous avez chargé le calendrier. Veuillez recharger le calendrier.,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  ErrorsOrEmptyList: [
+    {
+      Code: no_permission,
+      Description:
+Aucune permission
+Vous n'avez pas les autorisations requises pour effectuer cette action. Cela peut être dû à une modification des autorisations de votre lien depuis que vous avez chargé le calendrier. Veuillez recharger le calendrier.,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  FirstError: {
+    Code: no_permission,
+    Description:
+Aucune permission
+Vous n'avez pas les autorisations requises pour effectuer cette action. Cela peut être dû à une modification des autorisations de votre lien depuis que vous avez chargé le calendrier. Veuillez recharger le calendrier.,
+    Type: Validation,
+    NumericType: 2
+  }
+}

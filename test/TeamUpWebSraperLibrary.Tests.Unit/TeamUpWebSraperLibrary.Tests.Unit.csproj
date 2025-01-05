@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.6.1" />
-    <PackageReference Include="coverlet.collector" Version="6.0.2">
+    <PackageReference Include="coverlet.collector" Version="6.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -20,6 +20,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="NSubstitute" Version="5.3.0" />
+    <PackageReference Include="Verify" Version="28.7.1" />
+    <PackageReference Include="Verify.Xunit" Version="28.7.1" />
     <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -36,15 +38,82 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="AppsettingsConfigReadingTestFiles\AppsettingsConfigReadingTests.ReadExcelReportSpreadSheetConfigSection_ShouldMatchExpected_WhenConfigValid.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AppsettingsConfigReadingTestFiles\AppsettingsConfigReadingTests.ReadTeamUpAPIConfigSection_ShouldMatchExpected_WhenConfigValid.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AppsettingsConfigReadingTestFiles\ValidTestsConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="EventApiResponseToReportModelAcceptanceTests\EventApiResponseToReportModelAcceptanceTests.EventApiResponseToSpreadSheetLines_ShouldVerrify.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="EventApiResponseToReportModelAcceptanceTests\SeptemberEventsAPIResponse.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EventApiResponseTransformerTestFiles\TestsConfig.json">
+    <None Update="EventApiResponseTransformerTestFiles\EventApiResponseTransformerTests.EventApiResponseToSpreadSheetLines_ShouldReturnMatchingList_WhenInputValid.verified.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TeamUpApiServiceTestFiles\ShortEventsResponse.json">
+    <None Update="EventApiResponseTransformerTestFiles\GetSubcalendarsAsync_CleanJsonResult.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ExcelSpreadsheetReportProviderTestFiles\EventApiResponseToExcelReportFile.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExcelSpreadsheetReportProviderTestFiles\ExcelSpreadsheetReportProviderTests.EventApiResponseToExcelReportFile_ShouldVerrify.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_200EmptyJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_200ShortEventsJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_400InvalidTokenJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_404CalendarNotFoundJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetEventsAsync_404RouteNotExistsJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetSubcalendarsAsync_200OkJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesInput\GetSubcalendarsAsync_403NoPermissionJsonResult.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_200EmptyJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_200ShortEventsJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_400InvalidTokenJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_404CalendarNotFoundJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_404RouteNotExistsJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetEventsAsync_OkButTextResponse_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetSubcalendarsAsync_200OkJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TeamUpApiServiceFilesVerrified\TeamUpAPIServiceTests.GetSubcalendarsAsync_403NoPermissionJsonResult_ShouldMatch.verified.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TeamUpApiServiceFilesVerrified\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-﻿using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
+﻿using System.Text.RegularExpressions;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
 namespace TeamUpWebScraperLibrary.Transformers;
@@ -17,12 +17,21 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 	public const string CENTRE_BELL_SEARCHABLE = "centre bell";
 	public const string PLACE_BELL_SEARCHABLE = "pb";
 
-	public EventApiResponseTransformer()
-	{
 
+	private readonly ExcelReportSpreadSheetConfig _excelReportSpreadSheetConfig;
+	private readonly Regex? _highlightTitlePattern;
+
+	public EventApiResponseTransformer(ExcelReportSpreadSheetConfig excelReportSpreadSheetConfig)
+	{
+		_excelReportSpreadSheetConfig = excelReportSpreadSheetConfig;
+
+		if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern))
+		{
+			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern);
+		}
 	}
 
-	public List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<CalendarConfiguration> calendarsMapping)
+	public List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<Subcalendar> calendarsMapping)
 	{
 		var eventSpreadSheetLines = new List<EventSpreadSheetLine>();
 
@@ -45,7 +54,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			.ToList();
 	}
 
-	private EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<Subcalendar> calendarsMapping)
 	{
 		return new EventSpreadSheetLine
 		{
@@ -71,8 +80,27 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			ProvincialContract = GetConcatenatedListValues(eventData.Custom.ContratProvincialContract),
 			NbMembersNeeded = eventData.Custom.NombreDeMembresNecessaires,
 
-			PresencesConcat = GetPresencesConcat(eventData)
+			PresencesConcat = GetPresencesConcat(eventData),
+
+			LineHighLightColor = GetLineHighLightColor(eventData, calendarsMapping)
 		};
+	}
+
+	private string GetLineHighLightColor(Event eventData, List<Subcalendar> calendarsMapping)
+	{
+		if (string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml) || _highlightTitlePattern is null)
+		{
+			return default!;
+		}
+
+		if (_highlightTitlePattern.IsMatch(eventData.Title))
+		{
+			return _excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml;
+		}
+		else
+		{
+			return default!;
+		}
 	}
 
 	private string? GetConcatenatedListValues(List<string>? listFromCustom)
@@ -100,7 +128,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 		return eventData.Signups?.Select(q => q.Name).ToList() ?? new List<string>();
 	}
 
-	private string GetEventId(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private string GetEventId(Event eventData, List<Subcalendar> calendarsMapping)
 	{
 		var eventDate = eventData.StartDate.ToString(EVENT_ID_EVENT_DATE_FORMAT);
 		var eventTime = eventData.StartDate.ToString(EVENT_ID_EVENT_TIME_FORMAT);
@@ -108,7 +136,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 		return $"{GetEventIdPrefix(eventData, calendarsMapping)}-{eventDate}-{eventTime}-{GetDivision(eventData, calendarsMapping)}";
 	}
 
-	private string GetDivision(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private string GetDivision(Event eventData, List<Subcalendar> calendarsMapping)
 	{
 		var prefix = GetEventIdPrefix(eventData, calendarsMapping);
 
@@ -152,7 +180,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 		}
 	}
 
-	private string GetEventIdPrefix(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private string GetEventIdPrefix(Event eventData, List<Subcalendar> calendarsMapping)
 	{
 		var subCalendarNames = GetSubCalendarsOfEvent(eventData, calendarsMapping);
 
@@ -169,7 +197,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 		return EVENT_ID_PREFIX_DIV;
 	}
 
-	private List<string> GetSubCalendarsOfEvent(Event eventData, List<CalendarConfiguration> calendarsMapping)
+	private List<string> GetSubCalendarsOfEvent(Event eventData, List<Subcalendar> calendarsMapping)
 	{
 		List<string> subCalendarNames = new List<string>();
 		if (eventData.SubcalendarIds.Any())

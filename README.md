@@ -36,9 +36,19 @@ Make sure to change the following values:
 - ✅ Serilog Logger + Rotating File
 - ✅ Unit tests (xUnit, FluentAssertions, NSubstitute, bogus)
 - ✅ Add versionning with build and environment variables
-- ✅ write tests with _teamUpAPIService mocked with n substitute using provided json file
+- ✅ write tests with _teamUpAPIService mocked with nSubstitute using provided json file
 - ✅ write logic that transforms the data recieved from API into a model that will go to Excel
 - ✅ Model for Excel Table
 - ✅ Display minimal values in the UI
 - ✅ Excel spreadsheet report provider
+- ✅ Use Verify & Verify.xUnit for some of the bigger expected objects in tests https://github.com/VerifyTests/Verify
+- ✅ Use FluentValidations for input validator
+- ✅ Add config section and model for Excel SpreadSheet provider
+- ✅ Highlight in yellow Excel report lines that have words matching a RegEx in config (Annule, Cancelled, Reporte)
+- ✅ Read from config this private const int MAX_DAYS_SPAN_LIMIT = 60;
+- ✅ Write additional tests for GetEvents & GetSubcalendars routes of TeamUpAPI service
+- ✅ Read Calendars from API route (not from mapping)  `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
+- 🔲 AutoMapper converting your model objects to Excel formats or from API responses to domain models
+- ✅ Tests (Exploration tests (uncomment)) Excel for a produced excel file
+- 🔲 UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
 - 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER

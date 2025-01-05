@@ -1,0 +1,31 @@
+﻿{
+  IsError: true,
+  Errors: [
+    {
+      Code: calendar_not_found,
+      Description:
+Calendar not found
+The web address used is not addressing a known calendar. Please verify the web address.,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  ErrorsOrEmptyList: [
+    {
+      Code: calendar_not_found,
+      Description:
+Calendar not found
+The web address used is not addressing a known calendar. Please verify the web address.,
+      Type: Validation,
+      NumericType: 2
+    }
+  ],
+  FirstError: {
+    Code: calendar_not_found,
+    Description:
+Calendar not found
+The web address used is not addressing a known calendar. Please verify the web address.,
+    Type: Validation,
+    NumericType: 2
+  }
+}
