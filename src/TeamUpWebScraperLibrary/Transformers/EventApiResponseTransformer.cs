@@ -1,4 +1,5 @@
-﻿using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
+﻿using System.Text.RegularExpressions;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
 namespace TeamUpWebScraperLibrary.Transformers;
@@ -16,9 +17,18 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 	public const string CENTRE_BELL_SEARCHABLE = "centre bell";
 	public const string PLACE_BELL_SEARCHABLE = "pb";
 
-	public EventApiResponseTransformer()
-	{
 
+	private readonly ExcelReportSpreadSheetConfig _excelReportSpreadSheetConfig;
+	private readonly Regex? _highlightTitlePattern;
+
+	public EventApiResponseTransformer(ExcelReportSpreadSheetConfig excelReportSpreadSheetConfig)
+	{
+		_excelReportSpreadSheetConfig = excelReportSpreadSheetConfig;
+
+		if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern))
+		{
+			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern);
+		}
 	}
 
 	public List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<Subcalendar> calendarsMapping)
@@ -70,8 +80,27 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			ProvincialContract = GetConcatenatedListValues(eventData.Custom.ContratProvincialContract),
 			NbMembersNeeded = eventData.Custom.NombreDeMembresNecessaires,
 
-			PresencesConcat = GetPresencesConcat(eventData)
+			PresencesConcat = GetPresencesConcat(eventData),
+
+			LineHighLightColor = GetLineHighLightColor(eventData, calendarsMapping)
 		};
+	}
+
+	private string GetLineHighLightColor(Event eventData, List<Subcalendar> calendarsMapping)
+	{
+		if (string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml) || _highlightTitlePattern is null)
+		{
+			return default!;
+		}
+
+		if (_highlightTitlePattern.IsMatch(eventData.Title))
+		{
+			return _excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml;
+		}
+		else
+		{
+			return default!;
+		}
 	}
 
 	private string? GetConcatenatedListValues(List<string>? listFromCustom)

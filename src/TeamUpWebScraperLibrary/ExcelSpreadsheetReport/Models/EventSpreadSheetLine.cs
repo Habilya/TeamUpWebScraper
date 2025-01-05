@@ -26,4 +26,6 @@ public class EventSpreadSheetLine
 	public string? ProvincialContract { get; set; } = default;
 	public string? NbMembersNeeded { get; set; } = default;
 	public string PresencesConcat { get; set; } = default!;
+
+	public string LineHighLightColor { get; set; } = default!;
 }
