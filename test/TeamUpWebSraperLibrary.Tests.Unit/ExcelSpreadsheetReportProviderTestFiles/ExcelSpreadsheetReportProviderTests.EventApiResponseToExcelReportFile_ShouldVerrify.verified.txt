@@ -3,7 +3,7 @@
     Id: DIV-240901-1545-0094,
     Title: Festival Hilarium,
     Location: Parc Jacques Cartier,
-    Notes: <p>festival de humor</p>,
+    Notes: festival de humor,
     StartDate: 2024-09-01T15:45:00-04:00,
     EndDate: 2024-09-01T23:00:00-04:00,
     CreationDate: 2024-06-11T16:32:35-04:00,
@@ -30,9 +30,9 @@
     Title: Fierté Québec (ancienne fête arc-en-ciel),
     Location: Place D'Youville Rue Saint-Jean Québec QC G1R 3P1,
     Notes:
-<p> Festival socio-artistique de la <em>fierté</em> 2SLGBTQ+</p>
-<p>Stationnements et repas non inclus, gardez vos reçues pour remboursement</p>
-<p>Tente fournis par le client </p>,
+ Festival socio-artistique de la fierté 2SLGBTQ+
+Stationnements et repas non inclus, gardez vos reçues pour remboursement
+Tente fournis par le client ,
     StartDate: 2024-09-01T16:30:00-04:00,
     EndDate: 2024-09-01T23:30:00-04:00,
     CreationDate: 2024-06-14T10:52:28-04:00,
@@ -75,7 +75,7 @@
     Id: DIV-240902-1900-1002,
     Title: Rencontre divisionnaire mensuelle,
     Location: 20 Rue Pierre-Boucher, Boucherville, QC J4B 5A4,
-    Notes: <p>Rencontre divisionnaire mensuelle au local </p>,
+    Notes: Rencontre divisionnaire mensuelle au local ,
     StartDate: 2024-09-02T19:00:00-04:00,
     EndDate: 2024-09-02T20:30:00-04:00,
     CreationDate: 2024-04-30T11:22:56-04:00,
@@ -156,7 +156,7 @@
     Id: DIV-240907-1000-1002,
     Title: voiture ancienne,
     Location: 1075 lionel-daunais boucherville,
-    Notes: <p>show de voitures anciennes devant le centre multifonctionnel Francine-Gadbois a Boucherville. </p>,
+    Notes: show de voitures anciennes devant le centre multifonctionnel Francine-Gadbois a Boucherville. ,
     StartDate: 2024-09-07T10:00:00-04:00,
     EndDate: 2024-09-07T16:30:00-04:00,
     CreationDate: 2024-07-06T17:51:04-04:00,
@@ -181,8 +181,8 @@
     Title: Lévis interculturelle,
     Location: Quai Paquet 6075 Rue Saint-Laurent Lévis G6V 3P5 Québec,
     Notes:
-<p>La tente doit être fourni par Ambulance Saint-Jean</p>
-<p>Repas et stationnement fournis </p>,
+La tente doit être fourni par Ambulance Saint-Jean
+Repas et stationnement fournis ,
     StartDate: 2024-09-07T11:00:00-04:00,
     EndDate: 2024-09-07T17:00:00-04:00,
     CreationDate: 2024-07-24T17:11:10-04:00,
@@ -201,7 +201,7 @@
     Id: DIV-240907-1330-0280,
     Title: Concert d’orgue,
     Location: Monastère Précieux Sang 2520 Girouard Ouest,
-    Notes: <p>Concert d’orgue</p>,
+    Notes: Concert d’orgue,
     StartDate: 2024-09-07T13:30:00-04:00,
     EndDate: 2024-09-07T16:00:00-04:00,
     CreationDate: 2024-08-27T10:21:27-04:00,
@@ -222,7 +222,7 @@
     Id: DIV-240907-1500-0158,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
-    Notes: <p>venez encourager nos rouges!!! </p>,
+    Notes: venez encourager nos rouges!!! ,
     StartDate: 2024-09-07T15:00:00-04:00,
     EndDate: 2024-09-07T19:00:00-04:00,
     CreationDate: 2024-08-05T11:32:09-04:00,
@@ -245,7 +245,7 @@
     Id: PB-240907-1830-0971,
     Title: PB Annulé Davido,
     Location: ,
-    Notes: <p>Ouverture des inscriptions le 19 avril à 8h</p>,
+    Notes: Ouverture des inscriptions le 19 avril à 8h,
     StartDate: 2024-09-07T18:30:00-04:00,
     EndDate: 2024-09-07T23:45:00-04:00,
     CreationDate: 2024-04-18T10:23:45-04:00,
@@ -286,7 +286,7 @@
     Id: DIV-240907-1830-0280,
     Title: Concert d’orgue,
     Location: Monastère Précieux Sang 2520 Girouard Ouest,
-    Notes: <p>Concert d’orgue</p>,
+    Notes: Concert d’orgue,
     StartDate: 2024-09-07T18:30:00-04:00,
     EndDate: 2024-09-07T20:30:00-04:00,
     CreationDate: 2024-08-27T10:22:21-04:00,
@@ -307,7 +307,7 @@
     Id: DIV-240908-1300-0280,
     Title: Concert d’orgue,
     Location: Chapel Séminaire 650Girouard Est,
-    Notes: <p>Concert d’orgue</p>,
+    Notes: Concert d’orgue,
     StartDate: 2024-09-08T13:00:00-04:00,
     EndDate: 2024-09-08T17:00:00-04:00,
     CreationDate: 2024-08-27T10:23:45-04:00,
@@ -329,7 +329,7 @@
     Id: DIV-240908-1345-0094,
     Title: Ceremonie pour veterans,
     Location: 2685 King O (Hotel Delta),
-    Notes: <p>Ceremonie pour les veterans</p>,
+    Notes: Ceremonie pour les veterans,
     StartDate: 2024-09-08T13:45:00-04:00,
     EndDate: 2024-09-08T17:00:00-04:00,
     CreationDate: 2024-09-01T11:42:13-04:00,
@@ -351,7 +351,7 @@
     Id: DIV-240909-0745-0094,
     Title: ceremonie pour veterans,
     Location: 2685 King O (Hotel Delta),
-    Notes: <p>ceremonie pour les veterans</p>,
+    Notes: ceremonie pour les veterans,
     StartDate: 2024-09-09T07:45:00-04:00,
     EndDate: 2024-09-09T16:00:00-04:00,
     CreationDate: 2024-09-01T11:45:01-04:00,
@@ -374,7 +374,7 @@
     Id: DIV-240910-0745-0094,
     Title: Ceremonie pour veterans,
     Location: 2685 King O (Hotel Delta),
-    Notes: <p>ceremonie pour les veterans</p>,
+    Notes: ceremonie pour les veterans,
     StartDate: 2024-09-10T07:45:00-04:00,
     EndDate: 2024-09-10T12:00:00-04:00,
     CreationDate: 2024-09-01T11:47:21-04:00,
@@ -397,15 +397,15 @@
     Title: Formation continue avec le 51e Ambulance de Campagne (PR seulement),
     Location: 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion,
     Notes:
-<p><strong>Dans le cadre du partenariat avec le 51e Ambulance de Campagne, nos PR pourront participer à certaines session de perfectionnement avec les Médics de l'Armée.</strong>  </p>
-<p><strong>Détails :</strong></p>
-<ol>
-<li>Il faudra être là à 18h50 pour commencer à l'heure.</li>
-<li>Ce sera en uniforme chemise ASJ complet comme en service, cela inclut donc les équipements de base (montres, de quoi prendre des notes, etc). Pour l'équipement de premier soin, comme d'habitude, il sera fourni.</li>
-<li>Cette soirée sera consacrée au protocole MARCH, similaire à notre CABCDE.</li>
-<li>Un instructeur PR d'ASJ sera présent pour assurer le suivi de nos protocoles ASJ.</li>
-<li>Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.</li>
-</ol>,
+Dans le cadre du partenariat avec le 51e Ambulance de Campagne, nos PR pourront participer à certaines session de perfectionnement avec les Médics de l'Armée.  
+Détails :
+
+Il faudra être là à 18h50 pour commencer à l'heure.
+Ce sera en uniforme chemise ASJ complet comme en service, cela inclut donc les équipements de base (montres, de quoi prendre des notes, etc). Pour l'équipement de premier soin, comme d'habitude, il sera fourni.
+Cette soirée sera consacrée au protocole MARCH, similaire à notre CABCDE.
+Un instructeur PR d'ASJ sera présent pour assurer le suivi de nos protocoles ASJ.
+Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.
+,
     StartDate: 2024-09-10T18:50:00-04:00,
     EndDate: 2024-09-10T20:30:00-04:00,
     CreationDate: 2024-09-06T09:00:39-04:00,
@@ -433,7 +433,7 @@
     Id: DIV-240911-0745-0094,
     Title: ceremonie pour veterans,
     Location: 2685 King O ( Hotel Delta),
-    Notes: <p>ceremonie pour les veterans</p>,
+    Notes: ceremonie pour les veterans,
     StartDate: 2024-09-11T07:45:00-04:00,
     EndDate: 2024-09-11T17:00:00-04:00,
     CreationDate: 2024-09-01T11:49:23-04:00,
@@ -456,7 +456,7 @@
     Id: DIV-240912-1600-0280,
     Title: Happening de la rentrée,
     Location: Rue Sicotte devant l’ITAQ,
-    Notes: <p>Spectacle pour la rentrée </p>,
+    Notes: Spectacle pour la rentrée ,
     StartDate: 2024-09-12T16:00:00-04:00,
     EndDate: 2024-09-12T22:00:00-04:00,
     CreationDate: 2024-07-02T11:43:46-04:00,
@@ -479,8 +479,8 @@
     Title: Festival FONO Québec,
     Location: Université Laval,
     Notes:
-<p>Informations à venir</p>
-<p></p>,
+Informations à venir
+,
     StartDate: 2024-09-13T13:00:00-04:00,
     EndDate: 2024-09-13T23:00:00-04:00,
     CreationDate: 2024-08-30T09:41:52-04:00,
@@ -506,20 +506,19 @@
     Title: Lumen,
     Location: 4950 Rue Louis-B.-Mayer Laval H7P 0H7 QC,
     Notes:
-<p></p>
-<p></p>
-<p> </p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p>Inauguration agrandissement Lumen </p>,
+
+ 
+
+
+
+
+
+
+
+
+
+
+Inauguration agrandissement Lumen ,
     StartDate: 2024-09-13T16:30:00-04:00,
     EndDate: 2024-09-13T20:30:00-04:00,
     CreationDate: 2024-07-16T16:05:31-04:00,
@@ -541,7 +540,7 @@
     Id: CB-240913-1730-0452,
     Title: Judas Priest,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/ETCby7TRo1xCmncZ3hpSVXQBq2KIbUzUDrH7pzJGhZXbiA?e=5QTfjE" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-13T17:30:00-04:00,
     EndDate: 2024-09-13T23:45:00-04:00,
     CreationDate: 2024-07-29T09:46:08-04:00,
@@ -599,13 +598,13 @@
     Title: Exercice Médic Rampamt,
     Location: 51e Ambulance de Campagne, 4895 Rue de Bullion, Montréal,
     Notes:
-<p>1. Le 51e Ambulance de campagne tiendra son exercice annuel, Ex MEDIC RAMPANT à Farnham du 13-15 Sep 2024. Le 51e nous propose d'avoir 8 participants pour jouer des blessés pendant les simulations.</p>
-<p>2. Voici comment les participants d'ASJ pourraient être utilisés :<br>
-a. Participants dans les plateaux de révision de contrôle hémorragique<br>
-b. Participants dans le plateau d'extraction d'urgence<br>
-c. Leçon de théorie de search and rescue<br>
-d. En tant que patient/figurant lors de scénarios.</p>
-<p>3. Le point de réunion sera au 51e Ambulance de Campagne pour 06:15 le matin du 14 septembre 2024 en uniforme ASJ avec vêtements chauds pour l'extérieur. (Apportez des vêtements civils pouvant être salis, déchirés, etc. dans un sac). Je serai en charge de vous transporter à la base de Farnham et de vous ramener le soir avant l'heure du souper. Le dîner sera fourni.</p>,
+1. Le 51e Ambulance de campagne tiendra son exercice annuel, Ex MEDIC RAMPANT à Farnham du 13-15 Sep 2024. Le 51e nous propose d'avoir 8 participants pour jouer des blessés pendant les simulations.
+2. Voici comment les participants d'ASJ pourraient être utilisés :
+a. Participants dans les plateaux de révision de contrôle hémorragique
+b. Participants dans le plateau d'extraction d'urgence
+c. Leçon de théorie de search and rescue
+d. En tant que patient/figurant lors de scénarios.
+3. Le point de réunion sera au 51e Ambulance de Campagne pour 06:15 le matin du 14 septembre 2024 en uniforme ASJ avec vêtements chauds pour l'extérieur. (Apportez des vêtements civils pouvant être salis, déchirés, etc. dans un sac). Je serai en charge de vous transporter à la base de Farnham et de vous ramener le soir avant l'heure du souper. Le dîner sera fourni.,
     StartDate: 2024-09-14T08:30:00-04:00,
     EndDate: 2024-09-14T19:15:00-04:00,
     CreationDate: 2024-08-20T20:03:02-04:00,
@@ -633,7 +632,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240914-0945-0094,
     Title: Portes ouvertes travaux public,
     Location: 555 rue des grandes fourches sud,
-    Notes: <p>journee portes ouvertes</p>,
+    Notes: journee portes ouvertes,
     StartDate: 2024-09-14T09:45:00-04:00,
     EndDate: 2024-09-14T16:00:00-04:00,
     CreationDate: 2024-09-04T16:54:19-04:00,
@@ -656,7 +655,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: CB-240914-1030-0452,
     Title: HOCKEY CANADIENS FACE-À-FACE DES ESPOIRS 2024,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EXI_HlEyILdLgCB6OLhrcsIBjAuxNMTDfdy9A4qK6hzv6Q?e=RViydM" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-14T10:30:00-04:00,
     EndDate: 2024-09-14T16:15:00-04:00,
     CreationDate: 2024-07-29T09:47:29-04:00,
@@ -686,17 +685,17 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Title: Fête de quartier de Saint-Henri,
     Location: Parc Sir-George-Étienne-Cartier,
     Notes:
-<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR pour 1 SG inscrit).</strong> </p>
-<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
-<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
-<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong> </p>
-<p></p>
-<p>Nombre de personnes attendues : 300 à 500 personnes.</p>
-<p>Repas fournis : BBQ </p>
-<p>Stationnement sur place</p>
-<p>Événement familiale avec activités divers sur place.</p>
-<p></p>
-<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR pour 1 SG inscrit). 
+Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations. 
+Veuillez respecter ce modèle pour s’inscrire : Prénom Nom (PR/SG– J-M) Division.  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M) 
+Ce qui donne par exemple : Jane Doe (SG-J-M) 452. 
+
+Nombre de personnes attendues : 300 à 500 personnes.
+Repas fournis : BBQ 
+Stationnement sur place
+Événement familiale avec activités divers sur place.
+
+- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) ,
     StartDate: 2024-09-14T11:30:00-04:00,
     EndDate: 2024-09-14T16:00:00-04:00,
     CreationDate: 2024-06-27T16:31:22-04:00,
@@ -719,7 +718,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240914-1300-0062,
     Title: Festival FONO Québec,
     Location: Université Laval,
-    Notes: <p>Informations à venir </p>,
+    Notes: Informations à venir ,
     StartDate: 2024-09-14T13:00:00-04:00,
     EndDate: 2024-09-14T23:00:00-04:00,
     CreationDate: 2024-06-24T01:26:52-04:00,
@@ -777,7 +776,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240915-0915-1002,
     Title: Circuit bleu,
     Location: Parc national des Iles de Boucherville55: Île Sainte-Marguerite, Boucherville, J4B 8R2, Québec,
-    Notes: <p>Maximum 200 personnes sur places. Repas et parking disponible sur places. C'est une journée de pagaie pour des amateurs. Dans le but de ramasser des fonds. Un lieu et une tente sera fourni par l'organisatuer.</p>,
+    Notes: Maximum 200 personnes sur places. Repas et parking disponible sur places. C'est une journée de pagaie pour des amateurs. Dans le but de ramasser des fonds. Un lieu et une tente sera fourni par l'organisatuer.,
     StartDate: 2024-09-15T09:15:00-04:00,
     EndDate: 2024-09-15T18:30:00-04:00,
     CreationDate: 2024-09-12T13:18:49-04:00,
@@ -801,7 +800,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: CB-240915-1100-0452,
     Title: HOCKEY CANADIENS FACE-À-FACE DES ESPOIRS 2024,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EdDQSyHOFYpFpDmhrPyynxUBp22rEVMeAp9vpGoY9fV2gg?e=XckGJr" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-15T11:00:00-04:00,
     EndDate: 2024-09-15T16:45:00-04:00,
     CreationDate: 2024-07-29T09:47:55-04:00,
@@ -892,7 +891,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: CB-240917-1800-0452,
     Title: Hans Zimmer,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EUqcjqamcNlDits_UXhAwp4BIx8ob_54qzwWDB7wGNa0HA?e=hik7dR" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-17T18:00:00-04:00,
     EndDate: 2024-09-17T23:45:00-04:00,
     CreationDate: 2024-07-29T09:48:27-04:00,
@@ -930,7 +929,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: CB-240918-1630-0452,
     Title: Privé: ONE YOUNG WORLD 2024,
     Location: 1225 st Antoine  ouest,
-    Notes: <p>5000 personnes </p>,
+    Notes: 5000 personnes ,
     StartDate: 2024-09-18T16:30:00-04:00,
     EndDate: 2024-09-18T21:30:00-04:00,
     CreationDate: 2024-09-12T16:58:58-04:00,
@@ -982,15 +981,15 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Title: Session de perfectionnement (Sujet: ateliers techniques signes vitaux) -  Training Session (Topic: technical workshop vital signs),
     Location: 51e Ambulance de Campagne, 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion, Montréal, QC H2T 1Z6,
     Notes:
-<p>Participez à nos sessions de perfectionnement ! </p>
-<p>Objectif : Renforcer l'esprit de corps des membres de la Division 452, tout en contribuant à accroître les compétences des bénévoles de l'ASJ.</p>
-<p>Code vestimentaire : Uniforme ASJ</p>
-<p>Participants : Tous sont les bienvenus (toutes divisions confondues). Les SG, les PR et les instructeurs sont les bienvenus. Si vous êtes un instructeur ou un professionnel de la santé ou tout simplement volontaire, vous pourriez donner une leçon ou aider à animer une session. Simplement contacter formation452@asjquebec.ca</p>
-<p>--------------------------</p>
-<p>Take part in our training sessions! </p>
-<p>Goal: To strengthen the esprit de corps of Division 452 members, while contributing to increasing the skills of ASJ volunteers.</p>
-<p>Dress code: SJA uniform</p>
-<p>Participants : All are welcome (all divisions). SGs, PRs and instructors alike. If you are an instructor or a healthcare professional or just willing, you can give a lesson or help lead a session. Just contact formation452@asjquebec.ca</p>,
+Participez à nos sessions de perfectionnement ! 
+Objectif : Renforcer l'esprit de corps des membres de la Division 452, tout en contribuant à accroître les compétences des bénévoles de l'ASJ.
+Code vestimentaire : Uniforme ASJ
+Participants : Tous sont les bienvenus (toutes divisions confondues). Les SG, les PR et les instructeurs sont les bienvenus. Si vous êtes un instructeur ou un professionnel de la santé ou tout simplement volontaire, vous pourriez donner une leçon ou aider à animer une session. Simplement contacter formation452@asjquebec.ca
+--------------------------
+Take part in our training sessions! 
+Goal: To strengthen the esprit de corps of Division 452 members, while contributing to increasing the skills of ASJ volunteers.
+Dress code: SJA uniform
+Participants : All are welcome (all divisions). SGs, PRs and instructors alike. If you are an instructor or a healthcare professional or just willing, you can give a lesson or help lead a session. Just contact formation452@asjquebec.ca,
     StartDate: 2024-09-19T19:00:00-04:00,
     EndDate: 2024-09-19T21:00:00-04:00,
     CreationDate: 2024-09-03T20:12:48-04:00,
@@ -1021,7 +1020,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240920-0000-0783,
     Title: tigres contre val d'or,
     Location: colisée desjardins victoriaville,
-    Notes: <p>hockey de la LHJMQ  </p>,
+    Notes: hockey de la LHJMQ  ,
     StartDate: 2024-09-20T00:00:00-04:00,
     EndDate: 2024-09-20T23:59:00-04:00,
     CreationDate: 2024-09-13T09:09:12-04:00,
@@ -1045,8 +1044,8 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Title: Cross-Country CSSPS,
     Location: 145 Rue de la Faune Québec G1G 0K9,
     Notes:
-<p>Salle ou tente fourni par le client</p>
-<p>Stationnement fourni</p>,
+Salle ou tente fourni par le client
+Stationnement fourni,
     StartDate: 2024-09-20T08:00:00-04:00,
     EndDate: 2024-09-20T11:00:00-04:00,
     CreationDate: 2024-08-07T20:28:44-04:00,
@@ -1064,7 +1063,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: CB-240920-1700-0452,
     Title: Kygo,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EXARUdfhQfBAjML4prS3anQBBbZMuGls7kIQhSm1VRXqBA?e=hUOz5F" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-20T17:00:00-04:00,
     EndDate: 2024-09-20T23:30:00-04:00,
     CreationDate: 2024-07-29T09:49:10-04:00,
@@ -1102,7 +1101,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240920-1800-0158,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
-    Notes: <p>venez encourager nos rouges!!! </p>,
+    Notes: venez encourager nos rouges!!! ,
     StartDate: 2024-09-20T18:00:00-04:00,
     EndDate: 2024-09-20T22:00:00-04:00,
     CreationDate: 2024-08-27T11:21:59-04:00,
@@ -1163,7 +1162,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240921-0945-0158,
     Title: Festival aux Goûts du Sanctuaire,
     Location: 1795 Chemin du Golf Ouest Saint-Majorique,
-    Notes: <p>repas fourni</p>,
+    Notes: repas fourni,
     StartDate: 2024-09-21T09:45:00-04:00,
     EndDate: 2024-09-21T16:00:00-04:00,
     CreationDate: 2024-09-09T16:36:54-04:00,
@@ -1186,7 +1185,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240921-1100-0094,
     Title: Collation des Grades,
     Location: Universite,
-    Notes: <p>Ceremonie des finnisants , Poste sur place, Uniforme complete oubliger (pantalon et chemise)</p>,
+    Notes: Ceremonie des finnisants , Poste sur place, Uniforme complete oubliger (pantalon et chemise),
     StartDate: 2024-09-21T11:00:00-04:00,
     EndDate: 2024-09-21T18:00:00-04:00,
     CreationDate: 2024-08-21T16:17:05-04:00,
@@ -1261,7 +1260,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: CB-240921-1800-0452,
     Title: Dadju & Tayc,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EdXFxrVT7U5In-5wflkDj64BwvGBzXFBTtDfj6l1F92zMA?e=NJjvBI" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-21T18:00:00-04:00,
     EndDate: 2024-09-21T23:30:00-04:00,
     CreationDate: 2024-07-29T09:49:33-04:00,
@@ -1293,19 +1292,19 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Title: Walk to end PKD,
     Location: Parc de Dollard-des-Ormeaux,
     Notes:
-<p><strong>IMPORTANTS : </strong> </p>
-<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR par SG inscrit).</strong> </p>
-<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
-<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
-<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452</strong> </p>
-<p>Informations relatives à l’événement : </p>
-<p>Description de l’événement si le titre n’est pas complétement explicite, fonctionnement de l’événement </p>
-<p>Infos supplémentaires : </p>
-<p>- Parking fourni</p>
-<p>- Repas fourni</p>
-<p>- Nombre de personnes attendues : <em>à valider</em></p>
-<p>- L'événement a lieu à l'extérieur, donc prévoir les vêtements en conséquences</p>
-<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+IMPORTANTS :  
+Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR par SG inscrit). 
+Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations. 
+Veuillez respecter ce modèle pour s’inscrire : Prénom Nom (PR/SG– J-M) Division.  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M) 
+Ce qui donne par exemple : Jane Doe (SG-J-M) 452 
+Informations relatives à l’événement : 
+Description de l’événement si le titre n’est pas complétement explicite, fonctionnement de l’événement 
+Infos supplémentaires : 
+- Parking fourni
+- Repas fourni
+- Nombre de personnes attendues : à valider
+- L'événement a lieu à l'extérieur, donc prévoir les vêtements en conséquences
+- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) ,
     StartDate: 2024-09-22T09:30:00-04:00,
     EndDate: 2024-09-22T14:00:00-04:00,
     CreationDate: 2024-09-17T19:21:16-04:00,
@@ -1328,7 +1327,7 @@ d. En tant que patient/figurant lors de scénarios.</p>
     Id: DIV-240922-1500-0158,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
-    Notes: <p>venez encourager nos rouges!!! </p>,
+    Notes: venez encourager nos rouges!!! ,
     StartDate: 2024-09-22T15:00:00-04:00,
     EndDate: 2024-09-22T19:00:00-04:00,
     CreationDate: 2024-08-27T11:22:22-04:00,
@@ -1385,8 +1384,8 @@ d. En tant que patient/figurant lors de scénarios.</p>
 Club de golf Royal Montréal
 25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
     Notes:
-<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
-<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.
+Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à premiers.secours@asjquebec.ca si vous devez faire une demande d'hébergement.,
     StartDate: 2024-09-24T07:00:00-04:00,
     EndDate: 2024-09-24T19:00:00-04:00,
     CreationDate: 2024-09-03T11:27:08-04:00,
@@ -1443,7 +1442,7 @@ Club de golf Royal Montréal
     Id: CB-240924-1700-0452,
     Title: Canadiens vs New Jersey,
     Location: 1225 rue Saint-Antoine O,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EQz_ulJpCBpKguB1SrWJXWgBzA63rzB8ed56I4wVoqszFg?e=Dlgaa1" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-24T17:00:00-04:00,
     EndDate: 2024-09-24T22:45:00-04:00,
     CreationDate: 2024-08-15T13:25:54-04:00,
@@ -1471,15 +1470,15 @@ Club de golf Royal Montréal
     Title: Formation continue avec le 51e Ambulance de Campagne (PR seulement),
     Location: 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion,
     Notes:
-<p><strong>Dans le cadre du partenariat avec le 51e Ambulance de Campagne, nos PR pourront participer à certaines session de perfectionnement avec les Médics de l'Armée.</strong></p>
-<p><strong>Détails :</strong></p>
-<ol>
-<li>Il faudra être là à 18h50 pour commencer à l'heure.</li>
-<li>Ce sera en uniforme chemise ASJ complet comme en service, cela inclut donc les équipements de base (montres, de quoi prendre des notes, etc). Pour l'équipement de premier soin, comme d'habitude, il sera fourni.</li>
-<li>Cette soirée sera consacrée au système musculo-squelettique, aux traumas craniens et aux blessures liées à la chaleur et au froid.</li>
-<li>Un instructeur PR d'ASJ sera présent pour assurer le suivi de nos protocoles ASJ.</li>
-<li>Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.</li>
-</ol>,
+Dans le cadre du partenariat avec le 51e Ambulance de Campagne, nos PR pourront participer à certaines session de perfectionnement avec les Médics de l'Armée.
+Détails :
+
+Il faudra être là à 18h50 pour commencer à l'heure.
+Ce sera en uniforme chemise ASJ complet comme en service, cela inclut donc les équipements de base (montres, de quoi prendre des notes, etc). Pour l'équipement de premier soin, comme d'habitude, il sera fourni.
+Cette soirée sera consacrée au système musculo-squelettique, aux traumas craniens et aux blessures liées à la chaleur et au froid.
+Un instructeur PR d'ASJ sera présent pour assurer le suivi de nos protocoles ASJ.
+Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.
+,
     StartDate: 2024-09-24T18:50:00-04:00,
     EndDate: 2024-09-24T20:30:00-04:00,
     CreationDate: 2024-09-13T09:01:41-04:00,
@@ -1508,8 +1507,8 @@ Club de golf Royal Montréal
 Club de golf Royal Montréal
 25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
     Notes:
-<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
-<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.
+Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à premiers.secours@asjquebec.ca si vous devez faire une demande d'hébergement.,
     StartDate: 2024-09-25T07:00:00-04:00,
     EndDate: 2024-09-25T19:00:00-04:00,
     CreationDate: 2024-09-03T11:27:48-04:00,
@@ -1585,7 +1584,7 @@ Club de golf Royal Montréal
     Id: CB-240925-1800-0452,
     Title: Twenty One Pilots,
     Location: 1225 st antoine ouest,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EWUvTIayuZRKuBw5TYKAiXwBT45VXEbwnQ2TIbagQrd0cg?e=JSRIag" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-25T18:00:00-04:00,
     EndDate: 2024-09-25T23:45:00-04:00,
     CreationDate: 2024-07-29T09:49:57-04:00,
@@ -1621,8 +1620,8 @@ Club de golf Royal Montréal
 Club de golf Royal Montréal
 25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
     Notes:
-<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
-<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.
+Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à premiers.secours@asjquebec.ca si vous devez faire une demande d'hébergement.,
     StartDate: 2024-09-26T07:00:00-04:00,
     EndDate: 2024-09-26T19:00:00-04:00,
     CreationDate: 2024-09-03T11:29:44-04:00,
@@ -1676,8 +1675,8 @@ Club de golf Royal Montréal
 Club de golf Royal Montréal
 25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
     Notes:
-<p>Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.</p>
-<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+Nous sommes à la recherche de 10 secouristes pour cet événement unique. Inscription via TEAM UP.
+Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à premiers.secours@asjquebec.ca si vous devez faire une demande d'hébergement.,
     StartDate: 2024-09-27T07:00:00-04:00,
     EndDate: 2024-09-27T19:00:00-04:00,
     CreationDate: 2024-09-03T11:30:13-04:00,
@@ -1704,20 +1703,20 @@ Club de golf Royal Montréal
     Title: Ultra Hole Challenge,
     Location: Golf Saint-Raphaël (1111 Montée de l’Église, Île-Bizzard),
     Notes:
-<p><strong>IMPORTANTS : </strong> </p>
-<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR par SG inscrit).</strong> </p>
-<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
-<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
-<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong> </p>
-<p>Informations relatives à l’événement : </p>
-<p>Compétitions de golf filmées et diffusées à la télévision. </p>
-<p>Infos supplémentaires : </p>
-<p>- Parking fourni</p>
-<p>- Repas fourni   </p>
-<p>- Nombre de personnes attendues  : 3 000</p>
-<p>- L'événement se tient à l'extérieur donc prévoir la tenue en conséquence.</p>
-<p>- Possible transport depuis centre-ville en covoiturage</p>
-<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+IMPORTANTS :  
+Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR par SG inscrit). 
+Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations. 
+Veuillez respecter ce modèle pour s’inscrire : Prénom Nom (PR/SG– J-M) Division.  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M) 
+Ce qui donne par exemple : Jane Doe (SG-J-M) 452. 
+Informations relatives à l’événement : 
+Compétitions de golf filmées et diffusées à la télévision. 
+Infos supplémentaires : 
+- Parking fourni
+- Repas fourni   
+- Nombre de personnes attendues  : 3 000
+- L'événement se tient à l'extérieur donc prévoir la tenue en conséquence.
+- Possible transport depuis centre-ville en covoiturage
+- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) ,
     StartDate: 2024-09-27T15:30:00-04:00,
     EndDate: 2024-09-27T22:00:00-04:00,
     CreationDate: 2024-09-11T12:40:19-04:00,
@@ -1739,7 +1738,7 @@ Club de golf Royal Montréal
     Id: DIV-240927-1800-0158,
     Title: Village Hanté,
     Location: 1425 rue Montplaisir Drummondville,
-    Notes: <p>Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir</p>,
+    Notes: Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir,
     StartDate: 2024-09-27T18:00:00-04:00,
     EndDate: 2024-09-27T22:30:00-04:00,
     CreationDate: 2024-08-29T15:02:53-04:00,
@@ -1765,7 +1764,7 @@ Club de golf Royal Montréal
     Id: DIV-240927-1800-0783,
     Title: tigres contre rouyn-noranda,
     Location: colisée desjardins victoriaville,
-    Notes: <p>hockey de la LHJMQ</p>,
+    Notes: hockey de la LHJMQ,
     StartDate: 2024-09-27T18:00:00-04:00,
     EndDate: 2024-09-27T22:00:00-04:00,
     CreationDate: 2024-09-13T09:12:20-04:00,
@@ -1813,8 +1812,8 @@ Club de golf Royal Montréal
 Club de golf Royal Montréal
 25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
     Notes:
-<p>Nous sommes à la recherche de 10 PR pour cet événement unique. Inscription via TEAM UP.</p>
-<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+Nous sommes à la recherche de 10 PR pour cet événement unique. Inscription via TEAM UP.
+Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à premiers.secours@asjquebec.ca si vous devez faire une demande d'hébergement.,
     StartDate: 2024-09-28T07:00:00-04:00,
     EndDate: 2024-09-28T19:00:00-04:00,
     CreationDate: 2024-09-03T11:30:38-04:00,
@@ -1843,10 +1842,10 @@ Club de golf Royal Montréal
     Title: Défi forestier,
     Location: École secondaire Mont-Saint-Sacrement 200 Boul Saint-Sacrement Saint-Gabriel-de-Valcartier G0A 4S0 QC,
     Notes:
-<p>10 boucles de sentiers, le plus gros 5KM, 4 roues disponible si besoin </p>
-<p>Premier départ 08:00</p>
-<p>Salle fournis par le client à l'accueil des coureurs, bâtiment fermé avec eau, table et chaise.</p>
-<p>Repas et stationnement fournis </p>,
+10 boucles de sentiers, le plus gros 5KM, 4 roues disponible si besoin 
+Premier départ 08:00
+Salle fournis par le client à l'accueil des coureurs, bâtiment fermé avec eau, table et chaise.
+Repas et stationnement fournis ,
     StartDate: 2024-09-28T08:00:00-04:00,
     EndDate: 2024-09-28T13:30:00-04:00,
     CreationDate: 2024-07-24T15:51:42-04:00,
@@ -1868,9 +1867,9 @@ Club de golf Royal Montréal
 École Fleur-de-Vie Laval
 Québec H7R 3R8,
     Notes:
-<p>Le 28 septembre prochain, la division 971 Laval participe à un exercice de déploiement en sécurité civile qui aura lieu à Laval. Dans le cadre de cet exercice, nous avons besoin de 6 à 8 volontaires qui seront les victimes à secourir lors de la situation d’urgence.</p>
-<p> </p>
-<p>De plus, lors de cet évènement, nous avons l’occasion de tenir un kiosque pour présenter notre organisation et éventuellement recruter des membres. Il s’agit d’une bonne occasion de visibilité pour notre équipe. À cette fin, nous avons besoin d’un ou deux volontaires afin de tenir le kiosque.</p>,
+Le 28 septembre prochain, la division 971 Laval participe à un exercice de déploiement en sécurité civile qui aura lieu à Laval. Dans le cadre de cet exercice, nous avons besoin de 6 à 8 volontaires qui seront les victimes à secourir lors de la situation d’urgence.
+ 
+De plus, lors de cet évènement, nous avons l’occasion de tenir un kiosque pour présenter notre organisation et éventuellement recruter des membres. Il s’agit d’une bonne occasion de visibilité pour notre équipe. À cette fin, nous avons besoin d’un ou deux volontaires afin de tenir le kiosque.,
     StartDate: 2024-09-28T08:00:00-04:00,
     EndDate: 2024-09-28T17:00:00-04:00,
     CreationDate: 2024-08-09T11:36:05-04:00,
@@ -1896,16 +1895,16 @@ Québec H7R 3R8,
     Title: Marche Respirons l'Espoir de Montréal,
     Location: Parc Angrignon (3500 Boul Des Trinitaires Montréal H4E 4J3 QC),
     Notes:
-<p><strong>IMPORTANTS :</strong></p>
-<p><strong>Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR pour 1 SG inscrit).</strong></p>
-<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong></p>
-<p><strong>Veuillez respecter ce modèle pour s’inscrire : <em>Prénom Nom (PR/SG– J-M) Division.</em>  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong></p>
-<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong></p>
-<p>Informations supplémentaires :</p>
-<p>-Stationnement disponible sur place</p>
-<p>-Repas fourni par le client à la fin de la marche</p>
-<p>-Nombre de personnes attendues : 50 à 100 personnes</p>
-<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées)</p>,
+IMPORTANTS :
+Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR pour 1 SG inscrit).
+Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.
+Veuillez respecter ce modèle pour s’inscrire : Prénom Nom (PR/SG– J-M) Division.  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)
+Ce qui donne par exemple : Jane Doe (SG-J-M) 452.
+Informations supplémentaires :
+-Stationnement disponible sur place
+-Repas fourni par le client à la fin de la marche
+-Nombre de personnes attendues : 50 à 100 personnes
+- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées),
     StartDate: 2024-09-28T09:45:00-04:00,
     EndDate: 2024-09-28T13:30:00-04:00,
     CreationDate: 2024-05-16T12:06:58-04:00,
@@ -1928,7 +1927,7 @@ Québec H7R 3R8,
     Id: DIV-240928-1000-0280,
     Title: Porte ouverte aéroport,
     Location: Aéroport St-Mathieu de Beloeil,
-    Notes: <p>porte ouvert</p>,
+    Notes: porte ouvert,
     StartDate: 2024-09-28T10:00:00-04:00,
     EndDate: 2024-09-28T16:30:00-04:00,
     CreationDate: 2024-05-23T20:53:17-04:00,
@@ -1949,7 +1948,7 @@ Québec H7R 3R8,
     Id: DIV-240928-1015-0094,
     Title: Entreprise en famille,
     Location: Ecole du Triolet,
-    Notes: <p>eventment de familles a l`ecole du Triolet</p>,
+    Notes: eventment de familles a l`ecole du Triolet,
     StartDate: 2024-09-28T10:15:00-04:00,
     EndDate: 2024-09-28T16:30:00-04:00,
     CreationDate: 2024-09-04T16:51:21-04:00,
@@ -1993,7 +1992,7 @@ Québec H7R 3R8,
     Id: CB-240928-1700-0452,
     Title: Canadiens vs Toronto,
     Location: 1225 rue Saint-Antoine O,
-    Notes: <p><a href="https://asjqc.sharepoint.com/:x:/s/d666/EcpIgPcJ7phJk15tPymLoFMBnG0mDPpP_PypnP4qOqa-9Q?e=SeThvT" target="_blank" rel="noreferrer noopener external">FICHIER</a></p>,
+    Notes: FICHIER,
     StartDate: 2024-09-28T17:00:00-04:00,
     EndDate: 2024-09-28T22:45:00-04:00,
     CreationDate: 2024-08-15T13:26:52-04:00,
@@ -2020,7 +2019,7 @@ Québec H7R 3R8,
     Id: DIV-240928-1800-0158,
     Title: Village Hanté,
     Location: 1425 rue Montplaisir Drummondville,
-    Notes: <p>Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir</p>,
+    Notes: Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir,
     StartDate: 2024-09-28T18:00:00-04:00,
     EndDate: 2024-09-28T22:30:00-04:00,
     CreationDate: 2024-08-29T15:03:12-04:00,
@@ -2047,8 +2046,8 @@ Québec H7R 3R8,
 Club de golf Royal Montréal
 25 Chemin South Ridge, L'Île-Bizard, Québec, H9E 1B3, Canada,
     Notes:
-<p>Nous sommes à la recherche de 10 PR pour cet événement unique. Inscription via TEAM UP.</p>
-<p>Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à <a href="mailto:premier.secours@asjquebec.ca" target="_blank" rel="noreferrer noopener external">premiers.secours@asjquebec.ca</a> si vous devez faire une demande d'hébergement.</p>,
+Nous sommes à la recherche de 10 PR pour cet événement unique. Inscription via TEAM UP.
+Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géographique. Lors de l'inscription, vous devez faire parvenir un courriel à premiers.secours@asjquebec.ca si vous devez faire une demande d'hébergement.,
     StartDate: 2024-09-29T07:00:00-04:00,
     EndDate: 2024-09-29T19:00:00-04:00,
     CreationDate: 2024-09-03T11:31:09-04:00,
@@ -2072,7 +2071,7 @@ Club de golf Royal Montréal
     Id: DIV-240929-0800-0280,
     Title: Relai 2 h,
     Location: Parc Casimir Dessaules,
-    Notes: <p>Course à relai autour du parc</p>,
+    Notes: Course à relai autour du parc,
     StartDate: 2024-09-29T08:00:00-04:00,
     EndDate: 2024-09-29T12:00:00-04:00,
     CreationDate: 2024-08-26T15:49:23-04:00,
@@ -2096,20 +2095,20 @@ Club de golf Royal Montréal
     Title: Monktoberfest,
     Location: 5959 Boulevard Monk,
     Notes:
-<p><strong>IMPORTANTS :</strong></p>
-<p><strong>Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR par SG inscrit).</strong></p>
-<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong></p>
-<p><strong>Veuillez respecter ce modèle pour s’inscrire : <em>Prénom Nom (PR/SG– J-M) Division.</em>  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong></p>
-<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong></p>
-<p><strong>Les membres mineurs doivent faire remplir l’autorisation parentale (ci-jointe) pour chaque événement.</strong></p>
-<p>Informations relatives à l’événement :</p>
-<p>Description de l’événement si le titre n’est pas complétement explicite, fonctionnement de l’événement</p>
-<p>Infos supplémentaires :</p>
-<p>- Parking fourni</p>
-<p>- Repas fourni</p>
-<p>- Nombre de personnes attendues : 7000 personnes sur la journée</p>
-<p>- Se déroule à l'extérieur donc prévoir la tenue en conséquence</p>
-<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées)</p>,
+IMPORTANTS :
+Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR par SG inscrit).
+Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.
+Veuillez respecter ce modèle pour s’inscrire : Prénom Nom (PR/SG– J-M) Division.  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)
+Ce qui donne par exemple : Jane Doe (SG-J-M) 452.
+Les membres mineurs doivent faire remplir l’autorisation parentale (ci-jointe) pour chaque événement.
+Informations relatives à l’événement :
+Description de l’événement si le titre n’est pas complétement explicite, fonctionnement de l’événement
+Infos supplémentaires :
+- Parking fourni
+- Repas fourni
+- Nombre de personnes attendues : 7000 personnes sur la journée
+- Se déroule à l'extérieur donc prévoir la tenue en conséquence
+- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées),
     StartDate: 2024-09-29T11:30:00-04:00,
     EndDate: 2024-09-29T19:00:00-04:00,
     CreationDate: 2024-09-17T15:40:23-04:00,
@@ -2133,17 +2132,17 @@ Club de golf Royal Montréal
     Title: Parade Phénoména,
     Location: Parc Lahaie,
     Notes:
-<p><strong>IMPORTANTS :  </strong></p>
-<p><strong>Il faut au moins la moitié de </strong><strong>PR majeur et qui ne sont pas en mentorat</strong><strong> (donc 1 PR pour 1 SG inscrit).</strong> </p>
-<p><strong>Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations.</strong> </p>
-<p><strong>Veuillez respecter ce modèle pour s’inscrire : </strong><strong><em>Prénom Nom (PR/SG– J-M) Division. </em></strong><strong> Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M)</strong> </p>
-<p><strong>Ce qui donne par exemple : Jane Doe (SG-J-M) 452.</strong> </p>
-<p>Infos supplémentaires : </p>
-<p>- Parking non fourni (remboursement à la suite à hauteur de 20$) </p>
-<p>- Repas non fourni (service de moins de 5h)</p>
-<p>- Nombre de personnes attendues : de 500 à 1000</p>
-<p>- Sur la route, donc attention à la météo ce jour ! La parade part du Parc Lahaie pour se rendre au carré de Gaspé.</p>
-<p>- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) </p>,
+IMPORTANTS :  
+Il faut au moins la moitié de PR majeur et qui ne sont pas en mentorat (donc 1 PR pour 1 SG inscrit). 
+Merci de nous aviser par courriel si vous souhaiter vous désinscrire, c’est nécessaire pour le bon déroulement des opérations. 
+Veuillez respecter ce modèle pour s’inscrire : Prénom Nom (PR/SG– J-M) Division.  Entre parenthèse se trouve la formation : Premier Répondant (PR), Secouriste Général (SG), Jeunesse (J), Mentorat (M) 
+Ce qui donne par exemple : Jane Doe (SG-J-M) 452. 
+Infos supplémentaires : 
+- Parking non fourni (remboursement à la suite à hauteur de 20$) 
+- Repas non fourni (service de moins de 5h)
+- Nombre de personnes attendues : de 500 à 1000
+- Sur la route, donc attention à la météo ce jour ! La parade part du Parc Lahaie pour se rendre au carré de Gaspé.
+- Les informations avec les bénévoles inscrits, le contact client, les plans, le lieu où vous êtes attendu seront envoyés aux bénévoles participants quelques jours avant l'événements (une fois que tout sera confirmées) ,
     StartDate: 2024-09-29T12:30:00-04:00,
     EndDate: 2024-09-29T17:00:00-04:00,
     CreationDate: 2024-05-28T18:31:55-04:00,
@@ -2167,7 +2166,7 @@ Club de golf Royal Montréal
     Id: DIV-240929-1500-0158,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
-    Notes: <p>venez encourager nos rouges!!! </p>,
+    Notes: venez encourager nos rouges!!! ,
     StartDate: 2024-09-29T15:00:00-04:00,
     EndDate: 2024-09-29T19:00:00-04:00,
     CreationDate: 2024-08-27T11:22:39-04:00,
@@ -2190,7 +2189,7 @@ Club de golf Royal Montréal
     Id: DIV-240929-1500-0783,
     Title: tigres contre quebec,
     Location: colisée desjardins vicroriaville,
-    Notes: <p>hockey de la LHJMQ</p>,
+    Notes: hockey de la LHJMQ,
     StartDate: 2024-09-29T15:00:00-04:00,
     EndDate: 2024-09-29T19:00:00-04:00,
     CreationDate: 2024-09-13T09:18:00-04:00,
@@ -2244,12 +2243,12 @@ Club de golf Royal Montréal
     Title: Réunion d'État-Major (CUB),
     Location: Par Team,
     Notes:
-<p>Réunion d'État-Major suivant le modèle de CUB.</p>
-<p>Pour vous connecter : </p>
-<p><a href="https://teams.microsoft.com/l/meetup-join/19%3Ameeting_Y2ExOTNiMTEtMDk1NS00YjZiLWE0Y2YtYjM2NGJkZmFlYjky%40thread.v2/0?context=%7B%22Tid%22%3A%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2C%22Oid%22%3A%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7D" target="_blank" title="https://teams.microsoft.com/l/meetup-join/19%3ameeting_y2exotnimtetmdk1ns00yjzilwe0y2ytyjm2ngjkzmflyjky%40thread.v2/0?context=%7b%22tid%22%3a%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2c%22oid%22%3a%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7d" rel="noreferrer noopener external">https://teams.microsoft.com/l/meetup-join/19%3ameeting_Y2ExOTNiMTEtMDk1NS00YjZiLWE0Y2YtYjM2NGJkZmFlYjky%40thread.v2/0?context=%7b%22Tid%22%3a%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2c%22Oid%22%3a%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7d</a></p>
-<p>La réunion est seulement requise pour les officiers de la Division 452.</p>
-<p>Assurer vous d'avoir mis à jour la diapositive de votre département : <a href="https://asjqc.sharepoint.com/:p:/s/Division0452-Gestionnairesdivisionnaires/EWwO8EOM3yRGo_fU1NZjnLEBaBG70KEY0-HRxPLYkPk9WA?e=7ZNn3U" target="_blank" rel="noreferrer noopener external">CUB (30 sept 2024).pptx</a></p>
-<p>La réunion devrait durer une trentaine de minutes.</p>,
+Réunion d'État-Major suivant le modèle de CUB.
+Pour vous connecter : 
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_Y2ExOTNiMTEtMDk1NS00YjZiLWE0Y2YtYjM2NGJkZmFlYjky%40thread.v2/0?context=%7b%22Tid%22%3a%22c9e60a37-0231-4d5f-b99d-50e907232e3e%22%2c%22Oid%22%3a%22f7f6bf3f-3e2f-47c2-b7f4-d04396438cc8%22%7d
+La réunion est seulement requise pour les officiers de la Division 452.
+Assurer vous d'avoir mis à jour la diapositive de votre département : CUB (30 sept 2024).pptx
+La réunion devrait durer une trentaine de minutes.,
     StartDate: 2024-09-30T19:00:00-04:00,
     EndDate: 2024-09-30T20:00:00-04:00,
     CreationDate: 2024-09-03T18:17:15-04:00,
