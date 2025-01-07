@@ -156,6 +156,10 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 
 			emptyRowNumber++;
 		}
+
+		// Transform entire line set into a table
+		ws.Range(_excelReportSpreadSheetConfig.ReportHeaderLine, (int)ExcelReportHeadersColumns.Id, emptyRowNumber - 1, (int)ExcelReportHeadersColumns.presences_collees)
+			.CreateTable();
 	}
 
 	private void ManageLineHighLighting(IXLWorksheet ws, int emptyRowNumber, string LineHighLightColor)
