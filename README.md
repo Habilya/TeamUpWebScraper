@@ -49,7 +49,7 @@ Make sure to change the following values:
 - ✅ Write additional tests for GetEvents & GetSubcalendars routes of TeamUpAPI service
 - ✅ Read Calendars from API route (not from mapping)  `/subcalendars` https://teamup.stoplight.io/docs/api/046361930f27a-get-a-collection-of-sub-calendars
 - ✅ Tests (Exploration tests (uncomment)) Excel for a produced excel file
-- 🔲 Remove HTML tags from note field HTML Agility pack  HtmlEntity.DeEntetize(document.DocumentNode.innertext)
+- ✅ Remove HTML tags from note field HTML Agility pack  HtmlEntity.DeEntetize(document.DocumentNode.innertext)
 - ✅ Make Excel Report a table
 - 🔲 UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
 - 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
