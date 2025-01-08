@@ -28,7 +28,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 
 		if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern))
 		{
-			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern);
+			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern, RegexOptions.IgnoreCase);
 		}
 	}
 
@@ -99,7 +99,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 		document.LoadHtml(eventData.Notes);
 
 		// Remove HTML entities (tags)
-		return document.DocumentNode.InnerText;
+		return document.DocumentNode.InnerText.Trim();
 	}
 
 	private string GetLineHighLightColor(Event eventData, List<Subcalendar> calendarsMapping)
