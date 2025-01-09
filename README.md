@@ -33,7 +33,7 @@ Make sure to change the following values:
 ...
 ```
 
-## Keep in mind the environmental variables specifieed in UI project
+## Keep in mind the environmental variables specified in UI project
 (They are in project properties > Debug/General > Open Debug Launch Profiles UI > Environment Variables)
 (Or in Solution Explorer > Properties > launchSettings.json)
 * BUILD_NUMBER = DEV_ENV
