@@ -1,8 +1,11 @@
 ﻿# TeamUpWebScraper
 
-WinForms App to parse a TeamUp Calendar 
-![Main dashboard screen featuring all the controls](screenshots/Winform1.png)
+WinForms App to parse a TeamUp Calendar using API,
 and return data in Excel spreadsheet report format.
+
+### Application interface
+![Main dashboard screen featuring all the controls](screenshots/Winform1.png)
+### Excel report
 ![screenshot of Excel report file](screenshots/ExcelReport.png)
 
 ## Configuration
@@ -17,10 +20,10 @@ You may take the "Development" version of that config, that is in the github rep
 Make sure to change the following values:
 ```json
 "TeamUpAPI": {
-		"TeamupToken": "[YOUR_API_KEY]",
-		"CalendarId": "[YOUR_CALENDAR_ID]",
-	},
-	...
+	"TeamupToken": "[YOUR_API_KEY]",
+	"CalendarId": "[YOUR_CALENDAR_ID]",
+},
+...
 ```
 
 ## Keep in mind the environmental variables specifieed in UI project
