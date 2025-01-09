@@ -20,8 +20,8 @@ You may take the "Development" version of that config, that is in the github rep
 Make sure to change the following values:
 ```json
 "TeamUpAPI": {
-	"TeamupToken": "[YOUR_API_KEY]",
-	"CalendarId": "[YOUR_CALENDAR_ID]",
+  "TeamupToken": "[YOUR_API_KEY]",
+  "CalendarId": "[YOUR_CALENDAR_ID]",
 },
 ...
 ```
