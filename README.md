@@ -1,4 +1,4 @@
-﻿[![CI Status](https://github.com/Habilya/TeamUpWebScraper/actions/workflows/dotnet-desktop.yml/badge.svg?branch=main)](https://github.com/Habilya/TeamUpWebScraper/actions/workflows/dotnet-desktop.yml)
+﻿[![CI Status](https://github.com/Habilya/TeamUpWebScraper/actions/workflows/dotnet-desktop.yml/badge.svg?branch=main)](https://github.com/Habilya/TeamUpWebScraper/actions/workflows/dotnet-desktop.yml?query=branch%3Amain)
 
 [![Latest release verison](https://img.shields.io/github/v/release/Habilya/TeamUpWebScraper)](https://github.com/Habilya/TeamUpWebScraper/releases)
 [![License](https://img.shields.io/github/license/Habilya/TeamUpWebScraper)](https://github.com/Habilya/TeamUpWebScraper/blob/main/LICENSE)
