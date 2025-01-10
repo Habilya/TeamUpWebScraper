@@ -64,6 +64,6 @@ Make sure to change the following values:
 - 🔲 API Retry Logic with Polly to handle intermittent network failures or temporary unavailability of the external API. Use policies for retrying requests on failure with exponential backoff.
 - 🔲 Error Reporting / Crash Logging NuGet package: Sentry or Rollbar crash reporting service like Sentry to track unhandled exceptions, application crashes, and other error details automatically.
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json 
-- 🔲 UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
-- 🔲 Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
+- ❌ (Cancelled complexity) UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
+- ❌ (Cancelled) The ENV variables are passed as BUILD env variables, but there is no simple way to pass them as runtime env Variables. Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
 - ❌ (Cancelled not recommended) AutoMapper converting your model objects to Excel formats or from API responses to domain models
