@@ -7,7 +7,7 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Version>1.0.4</Version>
-		<FileVersion>DEV_ENV</FileVersion>
+		<InformationalVersion>DEV_ENV</InformationalVersion>
 		<ApplicationIcon>Teamup-App-Icon-iOS-1.ico</ApplicationIcon>
 	</PropertyGroup>
 

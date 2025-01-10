@@ -6,6 +6,7 @@ namespace TeamUpWebScraperUI.Constants;
 public static class Versionning
 {
 	public const string ENV_DEFAULT_VARIABLE_ANSWER = "N/A";
+	public const char INFORMATIONAL_VERSION_PLUS_SEPARATOR = '+';
 
 	public static string GetVersion()
 	{
@@ -27,9 +28,19 @@ public static class Versionning
 	{
 		try
 		{
-			return Assembly.GetEntryAssembly()!
-				.GetCustomAttribute<AssemblyFileVersionAttribute>()!
-				.Version;
+			var informationalVersion = Assembly.GetEntryAssembly()!
+				.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!
+				.InformationalVersion;
+
+			var plusIndex = informationalVersion.IndexOf(INFORMATIONAL_VERSION_PLUS_SEPARATOR);
+			if (plusIndex > 0)
+			{
+				return informationalVersion.Substring(0, plusIndex);
+			}
+			else
+			{
+				return informationalVersion;
+			}
 		}
 		catch (Exception)
 		{
