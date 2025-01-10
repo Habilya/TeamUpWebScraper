@@ -70,7 +70,7 @@ jobs:
         $TODAY = (Get-Date).ToString('yyyyMMdd')
         
         # Combine date with the GitHub run number to create BUILD_NUMBER
-        $BUILD_NUMBER_LOC = "${{ env.DOTNET_ENVIRONMENT }}_$TODAY.${{ github.run_number }}"
+        $BUILD_NUMBER_LOC = "$TODAY.${{ github.run_number }}"
 
         # Set the BUILD_NUMBER as an environment variable for subsequent steps
         echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $env:GITHUB_ENV
@@ -102,7 +102,7 @@ jobs:
       
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration /p:FileVersion=$env:BUILD_NUMBER
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
@@ -119,12 +119,14 @@ jobs:
 
     # Create the app package by building and packaging the Windows Application Packaging project
     - name: Create the app package
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:FileVersion=$env:BUILD_NUMBER
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:BUILD_NUMBER=$env:BUILD_NB /p:DOTNET_ENVIRONMENT=$env:DOTNET_ENV
       env:
         Appx_Bundle: Always
         Appx_Bundle_Platforms: x86|x64
         Appx_Package_Build_Mode: StoreUpload
         Configuration: ${{ matrix.configuration }}
+		BUILD_NB: ${{ env.BUILD_NUMBER }}
+		DOTNET_ENV: ${{ env.DOTNET_ENVIRONMENT }}
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
