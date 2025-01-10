@@ -54,6 +54,6 @@ public static class Versionning
 
 	public static string GetVersionOneLiner()
 	{
-		return $"v{GetVersion()}-{GetVersionPostfix()}";
+		return $"v{GetVersion()}-{GetBuildNumber()} {GetRunningEnvironement()}";
 	}
 }
