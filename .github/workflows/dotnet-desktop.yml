@@ -125,8 +125,8 @@ jobs:
         Appx_Bundle_Platforms: x86|x64
         Appx_Package_Build_Mode: StoreUpload
         Configuration: ${{ matrix.configuration }}
-		BUILD_NB: ${{ env.BUILD_NUMBER }}
-		DOTNET_ENV: ${{ env.DOTNET_ENVIRONMENT }}
+        BUILD_NB: ${{ env.BUILD_NUMBER }}
+        DOTNET_ENV: ${{ env.DOTNET_ENVIRONMENT }}
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
