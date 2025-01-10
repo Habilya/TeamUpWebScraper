@@ -18,6 +18,8 @@ namespace TeamUpWebScraperUI;
 
 public static class Program
 {
+	const string CONFIG_JSON_FILE_PATH = @"config\appsettings.json";
+
 	/// <summary>
 	///  The main entry point for the application.
 	/// </summary>
@@ -27,11 +29,21 @@ public static class Program
 		// To customize application configuration such as set high DPI settings or default font,
 		// see https://aka.ms/applicationconfiguration.
 		ApplicationConfiguration.Initialize();
+		CheckForConfig();
 
 		var host = CreateHostBuilder().Build();
 		ServiceProvider = host.Services;
 
 		Application.Run(ServiceProvider.GetRequiredService<Dashboard>());
+	}
+
+	private static void CheckForConfig()
+	{
+		var configFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CONFIG_JSON_FILE_PATH);
+		if (!File.Exists(configFullPath))
+		{
+			MessageBox.Show($"Make sure you have the config file {CONFIG_JSON_FILE_PATH}, it is not deployed by default.", "appsettings.json not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+		}
 	}
 
 	public static IServiceProvider ServiceProvider { get; private set; } = default!;
@@ -42,7 +54,7 @@ public static class Program
 			.CreateDefaultBuilder()
 			.ConfigureAppConfiguration((hostContext, config) =>
 			{
-				config.AddJsonFile(@"config\appsettings.json", optional: false)
+				config.AddJsonFile(CONFIG_JSON_FILE_PATH, optional: false)
 					.AddEnvironmentVariables()
 					.Build();
 			})
