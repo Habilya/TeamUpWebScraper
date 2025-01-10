@@ -8,6 +8,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Version>1.0.4</Version>
 		<ApplicationIcon>Teamup-App-Icon-iOS-1.ico</ApplicationIcon>
+		<BuildNumber>$(BUILD_NUMBER)</BuildNumber>
+		<DotnetEnvironment>$(DOTNET_ENVIRONMENT)</DotnetEnvironment>
 	</PropertyGroup>
 
 	<ItemGroup>
