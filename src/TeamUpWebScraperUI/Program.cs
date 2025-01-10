@@ -29,7 +29,10 @@ public static class Program
 		// To customize application configuration such as set high DPI settings or default font,
 		// see https://aka.ms/applicationconfiguration.
 		ApplicationConfiguration.Initialize();
-		CheckForConfig();
+		if (!CheckForConfig())
+		{
+			return;
+		}
 
 		var host = CreateHostBuilder().Build();
 		ServiceProvider = host.Services;
@@ -37,13 +40,16 @@ public static class Program
 		Application.Run(ServiceProvider.GetRequiredService<Dashboard>());
 	}
 
-	private static void CheckForConfig()
+	private static bool CheckForConfig()
 	{
 		var configFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CONFIG_JSON_FILE_PATH);
 		if (!File.Exists(configFullPath))
 		{
 			MessageBox.Show($"Make sure you have the config file {CONFIG_JSON_FILE_PATH}, it is not deployed by default.", "appsettings.json not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			return false;
 		}
+
+		return true;
 	}
 
 	public static IServiceProvider ServiceProvider { get; private set; } = default!;
