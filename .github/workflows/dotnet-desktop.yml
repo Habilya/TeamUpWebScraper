@@ -102,7 +102,7 @@ jobs:
       
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration /p:BUILD_NUMBER=$env:BUILD_NB /p:DOTNET_ENVIRONMENT=$env:DOTNET_ENV
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
@@ -125,6 +125,8 @@ jobs:
         Appx_Bundle_Platforms: x86|x64
         Appx_Package_Build_Mode: StoreUpload
         Configuration: ${{ matrix.configuration }}
+		BUILD_NB: ${{ env.BUILD_NB }}
+		DOTNET_ENVIRONMENT: ${{ env.DOTNET_ENV }}
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
