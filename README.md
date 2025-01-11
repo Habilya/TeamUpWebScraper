@@ -65,5 +65,5 @@ Make sure to change the following values:
 - 🔲 Error Reporting / Crash Logging NuGet package: Sentry or Rollbar crash reporting service like Sentry to track unhandled exceptions, application crashes, and other error details automatically.
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json 
 - ❌ (Cancelled complexity) UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
-- ❌ (Cancelled) The ENV variables are passed as BUILD env variables, but there is no simple way to pass them as runtime env Variables. Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
+- ❌ (Cancelled) The ENV variables are passed as BUILD env variables, but there is no simple way to pass them as runtime env Variables. The bes I could do is to pass \<InformationalVersion>DEV_ENV\</InformationalVersion>.  Make CI/CD pipelines work with Environment variables instead of \<FileVersion>DEV_ENV\</FileVersion>  and /p:FileVersion=$env:BUILD_NUMBER
 - ❌ (Cancelled not recommended) AutoMapper converting your model objects to Excel formats or from API responses to domain models
