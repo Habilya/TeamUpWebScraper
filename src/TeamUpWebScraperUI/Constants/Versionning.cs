@@ -24,7 +24,7 @@ public static class Versionning
 		}
 	}
 
-	private static string GetVersionPostfix()
+	public static string GetVersionPostfix()
 	{
 		try
 		{
