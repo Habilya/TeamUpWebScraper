@@ -1,4 +1,6 @@
 ﻿using ErrorOr;
+using Polly;
+using Polly.Retry;
 using System.Globalization;
 using System.Net;
 using System.Net.Http.Json;
@@ -15,6 +17,8 @@ public class TeamUpAPIService : ITeamUpAPIService
 	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;
 	private readonly ILoggerAdapter<TeamUpAPIService> _logger;
 
+	private readonly AsyncRetryPolicy _asyncRetryPolicy;
+
 	public TeamUpAPIService(
 		IHttpClientFactory httpClientFactory,
 		TeamUpApiConfiguration teamUpApiConfiguration,
@@ -24,6 +28,17 @@ public class TeamUpAPIService : ITeamUpAPIService
 		_teamUpApiConfiguration = teamUpApiConfiguration;
 		_httpClientFactory = httpClientFactory;
 		_httpClient = _httpClientFactory.CreateClient(TeamUpApiConstants.HTTP_CLIENTNAME);
+
+		// Handle network-related errors, Retry up to 3 times, Exponential backoff: 1, 2, 4 seconds
+		_asyncRetryPolicy = Policy
+			.Handle<HttpRequestException>()
+			.WaitAndRetryAsync(
+				retryCount: 3,
+				sleepDurationProvider: attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)),
+				onRetry: (exception, timespan, attempt, context) =>
+				{
+					_logger.LogWarning($"(Retry {attempt}) after {timespan.TotalSeconds} seconds, due to: {exception?.GetType()} {exception?.Message}");
+				});
 	}
 
 	public async Task<ErrorOr<EventResponse>> GetEventsAsync(DateTime dateFrom, DateTime dateTo)
@@ -31,14 +46,14 @@ public class TeamUpAPIService : ITeamUpAPIService
 		string route = "events";
 		string queryStringParams = $"?startDate={DateTimeToString(dateFrom)}&endDate={DateTimeToString(dateTo)}&tz={_teamUpApiConfiguration.TimeZone}";
 
-		var response = await _httpClient.GetAsync($"{route}{queryStringParams}");
+		var response = await _asyncRetryPolicy.ExecuteAsync(() => _httpClient.GetAsync($"{route}{queryStringParams}"));
 
 		return await ProcessApiResponse<EventResponse>(response);
 	}
 
 	public async Task<ErrorOr<SubcalendarResponse>> GetSubcalendarsAsync()
 	{
-		var response = await _httpClient.GetAsync($"subcalendars");
+		var response = await _asyncRetryPolicy.ExecuteAsync(() => _httpClient.GetAsync($"subcalendars"));
 
 		return await ProcessApiResponse<SubcalendarResponse>(response);
 	}
