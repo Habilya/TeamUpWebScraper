@@ -1,6 +1,7 @@
 ﻿using ErrorOr;
 using Polly;
 using Polly.Retry;
+using System.Diagnostics;
 using System.Globalization;
 using System.Net;
 using System.Net.Http.Json;
@@ -80,7 +81,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, "Unhandled Exception while processing API response");
+			_logger.LogError(ex.Demystify(), "Unhandled Exception while processing API response");
 			await LogResponseAsText(response);
 			return Errors.TeamUpAPIServiceErrors.ApiResponseWithTextError("Unhandled Exception was thrown while parsing response, more details in the log file.");
 		}
@@ -95,7 +96,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, "Unhandled Exception while LogResponseAsText");
+			_logger.LogError(ex.Demystify(), "Unhandled Exception while LogResponseAsText");
 		}
 	}
 

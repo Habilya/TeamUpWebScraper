@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using System.Diagnostics;
 using System.Drawing;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
@@ -40,7 +41,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, $"Trouble parsing color {htmlColor} into XLcolor object");
+			_logger.LogError(ex.Demystify(), $"Trouble parsing color {htmlColor} into XLcolor object");
 			return XLColor.Transparent;
 		}
 	}

@@ -1,4 +1,5 @@
 ﻿using ErrorOr;
+using System.Diagnostics;
 using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
@@ -127,7 +128,7 @@ public partial class Dashboard : Form
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, "CallAPI_Click Button threw an unhandled exception.");
+			_logger.LogError(ex.Demystify(), "CallAPI_Click Button threw an unhandled exception.");
 			ShowUnhandledExceptionPopup();
 		}
 	}
@@ -187,7 +188,7 @@ public partial class Dashboard : Form
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, "SaveXLSX_Click Button threw an unhandled exception.");
+			_logger.LogError(ex.Demystify(), "SaveXLSX_Click Button threw an unhandled exception.");
 			ShowUnhandledExceptionPopup();
 		}
 	}

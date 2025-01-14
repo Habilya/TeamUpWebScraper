@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace TeamUpWebScraperLibrary.Logging;
 
@@ -23,6 +24,6 @@ public class LoggerAdapter<TType> : ILoggerAdapter<TType>
 
 	public void LogError(Exception? exception, string? message, params object?[] args)
 	{
-		_logger.LogError(exception, message, args);
+		_logger.LogError(exception?.Demystify(), message, args);
 	}
 }
