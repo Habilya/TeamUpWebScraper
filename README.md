@@ -63,6 +63,7 @@ Make sure to change the following values:
 - ✅ Make Excel Report a table
 - ✅ API Retry Logic with Polly to handle intermittent network failures or temporary unavailability of the external API. Use policies for retrying requests on failure with exponential backoff.
 - ✅ Add Ben.Demystifier for better formatted exceptions stack logging
+- ✅ Decouple UI from Library
 - 🔲 Look to replace FluentAssertions with shouldly https://github.com/shouldly/shouldly
 - 🔲 Replace Polly with microsoft built in retry policy Extensions.resiliance
 - 🔲 Error Reporting / Crash Logging NuGet package: Sentry or Rollbar crash reporting service like Sentry to track unhandled exceptions, application crashes, and other error details automatically.
