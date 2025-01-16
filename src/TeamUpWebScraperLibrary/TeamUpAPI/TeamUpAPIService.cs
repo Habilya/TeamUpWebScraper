@@ -34,7 +34,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 		_asyncRetryPolicy = Policy
 			.Handle<HttpRequestException>()
 			.WaitAndRetryAsync(
-				retryCount: 3,
+				retryCount: _teamUpApiConfiguration.MaxHttpCallRetries,
 				sleepDurationProvider: attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)),
 				onRetry: (exception, timespan, attempt, context) =>
 				{
