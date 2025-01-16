@@ -30,7 +30,7 @@ public class TeamUpAPIService : ITeamUpAPIService
 		_httpClientFactory = httpClientFactory;
 		_httpClient = _httpClientFactory.CreateClient(TeamUpApiConstants.HTTP_CLIENTNAME);
 
-		// Handle network-related errors, Retry up to 3 times, Exponential backoff: 1, 2, 4 seconds
+		// Handle network-related errors, Retry up to (MaxHttpCallRetries) times, Exponential backoff: 1, 2, 4, etc. seconds
 		_asyncRetryPolicy = Policy
 			.Handle<HttpRequestException>()
 			.WaitAndRetryAsync(
