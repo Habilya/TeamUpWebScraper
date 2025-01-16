@@ -64,6 +64,7 @@ Make sure to change the following values:
 - ✅ API Retry Logic with Polly to handle intermittent network failures or temporary unavailability of the external API. Use policies for retrying requests on failure with exponential backoff.
 - ✅ Add Ben.Demystifier for better formatted exceptions stack logging
 - 🔲 Look to replace FluentAssertions with shouldly https://github.com/shouldly/shouldly
+- 🔲 Replace Polly with microsoft built in retry policy Extensions.resiliance
 - 🔲 Error Reporting / Crash Logging NuGet package: Sentry or Rollbar crash reporting service like Sentry to track unhandled exceptions, application crashes, and other error details automatically.
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json 
 - ❌ (Cancelled complexity) UI Testing with Appium (complexity, have to actually install WinAppDriver on your machine)
