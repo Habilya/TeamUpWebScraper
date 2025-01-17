@@ -1,4 +1,5 @@
-﻿using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
+﻿using TeamUpWebScraperLibrary.DTO;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 
 namespace TeamUpWebScraperLibrary.DisplayGridView;
 
