@@ -6,7 +6,6 @@ using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 
@@ -38,7 +37,7 @@ public class TeamUpController
 		_displayGridViewProvider = displayGridViewProvider;
 	}
 
-	public TeamUpViewModel IsValidInputValues(InputModel inputValues)
+	public TeamUpViewModel IsValidInputValues(InputViewModel inputValues)
 	{
 		var inputValidationResults = _inputValidation.Validate(inputValues);
 
@@ -53,7 +52,7 @@ public class TeamUpController
 		}
 	}
 
-	public async Task<TeamUpViewModel> CallTeamUpAPI(InputModel inputValues)
+	public async Task<TeamUpViewModel> CallTeamUpAPI(InputViewModel inputValues)
 	{
 		ReportSpreadsheetLines = default!;
 		try

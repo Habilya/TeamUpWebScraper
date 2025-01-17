@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using FluentValidation.Results;
 using NSubstitute;
+using TeamUpWebScraperLibrary.DTO;
 using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Validators;
 
 namespace TeamUpWebSraperLibrary.Tests.Unit;
@@ -45,11 +45,9 @@ public class InputValidationTests
 	public void InputValidation_Validate_ShouldValidate_WhenInputProvided(int id, string? dateFromAsString, string? dateToAsString, bool expected)
 	{
 		// Arrange
-		var inputValues = new InputModel
-		{
-			DateFrom = TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
-			DateTo = TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat)
-		};
+		var inputValues = new InputViewModel(
+			TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
+			TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat));
 
 		// Act
 		var actual = _sut.Validate(inputValues);
@@ -75,11 +73,9 @@ public class InputValidationTests
 	public void InputValidation_Validate_ShouldReturnValidationMessages_WhenInputProvided(int id, string? dateFromAsString, string? dateToAsString)
 	{
 		// Arrange
-		var inputValues = new InputModel
-		{
-			DateFrom = TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
-			DateTo = TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat)
-		};
+		var inputValues = new InputViewModel(
+			TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
+			TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat));
 
 		var dataMap = new Dictionary<int, List<ValidationFailure>>
 		{

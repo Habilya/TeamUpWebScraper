@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
+using TeamUpWebScraperLibrary.DTO;
 using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 
 namespace TeamUpWebScraperLibrary.Validators;
 
-public class InputValidation : AbstractValidator<InputModel>
+public class InputValidation : AbstractValidator<InputViewModel>
 {
 	private readonly IDateTimeProvider _dateTimeProvider;
 	private readonly TeamUpApiConfiguration _teamUpApiConfiguration;

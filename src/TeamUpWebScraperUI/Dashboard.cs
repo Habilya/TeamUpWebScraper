@@ -1,5 +1,5 @@
 ﻿using TeamUpWebScraperLibrary;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
+using TeamUpWebScraperLibrary.DTO;
 using TeamUpWebScraperUI.Constants;
 using TeamUpWebScraperUI.DisplayDataGridGeneration;
 
@@ -67,16 +67,12 @@ public partial class Dashboard : Form
 		}
 	}
 
-	private InputModel GetInputIntoModel()
+	private InputViewModel GetInputIntoModel()
 	{
-		return new InputModel
-		{
-			DateFrom = dtpDateFrom.Value.Date,
-			DateTo = dtpDateTo.Value.Date
-		};
+		return new InputViewModel(dtpDateFrom.Value.Date, dtpDateTo.Value.Date);
 	}
 
-	private bool IsValidInputValues(InputModel inputValues)
+	private bool IsValidInputValues(InputViewModel inputValues)
 	{
 		var result = _teamUpController.IsValidInputValues(inputValues);
 
