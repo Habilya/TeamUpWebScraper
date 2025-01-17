@@ -1,6 +1,7 @@
 ﻿using ErrorOr;
 using System.Diagnostics;
 using TeamUpWebScraperLibrary.DisplayGridView;
+using TeamUpWebScraperLibrary.DTO;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
@@ -37,22 +38,22 @@ public class TeamUpController
 		_displayGridViewProvider = displayGridViewProvider;
 	}
 
-	public (bool isValid, string displayableMessage) IsValidInputValues(InputModel inputValues)
+	public TeamUpViewModel IsValidInputValues(InputModel inputValues)
 	{
 		var inputValidationResults = _inputValidation.Validate(inputValues);
 
 		if (inputValidationResults.IsValid)
 		{
-			return (true, "");
+			return new(true, "", "");
 		}
 		else
 		{
 			var message = string.Join("\n", inputValidationResults.Errors.Select(q => q.ErrorMessage));
-			return (false, message);
+			return new(false, "Validation Warning", message);
 		}
 	}
 
-	public async Task<(bool isError, string errorTitle, string errorMessage)> CallTeamUpAPI(InputModel inputValues)
+	public async Task<TeamUpViewModel> CallTeamUpAPI(InputModel inputValues)
 	{
 		ReportSpreadsheetLines = default!;
 		try
@@ -60,26 +61,26 @@ public class TeamUpController
 			var subCalendarsRouteResponse = await _teamUpAPIService.GetSubcalendarsAsync();
 			if (subCalendarsRouteResponse.IsError)
 			{
-				return (true, subCalendarsRouteResponse.FirstError.Code, CombineErrorMessages(subCalendarsRouteResponse));
+				return new(false, subCalendarsRouteResponse.FirstError.Code, CombineErrorMessages(subCalendarsRouteResponse));
 			}
 
 			var subCalendarsList = subCalendarsRouteResponse.Value.Subcalendars;
 			if (subCalendarsList is null || !subCalendarsList.Any())
 			{
-				return (true, "SubCalendars List Empty", "For some reason the event SubCalendars list is empty...");
+				return new(false, "SubCalendars List Empty", "For some reason the event SubCalendars list is empty...");
 			}
 
 			// At this point, Assuming the input Values have been validated
 			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync((DateTime)inputValues.DateFrom!, (DateTime)inputValues.DateTo!);
 			if (eventsRouteResponse.IsError)
 			{
-				return (true, eventsRouteResponse.FirstError.Code, CombineErrorMessages(eventsRouteResponse));
+				return new(false, eventsRouteResponse.FirstError.Code, CombineErrorMessages(eventsRouteResponse));
 			}
 
 			var eventsList = eventsRouteResponse.Value.Events;
 			if (eventsList is null || !eventsList.Any())
 			{
-				return (true, "Events List Empty", "For some reason the events list is empty...");
+				return new(false, "Events List Empty", "For some reason the events list is empty...");
 			}
 
 			ReportSpreadsheetLines = _eventApiResponseTransformer.EventApiResponseToSpreadSheetLines(eventsList, subCalendarsList);
@@ -87,11 +88,11 @@ public class TeamUpController
 
 			if (ReportSpreadsheetLines is null || !ReportSpreadsheetLines.Any())
 			{
-				return (true, "Events List Empty", "For some reason the Transformed list that goes in Excel is empty...");
+				return new(false, "Events List Empty", "For some reason the Transformed list that goes in Excel is empty...");
 			}
 			else
 			{
-				return (false, "", "");
+				return new(true, "", "");
 			}
 		}
 		catch (Exception ex)

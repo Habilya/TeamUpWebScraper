@@ -46,20 +46,19 @@ public partial class Dashboard : Form
 				return;
 			}
 
-			var (isError, errorTitle, errorMessage) = await _teamUpController.CallTeamUpAPI(inputValues);
+			var result = await _teamUpController.CallTeamUpAPI(inputValues);
 
-
-			if (isError)
-			{
-				MessageBox.Show(errorMessage, errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
-			}
-			else
+			if (result.IsValid)
 			{
 				var displayResults = _teamUpController.GetDisplayableGridResults();
 				resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_RESULTS, displayResults.Count);
 				DataGridViewHelper.GenerateDataGridView(dataGridViewResults, displayResults);
 				saveXLSX.Enabled = true;
+			}
+			else
+			{
+				MessageBox.Show(result.ErrorMessage, result.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
 			}
 		}
 		catch (Exception)
@@ -79,15 +78,15 @@ public partial class Dashboard : Form
 
 	private bool IsValidInputValues(InputModel inputValues)
 	{
-		var (isValid, displayableMessage) = _teamUpController.IsValidInputValues(inputValues);
+		var result = _teamUpController.IsValidInputValues(inputValues);
 
-		if (isValid)
+		if (result.IsValid)
 		{
 			return true;
 		}
 		else
 		{
-			MessageBox.Show(displayableMessage, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			MessageBox.Show(result.ErrorMessage, result.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			return false;
 		}
 	}
