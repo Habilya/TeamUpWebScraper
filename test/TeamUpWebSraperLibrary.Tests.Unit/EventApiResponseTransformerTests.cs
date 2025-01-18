@@ -128,8 +128,7 @@ public class EventApiResponseTransformerTests
 		var actual = _sut.EventApiResponseToSpreadSheetLines(input, subCalendars);
 
 		// Assert
-		await Verify(actual, _verifySettings)
-				.DontScrubDateTimes();
+		await Verify(actual, _verifySettings).DontScrubDateTimes();
 	}
 
 	[Theory]
