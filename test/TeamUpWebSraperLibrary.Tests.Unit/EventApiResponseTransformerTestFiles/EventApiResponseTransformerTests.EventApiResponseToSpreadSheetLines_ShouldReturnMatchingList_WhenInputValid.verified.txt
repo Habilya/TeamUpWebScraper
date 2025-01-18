@@ -5,7 +5,7 @@
     Location:
 Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est
 Laval (Québec)  H7E 5G8,
-    Notes: <p>Exercice de sauvetage en milieu forestier</p>,
+    Notes: Exercice de sauvetage en milieu forestier,
     StartDate: 2024-12-01T09:00:00-05:00,
     EndDate: 2024-12-01T12:00:00-05:00,
     CreationDate: 2024-10-13T21:18:47-04:00,
@@ -24,7 +24,7 @@ Laval (Québec)  H7E 5G8,
     Id: CB-241201-1400-0452,
     Title: Fan Club et Club 1909,
     Location: 1225 st antoine,
-    Notes: <p>Date : 1 décembre 2024</p>,
+    Notes: Date : 1 décembre 2024,
     StartDate: 2024-12-01T14:00:00-05:00,
     EndDate: 2024-12-01T19:30:00-05:00,
     CreationDate: 2024-11-12T15:53:57-05:00,

@@ -7,4 +7,5 @@ public class TeamUpApiConfiguration
 	public string CalendarId { get; set; } = default!;
 	public string TimeZone { get; set; } = default!;
 	public int MaxDaysDataSpanLimit { get; set; } = default!;
+	public int MaxHttpCallRetries { get; set; } = default!;
 }

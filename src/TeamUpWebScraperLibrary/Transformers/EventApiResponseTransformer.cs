@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using HtmlAgilityPack;
+using System.Text.RegularExpressions;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 
@@ -27,7 +28,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 
 		if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern))
 		{
-			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern);
+			_highlightTitlePattern = new Regex(_excelReportSpreadSheetConfig.EventTitlesToHighLightPattern, RegexOptions.IgnoreCase);
 		}
 	}
 
@@ -61,7 +62,7 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			Id = GetEventId(eventData, calendarsMapping),
 			Title = eventData.Title,
 			Location = eventData.Location,
-			Notes = eventData.Notes,
+			Notes = GetNotes(eventData),
 			StartDate = eventData.StartDate.ToString(STRING_DATE_TIME_FORMAT),
 			EndDate = eventData.EndDate.ToString(STRING_DATE_TIME_FORMAT),
 			CreationDate = eventData.CreationDate.ToString(STRING_DATE_TIME_FORMAT),
@@ -84,6 +85,21 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 
 			LineHighLightColor = GetLineHighLightColor(eventData, calendarsMapping)
 		};
+	}
+
+	private string GetNotes(Event eventData)
+	{
+		if (string.IsNullOrWhiteSpace(eventData.Notes))
+		{
+			return "";
+		}
+
+		// Load the HTML content into an HtmlDocument object
+		var document = new HtmlDocument();
+		document.LoadHtml(eventData.Notes);
+
+		// Remove HTML entities (tags)
+		return document.DocumentNode.InnerText.Trim();
 	}
 
 	private string GetLineHighLightColor(Event eventData, List<Subcalendar> calendarsMapping)

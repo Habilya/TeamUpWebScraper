@@ -75,7 +75,6 @@ public class ExcelSpreadsheetReportProviderTests
 		//_sut.SaveExcelReport(excelSaveFullPath, transformedSheetLines);
 
 		// Assert
-		await Verify(transformedSheetLines, _verifySettings)
-				.DontScrubDateTimes();
+		await Verify(transformedSheetLines, _verifySettings).DontScrubDateTimes();
 	}
 }

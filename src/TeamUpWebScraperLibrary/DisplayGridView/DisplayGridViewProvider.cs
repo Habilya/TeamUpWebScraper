@@ -1,4 +1,5 @@
-﻿using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
+﻿using TeamUpWebScraperLibrary.DTO;
+using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 
 namespace TeamUpWebScraperLibrary.DisplayGridView;
 
@@ -16,14 +17,14 @@ public class DisplayGridViewProvider : IDisplayGridViewProvider
 
 		foreach (var reportLine in reportSpreadsheetLines)
 		{
-			var resultLine = new DisplayGridViewModel();
-
-			resultLine.Id = reportLine.Id;
-			resultLine.Title = reportLine.Title;
-			resultLine.StartDate = reportLine.StartDate;
-			resultLine.EndDate = reportLine.EndDate;
-			resultLine.SignupCount = reportLine.SignupCount;
-			resultLine.PresencesConcat = reportLine.PresencesConcat;
+			var resultLine = new DisplayGridViewModel(
+				reportLine.Id,
+				reportLine.Title,
+				reportLine.StartDate,
+				reportLine.EndDate,
+				reportLine.SignupCount,
+				reportLine.PresencesConcat
+			);
 
 			result.Add(resultLine);
 		}

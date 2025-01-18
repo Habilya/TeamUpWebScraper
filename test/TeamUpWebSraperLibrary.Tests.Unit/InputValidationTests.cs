@@ -1,9 +1,8 @@
-﻿using FluentAssertions;
-using FluentValidation.Results;
-using NSubstitute;
+﻿using NSubstitute;
+using Shouldly;
+using TeamUpWebScraperLibrary.DTO;
 using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
-using TeamUpWebScraperLibrary.TeamUpAPI.Models.Input;
 using TeamUpWebScraperLibrary.Validators;
 
 namespace TeamUpWebSraperLibrary.Tests.Unit;
@@ -45,17 +44,15 @@ public class InputValidationTests
 	public void InputValidation_Validate_ShouldValidate_WhenInputProvided(int id, string? dateFromAsString, string? dateToAsString, bool expected)
 	{
 		// Arrange
-		var inputValues = new InputModel
-		{
-			DateFrom = TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
-			DateTo = TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat)
-		};
+		var inputValues = new InputViewModel(
+			TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
+			TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat));
 
 		// Act
 		var actual = _sut.Validate(inputValues);
 
 		// Assert
-		actual.IsValid.Should().Be(expected);
+		actual.IsValid.ShouldBe(expected);
 	}
 
 	[Theory]
@@ -75,48 +72,46 @@ public class InputValidationTests
 	public void InputValidation_Validate_ShouldReturnValidationMessages_WhenInputProvided(int id, string? dateFromAsString, string? dateToAsString)
 	{
 		// Arrange
-		var inputValues = new InputModel
-		{
-			DateFrom = TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
-			DateTo = TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat)
-		};
+		var inputValues = new InputViewModel(
+			TestsHelper.ParseDateForTest(dateFromAsString, DateInputFormat),
+			TestsHelper.ParseDateForTest(dateToAsString, DateInputFormat));
 
-		var dataMap = new Dictionary<int, List<ValidationFailure>>
+		var dataMap = new Dictionary<int, List<string>>
 		{
 			//  [InlineData(1, null, null)]
-			{1, new List<ValidationFailure>
+			{1, new List<string>
 				{
-					new ValidationFailure { ErrorMessage= "DateFrom cannot be empty" },
-					new ValidationFailure { ErrorMessage= "DateTo cannot be empty" }
+					"DateFrom cannot be empty",
+					"DateTo cannot be empty"
 				}
 			},
 			// [InlineData(2, "2022-02-02", null)]
-			{2, new List<ValidationFailure>
+			{2, new List<string>
 				{
-					new ValidationFailure { ErrorMessage= "DateFrom cannot be greater than DateTo" },
-					new ValidationFailure { ErrorMessage= "DateTo cannot be empty" }
+					"DateFrom cannot be greater than DateTo",
+					"DateTo cannot be empty"
 				}
 			},
 			// [InlineData(3, "2022-01-05", "2022-01-02")]
-			{3, new List<ValidationFailure>
+			{3, new List<string>
 				{
-					new ValidationFailure { ErrorMessage= "DateFrom cannot be greater than DateTo" }
+					"DateFrom cannot be greater than DateTo"
 				}
 			},
 			// [InlineData(4, "2022-02-02", "2022-05-02")]
-			{4, new List<ValidationFailure>
+			{4, new List<string>
 				{
-					new ValidationFailure { ErrorMessage= "Span of DateFrom to DateTo cannot be greater than 60 days (Too much Data)" }
+					"Span of DateFrom to DateTo cannot be greater than 60 days (Too much Data)"
 				}
 			},
 			// [InlineData(5, "2022-03-02", "2022-03-20")]
-			{5, new List<ValidationFailure>
+			{5, new List<string>
 				{
-					new ValidationFailure { ErrorMessage= "DateFrom may not be in the future (greater than 2022-02-02)" }
+					"DateFrom may not be in the future (greater than 2022-02-02)"
 				}
 			},
 			// [InlineData(6, "2022-02-01", "2022-04-02")]
-			{6, new List<ValidationFailure>{} },
+			{6, new List<string>{} },
 		};
 
 		var expected = dataMap[id];
@@ -126,10 +121,9 @@ public class InputValidationTests
 		var actual = _sut.Validate(inputValues);
 
 		// Assert
-		actual.Errors.Should().BeEquivalentTo(expected, options =>
-		{
-			options.Including(s => s.ErrorMessage);
-			return options;
-		});
+		actual.Errors
+			.Select(s => s.ErrorMessage)
+			.ToList()
+			.ShouldBe(expected);
 	}
 }

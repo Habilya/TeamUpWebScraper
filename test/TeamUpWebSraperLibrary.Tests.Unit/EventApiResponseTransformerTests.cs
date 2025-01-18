@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using NSubstitute;
+﻿using NSubstitute;
+using Shouldly;
 using System.Reflection;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
@@ -128,8 +128,7 @@ public class EventApiResponseTransformerTests
 		var actual = _sut.EventApiResponseToSpreadSheetLines(input, subCalendars);
 
 		// Assert
-		await Verify(actual, _verifySettings)
-				.DontScrubDateTimes();
+		await Verify(actual, _verifySettings).DontScrubDateTimes();
 	}
 
 	[Theory]
@@ -253,6 +252,66 @@ public class EventApiResponseTransformerTests
 
 
 		// Assert
-		actual.Should().Be(expected);
+		actual.ShouldBe(expected);
+	}
+
+	[Theory]
+	[InlineData(1, "Fierté Québec (ancienne fête arc-en-ciel)", false)]
+	[InlineData(2, "Annulé PB Arcangel & De La Ghetto", true)]
+	[InlineData(2, "Rencontre divisionnaire mensuelle", false)]
+	[InlineData(3, "ANNULÉ PB Grupo Frontera", true)]
+	[InlineData(4, "PB Annulé Davido", true)]
+	[InlineData(5, "Concert d’orgue", false)]
+	[InlineData(6, "Annulé Préparation sécurité civile", true)]
+	[InlineData(7, "REPORTÉ PB Keshi avec Mac Ayres, Starfall", true)]
+	[InlineData(8, "PB Reporté juin 2025 Tournée du Trio- Ferrari, Tsamère, Lecaplain.", true)]
+	[InlineData(9, "Reporté au 7 septembre 2024 PB Davido", true)]
+	[InlineData(10, "Annulé Course St-Maxime", true)]
+	[InlineData(11, "ANNULÉ nouvelle date à déterminer SimulationsAnnulé PB PWHL Séries", true)]
+	[InlineData(12, "Annulé PB PWHL Séries", true)]
+	[InlineData(13, "annulé PESO PLUMA 10PR/8SG", true)]
+	[InlineData(14, "ANNULE - Festival Fierté Montréal", true)]
+	[InlineData(15, "Festival international du rire ComediHa! (Québec) (annulé)", true)]
+	[InlineData(16, "Cancelled event1", true)]
+	[InlineData(17, "Anulé event2", true)]
+	[InlineData(18, "Reporte event3", true)]
+	[InlineData(19, "cancel event4", true)]
+	[InlineData(20, "annui", false)]
+	[InlineData(21, "", false)]
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1026:Theory methods should use all of their parameters", Justification = "UnitTests with testId")]
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "UnitTests with testId")]
+	public void GetLineHighLightColor_ShouldMatchExpected(int id, string eventTitle, bool expected)
+	{
+		// Arrange
+		var thePattern = "cancel|annul[é|e]|report[é|e]|report|anul[é|e]";
+		#region arrangement
+		var excelReportSpreadSheetConfig = Substitute.For<ExcelReportSpreadSheetConfig>();
+		excelReportSpreadSheetConfig.EventTitlesToHighLightPattern = thePattern;
+		excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml = "[NotImportantJustNeedsAValue]";
+
+		var _sut = new EventApiResponseTransformer(excelReportSpreadSheetConfig);
+
+		var subCalendars = Substitute.For<List<Subcalendar>>();
+		var eventData = Substitute.For<Event>();
+		eventData.Title = eventTitle;
+
+		// Private Method info obtained using REFLEXION
+		MethodInfo privateMethodGetEventId = typeof(EventApiResponseTransformer)
+			.GetMethod("GetLineHighLightColor", BindingFlags.NonPublic | BindingFlags.Instance)!;
+
+		object[] methodParameters = new object[2] { eventData, subCalendars };
+		#endregion
+
+
+		// Act
+		var highlitColor = (string)privateMethodGetEventId.Invoke(_sut, methodParameters)!;
+		// At this point I don't care about the value of highlight, I just want to see if it is highlighted or not
+		var actual = highlitColor is null
+			? false
+			: highlitColor.Equals(excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml);
+
+
+		// Assert
+		actual.ShouldBe(expected);
 	}
 }
