@@ -47,7 +47,7 @@ Ex.: **Prod_20250105.114**
 ### How it is set in the pipeline:
 ```yml
 env:
-	DOTNET_ENVIRONMENT: Prod
+    DOTNET_ENVIRONMENT: Prod
 
 # Get today's date in yyyyMMdd format using PowerShell's Get-Date cmdlet
 $TODAY = (Get-Date).ToString('yyyyMMdd')
