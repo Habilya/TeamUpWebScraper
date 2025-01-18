@@ -66,14 +66,14 @@ in msbuild command argument `/p:InformationalVersion=$env:BUILD_NUMBER`
 
 - ✅ Dependency Injection
 - ✅ Serilog Logger + Rotating File
-- ✅ Unit tests (xUnit, FluentAssertions, NSubstitute, bogus)
-- ✅ Add versionning with build and environment variables
+- ✅ Unit tests (xUnit, Shouldly, NSubstitute, bogus)
+- ✅ Use Verify & Verify.xUnit for some of the bigger expected objects in tests https://github.com/VerifyTests/Verify
+- ✅ Add versionning with build informational version
 - ✅ write tests with _teamUpAPIService mocked with nSubstitute using provided json file
 - ✅ write logic that transforms the data recieved from API into a model that will go to Excel
 - ✅ Model for Excel Table
 - ✅ Display minimal values in the UI
 - ✅ Excel spreadsheet report provider
-- ✅ Use Verify & Verify.xUnit for some of the bigger expected objects in tests https://github.com/VerifyTests/Verify
 - ✅ Use FluentValidations for input validator
 - ✅ Add config section and model for Excel SpreadSheet provider
 - ✅ Highlight in yellow Excel report lines that have words matching a RegEx in config (Annule, Cancelled, Reporte)
@@ -86,7 +86,7 @@ in msbuild command argument `/p:InformationalVersion=$env:BUILD_NUMBER`
 - ✅ API Retry Logic with Polly to handle intermittent network failures or temporary unavailability of the external API. Use policies for retrying requests on failure with exponential backoff.
 - ✅ Add Ben.Demystifier for better formatted exceptions stack logging
 - ✅ Decouple UI from Library
-- 🔲 Look to replace FluentAssertions with shouldly https://github.com/shouldly/shouldly
+- ✅ Look to replace FluentAssertions with shouldly https://github.com/shouldly/shouldly
 - 🔲 Replace Polly with microsoft built in retry policy Extensions.resiliance
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json
 - ❌ (Cancelled paid external services) Error Reporting / Crash Logging NuGet package: Sentry or Rollbar crash reporting service like Sentry to track unhandled exceptions, application crashes, and other error details automatically.

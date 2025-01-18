@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using NSubstitute;
+﻿using NSubstitute;
+using Shouldly;
 using System.Reflection;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
@@ -253,7 +253,7 @@ public class EventApiResponseTransformerTests
 
 
 		// Assert
-		actual.Should().Be(expected);
+		actual.ShouldBe(expected);
 	}
 
 	[Theory]
@@ -313,6 +313,6 @@ public class EventApiResponseTransformerTests
 
 
 		// Assert
-		actual.Should().Be(expected);
+		actual.ShouldBe(expected);
 	}
 }
