@@ -33,11 +33,33 @@ Make sure to change the following values:
 ...
 ```
 
-## Keep in mind the environmental variables specified in UI project
-(They are in project properties > Debug/General > Open Debug Launch Profiles UI > Environment Variables)
-(Or in Solution Explorer > Properties > launchSettings.json)
-* BUILD_NUMBER = DEV_ENV
-* DOTNET_ENVIRONMENT = Development
+## Keep in mind Versionning
+
+in: `TeamUpWebScraperUI.csproj`
+```xml
+<Version>1.0.5</Version>
+<InformationalVersion>DEV_ENV</InformationalVersion>
+```
+
+InformationalVersion - is the build number, will be replaced by the actual value in the pipeline
+Ex.: **Prod_20250105.114**
+
+### How it is set in the pipeline:
+```yml
+env:
+	DOTNET_ENVIRONMENT: Prod
+
+# Get today's date in yyyyMMdd format using PowerShell's Get-Date cmdlet
+$TODAY = (Get-Date).ToString('yyyyMMdd')
+        
+# Combine date with the GitHub run number to create BUILD_NUMBER
+$BUILD_NUMBER_LOC = "${{ env.DOTNET_ENVIRONMENT }}_$TODAY.${{ github.run_number }}"
+
+# Set the BUILD_NUMBER as an environment variable for subsequent steps
+echo "BUILD_NUMBER=$BUILD_NUMBER_LOC" >> $env:GITHUB_ENV
+```
+
+in msbuild command argument `/p:InformationalVersion=$env:BUILD_NUMBER`
 
 
 ## To Do List
