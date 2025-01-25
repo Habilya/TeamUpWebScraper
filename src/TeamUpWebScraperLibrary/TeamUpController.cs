@@ -1,4 +1,5 @@
 ﻿using ErrorOr;
+using Microsoft.Extensions.Caching.Hybrid;
 using System.Diagnostics;
 using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.DTO;
@@ -6,6 +7,7 @@ using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
 using TeamUpWebScraperLibrary.Logging;
 using TeamUpWebScraperLibrary.TeamUpAPI;
+using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
 
@@ -16,6 +18,7 @@ public class TeamUpController
 	private readonly ILoggerAdapter<TeamUpController> _logger;
 	private readonly InputValidation _inputValidation;
 	private readonly ITeamUpAPIService _teamUpAPIService;
+	private readonly HybridCache _hybridCache;
 	private readonly IEventApiResponseTransformer _eventApiResponseTransformer;
 	private readonly IExcelSpreadsheetReportProvider _excelSpreadsheetReportProvider;
 	private readonly IDisplayGridViewProvider _displayGridViewProvider;
@@ -24,6 +27,7 @@ public class TeamUpController
 
 	public TeamUpController(ILoggerAdapter<TeamUpController> logger,
 		InputValidation inputValidation,
+		HybridCache hybridCache,
 		ITeamUpAPIService teamUpAPIService,
 		IEventApiResponseTransformer eventApiResponseTransformer,
 		IExcelSpreadsheetReportProvider excelSpreadsheetReportProvider,
@@ -31,6 +35,7 @@ public class TeamUpController
 	{
 		_logger = logger;
 		_inputValidation = inputValidation;
+		_hybridCache = hybridCache;
 		_teamUpAPIService = teamUpAPIService;
 		_eventApiResponseTransformer = eventApiResponseTransformer;
 		_excelSpreadsheetReportProvider = excelSpreadsheetReportProvider;
@@ -57,7 +62,7 @@ public class TeamUpController
 		ReportSpreadsheetLines = default!;
 		try
 		{
-			var subCalendarsRouteResponse = await _teamUpAPIService.GetSubcalendarsAsync();
+			var subCalendarsRouteResponse = await GetSubcalendarsFromTeamUpAPI();
 			if (subCalendarsRouteResponse.IsError)
 			{
 				return new(false, subCalendarsRouteResponse.FirstError.Code, CombineErrorMessages(subCalendarsRouteResponse));
@@ -69,8 +74,7 @@ public class TeamUpController
 				return new(false, "SubCalendars List Empty", "For some reason the event SubCalendars list is empty...");
 			}
 
-			// At this point, Assuming the input Values have been validated
-			var eventsRouteResponse = await _teamUpAPIService.GetEventsAsync((DateTime)inputValues.DateFrom!, (DateTime)inputValues.DateTo!);
+			var eventsRouteResponse = await GetEventsFromTeamUpAPI(inputValues);
 			if (eventsRouteResponse.IsError)
 			{
 				return new(false, eventsRouteResponse.FirstError.Code, CombineErrorMessages(eventsRouteResponse));
@@ -99,6 +103,28 @@ public class TeamUpController
 			_logger.LogError(ex.Demystify(), "CallTeamUpAPI threw an unhandled exception.");
 			throw;
 		}
+	}
+
+	private async Task<ErrorOr<EventResponse>> GetEventsFromTeamUpAPI(InputViewModel inputValues)
+	{
+		// At this point, Assuming the input Values have been validated
+		var dateFrom = (DateTime)inputValues.DateFrom!;
+		var dateTo = (DateTime)inputValues.DateTo!;
+
+		var cacheKey = $"Events{dateFrom.ToString()}-{dateTo.ToString()}";
+
+		return await _hybridCache.GetOrCreateAsync(
+			cacheKey,
+			async _ => await _teamUpAPIService.GetEventsAsync(dateFrom, dateTo));
+	}
+
+	private async Task<ErrorOr<SubcalendarResponse>> GetSubcalendarsFromTeamUpAPI()
+	{
+		var cacheKey = "subcalendars";
+
+		return await _hybridCache.GetOrCreateAsync(
+				cacheKey,
+				async _ => await _teamUpAPIService.GetSubcalendarsAsync());
 	}
 
 	public List<DisplayGridViewModel> GetDisplayableGridResults()
