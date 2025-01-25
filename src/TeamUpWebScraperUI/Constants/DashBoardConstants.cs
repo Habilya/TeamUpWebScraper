@@ -1,4 +1,4 @@
-﻿namespace TeamUpWebScraperUI;
+﻿namespace TeamUpWebScraperUI.Constants;
 
 public static class DashBoardConstants
 {
