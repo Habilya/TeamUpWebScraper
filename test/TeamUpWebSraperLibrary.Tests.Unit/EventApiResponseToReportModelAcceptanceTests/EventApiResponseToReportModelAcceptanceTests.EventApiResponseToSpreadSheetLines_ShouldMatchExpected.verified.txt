@@ -1,5 +1,22 @@
 ﻿[
   {
+    Id: DIV-240503-1630-0783,
+    Title: Panthéon de la performance,
+    Location: Colisé desjardins,
+    Notes: ,
+    StartDate: 2024-05-03T16:30:00-04:00,
+    EndDate: 2024-05-03T23:56:00-04:00,
+    CreationDate: 2024-04-27T08:17:23-04:00,
+    UpdateDate: 2024-04-27T09:02:30-04:00,
+    SignupCount: 2,
+    Signups: [
+      Johanne Chillas,
+      Yves Tardif PR
+    ],
+    Division: 0783,
+    PresencesConcat: Johanne Chillas //Yves Tardif PR
+  },
+  {
     Id: DIV-240901-1545-0094,
     Title: Festival Hilarium,
     Location: Parc Jacques Cartier,

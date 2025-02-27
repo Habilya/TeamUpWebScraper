@@ -72,14 +72,14 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			SignupCount = eventData.SignupCount.ToString(),
 			Signups = GetSignups(eventData),
 
-			Client2 = eventData.Custom.Client2,
+			Client2 = eventData.Custom?.Client2,
 			Division = GetDivision(eventData, calendarsMapping),
-			Medical = eventData.Custom.MeDicalMedical,
-			Priority = GetConcatenatedListValues(eventData.Custom.PrioritePriority2),
-			Category = GetConcatenatedListValues(eventData.Custom.CateGorieCategory),
-			ResponsibleInCharge = eventData.Custom.ResponsableInCharge,
-			ProvincialContract = GetConcatenatedListValues(eventData.Custom.ContratProvincialContract),
-			NbMembersNeeded = eventData.Custom.NombreDeMembresNecessaires,
+			Medical = eventData.Custom?.MeDicalMedical,
+			Priority = GetConcatenatedListValues(eventData.Custom?.PrioritePriority2),
+			Category = GetConcatenatedListValues(eventData.Custom?.CateGorieCategory),
+			ResponsibleInCharge = eventData.Custom?.ResponsableInCharge,
+			ProvincialContract = GetConcatenatedListValues(eventData.Custom?.ContratProvincialContract),
+			NbMembersNeeded = eventData.Custom?.NombreDeMembresNecessaires,
 
 			PresencesConcat = GetPresencesConcat(eventData),
 

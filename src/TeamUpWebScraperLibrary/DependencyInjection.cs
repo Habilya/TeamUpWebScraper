@@ -12,6 +12,7 @@ using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Config;
 using TeamUpWebScraperLibrary.Transformers;
 using TeamUpWebScraperLibrary.Validators;
+using ZiggyCreatures.Caching.Fusion;
 
 namespace TeamUpWebScraperLibrary;
 
@@ -55,6 +56,11 @@ public static class DependencyInjection
 			httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
 			httpClient.DefaultRequestHeaders.Add(TeamUpApiConstants.API_TOKEN_HEADER_NAME, teamupToken);
 		});
+
+		services.AddFusionCache()
+			.WithDefaultEntryOptions(options => options.Duration = TimeSpan.FromMinutes(15))
+			.WithSystemTextJsonSerializer()
+			.AsHybridCache();
 
 		// Read appsettings.json into appropriate models
 

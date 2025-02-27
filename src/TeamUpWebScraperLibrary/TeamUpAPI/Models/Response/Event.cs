@@ -36,7 +36,7 @@ public class Event
 	[JsonPropertyName("signup_count")]
 	public int SignupCount { get; set; } = default!;
 	public List<Signup>? Signups { get; set; } = default!;
-	public Custom Custom { get; set; } = default!;
+	public Custom? Custom { get; set; } = default!;
 
 
 	#region !! Those fields are not used, just left here for a reference !!

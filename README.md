@@ -87,6 +87,8 @@ in msbuild command argument `/p:InformationalVersion=$env:BUILD_NUMBER`
 - ✅ Add Ben.Demystifier for better formatted exceptions stack logging
 - ✅ Decouple UI from Library
 - ✅ Look to replace FluentAssertions with shouldly https://github.com/shouldly/shouldly
+- ✅ Add FusionCache to cache the TeamUp API calls
+- 🔲 Add Tests for TeamUpController (mind the cache)
 - 🔲 Replace Polly with microsoft built in retry policy Extensions.resiliance
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json
 - ❌ (Cancelled paid external services) Error Reporting / Crash Logging NuGet package: Sentry or Rollbar crash reporting service like Sentry to track unhandled exceptions, application crashes, and other error details automatically.

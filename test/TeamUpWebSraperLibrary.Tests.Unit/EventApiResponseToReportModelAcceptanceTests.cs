@@ -54,7 +54,7 @@ public class EventApiResponseToReportModelAcceptanceTests
 
 		// Assert
 		actual.ShouldNotBeNull();
-		actual.Count.ShouldBe(82);
+		actual.Count.ShouldBe(83);
 		await Verify(actual, _verifySettings).DontScrubDateTimes();
 	}
 
