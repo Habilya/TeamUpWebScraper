@@ -12,6 +12,7 @@
 		"ReportSignupsLimit": 60,
 		"ReportHeaderBackgroundColorHtml": "#87cefa",
 		"ReportAttentionRequiredHighlightingColorHtml": "#FFFF00",
+		"ReportDuplicateEventIdHighlightColorHtml": "#FFA500",
 		"EventTitlesToHighLightPattern": "Cancel|Annul",
 		"FileNameTemplate": "TeamUpEventsReport_{0}.xlsx",
 		"FileNameDateTimeFormat": "yyyy-MM-dd_hh-mm-ss",

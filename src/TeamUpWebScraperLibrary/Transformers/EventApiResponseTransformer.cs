@@ -41,7 +41,33 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			eventSpreadSheetLines.Add(SingleEventResponseToSpreadSheetLine(eventData, calendarsMapping));
 		}
 
+		CheckEventIdsForDuplicates(eventSpreadSheetLines);
+
 		return eventSpreadSheetLines;
+	}
+
+	private void CheckEventIdsForDuplicates(List<EventSpreadSheetLine> eventSpreadSheetLines)
+	{
+		if (eventSpreadSheetLines.Count == 0)
+		{
+			return;
+		}
+
+		var duplicateIds = eventSpreadSheetLines
+			.Where(e => !string.IsNullOrEmpty(e.Id))
+			.GroupBy(e => e.Id)
+			.Where(g => g.Count() > 1)
+			.Select(g => g.Key)
+			.ToHashSet();
+
+		foreach (var eventSpreadSheetLine in eventSpreadSheetLines)
+		{
+			eventSpreadSheetLine.IsDuplicateId = duplicateIds.Contains(eventSpreadSheetLine.Id);
+			if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.ReportDuplicateEventIdHighlightColorHtml) && duplicateIds.Contains(eventSpreadSheetLine.Id))
+			{
+				eventSpreadSheetLine.LineHighLightColor = _excelReportSpreadSheetConfig.ReportDuplicateEventIdHighlightColorHtml;
+			}
+		}
 	}
 
 	private List<Event> PrepareEventsCollection(List<Event> events)

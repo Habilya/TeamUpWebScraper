@@ -1,6 +1,7 @@
 ﻿[
   {
     Id: DIV-241201-0900-0971,
+    IsDuplicateId: false,
     Title: Exercice sauvetage forestier,
     Location:
 Boisé Papineau, dans le stationnement derrière le CC 3235, boulevard Saint-Martin Est
@@ -22,6 +23,7 @@ Laval (Québec)  H7E 5G8,
   },
   {
     Id: CB-241201-1400-0452,
+    IsDuplicateId: false,
     Title: Fan Club et Club 1909,
     Location: 1225 st antoine,
     Notes: Date : 1 décembre 2024,

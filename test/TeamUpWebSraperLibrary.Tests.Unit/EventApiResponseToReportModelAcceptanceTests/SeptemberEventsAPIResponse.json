@@ -9886,6 +9886,63 @@
 				}
 			],
 			"comments_enabled": false
+		},
+		{
+			"id": "1674883757",
+			"series_id": null,
+			"remote_id": "9a27ddbf-debe-43dd-97a9-5bcbe75c0d43",
+			"subcalendar_id": 11798521,
+			"subcalendar_ids": [
+				11798521
+			],
+			"all_day": false,
+			"rrule": "",
+			"title": "Panthéon de la performance 2 salle",
+			"who": "",
+			"location": "Colisé desjardins",
+			"notes": "",
+			"version": "f0cdf57e3437",
+			"readonly": true,
+			"tz": "America/Toronto",
+			"attachments": [],
+			"start_dt": "2024-05-03T16:30:00-04:00",
+			"end_dt": "2024-05-03T23:56:00-04:00",
+			"ristart_dt": null,
+			"rsstart_dt": null,
+			"creation_dt": "2024-04-27T08:17:23-04:00",
+			"update_dt": "2024-04-27T09:02:30-04:00",
+			"delete_dt": null,
+			"signup_enabled": true,
+			"signup_visibility": "all_users",
+			"signup_limit": 0,
+			"signup_deadline": "2024-05-03T13:00:00-04:00",
+			"signup_deadline_enabled": true,
+			"signup_count": 2,
+			"signups": [
+				{
+					"id": 3444259,
+					"event_id": 1674883756,
+					"name": "Johanne Chillas",
+					"email": "",
+					"email_hash": "ac3a9af5840bd00016e484804ff8af58",
+					"remote_id": null,
+					"readonly": true,
+					"creation_dt": "2024-04-27T09:02:30-04:00",
+					"update_dt": null
+				},
+				{
+					"id": 3444179,
+					"event_id": 1674883756,
+					"name": "Yves Tardif PR",
+					"email": "",
+					"email_hash": "8747c9f6c078cc0f9640458246f65dc4",
+					"remote_id": "ece4ebea-5ea9-4a22-af45-51a64859e79d",
+					"readonly": true,
+					"creation_dt": "2024-04-27T08:16:56-04:00",
+					"update_dt": null
+				}
+			],
+			"comments_enabled": false
 		}
 	],
 	"timestamp": 1735578039

@@ -1,6 +1,7 @@
 ﻿[
   {
     Id: DIV-240503-1630-0783,
+    IsDuplicateId: true,
     Title: Panthéon de la performance,
     Location: Colisé desjardins,
     Notes: ,
@@ -17,7 +18,26 @@
     PresencesConcat: Johanne Chillas //Yves Tardif PR
   },
   {
+    Id: DIV-240503-1630-0783,
+    IsDuplicateId: true,
+    Title: Panthéon de la performance 2 salle,
+    Location: Colisé desjardins,
+    Notes: ,
+    StartDate: 2024-05-03T16:30:00-04:00,
+    EndDate: 2024-05-03T23:56:00-04:00,
+    CreationDate: 2024-04-27T08:17:23-04:00,
+    UpdateDate: 2024-04-27T09:02:30-04:00,
+    SignupCount: 2,
+    Signups: [
+      Johanne Chillas,
+      Yves Tardif PR
+    ],
+    Division: 0783,
+    PresencesConcat: Johanne Chillas //Yves Tardif PR
+  },
+  {
     Id: DIV-240901-1545-0094,
+    IsDuplicateId: false,
     Title: Festival Hilarium,
     Location: Parc Jacques Cartier,
     Notes: festival de humor,
@@ -44,6 +64,7 @@
   },
   {
     Id: DIV-240901-1630-0062,
+    IsDuplicateId: false,
     Title: Fierté Québec (ancienne fête arc-en-ciel),
     Location: Place D'Youville Rue Saint-Jean Québec QC G1R 3P1,
     Notes:
@@ -67,6 +88,7 @@ Tente fournis par le client,
   },
   {
     Id: PB-240901-1830-0971,
+    IsDuplicateId: false,
     Title: Annulé PB Arcangel & De La Ghetto,
     Location: ,
     Notes: ,
@@ -89,6 +111,7 @@ Tente fournis par le client,
   },
   {
     Id: DIV-240902-1900-1002,
+    IsDuplicateId: false,
     Title: Rencontre divisionnaire mensuelle,
     Location: 20 Rue Pierre-Boucher, Boucherville, QC J4B 5A4,
     Notes: Rencontre divisionnaire mensuelle au local,
@@ -110,6 +133,7 @@ Tente fournis par le client,
   },
   {
     Id: PB-240904-1830-0971,
+    IsDuplicateId: false,
     Title: ANNULÉ PB Grupo Frontera,
     Location: ,
     Notes: ,
@@ -140,6 +164,7 @@ Tente fournis par le client,
   },
   {
     Id: DIV-240905-1900-0971,
+    IsDuplicateId: false,
     Title: Rencontre Jeunesse et développement,
     Location: CC Philémon-Gascon, 2830 rang Saint-Elzéar Est,
     Notes: ,
@@ -170,6 +195,7 @@ Tente fournis par le client,
   },
   {
     Id: DIV-240907-1000-1002,
+    IsDuplicateId: false,
     Title: voiture ancienne,
     Location: 1075 lionel-daunais boucherville,
     Notes: show de voitures anciennes devant le centre multifonctionnel Francine-Gadbois a Boucherville.,
@@ -194,6 +220,7 @@ Tente fournis par le client,
   },
   {
     Id: DIV-240907-1100-0062,
+    IsDuplicateId: false,
     Title: Lévis interculturelle,
     Location: Quai Paquet 6075 Rue Saint-Laurent Lévis G6V 3P5 Québec,
     Notes:
@@ -215,6 +242,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240907-1330-0280,
+    IsDuplicateId: false,
     Title: Concert d’orgue,
     Location: Monastère Précieux Sang 2520 Girouard Ouest,
     Notes: Concert d’orgue,
@@ -236,6 +264,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240907-1500-0158,
+    IsDuplicateId: false,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
     Notes: venez encourager nos rouges!!!,
@@ -259,6 +288,7 @@ Repas et stationnement fournis,
   },
   {
     Id: PB-240907-1830-0971,
+    IsDuplicateId: false,
     Title: PB Annulé Davido,
     Location: ,
     Notes: Ouverture des inscriptions le 19 avril à 8h,
@@ -299,6 +329,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240907-1830-0280,
+    IsDuplicateId: false,
     Title: Concert d’orgue,
     Location: Monastère Précieux Sang 2520 Girouard Ouest,
     Notes: Concert d’orgue,
@@ -320,6 +351,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240908-1300-0280,
+    IsDuplicateId: false,
     Title: Concert d’orgue,
     Location: Chapel Séminaire 650Girouard Est,
     Notes: Concert d’orgue,
@@ -342,6 +374,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240908-1345-0094,
+    IsDuplicateId: false,
     Title: Ceremonie pour veterans,
     Location: 2685 King O (Hotel Delta),
     Notes: Ceremonie pour les veterans,
@@ -364,6 +397,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240909-0745-0094,
+    IsDuplicateId: false,
     Title: ceremonie pour veterans,
     Location: 2685 King O (Hotel Delta),
     Notes: ceremonie pour les veterans,
@@ -387,6 +421,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240910-0745-0094,
+    IsDuplicateId: false,
     Title: Ceremonie pour veterans,
     Location: 2685 King O (Hotel Delta),
     Notes: ceremonie pour les veterans,
@@ -409,6 +444,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240910-1850-0452,
+    IsDuplicateId: false,
     Title: Formation continue avec le 51e Ambulance de Campagne (PR seulement),
     Location: 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion,
     Notes:
@@ -445,6 +481,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240911-0745-0094,
+    IsDuplicateId: false,
     Title: ceremonie pour veterans,
     Location: 2685 King O ( Hotel Delta),
     Notes: ceremonie pour les veterans,
@@ -468,6 +505,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240912-1600-0280,
+    IsDuplicateId: false,
     Title: Happening de la rentrée,
     Location: Rue Sicotte devant l’ITAQ,
     Notes: Spectacle pour la rentrée,
@@ -490,6 +528,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240913-1300-0062,
+    IsDuplicateId: false,
     Title: Festival FONO Québec,
     Location: Université Laval,
     Notes: Informations à venir,
@@ -515,6 +554,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240913-1630-0971,
+    IsDuplicateId: false,
     Title: Lumen,
     Location: 4950 Rue Louis-B.-Mayer Laval H7P 0H7 QC,
     Notes: Inauguration agrandissement Lumen,
@@ -537,6 +577,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: CB-240913-1730-0452,
+    IsDuplicateId: false,
     Title: Judas Priest,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -573,6 +614,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240913-1815-0094,
+    IsDuplicateId: false,
     Title: Pre saison Phoenix,
     Location: Palais des Sports,
     Notes: ,
@@ -594,6 +636,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240914-0830-0452,
+    IsDuplicateId: false,
     Title: Exercice Médic Rampamt,
     Location: 51e Ambulance de Campagne, 4895 Rue de Bullion, Montréal,
     Notes:
@@ -629,6 +672,7 @@ d. En tant que patient/figurant lors de scénarios.
   },
   {
     Id: DIV-240914-0945-0094,
+    IsDuplicateId: false,
     Title: Portes ouvertes travaux public,
     Location: 555 rue des grandes fourches sud,
     Notes: journee portes ouvertes,
@@ -652,6 +696,7 @@ d. En tant que patient/figurant lors de scénarios.
   },
   {
     Id: CB-240914-1030-0452,
+    IsDuplicateId: false,
     Title: HOCKEY CANADIENS FACE-À-FACE DES ESPOIRS 2024,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -681,6 +726,7 @@ d. En tant que patient/figurant lors de scénarios.
   },
   {
     Id: DIV-240914-1130-0452,
+    IsDuplicateId: false,
     Title: Fête de quartier de Saint-Henri,
     Location: Parc Sir-George-Étienne-Cartier,
     Notes:
@@ -715,6 +761,7 @@ Stationnement sur place
   },
   {
     Id: DIV-240914-1300-0062,
+    IsDuplicateId: false,
     Title: Festival FONO Québec,
     Location: Université Laval,
     Notes: Informations à venir,
@@ -739,6 +786,7 @@ Stationnement sur place
   },
   {
     Id: PB-240914-1830-0971,
+    IsDuplicateId: false,
     Title: PB THE AUSTRALIAN PINK FLOYD SHOW,
     Location: ,
     Notes: ,
@@ -773,6 +821,7 @@ Stationnement sur place
   },
   {
     Id: DIV-240915-0915-1002,
+    IsDuplicateId: false,
     Title: Circuit bleu,
     Location: Parc national des Iles de Boucherville55: Île Sainte-Marguerite, Boucherville, J4B 8R2, Québec,
     Notes: Maximum 200 personnes sur places. Repas et parking disponible sur places. C'est une journée de pagaie pour des amateurs. Dans le but de ramasser des fonds. Un lieu et une tente sera fourni par l'organisatuer.,
@@ -797,6 +846,7 @@ Stationnement sur place
   },
   {
     Id: CB-240915-1100-0452,
+    IsDuplicateId: false,
     Title: HOCKEY CANADIENS FACE-À-FACE DES ESPOIRS 2024,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -823,6 +873,7 @@ Stationnement sur place
   },
   {
     Id: PB-240915-1800-0971,
+    IsDuplicateId: false,
     Title: PB Powerwolf avec Unleash The Archers,
     Location: ,
     Notes: ,
@@ -853,6 +904,7 @@ Stationnement sur place
   },
   {
     Id: PB-240916-1800-0971,
+    IsDuplicateId: false,
     Title: PB Charli XCX & Troye Sivan, Sweat avec Shygirl,
     Location: ,
     Notes: ,
@@ -888,6 +940,7 @@ Stationnement sur place
   },
   {
     Id: CB-240917-1800-0452,
+    IsDuplicateId: false,
     Title: Hans Zimmer,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -926,6 +979,7 @@ Stationnement sur place
   },
   {
     Id: CB-240918-1630-0452,
+    IsDuplicateId: false,
     Title: Privé: ONE YOUNG WORLD 2024,
     Location: 1225 st Antoine  ouest,
     Notes: 5000 personnes,
@@ -946,6 +1000,7 @@ Stationnement sur place
   },
   {
     Id: PB-240919-1700-0971,
+    IsDuplicateId: false,
     Title: PB The National and the War on Drugs avec Lucius,
     Location: ,
     Notes: ,
@@ -977,6 +1032,7 @@ Stationnement sur place
   },
   {
     Id: DIV-240919-1900-0452,
+    IsDuplicateId: false,
     Title: Session de perfectionnement (Sujet: ateliers techniques signes vitaux) -  Training Session (Topic: technical workshop vital signs),
     Location: 51e Ambulance de Campagne, 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion, Montréal, QC H2T 1Z6,
     Notes:
@@ -1017,6 +1073,7 @@ Participants : All are welcome (all divisions). SGs, PRs and instructors alike. 
   },
   {
     Id: DIV-240920-0000-0783,
+    IsDuplicateId: false,
     Title: tigres contre val d'or,
     Location: colisée desjardins victoriaville,
     Notes: hockey de la LHJMQ,
@@ -1040,6 +1097,7 @@ Participants : All are welcome (all divisions). SGs, PRs and instructors alike. 
   },
   {
     Id: DIV-240920-0800-0062,
+    IsDuplicateId: false,
     Title: Cross-Country CSSPS,
     Location: 145 Rue de la Faune Québec G1G 0K9,
     Notes:
@@ -1060,6 +1118,7 @@ Stationnement fourni,
   },
   {
     Id: CB-240920-1700-0452,
+    IsDuplicateId: false,
     Title: Kygo,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -1098,6 +1157,7 @@ Stationnement fourni,
   },
   {
     Id: DIV-240920-1800-0158,
+    IsDuplicateId: false,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
     Notes: venez encourager nos rouges!!!,
@@ -1121,6 +1181,7 @@ Stationnement fourni,
   },
   {
     Id: PB-240920-1830-0971,
+    IsDuplicateId: false,
     Title: PB Dadju et Tayc,
     Location: ,
     Notes: ,
@@ -1159,6 +1220,7 @@ Stationnement fourni,
   },
   {
     Id: DIV-240921-0945-0158,
+    IsDuplicateId: false,
     Title: Festival aux Goûts du Sanctuaire,
     Location: 1795 Chemin du Golf Ouest Saint-Majorique,
     Notes: repas fourni,
@@ -1182,6 +1244,7 @@ Stationnement fourni,
   },
   {
     Id: DIV-240921-1100-0094,
+    IsDuplicateId: false,
     Title: Collation des Grades,
     Location: Universite,
     Notes: Ceremonie des finnisants , Poste sur place, Uniforme complete oubliger (pantalon et chemise),
@@ -1208,6 +1271,7 @@ Stationnement fourni,
   },
   {
     Id: DIV-240921-1515-0094,
+    IsDuplicateId: false,
     Title: Phoenix,
     Location: Palais des Sports,
     Notes: ,
@@ -1229,6 +1293,7 @@ Stationnement fourni,
   },
   {
     Id: PB-240921-1800-0971,
+    IsDuplicateId: false,
     Title: PB PJHarvey,
     Location: ,
     Notes: ,
@@ -1257,6 +1322,7 @@ Stationnement fourni,
   },
   {
     Id: CB-240921-1800-0452,
+    IsDuplicateId: false,
     Title: Dadju & Tayc,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -1288,6 +1354,7 @@ Stationnement fourni,
   },
   {
     Id: DIV-240922-0930-0452,
+    IsDuplicateId: false,
     Title: Walk to end PKD,
     Location: Parc de Dollard-des-Ormeaux,
     Notes:
@@ -1324,6 +1391,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240922-1500-0158,
+    IsDuplicateId: false,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
     Notes: venez encourager nos rouges!!!,
@@ -1347,6 +1415,7 @@ Infos supplémentaires : 
   },
   {
     Id: CB-240923-1700-0452,
+    IsDuplicateId: false,
     Title: Canadiens vs Philadelphie,
     Location: 1225 rue Saint-Antoine O,
     Notes: ,
@@ -1378,6 +1447,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240924-0700-Prov,
+    IsDuplicateId: false,
     Title: Tournoi PGA,
     Location:
 Club de golf Royal Montréal
@@ -1407,6 +1477,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: PB-240924-1630-0971,
+    IsDuplicateId: false,
     Title: PB Suicideboy avec Denzel Curry, Pouya, Shakewell, HAARPER, Ekkstacy,
     Location: ,
     Notes: ,
@@ -1439,6 +1510,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: CB-240924-1700-0452,
+    IsDuplicateId: false,
     Title: Canadiens vs New Jersey,
     Location: 1225 rue Saint-Antoine O,
     Notes: FICHIER,
@@ -1466,6 +1538,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240924-1850-0452,
+    IsDuplicateId: false,
     Title: Formation continue avec le 51e Ambulance de Campagne (PR seulement),
     Location: 4895 Rue de Bullion, Montréal, QC H2T 1Z6 Rue De Bullion,
     Notes:
@@ -1500,6 +1573,7 @@ Parking : Disponible dès 18h à l'École Saint-Enfant-Jésus juste à côté.,
   },
   {
     Id: DIV-240925-0700-Prov,
+    IsDuplicateId: false,
     Title: Tournoi PGA,
     Location:
 Club de golf Royal Montréal
@@ -1529,6 +1603,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240925-1100-0094,
+    IsDuplicateId: false,
     Title: Recrutrment Cascades KF,
     Location: 412 bd Marie Victorin Kingsey Falls,
     Notes: ,
@@ -1550,6 +1625,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: PB-240925-1730-0971,
+    IsDuplicateId: false,
     Title: PB Vampire Weekend avec Cults,
     Location: ,
     Notes: ,
@@ -1580,6 +1656,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: CB-240925-1800-0452,
+    IsDuplicateId: false,
     Title: Twenty One Pilots,
     Location: 1225 st antoine ouest,
     Notes: FICHIER,
@@ -1613,6 +1690,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240926-0700-Prov,
+    IsDuplicateId: false,
     Title: Tournoi PGA,
     Location:
 Club de golf Royal Montréal
@@ -1643,6 +1721,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240926-1900-0971,
+    IsDuplicateId: false,
     Title: Annulé Préparation sécurité civile,
     Location: CC Philémon-Gascon, 2830 rang Saint-Elzéar Est,
     Notes: ,
@@ -1667,6 +1746,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240927-0700-Prov,
+    IsDuplicateId: false,
     Title: Tournoi PGA,
     Location:
 Club de golf Royal Montréal
@@ -1697,6 +1777,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240927-1530-0452,
+    IsDuplicateId: false,
     Title: Ultra Hole Challenge,
     Location: Golf Saint-Raphaël (1111 Montée de l’Église, Île-Bizzard),
     Notes:
@@ -1733,6 +1814,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240927-1800-0158,
+    IsDuplicateId: false,
     Title: Village Hanté,
     Location: 1425 rue Montplaisir Drummondville,
     Notes: Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir,
@@ -1759,6 +1841,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240927-1800-0783,
+    IsDuplicateId: false,
     Title: tigres contre rouyn-noranda,
     Location: colisée desjardins victoriaville,
     Notes: hockey de la LHJMQ,
@@ -1782,6 +1865,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240927-1815-0094,
+    IsDuplicateId: false,
     Title: Phoenix,
     Location: Palais des Sports,
     Notes: ,
@@ -1804,6 +1888,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240928-0700-Prov,
+    IsDuplicateId: false,
     Title: Tournoi PGA,
     Location:
 Club de golf Royal Montréal
@@ -1836,6 +1921,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240928-0800-0062,
+    IsDuplicateId: false,
     Title: Défi forestier,
     Location: École secondaire Mont-Saint-Sacrement 200 Boul Saint-Sacrement Saint-Gabriel-de-Valcartier G0A 4S0 QC,
     Notes:
@@ -1859,6 +1945,7 @@ Repas et stationnement fournis,
   },
   {
     Id: DIV-240928-0800-0971,
+    IsDuplicateId: false,
     Title: Rendez-vous de la sécurité civile,
     Location:
 École Fleur-de-Vie Laval
@@ -1889,6 +1976,7 @@ De plus, lors de cet évènement, nous avons l’occasion de tenir un kiosque po
   },
   {
     Id: DIV-240928-0945-0452,
+    IsDuplicateId: false,
     Title: Marche Respirons l'Espoir de Montréal,
     Location: Parc Angrignon (3500 Boul Des Trinitaires Montréal H4E 4J3 QC),
     Notes:
@@ -1922,6 +2010,7 @@ Informations supplémentaires :
   },
   {
     Id: DIV-240928-1000-0280,
+    IsDuplicateId: false,
     Title: Porte ouverte aéroport,
     Location: Aéroport St-Mathieu de Beloeil,
     Notes: porte ouvert,
@@ -1943,6 +2032,7 @@ Informations supplémentaires :
   },
   {
     Id: DIV-240928-1015-0094,
+    IsDuplicateId: false,
     Title: Entreprise en famille,
     Location: Ecole du Triolet,
     Notes: eventment de familles a l`ecole du Triolet,
@@ -1965,6 +2055,7 @@ Informations supplémentaires :
   },
   {
     Id: DIV-240928-1645-0094,
+    IsDuplicateId: false,
     Title: Phoenix,
     Location: Palais des Sports,
     Notes: ,
@@ -1987,6 +2078,7 @@ Informations supplémentaires :
   },
   {
     Id: CB-240928-1700-0452,
+    IsDuplicateId: false,
     Title: Canadiens vs Toronto,
     Location: 1225 rue Saint-Antoine O,
     Notes: FICHIER,
@@ -2014,6 +2106,7 @@ Informations supplémentaires :
   },
   {
     Id: DIV-240928-1800-0158,
+    IsDuplicateId: false,
     Title: Village Hanté,
     Location: 1425 rue Montplaisir Drummondville,
     Notes: Dans cette 15e édition, plus terrifiante que jamais, votre visite multisensorielle horrifiante sera riche en émotions fortes! Tous vos sens seront décuplés, pour attendre un niveau d’anxiété hors-normes. Affrontez vos plus grandes peurs, vos plus intenses phobies, vos angoisses les plus terribles et vos aversions les plus profondes à travers des décors et des personnages terrifiants. Parmi des personnages ahurissants, des cris à vous en fendre l’âme, des odeurs fétides, des sensations tactiles déstabilisantes et plusieurs scènes immondes, vous serez certainement troublés par votre visite, qui laissera des traces indélébiles dans votre mémoir,
@@ -2038,6 +2131,7 @@ Informations supplémentaires :
   },
   {
     Id: DIV-240929-0700-Prov,
+    IsDuplicateId: false,
     Title: Tournoi PGA,
     Location:
 Club de golf Royal Montréal
@@ -2066,6 +2160,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240929-0800-0280,
+    IsDuplicateId: false,
     Title: Relai 2 h,
     Location: Parc Casimir Dessaules,
     Notes: Course à relai autour du parc,
@@ -2089,6 +2184,7 @@ Possibilité d'hébergement pour les bénévoles de l'extérieur de la zone géo
   },
   {
     Id: DIV-240929-1130-0452,
+    IsDuplicateId: false,
     Title: Monktoberfest,
     Location: 5959 Boulevard Monk,
     Notes:
@@ -2126,6 +2222,7 @@ Infos supplémentaires :
   },
   {
     Id: DIV-240929-1230-0452,
+    IsDuplicateId: false,
     Title: Parade Phénoména,
     Location: Parc Lahaie,
     Notes:
@@ -2161,6 +2258,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240929-1500-0158,
+    IsDuplicateId: false,
     Title: Voltigeurs,
     Location: Centre Marcel Dionne, 300 rue Cockburn, Drummondville,
     Notes: venez encourager nos rouges!!!,
@@ -2184,6 +2282,7 @@ Infos supplémentaires : 
   },
   {
     Id: DIV-240929-1500-0783,
+    IsDuplicateId: false,
     Title: tigres contre quebec,
     Location: colisée desjardins vicroriaville,
     Notes: hockey de la LHJMQ,
@@ -2207,6 +2306,7 @@ Infos supplémentaires : 
   },
   {
     Id: PB-240930-1730-0971,
+    IsDuplicateId: false,
     Title: PB The Marley Brothers,
     Location: ,
     Notes: ,
@@ -2237,6 +2337,7 @@ Infos supplémentaires : 
   },
   {
     Id: CB-240930-1900-0452,
+    IsDuplicateId: false,
     Title: Réunion d'État-Major (CUB),
     Location: Par Team,
     Notes:
