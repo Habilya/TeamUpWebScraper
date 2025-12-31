@@ -42,6 +42,7 @@ public class ExcelSpreadsheetReportProviderTests
 		excelReportSpreadSheetConfig.ReportSignupsLimit = 60;
 		excelReportSpreadSheetConfig.ReportHeaderBackgroundColorHtml = "#87cefa";
 		excelReportSpreadSheetConfig.ReportAttentionRequiredHighlightingColorHtml = "#FFFF00";
+		excelReportSpreadSheetConfig.ReportDuplicateEventIdHighlightColorHtml = "#FFA500";
 		excelReportSpreadSheetConfig.EventTitlesToHighLightPattern = "Cancel|Annul";
 
 		var responseAsStringPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"EventApiResponseToReportModelAcceptanceTests\SeptemberEventsAPIResponse.json");

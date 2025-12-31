@@ -88,6 +88,7 @@ in msbuild command argument `/p:InformationalVersion=$env:BUILD_NUMBER`
 - ✅ Decouple UI from Library
 - ✅ Look to replace FluentAssertions with shouldly https://github.com/shouldly/shouldly
 - ✅ Add FusionCache to cache the TeamUp API calls
+- ✅ Add EventId duplicates highlighting in Excel report (same EventId appearing more than once in the report)
 - 🔲 Add Tests for TeamUpController (mind the cache)
 - 🔲 Replace Polly with microsoft built in retry policy Extensions.resiliance
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json

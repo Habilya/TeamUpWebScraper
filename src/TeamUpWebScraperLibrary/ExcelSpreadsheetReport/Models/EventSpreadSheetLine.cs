@@ -3,6 +3,7 @@
 public class EventSpreadSheetLine
 {
 	public string Id { get; set; } = default!;
+	public bool IsDuplicateId { get; set; } = default!;
 
 	public string Title { get; set; } = default!;
 	public string Location { get; set; } = default!;
