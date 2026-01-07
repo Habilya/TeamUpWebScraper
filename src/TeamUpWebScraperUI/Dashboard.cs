@@ -22,6 +22,13 @@ public partial class Dashboard : Form
 	private void ReinitUIElements()
 	{
 		saveXLSX.Enabled = false;
+		cbMemberTimeAnalysis.Enabled = false;
+		cbSelectUnselectAllDisplayed.Enabled = false;
+		tbFilterByName.Enabled = false;
+		cbMemberTimeAnalysis.Checked = false;
+		cbSelectUnselectAllDisplayed.Checked = false;
+		tbFilterByName.Text = string.Empty;
+
 		resultsLabel.Text = DashBoardConstants.RESULTS_LABEL_DEFAULT;
 		dataGridViewResults.Columns.Clear();
 		dataGridViewResults.Rows.Clear();
@@ -51,9 +58,18 @@ public partial class Dashboard : Form
 			if (result.IsValid)
 			{
 				var displayResults = _teamUpController.GetDisplayableGridResults();
-				resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_RESULTS, displayResults.Count);
+				resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_SELECTED_RESULTS, displayResults.Count);
+				systemStatusLabel.Text = string.Format(DashBoardConstants.SYSTEM_STATUS_LABEL_WITH_RESULTS, displayResults.Count);
 				DataGridViewHelper.GenerateDataGridView(dataGridViewResults, displayResults);
 				saveXLSX.Enabled = true;
+				cbMemberTimeAnalysis.Enabled = true;
+				cbSelectUnselectAllDisplayed.Enabled = true;
+				tbFilterByName.Enabled = true;
+
+				// Defaults
+				cbMemberTimeAnalysis.Checked = false;
+				cbSelectUnselectAllDisplayed.Checked = true;
+				tbFilterByName.Text = string.Empty;
 			}
 			else
 			{
@@ -91,6 +107,8 @@ public partial class Dashboard : Form
 	{
 		try
 		{
+			//TODO: if 0 selected in grid, warn user no data to save
+
 			// Preconfigured file path and file name and filter
 			var (defaultSavePath, fileName, filter) = _teamUpController.GetSaveDialogOptions();
 			SaveFileDialog saveFileDialog = new SaveFileDialog
@@ -119,5 +137,15 @@ public partial class Dashboard : Form
 	private static void ShowUnhandledExceptionPopup()
 	{
 		MessageBox.Show("An unhandled exception was thrown, more information in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+	}
+
+	private void cbSelectUnselectAllDisplayed_CheckedChanged(object sender, EventArgs e)
+	{
+
+	}
+
+	private void tbFilterByName_TextChanged(object sender, EventArgs e)
+	{
+
 	}
 }

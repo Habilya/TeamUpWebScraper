@@ -115,7 +115,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		foreach (var line in reportSpreadsheetLines)
 		{
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Id).Value = line.Id;
+			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Id).Value = line.EventId;
 
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.title).Value = line.Title;
 			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.location).Value = line.Location;
