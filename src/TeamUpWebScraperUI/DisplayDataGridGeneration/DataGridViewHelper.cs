@@ -2,6 +2,63 @@
 
 public class DataGridViewHelper
 {
+	public static BindingSource GenerateDataGridView<T>(
+		DataGridView dataGridView,
+		IList<T> data)
+	{
+		var bindingSource = new BindingSource();
+		bindingSource.DataSource = data;
+
+		dataGridView.Columns.Clear();
+		dataGridView.AutoGenerateColumns = false;
+		dataGridView.DataSource = bindingSource;
+
+		var props = typeof(T).GetProperties();
+
+		// Checkbox column FIRST
+		dataGridView.Columns.Add(new DataGridViewCheckBoxColumn
+		{
+			Name = "",
+			DataPropertyName = "Selected",
+			Width = 30,
+			ReadOnly = false
+		});
+
+		// Other properties
+		foreach (var prop in props)
+		{
+			if (prop.Name == "Selected") continue;
+
+			dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				Name = prop.Name,
+				HeaderText = prop.Name,
+				DataPropertyName = prop.Name,
+				ReadOnly = true,
+				AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+			});
+		}
+
+		DataGridViewStyling(dataGridView);
+		return bindingSource;
+	}
+
+	private static void DataGridViewStyling(DataGridView dataGridView)
+	{
+		// Optionally, make the DataGridView AutoSize the columns for better presentation
+		dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+		dataGridView.Columns["UniqueId"].Visible = false;
+
+		dataGridView.AllowUserToResizeColumns = false;
+		dataGridView.AllowUserToResizeRows = false;
+		dataGridView.RowHeadersVisible = false;
+
+		dataGridView.ReadOnly = false;
+		dataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
+
+	}
+
 	/// <summary>
 	/// Generates a DataGridView dynamically based on the list of objects.
 	/// </summary>
@@ -45,7 +102,6 @@ public class DataGridViewHelper
 			dataGridView.Rows.Add(row.ToArray());
 		}
 
-		// Optionally, make the DataGridView AutoSize the columns for better presentation
-		dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+		DataGridViewStyling(dataGridView);
 	}
 }

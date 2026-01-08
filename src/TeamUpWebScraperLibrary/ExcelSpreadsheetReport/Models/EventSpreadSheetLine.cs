@@ -2,14 +2,16 @@
 
 public class EventSpreadSheetLine
 {
-	public string Id { get; set; } = default!;
+	public int UniqueId { get; set; } = default!;
 	public bool IsDuplicateId { get; set; } = default!;
 
+	public string EventId { get; set; } = default!;
 	public string Title { get; set; } = default!;
 	public string Location { get; set; } = default!;
 	public string Notes { get; set; } = default!;
 	public string StartDate { get; set; } = default!;
 	public string EndDate { get; set; } = default!;
+	public double Hours { get; set; } = default!;
 	public string CreationDate { get; set; } = default!;
 	public string UpdateDate { get; set; } = default!;
 	public string DeleteDate { get; set; } = default!;

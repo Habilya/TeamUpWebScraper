@@ -10,5 +10,5 @@ public interface IExcelSpreadsheetReportProvider
 
 	string ExcelReportSaveDialogFilter { get; }
 
-	bool SaveExcelReport(string fileFullPath, List<EventSpreadSheetLine> reportSpreadsheetLines);
+	bool SaveExcelReport(string fileFullPath, List<EventSpreadSheetLine> reportSpreadsheetLines, bool isMemberTimeAnalysisIncluded, List<MemberTimeAnalysisModel> memberTimeAnalysisData, List<MemberTimeReportModel> memberTimeReportData);
 }

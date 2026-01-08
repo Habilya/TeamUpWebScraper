@@ -17,14 +17,18 @@ public class DisplayGridViewProvider : IDisplayGridViewProvider
 
 		foreach (var reportLine in reportSpreadsheetLines)
 		{
-			var resultLine = new DisplayGridViewModel(
-				reportLine.Id,
-				reportLine.Title,
-				reportLine.StartDate,
-				reportLine.EndDate,
-				reportLine.SignupCount,
-				reportLine.PresencesConcat
-			);
+			var resultLine = new DisplayGridViewModel()
+			{
+				Selected = true,
+				UniqueId = reportLine.UniqueId,
+				Title = reportLine.Title,
+				EventId = reportLine.EventId,
+				StartDate = reportLine.StartDate,
+				EndDate = reportLine.EndDate,
+				Hours = reportLine.Hours,
+				SignupCount = reportLine.SignupCount,
+				PresencesConcat = reportLine.PresencesConcat
+			};
 
 			result.Add(resultLine);
 		}

@@ -35,10 +35,11 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 	public List<EventSpreadSheetLine> EventApiResponseToSpreadSheetLines(List<Event> events, List<Subcalendar> calendarsMapping)
 	{
 		var eventSpreadSheetLines = new List<EventSpreadSheetLine>();
-
+		var uniqueId = 1;
 		foreach (var eventData in PrepareEventsCollection(events))
 		{
-			eventSpreadSheetLines.Add(SingleEventResponseToSpreadSheetLine(eventData, calendarsMapping));
+			eventSpreadSheetLines.Add(SingleEventResponseToSpreadSheetLine(eventData, calendarsMapping, uniqueId));
+			uniqueId++;
 		}
 
 		CheckEventIdsForDuplicates(eventSpreadSheetLines);
@@ -54,16 +55,16 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 		}
 
 		var duplicateIds = eventSpreadSheetLines
-			.Where(e => !string.IsNullOrEmpty(e.Id))
-			.GroupBy(e => e.Id)
+			.Where(e => !string.IsNullOrEmpty(e.EventId))
+			.GroupBy(e => e.EventId)
 			.Where(g => g.Count() > 1)
 			.Select(g => g.Key)
 			.ToHashSet();
 
 		foreach (var eventSpreadSheetLine in eventSpreadSheetLines)
 		{
-			eventSpreadSheetLine.IsDuplicateId = duplicateIds.Contains(eventSpreadSheetLine.Id);
-			if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.ReportDuplicateEventIdHighlightColorHtml) && duplicateIds.Contains(eventSpreadSheetLine.Id))
+			eventSpreadSheetLine.IsDuplicateId = duplicateIds.Contains(eventSpreadSheetLine.EventId);
+			if (!string.IsNullOrWhiteSpace(_excelReportSpreadSheetConfig.ReportDuplicateEventIdHighlightColorHtml) && duplicateIds.Contains(eventSpreadSheetLine.EventId))
 			{
 				eventSpreadSheetLine.LineHighLightColor = _excelReportSpreadSheetConfig.ReportDuplicateEventIdHighlightColorHtml;
 			}
@@ -81,16 +82,18 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 			.ToList();
 	}
 
-	private EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<Subcalendar> calendarsMapping)
+	private EventSpreadSheetLine SingleEventResponseToSpreadSheetLine(Event eventData, List<Subcalendar> calendarsMapping, int uniqueId)
 	{
 		return new EventSpreadSheetLine
 		{
-			Id = GetEventId(eventData, calendarsMapping),
+			UniqueId = uniqueId,
+			EventId = GetEventId(eventData, calendarsMapping),
 			Title = eventData.Title,
 			Location = eventData.Location,
 			Notes = GetNotes(eventData),
 			StartDate = eventData.StartDate.ToString(STRING_DATE_TIME_FORMAT),
 			EndDate = eventData.EndDate.ToString(STRING_DATE_TIME_FORMAT),
+			Hours = GetEventHours(eventData),
 			CreationDate = eventData.CreationDate.ToString(STRING_DATE_TIME_FORMAT),
 			UpdateDate = eventData.UpdateDate?.ToString(STRING_DATE_TIME_FORMAT) ?? default!,
 			DeleteDate = eventData.DeleteDate?.ToString(STRING_DATE_TIME_FORMAT) ?? default!,
@@ -111,6 +114,11 @@ public class EventApiResponseTransformer : IEventApiResponseTransformer
 
 			LineHighLightColor = GetLineHighLightColor(eventData, calendarsMapping)
 		};
+	}
+
+	private static double GetEventHours(Event eventData)
+	{
+		return (eventData.EndDate - eventData.StartDate).TotalHours;
 	}
 
 	private string GetNotes(Event eventData)

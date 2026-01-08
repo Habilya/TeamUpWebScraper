@@ -40,6 +40,10 @@
 			label2 = new Label();
 			saveXLSX = new Button();
 			dataGridViewResults = new DataGridView();
+			cbSelectUnselectAllDisplayed = new CheckBox();
+			cbMemberTimeAnalysis = new CheckBox();
+			tbFilterByName = new TextBox();
+			label3 = new Label();
 			statusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
 			SuspendLayout();
@@ -82,7 +86,7 @@
 			// resultsLabel
 			// 
 			resultsLabel.AutoSize = true;
-			resultsLabel.Location = new Point(25, 197);
+			resultsLabel.Location = new Point(19, 155);
 			resultsLabel.Name = "resultsLabel";
 			resultsLabel.Size = new Size(88, 32);
 			resultsLabel.TabIndex = 6;
@@ -148,12 +152,54 @@
 			dataGridViewResults.Size = new Size(829, 403);
 			dataGridViewResults.TabIndex = 12;
 			// 
+			// cbSelectUnselectAllDisplayed
+			// 
+			cbSelectUnselectAllDisplayed.AutoSize = true;
+			cbSelectUnselectAllDisplayed.Location = new Point(25, 190);
+			cbSelectUnselectAllDisplayed.Name = "cbSelectUnselectAllDisplayed";
+			cbSelectUnselectAllDisplayed.Size = new Size(231, 36);
+			cbSelectUnselectAllDisplayed.TabIndex = 13;
+			cbSelectUnselectAllDisplayed.Text = "Select/Deselect All";
+			cbSelectUnselectAllDisplayed.UseVisualStyleBackColor = true;
+			cbSelectUnselectAllDisplayed.CheckedChanged += cbSelectUnselectAllDisplayed_CheckedChanged;
+			// 
+			// cbMemberTimeAnalysis
+			// 
+			cbMemberTimeAnalysis.AutoSize = true;
+			cbMemberTimeAnalysis.Location = new Point(448, 141);
+			cbMemberTimeAnalysis.Name = "cbMemberTimeAnalysis";
+			cbMemberTimeAnalysis.Size = new Size(292, 36);
+			cbMemberTimeAnalysis.TabIndex = 14;
+			cbMemberTimeAnalysis.Text = "Member's Time Analysis";
+			cbMemberTimeAnalysis.UseVisualStyleBackColor = true;
+			// 
+			// tbFilterByName
+			// 
+			tbFilterByName.Location = new Point(454, 187);
+			tbFilterByName.Name = "tbFilterByName";
+			tbFilterByName.Size = new Size(284, 39);
+			tbFilterByName.TabIndex = 15;
+			tbFilterByName.TextChanged += tbFilterByName_TextChanged;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Location = new Point(381, 190);
+			label3.Name = "label3";
+			label3.Size = new Size(67, 32);
+			label3.TabIndex = 16;
+			label3.Text = "Filter";
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(13F, 32F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(884, 677);
+			Controls.Add(label3);
+			Controls.Add(tbFilterByName);
+			Controls.Add(cbMemberTimeAnalysis);
+			Controls.Add(cbSelectUnselectAllDisplayed);
 			Controls.Add(dataGridViewResults);
 			Controls.Add(saveXLSX);
 			Controls.Add(label2);
@@ -188,5 +234,9 @@
 		private Label label2;
 		private Button saveXLSX;
 		private DataGridView dataGridViewResults;
+		private CheckBox cbSelectUnselectAllDisplayed;
+		private CheckBox cbMemberTimeAnalysis;
+		private TextBox tbFilterByName;
+		private Label label3;
 	}
 }

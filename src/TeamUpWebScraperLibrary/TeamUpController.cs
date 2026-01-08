@@ -5,7 +5,9 @@ using TeamUpWebScraperLibrary.DisplayGridView;
 using TeamUpWebScraperLibrary.DTO;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport;
 using TeamUpWebScraperLibrary.ExcelSpreadsheetReport.Models;
+using TeamUpWebScraperLibrary.Helpers;
 using TeamUpWebScraperLibrary.Logging;
+using TeamUpWebScraperLibrary.Providers;
 using TeamUpWebScraperLibrary.TeamUpAPI;
 using TeamUpWebScraperLibrary.TeamUpAPI.Models.Response;
 using TeamUpWebScraperLibrary.Transformers;
@@ -147,16 +149,131 @@ public class TeamUpController
 		);
 	}
 
-	public void SaveXLSX(string saveFullPath)
+	public void SaveXLSX(string saveFullPath, List<int> selectedIds, bool isMemberTimeAnalysisIncluded)
 	{
 		try
 		{
-			_excelSpreadsheetReportProvider.SaveExcelReport(saveFullPath, ReportSpreadsheetLines);
+			var filteredReportLines = ReportSpreadsheetLines
+				.Where(q => selectedIds.Contains(q.UniqueId))
+				.ToList();
+
+			var memberTimeAnalysisData = new List<MemberTimeAnalysisModel>();
+			var memberTimeReportData = new List<MemberTimeReportModel>();
+			if (isMemberTimeAnalysisIncluded)
+			{
+				var memberTimeAnalysisRawData = new List<MemberTimeAnalysisModel>();
+				foreach (var line in filteredReportLines)
+				{
+					foreach (var signup in line.Signups)
+					{
+						memberTimeAnalysisRawData.Add(new MemberTimeAnalysisModel
+						{
+							SignupName = signup,
+							EventName = line.Title,
+							StartDate = line.StartDate,
+							Hours = line.Hours,
+							EndDate = line.EndDate,
+							HoursPlus2 = line.Hours + 2
+						});
+					}
+				}
+
+				var similarMemberGroups = ClusterSimilarMembers(memberTimeAnalysisRawData);
+				// Flatten groups
+				memberTimeAnalysisData = similarMemberGroups
+					.SelectMany(g => g.Members.Select(m => new MemberTimeAnalysisModel
+					{
+						SignupName = m.SignupName,
+						Hours = m.Hours,
+						HoursPlus2 = m.HoursPlus2,
+						EventName = m.EventName,
+						StartDate = m.StartDate,
+						EndDate = m.EndDate,
+					}))
+					.ToList();
+
+				memberTimeReportData = similarMemberGroups
+					.Select(g =>
+					{
+						var firstMember = g.Members.First(); // pick a representative
+						return new MemberTimeReportModel
+						{
+							SignupName = firstMember.SignupName, // or you could combine names
+							Hours = g.Members.Sum(x => x.Hours),
+							HoursPlus2 = g.Members.Sum(x => x.HoursPlus2),
+							NBEvents = g.Members.Count,
+							OtherNameOccurances = string.Join(", ",
+								g.Members
+								 .Skip(1) // exclude the representative
+								 .Select(x => x.SignupName))
+						};
+					})
+					.ToList();
+			}
+
+			_excelSpreadsheetReportProvider.SaveExcelReport(
+					saveFullPath,
+					filteredReportLines,
+					isMemberTimeAnalysisIncluded,
+					memberTimeAnalysisData,
+					memberTimeReportData);
 		}
 		catch (Exception ex)
 		{
 			_logger.LogError(ex.Demystify(), "SaveXLSX threw an unhandled exception.");
 			throw;
 		}
+	}
+
+	public static List<SimilarMemberNameGroup> ClusterSimilarMembers(
+		List<MemberTimeAnalysisModel> members,
+		double threshold = 0.92) // raise threshold for safety
+	{
+		var groups = new List<SimilarMemberNameGroup>();
+		var used = new HashSet<MemberTimeAnalysisModel>();
+
+		var nameSimilarityCalculator = new NameSimilarityCalculator();
+
+		foreach (var member in members)
+		{
+			if (used.Contains(member)) continue;
+
+			var group = new SimilarMemberNameGroup();
+			group.Members.Add(member);
+			used.Add(member);
+
+			foreach (var other in members)
+			{
+				if (used.Contains(other) || other == member) continue;
+
+				// Optionally: check last name if member entered more than one word
+				var memberLastName = StringHelper.GetLastName(member.SignupName);
+				var otherLastName = StringHelper.GetLastName(other.SignupName);
+
+				// Only group if last names match or one of them is missing a last name
+				if (!string.IsNullOrEmpty(memberLastName) && !string.IsNullOrEmpty(otherLastName))
+				{
+					if (memberLastName != otherLastName) continue; // different people, skip
+				}
+
+				var score = nameSimilarityCalculator.Compute(member.SignupName, other.SignupName);
+
+				if (score >= threshold)
+				{
+					group.Members.Add(other);
+					group.Similarities.Add(new NameSimilarity
+					{
+						Name1 = member.SignupName,
+						Name2 = other.SignupName,
+						Score = score
+					});
+					used.Add(other);
+				}
+			}
+
+			groups.Add(group); // add the group even if it has only one member
+		}
+
+		return groups;
 	}
 }
