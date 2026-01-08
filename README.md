@@ -90,12 +90,12 @@ in msbuild command argument `/p:InformationalVersion=$env:BUILD_NUMBER`
 - ✅ Add FusionCache to cache the TeamUp API calls
 - ✅ Add EventId duplicates highlighting in Excel report (same EventId appearing more than once in the report)
 - ✅ Add GitHub CI/CD pipeline with build and release stages
-- 🔲 Add GUI checkboxes in gridview to select particular events
-- 🔲 Add GUI checkbox to select/deselect all events
-- 🔲 Add GUI searchbox to filter events in the gridview
-- 🔲 Make only filtered/checked events to Excel report
-- 🔲 Add GUI checkbox member hours analysis
-- 🔲 Add Member hours analysis to Excel report
+- ✅ Add GUI checkboxes in gridview to select particular events
+- ✅ Add GUI checkbox to select/deselect all events
+- ✅ Add GUI searchbox to filter events in the gridview
+- ✅ Make only filtered/checked events to Excel report
+- ✅ Add GUI checkbox member hours analysis
+- ✅ Add Member hours analysis to Excel report
 - 🔲 Add Tests for TeamUpController (mind the cache)
 - 🔲 Replace Polly with microsoft built in retry policy Extensions.resiliance
 - 🔲 Localization / Internationalization  NuGet package: Localization.Json
