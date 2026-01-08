@@ -70,7 +70,11 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		}
 	}
 
-	public bool SaveExcelReport(string fileFullPath, List<EventSpreadSheetLine> reportSpreadsheetLines)
+	public bool SaveExcelReport(string fileFullPath,
+		List<EventSpreadSheetLine> reportSpreadsheetLines,
+		bool isMemberTimeAnalysisIncluded,
+		List<MemberTimeAnalysisModel> memberTimeAnalysisData,
+		List<MemberTimeReportModel> memberTimeReportData)
 	{
 		if (File.Exists(fileFullPath))
 		{
@@ -78,12 +82,22 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		}
 		else
 		{
-			CreateNewExcelReportFile(fileFullPath, reportSpreadsheetLines);
+			CreateNewExcelReportFile(
+					fileFullPath,
+					reportSpreadsheetLines,
+					isMemberTimeAnalysisIncluded,
+					memberTimeAnalysisData,
+					memberTimeReportData);
+
 			return true;
 		}
 	}
 
-	private void CreateNewExcelReportFile(string filename, List<EventSpreadSheetLine> reportSpreadsheetLines)
+	private void CreateNewExcelReportFile(string filename,
+		List<EventSpreadSheetLine> reportSpreadsheetLines,
+		bool isMemberTimeAnalysisIncluded,
+		List<MemberTimeAnalysisModel> memberTimeAnalysisData,
+		List<MemberTimeReportModel> memberTimeReportData)
 	{
 		using (var wb = _xlWorkBookFactory.CreateXLWorkBook())
 		{
@@ -94,15 +108,85 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			// Write report lines
 			WriteDataLinesToSpresdsheet(_xLWorksheet, _excelReportSpreadSheetConfig.ReportHeaderLine + 1, reportSpreadsheetLines);
 
+			if (isMemberTimeAnalysisIncluded)
+			{
+				var _xLWSTimeAnalysis = wb.Worksheets.Add("Time Analysis");
+				WriteTimeAnalysisWorkSheet(wb, _xLWSTimeAnalysis, memberTimeAnalysisData);
+
+				var _xLWSMemberTimeReport = wb.Worksheets.Add("Member Time Report");
+				WriteMemberTimeReportWorkSheet(wb, _xLWSMemberTimeReport, memberTimeReportData);
+			}
+
 			wb.SaveAs(filename);
 		}
+	}
+
+	private void WriteMemberTimeReportWorkSheet(IXLWorkbook wb, IXLWorksheet ws, List<MemberTimeReportModel> memberTimeReportData)
+	{
+		// Write all the Columns
+		const int _headerLine = 1;
+		int columnIndex = (int)ExcelReportMembersTimeHeadersColumns.Name;
+		ExcelReportMembersTimeHeaders.ForEach(h =>
+		{
+			ws.Cell(_headerLine, columnIndex).Value = h.Key;
+			ws.Cell(_headerLine, columnIndex).WorksheetColumn().Width = h.Value;
+			ws.Cell(_headerLine, columnIndex).Style.Fill.BackgroundColor = GetXLColorFromHtmlColor(_excelReportSpreadSheetConfig.ReportHeaderBackgroundColorHtml);
+			columnIndex++;
+		});
+
+		var emptyRowNumber = _headerLine + 1;
+		foreach (var line in memberTimeReportData.OrderBy(o => o.SignupName))
+		{
+			ws.Cell(emptyRowNumber, (int)ExcelReportMembersTimeHeadersColumns.Name).Value = line.SignupName;
+			ws.Cell(emptyRowNumber, (int)ExcelReportMembersTimeHeadersColumns.Hours).Value = line.Hours;
+			ws.Cell(emptyRowNumber, (int)ExcelReportMembersTimeHeadersColumns.HoursPlus2).Value = line.HoursPlus2;
+			ws.Cell(emptyRowNumber, (int)ExcelReportMembersTimeHeadersColumns.NBEvents).Value = line.NBEvents;
+			ws.Cell(emptyRowNumber, (int)ExcelReportMembersTimeHeadersColumns.OtherNameOccurances).Value = line.OtherNameOccurances;
+
+			emptyRowNumber++;
+		}
+
+		// Transform entire line set into a table
+		var tableRange = ws.Range(_headerLine, (int)ExcelReportMembersTimeHeadersColumns.Name, emptyRowNumber - 1, (int)ExcelReportMembersTimeHeadersColumns.OtherNameOccurances);
+		var table = tableRange.CreateTable();
+	}
+
+	private void WriteTimeAnalysisWorkSheet(IXLWorkbook wb, IXLWorksheet ws, List<MemberTimeAnalysisModel> memberTimeAnalysisData)
+	{
+		// Write all the Columns
+		const int _headerLine = 1;
+		int columnIndex = (int)ExcelReportSignupsAnalysisHeadersColumns.SignupName;
+		ExcelReportSignupsAnalysisHeaders.ForEach(h =>
+		{
+			ws.Cell(_headerLine, columnIndex).Value = h.Key;
+			ws.Cell(_headerLine, columnIndex).WorksheetColumn().Width = h.Value;
+			ws.Cell(_headerLine, columnIndex).Style.Fill.BackgroundColor = GetXLColorFromHtmlColor(_excelReportSpreadSheetConfig.ReportHeaderBackgroundColorHtml);
+			columnIndex++;
+		});
+
+		var emptyRowNumber = _headerLine + 1;
+		foreach (var line in memberTimeAnalysisData)
+		{
+			ws.Cell(emptyRowNumber, (int)ExcelReportSignupsAnalysisHeadersColumns.SignupName).Value = line.SignupName;
+			ws.Cell(emptyRowNumber, (int)ExcelReportSignupsAnalysisHeadersColumns.Hours).Value = line.Hours;
+			ws.Cell(emptyRowNumber, (int)ExcelReportSignupsAnalysisHeadersColumns.HoursPlus2).Value = line.HoursPlus2;
+			ws.Cell(emptyRowNumber, (int)ExcelReportSignupsAnalysisHeadersColumns.Event).Value = line.EventName;
+			ws.Cell(emptyRowNumber, (int)ExcelReportSignupsAnalysisHeadersColumns.Start_Dt).Value = line.StartDate;
+			ws.Cell(emptyRowNumber, (int)ExcelReportSignupsAnalysisHeadersColumns.End_Dt).Value = line.EndDate;
+
+			emptyRowNumber++;
+		}
+
+		// Transform entire line set into a table
+		ws.Range(_headerLine, (int)ExcelReportSignupsAnalysisHeadersColumns.SignupName, emptyRowNumber - 1, (int)ExcelReportSignupsAnalysisHeadersColumns.End_Dt)
+			.CreateTable();
 	}
 
 	private void WriteHeaders(IXLWorksheet ws)
 	{
 		// Write all the Columns
-		int columnIndex = (int)ExcelReportHeadersColumns.Id;
-		ExcelReportHeaders.ForEach(h =>
+		int columnIndex = (int)ExcelReportEventHeadersColumns.Id;
+		ExcelReportEventsHeaders.ForEach(h =>
 		{
 			ws.Cell(_excelReportSpreadSheetConfig.ReportHeaderLine, columnIndex).Value = h.Key;
 			ws.Cell(_excelReportSpreadSheetConfig.ReportHeaderLine, columnIndex).WorksheetColumn().Width = h.Value;
@@ -115,20 +199,20 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 	{
 		foreach (var line in reportSpreadsheetLines)
 		{
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Id).Value = line.EventId;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.Id).Value = line.EventId;
 
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.title).Value = line.Title;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.location).Value = line.Location;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.notes).Value = line.Notes;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Start_Dt).Value = line.StartDate;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.End_Dt).Value = line.EndDate;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Creation_Dt).Value = line.CreationDate;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Update_Dt).Value = line.UpdateDate;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.Delete_Dt).Value = line.DeleteDate;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.SignupVisibility).Value = line.SignupVisibility;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.SignupCount).Value = line.SignupCount;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.title).Value = line.Title;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.location).Value = line.Location;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.notes).Value = line.Notes;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.Start_Dt).Value = line.StartDate;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.End_Dt).Value = line.EndDate;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.Creation_Dt).Value = line.CreationDate;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.Update_Dt).Value = line.UpdateDate;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.Delete_Dt).Value = line.DeleteDate;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.SignupVisibility).Value = line.SignupVisibility;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.SignupCount).Value = line.SignupCount;
 
-			int signupColumn = (int)ExcelReportHeadersColumns.Column1;
+			int signupColumn = (int)ExcelReportEventHeadersColumns.Column1;
 			// The Excell sheet has a limited number of columns
 			// There fore we can only display in report ExcelReportSignupsLimit of signups
 			foreach (var signup in line.Signups.Take(_excelReportSpreadSheetConfig.ReportSignupsLimit).ToList())
@@ -137,21 +221,21 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 				signupColumn++;
 			}
 
-			var events_custom_client2 = ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_client2);
+			var events_custom_client2 = ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_client2);
 			events_custom_client2.Value = line.Client2;
 			events_custom_client2.Style.NumberFormat.Format = "@";
 
-			var events_custom_division = ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_division);
+			var events_custom_division = ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_division);
 			events_custom_division.Value = line.Division;
 			events_custom_division.Style.NumberFormat.Format = "@";
 
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_me_dical_medical).Value = line.Medical;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_priorite_priority2_1).Value = line.Priority;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_cate_gorie_category_1).Value = line.Category;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_responsable_in_charge).Value = line.ResponsibleInCharge;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_contrat_provincial_contract_1).Value = line.ProvincialContract;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.events_custom_nombre_de_membres_ne_cessaires).Value = line.NbMembersNeeded;
-			ws.Cell(emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees).Value = line.PresencesConcat;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_me_dical_medical).Value = line.Medical;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_priorite_priority2_1).Value = line.Priority;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_cate_gorie_category_1).Value = line.Category;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_responsable_in_charge).Value = line.ResponsibleInCharge;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_contrat_provincial_contract_1).Value = line.ProvincialContract;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.events_custom_nombre_de_membres_ne_cessaires).Value = line.NbMembersNeeded;
+			ws.Cell(emptyRowNumber, (int)ExcelReportEventHeadersColumns.presences_collees).Value = line.PresencesConcat;
 
 			ManageLineHighLighting(ws, emptyRowNumber, line.LineHighLightColor);
 
@@ -159,7 +243,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 		}
 
 		// Transform entire line set into a table
-		ws.Range(_excelReportSpreadSheetConfig.ReportHeaderLine, (int)ExcelReportHeadersColumns.Id, emptyRowNumber - 1, (int)ExcelReportHeadersColumns.presences_collees)
+		ws.Range(_excelReportSpreadSheetConfig.ReportHeaderLine, (int)ExcelReportEventHeadersColumns.Id, emptyRowNumber - 1, (int)ExcelReportEventHeadersColumns.presences_collees)
 			.CreateTable();
 	}
 
@@ -172,7 +256,7 @@ public class ExcelSpreadsheetReportProvider : IExcelSpreadsheetReportProvider
 			return;
 		}
 
-		ws.Range(emptyRowNumber, (int)ExcelReportHeadersColumns.Id, emptyRowNumber, (int)ExcelReportHeadersColumns.presences_collees)
+		ws.Range(emptyRowNumber, (int)ExcelReportEventHeadersColumns.Id, emptyRowNumber, (int)ExcelReportEventHeadersColumns.presences_collees)
 				.Style.Fill.BackgroundColor = lineHighlightXLColor;
 	}
 }

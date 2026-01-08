@@ -6,7 +6,7 @@ public static class ExcelSpreadSheetConstants
 	public const int SIGNUP_NAME_COLUMN_WIDTH = 25;
 	public const int DEFAULT_COLUMN_WIDTH = 15;
 
-	public static readonly List<KeyValuePair<string, int>> ExcelReportHeaders = new List<KeyValuePair<string, int>>
+	public static readonly List<KeyValuePair<string, int>> ExcelReportEventsHeaders = new List<KeyValuePair<string, int>>
 	{
 		new KeyValuePair<string, int>("events.id", 20),
 		new KeyValuePair<string, int>("events.title", 65),
@@ -97,7 +97,7 @@ public static class ExcelSpreadSheetConstants
 		new KeyValuePair<string, int>("presences collees", DEFAULT_COLUMN_WIDTH),
 	};
 
-	public enum ExcelReportHeadersColumns
+	public enum ExcelReportEventHeadersColumns
 	{
 		Id = 1,
 		title = 2,
@@ -187,4 +187,48 @@ public static class ExcelSpreadSheetConstants
 		events_custom_nombre_de_membres_ne_cessaires = 79,
 		presences_collees = 80,
 	}
+
+	public enum ExcelReportSignupsAnalysisHeadersColumns
+	{
+		SignupName = 1,
+		Hours = 2,
+		HoursPlus2 = 3,
+		Event = 4,
+		Start_Dt = 5,
+		End_Dt = 6
+	}
+
+	public static readonly List<KeyValuePair<string, int>> ExcelReportSignupsAnalysisHeaders = new List<KeyValuePair<string, int>>
+	{
+		new KeyValuePair<string, int>("Signup Name", 40),
+		new KeyValuePair<string, int>("H", 5),
+		new KeyValuePair<string, int>("H+2", 5),
+		new KeyValuePair<string, int>("Event Name", 65),
+		new KeyValuePair<string, int>("Start Date", SIGNUP_NAME_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("End Date", SIGNUP_NAME_COLUMN_WIDTH),
+	};
+
+	public enum ExcelReportMembersTimeHeadersColumns
+	{
+		Name = 1,
+		Hours = 2,
+		HoursPlus2 = 3,
+		Qualtification = 4,
+		Division = 5,
+		CONT = 6,
+		NBEvents = 7,
+		OtherNameOccurances = 8,
+	}
+
+	public static readonly List<KeyValuePair<string, int>> ExcelReportMembersTimeHeaders = new List<KeyValuePair<string, int>>
+	{
+		new KeyValuePair<string, int>("Name", 30),
+		new KeyValuePair<string, int>("Hours", 10),
+		new KeyValuePair<string, int>("Hours +2", 10),
+		new KeyValuePair<string, int>("Qualtification", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("Division", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("CONT", DEFAULT_COLUMN_WIDTH),
+		new KeyValuePair<string, int>("Nb", 10),
+		new KeyValuePair<string, int>("All Name Occurances", 30),
+	};
 }
