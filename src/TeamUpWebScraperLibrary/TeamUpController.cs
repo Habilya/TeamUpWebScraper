@@ -147,7 +147,7 @@ public class TeamUpController
 		);
 	}
 
-	public void SaveXLSX(string saveFullPath)
+	public void SaveXLSX(string saveFullPath, List<int> selectedIds, bool isMemberTimeAnalysisIncluded)
 	{
 		try
 		{

@@ -1,5 +1,6 @@
 ﻿using TeamUpWebScraperLibrary;
 using TeamUpWebScraperLibrary.DTO;
+using TeamUpWebScraperLibrary.Helpers;
 using TeamUpWebScraperUI.Constants;
 using TeamUpWebScraperUI.DisplayDataGridGeneration;
 
@@ -8,6 +9,9 @@ namespace TeamUpWebScraperUI;
 public partial class Dashboard : Form
 {
 	private readonly TeamUpController _teamUpController;
+
+	private List<DisplayGridViewModel> _displayGridItems = new();
+	private BindingSource _displayGridBindingSource = new();
 
 	public Dashboard(
 		TeamUpController teamUpController)
@@ -28,6 +32,9 @@ public partial class Dashboard : Form
 		cbMemberTimeAnalysis.Checked = false;
 		cbSelectUnselectAllDisplayed.Checked = false;
 		tbFilterByName.Text = string.Empty;
+
+		_displayGridItems = new();
+		_displayGridBindingSource = new();
 
 		resultsLabel.Text = DashBoardConstants.RESULTS_LABEL_DEFAULT;
 		dataGridViewResults.Columns.Clear();
@@ -60,7 +67,8 @@ public partial class Dashboard : Form
 				var displayResults = _teamUpController.GetDisplayableGridResults();
 				resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_SELECTED_RESULTS, displayResults.Count);
 				systemStatusLabel.Text = string.Format(DashBoardConstants.SYSTEM_STATUS_LABEL_WITH_RESULTS, displayResults.Count);
-				DataGridViewHelper.GenerateDataGridView(dataGridViewResults, displayResults);
+				_displayGridBindingSource = DataGridViewHelper.GenerateDataGridView(dataGridViewResults, displayResults);
+				_displayGridItems = displayResults;
 				saveXLSX.Enabled = true;
 				cbMemberTimeAnalysis.Enabled = true;
 				cbSelectUnselectAllDisplayed.Enabled = true;
@@ -107,7 +115,16 @@ public partial class Dashboard : Form
 	{
 		try
 		{
-			//TODO: if 0 selected in grid, warn user no data to save
+			var isMemberTimeAnalysisIncluded = cbMemberTimeAnalysis.Checked;
+			var selectedIds = GetListOfSelectedIds();
+			if (!selectedIds.Any())
+			{
+				MessageBox.Show("No Items slected in the view.\n" +
+					"Report is not generated.\n" +
+					"Make sure list is not empty and use checkboxes.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+				return;
+			}
 
 			// Preconfigured file path and file name and filter
 			var (defaultSavePath, fileName, filter) = _teamUpController.GetSaveDialogOptions();
@@ -120,7 +137,7 @@ public partial class Dashboard : Form
 
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				_teamUpController.SaveXLSX(saveFileDialog.FileName);
+				_teamUpController.SaveXLSX(saveFileDialog.FileName, selectedIds, isMemberTimeAnalysisIncluded);
 				MessageBox.Show("Excel report saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			else
@@ -134,6 +151,22 @@ public partial class Dashboard : Form
 		}
 	}
 
+	private List<int> GetListOfSelectedIds()
+	{
+		if (_displayGridBindingSource.Count == 0)
+		{
+			return new List<int>();
+		}
+
+		var selectedIds = _displayGridBindingSource.List
+			.Cast<DisplayGridViewModel>()
+			.Where(item => item.Selected)
+			.Select(item => item.UniqueId)
+			.ToList();
+
+		return selectedIds;
+	}
+
 	private static void ShowUnhandledExceptionPopup()
 	{
 		MessageBox.Show("An unhandled exception was thrown, more information in log file.", "Unhandled Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -141,11 +174,48 @@ public partial class Dashboard : Form
 
 	private void cbSelectUnselectAllDisplayed_CheckedChanged(object sender, EventArgs e)
 	{
+		bool check = cbSelectUnselectAllDisplayed.Checked;
 
+		// Only visible rows are in the BindingSource
+		foreach (DisplayGridViewModel item in _displayGridBindingSource.List)
+		{
+			item.Selected = check;
+		}
+
+		_displayGridBindingSource.ResetBindings(false);
 	}
 
 	private void tbFilterByName_TextChanged(object sender, EventArgs e)
 	{
+		ApplyFilterToDataGridViewResults(tbFilterByName.Text);
+	}
 
+	private void ApplyFilterToDataGridViewResults(string filter)
+	{
+		// filter = filter?.Trim().ToLower();
+		// Converting null literal or possible null value to non-nullable type.
+		filter = (filter ?? string.Empty).Trim().ToLower();
+
+		bool noFilter = string.IsNullOrEmpty(filter);
+
+		// Update selection based on visibility
+		foreach (var item in _displayGridItems)
+		{
+			bool visible = noFilter || IsTitleMatching(filter!, item);
+			item.Selected = visible;
+		}
+
+		// Apply filter
+		_displayGridBindingSource.DataSource = noFilter
+			? _displayGridItems
+			: _displayGridItems
+				.Where(x => IsTitleMatching(filter!, x))
+				.ToList();
+
+		static bool IsTitleMatching(string filter, DisplayGridViewModel x)
+		{
+			return x.Title?.ToLower().Contains(filter) == true
+				|| StringHelper.RemoveDiacritics(x.Title!)?.ToLower().Contains(filter) == true;
+		}
 	}
 }
