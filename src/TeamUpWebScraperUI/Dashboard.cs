@@ -21,6 +21,8 @@ public partial class Dashboard : Form
 		InitializeComponent();
 		ReinitUIElements();
 		DisplayVersion();
+
+		AttachSelectedEventToDataGridView();
 	}
 
 	private void ReinitUIElements()
@@ -65,7 +67,7 @@ public partial class Dashboard : Form
 			if (result.IsValid)
 			{
 				var displayResults = _teamUpController.GetDisplayableGridResults();
-				resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_SELECTED_RESULTS, displayResults.Count);
+				SetNbSelectedLabel(displayResults.Count);
 				systemStatusLabel.Text = string.Format(DashBoardConstants.SYSTEM_STATUS_LABEL_WITH_RESULTS, displayResults.Count);
 				_displayGridBindingSource = DataGridViewHelper.GenerateDataGridView(dataGridViewResults, displayResults);
 				_displayGridItems = displayResults;
@@ -183,6 +185,7 @@ public partial class Dashboard : Form
 		}
 
 		_displayGridBindingSource.ResetBindings(false);
+		UpdateNbSelectedLabel();
 	}
 
 	private void tbFilterByName_TextChanged(object sender, EventArgs e)
@@ -212,10 +215,54 @@ public partial class Dashboard : Form
 				.Where(x => IsTitleMatching(filter!, x))
 				.ToList();
 
+		cbSelectUnselectAllDisplayed.Checked = true;
+		UpdateNbSelectedLabel();
+
 		static bool IsTitleMatching(string filter, DisplayGridViewModel x)
 		{
 			return x.Title?.ToLower().Contains(filter) == true
 				|| StringHelper.RemoveDiacritics(x.Title!)?.ToLower().Contains(filter) == true;
 		}
+	}
+
+	private void AttachSelectedEventToDataGridView()
+	{
+		dataGridViewResults.CurrentCellDirtyStateChanged += (s, e) =>
+		{
+			if (dataGridViewResults.IsCurrentCellDirty)
+				dataGridViewResults.CommitEdit(DataGridViewDataErrorContexts.Commit);
+		};
+
+		dataGridViewResults.CellValueChanged += DataGridViewResults_CellValueChanged;
+	}
+
+	private void SetNbSelectedLabel(int nbSelected)
+	{
+		resultsLabel.Text = string.Format(DashBoardConstants.RESULTS_LABEL_WITH_SELECTED_RESULTS, nbSelected);
+	}
+
+	private void UpdateNbSelectedLabel()
+	{
+		int nbSelected = _displayGridBindingSource.List
+			.Cast<DisplayGridViewModel>()
+			.Count(item => item.Selected);
+
+		SetNbSelectedLabel(nbSelected);
+	}
+
+	private void DataGridViewResults_CellValueChanged(object? sender, DataGridViewCellEventArgs e)
+	{
+		if (e.RowIndex < 0)
+		{
+			return;
+		}
+
+		// Only react to the checkbox column
+		if (dataGridViewResults.Columns[e.ColumnIndex].Name != DataGridViewHelper.SELECTED_COLUMN_NAME)
+		{
+			return;
+		}
+
+		UpdateNbSelectedLabel();
 	}
 }

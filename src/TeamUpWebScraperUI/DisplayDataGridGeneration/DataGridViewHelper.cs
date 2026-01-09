@@ -1,7 +1,9 @@
 ﻿namespace TeamUpWebScraperUI.DisplayDataGridGeneration;
 
-public class DataGridViewHelper
+public static class DataGridViewHelper
 {
+	public const string SELECTED_COLUMN_NAME = "Selected";
+
 	public static BindingSource GenerateDataGridView<T>(
 		DataGridView dataGridView,
 		IList<T> data)
@@ -18,8 +20,9 @@ public class DataGridViewHelper
 		// Checkbox column FIRST
 		dataGridView.Columns.Add(new DataGridViewCheckBoxColumn
 		{
-			Name = "",
-			DataPropertyName = "Selected",
+			Name = SELECTED_COLUMN_NAME,
+			DataPropertyName = SELECTED_COLUMN_NAME,
+			HeaderText = string.Empty,
 			Width = 30,
 			ReadOnly = false
 		});
@@ -27,7 +30,7 @@ public class DataGridViewHelper
 		// Other properties
 		foreach (var prop in props)
 		{
-			if (prop.Name == "Selected") continue;
+			if (prop.Name == SELECTED_COLUMN_NAME) continue;
 
 			dataGridView.Columns.Add(new DataGridViewTextBoxColumn
 			{
